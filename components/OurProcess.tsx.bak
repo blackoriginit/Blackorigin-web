@@ -1,0 +1,152 @@
+﻿"use client";
+
+import { useState } from "react";
+
+const steps = [
+  {
+    number: "01",
+    label: "DISCOVERY",
+    tag: "Foundation",
+    title: "Understand the problem",
+    text: "We define the goals, audience, requirements, and priorities before making design or development decisions.",
+  },
+  {
+    number: "02",
+    label: "DIRECTION",
+    tag: "Strategy",
+    title: "Define the system",
+    text: "We establish the visual direction, content hierarchy, reusable components, and technical approach.",
+  },
+  {
+    number: "03",
+    label: "EXECUTION",
+    tag: "Production",
+    title: "Design and build",
+    text: "The approved direction becomes a responsive, scalable experience with consistency across every section and interaction.",
+  },
+  {
+    number: "04",
+    label: "DELIVERY",
+    tag: "Launch",
+    title: "Refine and launch",
+    text: "We refine the final details, review the experience, and prepare a polished system that is ready to launch.",
+  },
+];
+
+export default function OurProcess() {
+  const [active, setActive] = useState(0);
+
+  return (
+    <section className="w-full bg-[#f6f8fd] px-4 py-12 sm:px-6 md:py-16">
+      <div className="mx-auto grid max-w-6xl overflow-hidden rounded-2xl md:grid-cols-[0.9fr_1.4fr] md:rounded-none">
+        {/* Left navy panel */}
+        <div className="bg-[#061a40] p-6 text-white sm:p-8 md:p-10">
+          <div className="flex items-center gap-4">
+            <span className="h-px w-10 bg-[#e85d04]" />
+            <span className="text-xs font-bold tracking-[0.2em] text-[#e85d04] sm:text-sm">
+              OUR PROCESS
+            </span>
+          </div>
+
+          <h2 className="mt-6 font-serif text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+            A smarter way to move from idea to launch.
+          </h2>
+
+          <p className="mt-6 leading-7 text-slate-300 sm:leading-8">
+            A focused four-stage process keeps every decision clear, every
+            deliverable aligned, and every project moving forward.
+          </p>
+
+          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="rounded-xl border border-white/15 p-5 transition duration-300 hover:-translate-y-1 hover:border-[#e85d04] hover:bg-white/5">
+              <p className="text-3xl font-bold text-[#e85d04]">04</p>
+              <p className="mt-1 text-sm font-semibold tracking-wide text-slate-300">
+                CLEAR STAGES
+              </p>
+            </div>
+            <div className="rounded-xl border border-white/15 p-5 transition duration-300 hover:-translate-y-1 hover:border-[#e85d04] hover:bg-white/5">
+              <p className="text-3xl font-bold text-[#e85d04]">01</p>
+              <p className="mt-1 text-sm font-semibold tracking-wide text-slate-300">
+                SHARED DIRECTION
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-8 border-t border-white/15 pt-6">
+            <p className="text-xs font-bold tracking-[0.2em] text-[#e85d04] sm:text-sm">
+              BUILT WITH CLARITY
+            </p>
+            <p className="mt-2 text-slate-300">
+              Less friction. Better decisions. Stronger outcomes.
+            </p>
+          </div>
+        </div>
+
+        {/* Right steps list */}
+        <div className="flex flex-col px-0 py-4 sm:px-4 md:px-8">
+          {steps.map((s, i) => {
+            const isActive = active === i;
+            return (
+              <div
+                key={s.number}
+                tabIndex={0}
+                onMouseEnter={() => setActive(i)}
+                onFocus={() => setActive(i)}
+                onClick={() => setActive(i)}
+                className={`flex cursor-pointer gap-4 rounded-xl border-b border-slate-200 px-4 py-6 outline-none transition-all duration-300 last:border-b-0 sm:gap-6 sm:px-5 sm:py-8 ${
+                  isActive
+                    ? "bg-white shadow-lg md:-translate-y-0.5"
+                    : "hover:bg-white/60"
+                }`}
+              >
+                <div
+                  className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-sm font-bold transition-all duration-300 sm:h-14 sm:w-14 ${
+                    isActive
+                      ? "scale-110 bg-[#e85d04] text-white ring-4 ring-[#e85d04]/30"
+                      : "bg-[#e85d04]/15 text-[#e85d04]"
+                  }`}
+                >
+                  {s.number}
+                </div>
+
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <span className="text-xs font-bold tracking-[0.2em] text-[#e85d04] sm:text-sm">
+                      {s.label}
+                    </span>
+                    <span
+                      className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors duration-300 ${
+                        isActive
+                          ? "bg-[#061a40] text-white"
+                          : "bg-white text-[#061a40] shadow-sm"
+                      }`}
+                    >
+                      {s.tag}
+                    </span>
+                  </div>
+
+                  <h3
+                    className={`mt-3 font-serif text-xl font-bold transition-colors duration-300 sm:text-2xl ${
+                      isActive ? "text-[#e85d04]" : "text-[#061a40]"
+                    }`}
+                  >
+                    {s.title}
+                  </h3>
+
+                  <span
+                    className={`mt-2 block h-1 rounded-full bg-[#e85d04] transition-all duration-500 ${
+                      isActive ? "w-16" : "w-0"
+                    }`}
+                  />
+
+                  <p className="mt-3 leading-7 text-slate-500">{s.text}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+

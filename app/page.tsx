@@ -1,3 +1,4 @@
+﻿import OurProcess from "../components/OurProcess";
 import Image from "next/image";
 
 export default function Home() {
@@ -64,6 +65,9 @@ export default function Home() {
           </a>
         </div>
       </main>
+      <OurProcess />
     </div>
   );
 }
+
+
