@@ -1,4 +1,3 @@
-
 @import "tailwindcss";
 
 /* =================================
@@ -6,7 +5,6 @@
 ================================= */
 
 :root {
-  /* Brand Colors */
   --background: #F5F9FF;
   --surface: #FFFFFF;
   --on-primary: #FFFFFF;
@@ -18,14 +16,9 @@
   --secondary: #061A40;
   --muted: #5A6B8C;
 
-  /* Brand Typography */
   --font-heading: Georgia, serif;
   --font-body: system-ui, sans-serif;
 }
-
-/* =================================
-   TAILWIND CSS THEME
-================================= */
 
 @theme inline {
   --color-background: var(--background);
@@ -44,79 +37,64 @@
 }
 
 /* =================================
-   GLOBAL STYLES
+   BASE STYLES
+   IMPORTANT: everything is inside @layer base so Tailwind
+   utility classes (text-white, text-primary, etc.) can
+   override it. Unlayered CSS always beats Tailwind utilities.
 ================================= */
 
-* {
-  box-sizing: border-box;
-}
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
 
-html {
-  scroll-behavior: smooth;
-}
+  html {
+    scroll-behavior: smooth;
+  }
 
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
-  background-color: var(--background);
-  color: var(--text);
-  font-family: var(--font-body);
-  -webkit-font-smoothing: antialiased;
-}
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background-color: var(--background);
+    color: var(--text);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
 
-/* =================================
-   TYPOGRAPHY
-================================= */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    color: var(--text);
+  }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-heading);
-  color: var(--text);
-}
+  p {
+    font-family: var(--font-body);
+    color: var(--muted);
+  }
 
-p {
-  font-family: var(--font-body);
-  color: var(--muted);
-}
+  button,
+  input,
+  textarea,
+  select {
+    font-family: var(--font-body);
+  }
 
-/* =================================
-   FORM ELEMENTS
-================================= */
+  a {
+    text-decoration: none;
+  }
 
-button,
-input,
-textarea,
-select {
-  font-family: var(--font-body);
-}
+  img {
+    display: block;
+    max-width: 100%;
+  }
 
-/* =================================
-   LINKS
-================================= */
-
-a {
-  text-decoration: none;
-}
-
-/* =================================
-   IMAGES
-================================= */
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-/* =================================
-   TEXT SELECTION
-================================= */
-
-::selection {
-  background-color: var(--primary);
-  color: var(--on-primary);
+  ::selection {
+    background-color: var(--primary);
+    color: var(--on-primary);
+  }
 }
