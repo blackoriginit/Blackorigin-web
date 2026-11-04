@@ -8,10 +8,12 @@ type Industry = {
   name: string
   description: string
   heroSubtitle: string
+  heroAccent: string
+  overviewTitle: string
   overview: string[]
-  challenges: string[]
-  solutions: string[]
-  outcomes: string[]
+  features: { title: string; description: string }[]
+  ctaTitle: string
+  ctaSubtitle: string
 }
 
 const industries: Industry[] = [
@@ -21,29 +23,37 @@ const industries: Industry[] = [
     description:
       'Learning platforms, training systems and administrative tools for schools and training organisations.',
     heroSubtitle:
-      'Digital platforms that make learning more accessible, engaging and easier to manage.',
+      'Empowering institutions with intelligent platforms that make learning more accessible, engaging and effective.',
+    heroAccent: 'from-[#061A40] via-[#0a1f4d] to-[#061A40]',
+    overviewTitle: 'Building the future of learning',
     overview: [
-      'We help educational institutions and training providers build secure, scalable platforms that support modern learning approaches.',
-      'From student portals to learning management systems, we focus on intuitive experiences that work for learners and administrators alike.',
+      'We partner with schools, universities and training providers to create digital learning ecosystems that scale with your needs.',
+      'Our solutions bridge the gap between traditional education and modern technology, creating experiences that work for both educators and learners.',
     ],
-    challenges: [
-      'Fragmented systems across admissions, fees and academics',
-      'Low engagement with existing digital tools',
-      'Data privacy and compliance requirements',
-      'Limited resources for ongoing maintenance',
+    features: [
+      {
+        title: 'Learning Management',
+        description:
+          'Custom LMS platforms with course creation, assessments, and progress tracking.',
+      },
+      {
+        title: 'Student Portals',
+        description:
+          'Unified dashboards for students, parents, and educators with real-time insights.',
+      },
+      {
+        title: 'Smart Assessments',
+        description:
+          'Automated grading, proctoring capabilities, and detailed performance analytics.',
+      },
+      {
+        title: 'System Integration',
+        description:
+          'Seamless connection with existing SIS, ERP, and administrative systems.',
+      },
     ],
-    solutions: [
-      'Custom learning management systems',
-      'Student and parent portals',
-      'Exam and assessment platforms',
-      'Integration with existing SIS/ERP systems',
-    ],
-    outcomes: [
-      'Streamlined administrative workflows',
-      'Improved learner engagement',
-      'Centralised data and reporting',
-      'Better accessibility across devices',
-    ],
+    ctaTitle: 'Transform your educational platform',
+    ctaSubtitle: 'Let us help you build a learning experience that drives results.',
   },
   {
     slug: 'e-commerce',
@@ -51,29 +61,37 @@ const industries: Industry[] = [
     description:
       'Storefronts, marketplaces and the integrations that keep orders, stock and payments in step.',
     heroSubtitle:
-      'Scalable commerce experiences built for conversion, reliability and growth.',
+      'High-converting commerce platforms engineered for scale, speed and seamless operations.',
+    heroAccent: 'from-[#061A40] via-[#1a0f00] to-[#061A40]',
+    overviewTitle: 'Commerce without limits',
     overview: [
-      'We build custom e-commerce solutions and marketplaces tailored to your business model.',
-      'Our focus is on performance, seamless integrations, and operations that scale as you grow.',
+      'We build headless and traditional e-commerce solutions that deliver exceptional shopping experiences across every touchpoint.',
+      'From single-brand storefronts to complex multi-vendor marketplaces, we engineer for performance and growth.',
     ],
-    challenges: [
-      'Complex inventory across channels',
-      'Cart abandonment and conversion issues',
-      'Payment gateway integrations',
-      'Order fulfilment and logistics complexity',
+    features: [
+      {
+        title: 'Headless Commerce',
+        description:
+          'Lightning-fast storefronts with flexible frontends powered by modern APIs.',
+      },
+      {
+        title: 'Marketplace Platforms',
+        description:
+          'Multi-vendor systems with vendor dashboards, commissions, and order management.',
+      },
+      {
+        title: 'Payment & Logistics',
+        description:
+          'Seamless integrations with payment gateways, shipping providers, and tax systems.',
+      },
+      {
+        title: 'Smart Inventory',
+        description:
+          'Real-time stock sync across channels with automated reordering and forecasting.',
+      },
     ],
-    solutions: [
-      'Custom storefronts and headless commerce',
-      'Multi-vendor marketplaces',
-      'Payment and shipping integrations',
-      'Inventory and order management systems',
-    ],
-    outcomes: [
-      'Higher conversion rates',
-      'Unified inventory across channels',
-      'Streamlined fulfilment workflows',
-      'Actionable sales analytics',
-    ],
+    ctaTitle: 'Scale your online business',
+    ctaSubtitle: 'Build a commerce platform that grows with your ambitions.',
   },
   {
     slug: 'saas',
@@ -81,29 +99,37 @@ const industries: Industry[] = [
     description:
       'Multi-tenant products, billing integrations and the operational tooling behind them.',
     heroSubtitle:
-      'From MVP to scale - we build multi-tenant SaaS products with solid foundations.',
+      'Product-first engineering for SaaS companies ready to scale from MVP to market leader.',
+    heroAccent: 'from-[#061A40] via-[#001122] to-[#061A40]',
+    overviewTitle: 'Built to scale, designed to convert',
     overview: [
-      'We partner with founders and product teams to build secure, multi-tenant SaaS platforms.',
-      'We focus on architecture that scales, clean billing flows, and the tooling you need to operate efficiently.',
+      'We help SaaS founders and teams build robust, multi-tenant platforms with the architecture to scale.',
+      'Every product we build is engineered for reliability, security, and the metrics that matter to your business.',
     ],
-    challenges: [
-      'Building for multi-tenancy from day one',
-      'Complex subscription and billing logic',
-      'Scaling infrastructure costs',
-      'Balancing speed to market with long-term maintainability',
+    features: [
+      {
+        title: 'Multi-Tenant Architecture',
+        description:
+          'Secure, scalable foundations built for thousands of users from day one.',
+      },
+      {
+        title: 'Billing & Subscriptions',
+        description:
+          'Flexible pricing models with Stripe, usage-based billing, and automated invoicing.',
+      },
+      {
+        title: 'Analytics & Insights',
+        description:
+          'Built-in dashboards to track usage, retention, and key business metrics.',
+      },
+      {
+        title: 'DevOps & Infrastructure',
+        description:
+          'CI/CD pipelines, monitoring, and cost-optimized cloud infrastructure.',
+      },
     ],
-    solutions: [
-      'Multi-tenant architecture and auth',
-      'Subscription billing (Stripe, etc.)',
-      'Admin dashboards and analytics',
-      'CI/CD and observability setup',
-    ],
-    outcomes: [
-      'Faster time to market',
-      'Reliable billing and metering',
-      'Scalable architecture',
-      'Reduced operational overhead',
-    ],
+    ctaTitle: 'Launch your SaaS faster',
+    ctaSubtitle: 'From concept to customers with a solid technical foundation.',
   },
   {
     slug: 'professional-services',
@@ -111,29 +137,37 @@ const industries: Industry[] = [
     description:
       'Client portals, scheduling and internal systems that reduce administrative work.',
     heroSubtitle:
-      'Tools that help professional service firms save time and deliver better client experiences.',
+      'Streamline operations and elevate client experiences with purpose-built business systems.',
+    heroAccent: 'from-[#061A40] via-[#0f1419] to-[#061A40]',
+    overviewTitle: 'Efficiency that drives profitability',
     overview: [
-      'We build custom systems for consultancies, agencies, and service businesses to streamline operations.',
-      'From client portals to project tracking, we eliminate manual work so your team can focus on delivery.',
+      'We build custom tools for consultancies, agencies, and professional service firms to eliminate bottlenecks.',
+      'Our solutions bring together project management, billing, and client communication in one seamless system.',
     ],
-    challenges: [
-      'Time tracking and billing complexity',
-      'Scattered client communication',
-      'Project profitability visibility',
-      'Manual proposal and contract workflows',
+    features: [
+      {
+        title: 'Client Portals',
+        description:
+          'Secure, branded portals for document sharing, approvals, and collaboration.',
+      },
+      {
+        title: 'Time & Billing',
+        description:
+          'Accurate tracking with automated invoicing and project profitability insights.',
+      },
+      {
+        title: 'Project Management',
+        description:
+          'Kanban boards, resource planning, and deadline tracking tailored to your workflow.',
+      },
+      {
+        title: 'CRM & Automation',
+        description:
+          'Streamlined pipelines with automated follow-ups and proposal generation.',
+      },
     ],
-    solutions: [
-      'Client portals and document sharing',
-      'Project and time tracking systems',
-      'Invoicing and billing automation',
-      'CRM and pipeline management',
-    ],
-    outcomes: [
-      'Improved billing accuracy',
-      'Better client collaboration',
-      'Clear project profitability',
-      'Less administrative overhead',
-    ],
+    ctaTitle: 'Optimize your service delivery',
+    ctaSubtitle: 'Spend less time on admin, more time on what you do best.',
   },
   {
     slug: 'healthcare',
@@ -141,29 +175,37 @@ const industries: Industry[] = [
     description:
       'Patient-facing and operational software built with privacy and reliability first.',
     heroSubtitle:
-      'Secure, compliant healthcare solutions that put patients and providers first.',
+      'Privacy-first healthcare technology that improves care delivery and operational efficiency.',
+    heroAccent: 'from-[#061A40] via-[#0a1a2f] to-[#061A40]',
+    overviewTitle: 'Technology that cares',
     overview: [
-      'We build healthcare software with privacy and reliability as core requirements.',
-      'Our approach focuses on secure data handling, intuitive UX, and systems that integrate well with existing workflows.',
+      'We build secure, compliant healthcare solutions designed with patient privacy and provider workflows in mind.',
+      'Our systems integrate seamlessly with existing processes while meeting the highest standards of security.',
     ],
-    challenges: [
-      'Strict privacy and compliance requirements',
-      'Legacy system integrations',
-      'Complex user roles and permissions',
-      'Need for reliability and uptime',
+    features: [
+      {
+        title: 'Patient Portals',
+        description:
+          'Secure access to appointments, records, and communication with care teams.',
+      },
+      {
+        title: 'Practice Management',
+        description:
+          'Streamlined scheduling, billing, and administrative workflows.',
+      },
+      {
+        title: 'Telehealth Solutions',
+        description:
+          'Video consultations with secure messaging and prescription management.',
+      },
+      {
+        title: 'Compliance & Security',
+        description:
+          'Built with privacy controls, audit trails, and compliance-ready architecture.',
+      },
     ],
-    solutions: [
-      'Patient portals and booking systems',
-      'Practice management tools',
-      'Secure data capture and reporting',
-      'Role-based access control systems',
-    ],
-    outcomes: [
-      'Improved patient experience',
-      'Streamlined clinical workflows',
-      'Stronger data security',
-      'Better operational efficiency',
-    ],
+    ctaTitle: 'Modernize healthcare delivery',
+    ctaSubtitle: 'Build secure solutions that put patients and providers first.',
   },
   {
     slug: 'fintech',
@@ -171,29 +213,37 @@ const industries: Industry[] = [
     description:
       'Secure transaction flows, reporting and compliance-minded engineering.',
     heroSubtitle:
-      'Trust-first financial software built with security and compliance at its core.',
+      'Fortress-grade financial technology built for trust, compliance and scale.',
+    heroAccent: 'from-[#061A40] via-[#000814] to-[#061A40]',
+    overviewTitle: 'Finance reimagined securely',
     overview: [
-      'We engineer secure, reliable fintech solutions for payments, lending, and financial operations.',
-      'Security, auditability, and compliance are built into every layer of what we deliver.',
+      'We engineer secure, auditable financial systems that handle sensitive transactions with confidence.',
+      'From payments to lending platforms, security and compliance are foundational to everything we build.',
     ],
-    challenges: [
-      'High security and compliance requirements',
-      'Complex transaction flows',
-      'Fraud prevention needs',
-      'Integration with banking APIs',
+    features: [
+      {
+        title: 'Payment Solutions',
+        description:
+          'Secure payment processing with multi-gateway support and fraud prevention.',
+      },
+      {
+        title: 'Digital Banking',
+        description:
+          'Modern banking interfaces with account management and transaction history.',
+      },
+      {
+        title: 'Lending Platforms',
+        description:
+          'Loan origination, underwriting, and portfolio management systems.',
+      },
+      {
+        title: 'Compliance Automation',
+        description:
+          'KYC, AML, and regulatory reporting built into your workflows.',
+      },
     ],
-    solutions: [
-      'Payment processing integrations',
-      'Digital wallet and transaction systems',
-      'KYC/AML workflow automation',
-      'Financial reporting and dashboards',
-    ],
-    outcomes: [
-      'Secure, auditable transactions',
-      'Faster onboarding flows',
-      'Real-time financial insights',
-      'Reduced compliance risk',
-    ],
+    ctaTitle: 'Build trusted financial products',
+    ctaSubtitle: 'Secure, compliant technology that your users can rely on.',
   },
   {
     slug: 'logistics',
@@ -201,29 +251,37 @@ const industries: Industry[] = [
     description:
       'Tracking, routing and warehouse systems that connect operations end to end.',
     heroSubtitle:
-      'Connected logistics systems that improve visibility, efficiency and delivery performance.',
+      'Intelligent logistics platforms that optimize routes, track shipments, and streamline operations.',
+    heroAccent: 'from-[#061A40] via-[#0f1419] to-[#061A40]',
+    overviewTitle: 'Logistics in motion',
     overview: [
-      'We build logistics and supply chain software that gives you real-time visibility across operations.',
-      'From tracking to warehouse management, we connect systems to eliminate bottlenecks.',
+      'We build connected logistics systems that give you complete visibility across your supply chain.',
+      'From fleet management to warehouse operations, our solutions drive efficiency at every step.',
     ],
-    challenges: [
-      'Lack of real-time visibility',
-      'Inefficient routing and dispatch',
-      'Warehouse management complexity',
-      'Disconnected systems across partners',
+    features: [
+      {
+        title: 'Fleet Management',
+        description:
+          'Real-time tracking, driver management, and vehicle maintenance scheduling.',
+      },
+      {
+        title: 'Route Optimization',
+        description:
+          'AI-powered routing to reduce fuel costs and delivery times.',
+      },
+      {
+        title: 'Warehouse Systems',
+        description:
+          'Inventory tracking, picking optimization, and order fulfillment automation.',
+      },
+      {
+        title: 'Customer Portals',
+        description:
+          'Real-time shipment tracking and delivery notifications for end customers.',
+      },
     ],
-    solutions: [
-      'Fleet tracking and dispatch systems',
-      'Route optimization tools',
-      'Warehouse management systems',
-      'Shipment tracking portals',
-    ],
-    outcomes: [
-      'Improved delivery efficiency',
-      'Real-time operational visibility',
-      'Reduced costs through optimization',
-      'Better customer experience',
-    ],
+    ctaTitle: 'Optimize your supply chain',
+    ctaSubtitle: 'Smarter logistics for faster, more reliable deliveries.',
   },
   {
     slug: 'real-estate',
@@ -231,29 +289,37 @@ const industries: Industry[] = [
     description:
       'Listings, enquiry handling and management platforms for property businesses.',
     heroSubtitle:
-      'Property platforms that streamline listings, enquiries and management workflows.',
+      'Modern property platforms that connect buyers, sellers, and managers seamlessly.',
+    heroAccent: 'from-[#061A40] via-[#1a1400] to-[#061A40]',
+    overviewTitle: 'Property tech that sells',
     overview: [
-      'We build custom real estate platforms for agencies, developers, and property managers.',
-      'Our solutions make it easier to manage listings, handle enquiries, and keep operations organized.',
+      'We build powerful real estate platforms for agencies, developers, and property management companies.',
+      'From virtual tours to automated workflows, we help you close deals faster and manage properties better.',
     ],
-    challenges: [
-      'Managing large property portfolios',
-      'Slow enquiry response times',
-      'Complex commission calculations',
-      'Disjointed CRM and listing systems',
+    features: [
+      {
+        title: 'Listing Platforms',
+        description:
+          'Beautiful, searchable property listings with advanced filters and maps.',
+      },
+      {
+        title: 'CRM & Leads',
+        description:
+          'Automated lead capture, nurturing, and commission tracking.',
+      },
+      {
+        title: 'Property Management',
+        description:
+          'Tenant portals, maintenance requests, and lease management tools.',
+      },
+      {
+        title: 'Virtual Experiences',
+        description:
+          '3D tours, floor plans, and immersive property showcases.',
+      },
     ],
-    solutions: [
-      'Property listing platforms',
-      'CRM for real estate sales',
-      'Tenant and lease management',
-      'Virtual tour and enquiry systems',
-    ],
-    outcomes: [
-      'Faster enquiry response',
-      'Better lead management',
-      'Streamlined property operations',
-      'Improved agent productivity',
-    ],
+    ctaTitle: 'Elevate your real estate business',
+    ctaSubtitle: 'Digital tools that help you sell more and manage better.',
   },
   {
     slug: 'startups-smes',
@@ -261,29 +327,37 @@ const industries: Industry[] = [
     description:
       'MVPs and growth-stage products delivered with a small, senior engineering team.',
     heroSubtitle:
-      'Turn your idea into a working product - fast, focused and built to scale.',
+      'From idea to market - build, validate, and scale with a senior engineering team.',
+    heroAccent: 'from-[#061A40] via-[#0a0a1a] to-[#061A40]',
+    overviewTitle: 'Launch faster, scale smarter',
     overview: [
-      'We help startups and SMEs build MVPs and grow them into production-ready products.',
-      'With a senior engineering team, we focus on what matters most to get you to market quickly.',
+      'We help startups and SMEs turn ideas into production-ready products without the overhead of a full engineering team.',
+      'Our focused approach gets you to market quickly while building on a foundation ready for growth.',
     ],
-    challenges: [
-      'Limited budget and timeline',
-      'Need to validate ideas quickly',
-      'Unclear technical requirements',
-      'Planning for scale from the start',
+    features: [
+      {
+        title: 'Rapid MVP',
+        description:
+          'Launch in weeks with a focused product that validates your core assumptions.',
+      },
+      {
+        title: 'Product Strategy',
+        description:
+          'Technical architecture and roadmap planning aligned with your goals.',
+      },
+      {
+        title: 'Scalable Foundation',
+        description:
+          'Clean, extensible code built to grow as your business evolves.',
+      },
+      {
+        title: 'Ongoing Support',
+        description:
+          'Post-launch iteration and scaling as you gain traction.',
+      },
     ],
-    solutions: [
-      'Rapid MVP development',
-      'Product strategy and architecture',
-      'Scalable backend and APIs',
-      'Launch support and iteration',
-    ],
-    outcomes: [
-      'Faster validation of ideas',
-      'Production-ready from day one',
-      'Flexible architecture for growth',
-      'Senior expertise without full-time hires',
-    ],
+    ctaTitle: 'Ready to build your product?',
+    ctaSubtitle: 'Get a senior team working on your idea from day one.',
   },
 ]
 
@@ -335,10 +409,23 @@ export default async function IndustryPage({
     notFound()
   }
 
+  // Different layouts per industry
+  const isEducation = slug === 'education'
+  const isEcommerce = slug === 'e-commerce'
+  const isSaas = slug === 'saas'
+  const isProfessional = slug === 'professional-services'
+  const isHealthcare = slug === 'healthcare'
+  const isFintech = slug === 'fintech'
+  const isLogistics = slug === 'logistics'
+  const isRealEstate = slug === 'real-estate'
+  const isStartups = slug === 'startups-smes'
+
   return (
     <div className="flex-1 bg-[#F5F9FF]">
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-[#061A40] text-white">
+      {/* Hero - Different styles per industry */}
+      <section
+        className={`relative overflow-hidden bg-gradient-to-br ${industry.heroAccent} text-white`}
+      >
         <div className="absolute inset-0">
           <Image
             src="/images/industries-hero.jpg"
@@ -346,139 +433,398 @@ export default async function IndustryPage({
             fill
             preload
             sizes="100vw"
-            className="object-cover opacity-40"
+            className="object-cover opacity-30 mix-blend-overlay"
           />
         </div>
 
-        <div className="absolute inset-0 bg-[#061A40]/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#061A40]/90 via-transparent to-[#061A40]/70" />
 
-        <div className="relative mx-auto w-full max-w-6xl px-6 py-20 pb-28 md:py-28 md:pb-36">
-          <div className="mx-auto max-w-4xl text-center">
-            <nav className="mb-6 flex items-center justify-center gap-2 text-sm text-white/70">
-              <Link href="/" className="hover:text-white">
+        <div className="relative mx-auto w-full max-w-7xl px-6 py-24 pb-32 md:py-32 md:pb-40">
+          <div className="max-w-3xl">
+            <nav className="mb-8 flex items-center gap-2 text-sm text-white/70">
+              <Link href="/" className="hover:text-white transition-colors">
                 Home
               </Link>
               <span aria-hidden="true">/</span>
-              <Link href="/industries" className="hover:text-white">
+              <Link href="/industries" className="hover:text-white transition-colors">
                 Industries
               </Link>
               <span aria-hidden="true">/</span>
               <span className="text-white">{industry.name}</span>
             </nav>
 
-            <h1 className="font-serif text-5xl font-bold tracking-tight text-white md:text-6xl">
+            <div className="mb-6 inline-flex items-center rounded-full border border-[#E85D04]/50 bg-[#E85D04]/10 px-4 py-1.5 text-sm font-medium text-[#E85D04]">
               {industry.name}
+            </div>
+
+            <h1 className="font-serif text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+              {industry.heroSubtitle}
             </h1>
 
-            <div className="mx-auto mt-8 max-w-2xl rounded-2xl border border-white/20 bg-white/10 p-6 shadow-lg">
-              <p className="text-lg leading-8 text-white/90">
-                {industry.heroSubtitle}
-              </p>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/80 md:text-xl">
+              {industry.description}
+            </p>
+
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link href="/contact" className={primaryButton}>
+                Start Your Project
+              </Link>
+              <Link
+                href="/industries"
+                className="inline-flex items-center justify-center rounded-md border border-white/30 bg-white/10 px-5 py-2.5 text-base font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/20"
+              >
+                Explore Other Industries
+              </Link>
             </div>
           </div>
         </div>
 
-        <div className="absolute inset-x-0 bottom-0 h-12 rounded-t-[50%_3rem] bg-[#F5F9FF]" />
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#F5F9FF] to-transparent" />
       </section>
 
-      {/* Overview */}
-      <section className="py-16 md:py-20">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="mx-auto max-w-4xl">
-            <h2 className="font-serif text-3xl font-bold tracking-tight text-[#061A40] md:text-4xl">
-              Overview
-            </h2>
-            <div className="mt-6 space-y-4">
-              {industry.overview.map((paragraph, index) => (
-                <p key={index} className="text-lg leading-8 text-[#5A6B8C]">
-                  {paragraph}
-                </p>
+      {/* Overview - Different layouts */}
+      {isEducation && (
+        <section className="py-20">
+          <div className="mx-auto w-full max-w-7xl px-6">
+            <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+              <div>
+                <div className="mb-4 inline-flex items-center rounded-full bg-[#E85D04]/10 px-4 py-1.5 text-sm font-semibold text-[#E85D04]">
+                  Overview
+                </div>
+                <h2 className="font-serif text-4xl font-bold tracking-tight text-[#061A40] md:text-5xl">
+                  {industry.overviewTitle}
+                </h2>
+                <div className="mt-6 space-y-4">
+                  {industry.overview.map((paragraph, index) => (
+                    <p key={index} className="text-lg leading-8 text-[#5A6B8C]">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+              </div>
+              <div className="relative">
+                <div className="absolute -left-4 -top-4 h-full w-full rounded-2xl bg-[#E85D04]/10" />
+                <div className="relative rounded-2xl bg-gradient-to-br from-[#061A40] to-[#0a1f4d] p-10 text-white shadow-xl">
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#E85D04]">
+                        <span className="text-xl">📚</span>
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold">Engaging Experiences</h3>
+                        <p className="mt-2 text-white/80">
+                          Interactive content that keeps learners motivated
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#E85D04]">
+                        <span className="text-xl">🎯</span>
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold">Measurable Outcomes</h3>
+                        <p className="mt-2 text-white/80">
+                          Track progress with detailed analytics and insights
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#E85D04]">
+                        <span className="text-xl">🔒</span>
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold">Secure & Scalable</h3>
+                        <p className="mt-2 text-white/80">
+                          Enterprise-grade security for institutions of any size
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {isFintech && (
+        <section className="py-20">
+          <div className="mx-auto w-full max-w-7xl px-6">
+            <div className="mb-12 text-center">
+              <div className="mb-4 inline-flex items-center rounded-full bg-[#E85D04]/10 px-4 py-1.5 text-sm font-semibold text-[#E85D04]">
+                Overview
+              </div>
+              <h2 className="font-serif text-4xl font-bold tracking-tight text-[#061A40] md:text-5xl">
+                {industry.overviewTitle}
+              </h2>
+              <div className="mx-auto mt-6 max-w-3xl space-y-4">
+                {industry.overview.map((paragraph, index) => (
+                  <p key={index} className="text-lg leading-8 text-[#5A6B8C]">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {[
+                { icon: '💳', title: 'Secure Payments', desc: 'Encrypted transactions' },
+                { icon: '🛡️', title: 'Fraud Prevention', desc: 'AI-powered detection' },
+                { icon: '📊', title: 'Real-time Analytics', desc: 'Instant insights' },
+                { icon: '✅', title: 'Compliance Ready', desc: 'Regulatory standards' },
+              ].map((item, idx) => (
+                <div
+                  key={idx}
+                  className="group rounded-xl border border-[#061A40]/10 bg-white p-6 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
+                >
+                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#E85D04]/20 to-[#E85D04]/10 text-3xl">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-lg font-semibold text-[#061A40]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-[#5A6B8C]">{item.desc}</p>
+                </div>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      {/* Challenges, Solutions, Outcomes */}
-      <section className="pb-16 md:pb-20">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="grid gap-8 md:grid-cols-3">
-            <div className="rounded-xl border border-[#061A40]/10 bg-white p-8 shadow-sm">
-              <h3 className="font-serif text-2xl font-bold text-[#061A40]">
-                Challenges
-              </h3>
-              <ul className="mt-4 space-y-3">
-                {industry.challenges.map((challenge, index) => (
-                  <li
-                    key={index}
-                    className="flex items-start gap-3 text-[#5A6B8C]"
-                  >
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#E85D04]" />
-                    <span className="leading-7">{challenge}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="rounded-xl border border-[#061A40]/10 bg-white p-8 shadow-sm">
-              <h3 className="font-serif text-2xl font-bold text-[#061A40]">
-                Our Solutions
-              </h3>
-              <ul className="mt-4 space-y-3">
-                {industry.solutions.map((solution, index) => (
-                  <li
-                    key={index}
-                    className="flex items-start gap-3 text-[#5A6B8C]"
-                  >
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#E85D04]" />
-                    <span className="leading-7">{solution}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="rounded-xl border border-[#061A40]/10 bg-white p-8 shadow-sm">
-              <h3 className="font-serif text-2xl font-bold text-[#061A40]">
-                Outcomes
-              </h3>
-              <ul className="mt-4 space-y-3">
-                {industry.outcomes.map((outcome, index) => (
-                  <li
-                    key={index}
-                    className="flex items-start gap-3 text-[#5A6B8C]"
-                  >
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#E85D04]" />
-                    <span className="leading-7">{outcome}</span>
-                  </li>
-                ))}
-              </ul>
+      {isSaas && (
+        <section className="py-20">
+          <div className="mx-auto w-full max-w-7xl px-6">
+            <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-center lg:gap-16">
+              <div>
+                <div className="mb-4 inline-flex items-center rounded-full bg-[#E85D04]/10 px-4 py-1.5 text-sm font-semibold text-[#E85D04]">
+                  Overview
+                </div>
+                <h2 className="font-serif text-4xl font-bold tracking-tight text-[#061A40] md:text-5xl">
+                  {industry.overviewTitle}
+                </h2>
+                <div className="mt-6 space-y-4">
+                  {industry.overview.map((paragraph, index) => (
+                    <p key={index} className="text-lg leading-8 text-[#5A6B8C]">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  {['Multi-tenant', 'Subscription Ready', 'API-First', 'Cloud Native'].map(
+                    (tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-[#061A40]/20 px-4 py-2 text-sm font-medium text-[#061A40]"
+                      >
+                        {tag}
+                      </span>
+                    )
+                  )}
+                </div>
+              </div>
+              <div className="relative">
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#E85D04]/20 to-transparent blur-3xl" />
+                <div className="relative rounded-2xl border border-[#061A40]/10 bg-white p-8 shadow-xl">
+                  <div className="mb-6 flex items-center gap-3">
+                    <div className="h-3 w-3 rounded-full bg-red-400" />
+                    <div className="h-3 w-3 rounded-full bg-yellow-400" />
+                    <div className="h-3 w-3 rounded-full bg-green-400" />
+                  </div>
+                  <div className="space-y-4">
+                    <div className="h-8 w-3/4 rounded bg-[#061A40]/10" />
+                    <div className="h-4 w-full rounded bg-[#061A40]/5" />
+                    <div className="h-4 w-5/6 rounded bg-[#061A40]/5" />
+                    <div className="mt-6 grid grid-cols-3 gap-3">
+                      <div className="h-20 rounded bg-[#E85D04]/10" />
+                      <div className="h-20 rounded bg-[#061A40]/10" />
+                      <div className="h-20 rounded bg-[#E85D04]/10" />
+                    </div>
+                    <div className="h-32 rounded bg-gradient-to-r from-[#061A40]/5 to-[#E85D04]/5" />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      {/* CTA */}
+      {/* Default layout for others */}
+      {!isEducation && !isFintech && !isSaas && (
+        <section className="py-20">
+          <div className="mx-auto w-full max-w-6xl px-6">
+            <div className="mx-auto max-w-4xl text-center">
+              <div className="mb-4 inline-flex items-center rounded-full bg-[#E85D04]/10 px-4 py-1.5 text-sm font-semibold text-[#E85D04]">
+                Overview
+              </div>
+              <h2 className="font-serif text-4xl font-bold tracking-tight text-[#061A40] md:text-5xl">
+                {industry.overviewTitle}
+              </h2>
+              <div className="mt-6 space-y-4">
+                {industry.overview.map((paragraph, index) => (
+                  <p key={index} className="text-lg leading-8 text-[#5A6B8C]">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Features - Different grid layouts */}
       <section className="pb-20">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="rounded-xl bg-[#061A40] p-10 text-center text-white">
-            <h2 className="font-serif text-2xl font-bold md:text-3xl">
-              Ready to build for {industry.name.toLowerCase()}?
+        <div className="mx-auto w-full max-w-7xl px-6">
+          <div className="mb-12 text-center">
+            <h2 className="font-serif text-3xl font-bold tracking-tight text-[#061A40] md:text-4xl">
+              What We Deliver
             </h2>
-
-            <p className="mt-3 text-white/80">
-              Let&apos;s discuss how we can help solve your specific challenges.
+            <p className="mt-4 text-lg text-[#5A6B8C]">
+              Tailored solutions for {industry.name.toLowerCase()}
             </p>
-
-            <div className="mt-6 flex flex-wrap justify-center gap-4">
-              <Link href="/contact" className={primaryButton}>
-                Start a Project
-              </Link>
-
-              <Link href="/industries" className={secondaryButton}>
-                View All Industries
-              </Link>
-            </div>
           </div>
+
+          {isEcommerce || isLogistics ? (
+            <div className="grid gap-6 md:grid-cols-2">
+              {industry.features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="group relative overflow-hidden rounded-2xl border border-[#061A40]/10 bg-white p-8 shadow-sm transition-all hover:shadow-xl"
+                >
+                  <div className="absolute right-0 top-0 h-32 w-32 translate-x-8 -translate-y-8 rounded-full bg-[#E85D04]/5 transition-transform group-hover:scale-150" />
+                  <div className="relative">
+                    <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-[#E85D04] to-[#c94f03] text-white">
+                      <span className="text-2xl">⚡</span>
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#061A40]">
+                      {feature.title}
+                    </h3>
+                    <p className="mt-3 leading-7 text-[#5A6B8C]">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : isHealthcare || isRealEstate || isProfessional ? (
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {industry.features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="rounded-xl border border-[#061A40]/10 bg-white p-6 shadow-sm transition-all hover:border-[#E85D04]/50 hover:shadow-md"
+                >
+                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-[#E85D04]/10">
+                    <div className="h-2 w-2 rounded-full bg-[#E85D04]" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-[#061A40]">
+                    {feature.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-[#5A6B8C]">
+                    {feature.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          ) : isStartups ? (
+            <div className="grid gap-8 md:grid-cols-2">
+              {industry.features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="flex gap-6 rounded-2xl border border-[#061A40]/10 bg-gradient-to-br from-white to-[#F5F9FF] p-8 shadow-sm"
+                >
+                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#061A40] text-white">
+                    <span className="text-xl font-bold">{index + 1}</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-[#061A40]">
+                      {feature.title}
+                    </h3>
+                    <p className="mt-2 leading-7 text-[#5A6B8C]">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {industry.features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="rounded-xl border border-[#061A40]/10 bg-white p-6 shadow-sm"
+                >
+                  <div className="mb-3 h-1 w-12 rounded-full bg-[#E85D04]" />
+                  <h3 className="text-lg font-semibold text-[#061A40]">
+                    {feature.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-[#5A6B8C]">
+                    {feature.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* CTA - Different styles */}
+      <section className="pb-20">
+        <div className="mx-auto w-full max-w-7xl px-6">
+          {isFintech || isHealthcare ? (
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#061A40] to-[#0a1f4d] p-12 text-center text-white">
+              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#E85D04]/20 blur-3xl" />
+              <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-[#E85D04]/10 blur-3xl" />
+              <div className="relative">
+                <h2 className="font-serif text-3xl font-bold md:text-4xl">
+                  {industry.ctaTitle}
+                </h2>
+                <p className="mt-4 text-lg text-white/80">
+                  {industry.ctaSubtitle}
+                </p>
+                <div className="mt-8 flex flex-wrap justify-center gap-4">
+                  <Link href="/contact" className={primaryButton}>
+                    Get Started Today
+                  </Link>
+                  <Link
+                    href="/industries"
+                    className="inline-flex items-center justify-center rounded-md border border-white/30 px-5 py-2.5 text-base font-semibold text-white transition-colors hover:bg-white/10"
+                  >
+                    Back to Industries
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ) : isStartups ? (
+            <div className="rounded-2xl border-2 border-[#E85D04] bg-white p-12 text-center shadow-lg">
+              <h2 className="font-serif text-3xl font-bold text-[#061A40] md:text-4xl">
+                {industry.ctaTitle}
+              </h2>
+              <p className="mt-4 text-lg text-[#5A6B8C]">
+                {industry.ctaSubtitle}
+              </p>
+              <div className="mt-8 flex flex-wrap justify-center gap-4">
+                <Link href="/contact" className={primaryButton}>
+                  Let&apos;s Build Together
+                </Link>
+                <Link href="/industries" className={secondaryButton}>
+                  View All Industries
+                </Link>
+              </div>
+            </div>
+          ) : (
+            <div className="rounded-xl bg-[#061A40] p-10 text-center text-white">
+              <h2 className="font-serif text-2xl font-bold md:text-3xl">
+                {industry.ctaTitle}
+              </h2>
+              <p className="mt-3 text-white/80">{industry.ctaSubtitle}</p>
+              <div className="mt-6 flex flex-wrap justify-center gap-4">
+                <Link href="/contact" className={primaryButton}>
+                  Start a Project
+                </Link>
+                <Link href="/industries" className={secondaryButton}>
+                  View All Industries
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </section>
     </div>
