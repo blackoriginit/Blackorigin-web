@@ -10,46 +10,55 @@ export const metadata: Metadata = {
 
 const industries = [
   {
+    slug: 'education',
     name: 'Education',
     description:
       'Learning platforms, training systems and administrative tools for schools and training organisations.',
   },
   {
+    slug: 'e-commerce',
     name: 'E-commerce',
     description:
       'Storefronts, marketplaces and the integrations that keep orders, stock and payments in step.',
   },
   {
+    slug: 'saas',
     name: 'SaaS',
     description:
       'Multi-tenant products, billing integrations and the operational tooling behind them.',
   },
   {
+    slug: 'professional-services',
     name: 'Professional Services',
     description:
       'Client portals, scheduling and internal systems that reduce administrative work.',
   },
   {
+    slug: 'healthcare',
     name: 'Healthcare',
     description:
       'Patient-facing and operational software built with privacy and reliability first.',
   },
   {
+    slug: 'fintech',
     name: 'FinTech',
     description:
       'Secure transaction flows, reporting and compliance-minded engineering.',
   },
   {
+    slug: 'logistics',
     name: 'Logistics',
     description:
       'Tracking, routing and warehouse systems that connect operations end to end.',
   },
   {
+    slug: 'real-estate',
     name: 'Real Estate',
     description:
       'Listings, enquiry handling and management platforms for property businesses.',
   },
   {
+    slug: 'startups-smes',
     name: 'Startups & SMEs',
     description:
       'MVPs and growth-stage products delivered with a small, senior engineering team.',
@@ -122,9 +131,10 @@ export default function IndustriesPage() {
 
             <div className="border-t border-[#061A40]/15">
               {industries.map((industry) => (
-                <div
-                  key={industry.name}
-                  className="group border-b border-[#061A40]/15 py-7"
+                <Link
+                  key={industry.slug}
+                  href={`/industries/${industry.slug}`}
+                  className="group block border-b border-[#061A40]/15 py-7 transition-colors"
                 >
                   <h3 className="font-serif text-2xl font-semibold tracking-tight text-[#061A40] transition-colors duration-300 group-hover:text-[#E85D04]">
                     {industry.name}
@@ -133,7 +143,12 @@ export default function IndustriesPage() {
                   <p className="mt-2 max-w-xl text-[#5A6B8C]">
                     {industry.description}
                   </p>
-                </div>
+
+                  <div className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#E85D04] opacity-0 transition-opacity group-hover:opacity-100">
+                    Learn more
+                    <span aria-hidden="true">→</span>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
