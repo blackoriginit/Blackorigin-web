@@ -1,4 +1,5 @@
 import Hero from '@/components/home/Hero'
+import Testimonials from '@/components/home/Testimonials'
 import TrustedBy from '@/components/home/TrustedBy'
 
 /**
@@ -30,6 +31,7 @@ export default function Home() {
       {/* 6. Working stack */}
       {/* 7. Case studies */}
       {/* 8. Testimonials */}
+      <Testimonials />
       {/* 9. Final CTA */}
     </>
   )

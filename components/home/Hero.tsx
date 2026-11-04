@@ -91,13 +91,13 @@ export default function Hero() {
           <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/contact"
-              className="inline-flex cursor-pointer items-center gap-3 rounded-md bg-[#E85D04] px-6 py-3 text-[13px] font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#061A40] hover:shadow-lg"
+              className="inline-flex cursor-pointer items-center gap-3 rounded-[8px] bg-[#E85D04] px-6 py-3 text-[13px] font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#061A40] hover:shadow-lg"
             >
               Start a Project<span aria-hidden="true">→</span>
             </Link>
             <Link
               href="/case-studies"
-              className="inline-flex cursor-pointer items-center gap-3 rounded-md border border-[#E85D04] px-6 py-3 text-[13px] font-semibold text-[#E85D04] transition duration-300 hover:-translate-y-1 hover:bg-[#E85D04] hover:text-white"
+              className="inline-flex cursor-pointer items-center gap-3 rounded-[8px] border border-[#E85D04] px-6 py-3 text-[13px] font-semibold text-[#E85D04] transition duration-300 hover:-translate-y-1 hover:bg-[#E85D04] hover:text-white"
             >
               Explore Our Work<span aria-hidden="true">↓</span>
             </Link>

@@ -12,21 +12,26 @@
   --font-mono: var(--font-geist-mono);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: system-ui, sans-serif;
-}
-
 /*
- * Site typography: headings are Georgia serif, everything else is the system
- * sans stack. This matches the live Black Origin site.
+ * Site typography, matching the live Black Origin site:
+ * headings are Georgia serif with tight line-height, body text is the system
+ * sans stack. Kept in @layer base so Tailwind utilities (leading-*, font-*)
+ * still win on individual elements.
  */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: Georgia, serif;
+@layer base {
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: Georgia, serif;
+    line-height: 1;
+  }
 }
