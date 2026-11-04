@@ -10,6 +10,8 @@
   summary: string;
   responsibilities: string[];
   requirements: string[];
+  niceToHave: string[];
+  offer: string[];
 };
 
 export const jobs: Job[] = [
@@ -17,24 +19,36 @@ export const jobs: Job[] = [
     slug: "software-engineer",
     department: "Engineering",
     title: "Software Engineer",
-    mode: "On-site",
+    mode: "Remote",
     type: "Full time",
     level: "Mid level",
     location: "Bangladesh",
     compensation: "Competitive",
     summary:
-      "We are looking for a Software Engineer to design, build and maintain reliable web products. You will work closely with designers and teammates to ship features that are fast, accessible and easy to maintain.",
+      "We are looking for a Software Engineer to design, build and maintain reliable web products for international clients. You will work closely with designers and teammates to ship features that are fast, secure and easy to maintain.",
     responsibilities: [
-      "Build and ship features using modern web technologies",
-      "Write clean, tested and maintainable code",
-      "Review code and share knowledge with the team",
-      "Work with designers and product owners to deliver quality work",
+      "Design, develop, test, deploy and maintain software applications.",
+      "Build APIs, integrations and database functionality.",
+      "Write clean, secure, well-documented code and take part in code reviews.",
+      "Investigate and fix bugs and production issues.",
+      "Work with engineers, designers and clients, and share knowledge with the team.",
     ],
     requirements: [
-      "Solid experience with JavaScript or TypeScript",
-      "Experience with React or Next.js and a backend language or framework",
-      "Understanding of databases, APIs and version control (Git)",
-      "Good communication and a collaborative mindset",
+      "Hands-on experience building web applications (for example PHP/Laravel, JavaScript/TypeScript, React/Next.js, Node.js or Python).",
+      "Good knowledge of databases (MySQL/PostgreSQL), REST APIs and Git.",
+      "Ability to work independently and communicate clearly in written English.",
+      "Strong problem-solving skills and attention to code quality and security.",
+      "A reliable laptop and internet connection for full-time remote work.",
+    ],
+    niceToHave: [
+      "Experience with Docker, cloud services or CI/CD.",
+      "Experience with AI/LLM integrations or workflow automation.",
+      "Experience mentoring juniors or coordinating small teams.",
+    ],
+    offer: [
+      "Remote, full-time work with international client projects.",
+      "A clear engineering career path, from Software Engineer to Senior Engineer and Team Lead.",
+      "Mentoring, code reviews and room to grow.",
     ],
   },
   {
@@ -47,18 +61,32 @@ export const jobs: Job[] = [
     location: "Bangladesh",
     compensation: "Stipend",
     summary:
-      "This role is for fresh graduates and early learners who want to start a career in software engineering. You will learn on real projects with guidance from experienced engineers.",
+      "This role is for fresh graduates and early learners who want to start a career in software engineering. You will learn on real projects with guidance from experienced engineers, and grow into a confident, independent developer.",
     responsibilities: [
-      "Learn our tools, codebase and development workflow",
-      "Build small features and fix bugs under guidance",
-      "Write clean code and learn to test it",
-      "Take part in code reviews and team discussions",
+      "Learn our tools, codebase and development workflow with guidance from senior engineers.",
+      "Build small features, fix bugs and write tests under supervision.",
+      "Help build APIs, database queries and simple integrations.",
+      "Write clean, documented code and take part in code reviews.",
+      "Share progress in regular check-ins and ask questions early.",
     ],
     requirements: [
-      "Basic knowledge of programming (JavaScript, Python or similar)",
-      "Understanding of HTML, CSS and how the web works",
-      "Eagerness to learn and take feedback well",
-      "A GitHub profile or personal projects are a plus",
+      "Basic knowledge of programming (JavaScript/TypeScript, PHP, Python or similar).",
+      "Understanding of HTML, CSS, how the web works and basic Git.",
+      "Clear written English and a willingness to take feedback well.",
+      "A problem-solving mindset and attention to detail.",
+      "A reliable laptop and internet connection.",
+    ],
+    niceToHave: [
+      "A GitHub profile or personal / academic projects.",
+      "Basic knowledge of React/Next.js, Laravel or Node.js.",
+      "Familiarity with databases (MySQL/PostgreSQL) and REST APIs.",
+      "Interest in Docker, cloud services or AI/LLM tools.",
+    ],
+    offer: [
+      "Structured onboarding and a dedicated mentor.",
+      "Hands-on work on real projects, with regular code reviews.",
+      "A clear growth path toward Software Engineer.",
+      "A monthly stipend while you learn.",
     ],
   },
 ];
@@ -75,6 +103,8 @@ export const generalJob: Job = {
   summary: "Tell us about yourself and we will reach out when a suitable role opens.",
   responsibilities: [],
   requirements: [],
+  niceToHave: [],
+  offer: [],
 };
 
 export function findJob(slug: string) {

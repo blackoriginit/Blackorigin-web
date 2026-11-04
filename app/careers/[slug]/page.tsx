@@ -29,6 +29,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+function SectionTitle({ eyebrow, title }: { eyebrow: string; title: string }) {
+  return (
+    <div>
+      <p className="text-[10px] font-bold tracking-[0.2em] text-[#e85d04]">
+        {eyebrow}
+      </p>
+      <h2 className="mt-1 font-serif text-xl font-bold text-[#061a40] sm:text-2xl">
+        {title}
+      </h2>
+    </div>
+  );
+}
+
 export default async function JobPage({ params }: Props) {
   const { slug } = await params;
   const job = findJob(slug);
@@ -55,10 +68,10 @@ export default async function JobPage({ params }: Props) {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden rounded-b-[2.5rem] bg-[#061a40] px-4 py-12 sm:px-6 md:py-16">
+      <section className="relative overflow-hidden bg-[#061a40] px-4 py-12 sm:px-6 md:py-16">
         <div
           aria-hidden
-          className="absolute inset-0 bg-cover bg-center opacity-25 transition duration-700"
+          className="absolute inset-0 bg-cover bg-center opacity-25"
           style={{ backgroundImage: "url('" + BG_URL + "')" }}
         />
         <div
@@ -75,7 +88,7 @@ export default async function JobPage({ params }: Props) {
           className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#e85d04]/20 blur-3xl"
         />
 
-        <div className="relative mx-auto max-w-5xl">
+        <div className="relative mx-auto max-w-6xl">
           <nav className="flex items-center gap-2 text-sm text-slate-300">
             <Link href="/careers" className="transition hover:text-white">
               Careers
@@ -130,47 +143,117 @@ export default async function JobPage({ params }: Props) {
       </section>
 
       {/* Content */}
-      <div className="relative mx-auto grid max-w-5xl gap-8 px-4 py-12 sm:px-6 md:py-16 lg:grid-cols-[1fr_300px]">
+      <div className="relative mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 md:py-14 lg:grid-cols-[1fr_280px]">
         <article className="min-w-0">
-          <p className="rounded-2xl border border-slate-200 bg-white/80 p-6 text-lg leading-8 text-slate-600 shadow-sm backdrop-blur transition duration-300 hover:shadow-md">
+          {/* About the role */}
+          <p className="text-[10px] font-bold tracking-[0.2em] text-[#e85d04]">
+            ABOUT THE ROLE
+          </p>
+          <p className="mt-2 rounded-2xl border border-slate-200 bg-white/80 p-5 text-base leading-7 text-slate-600 shadow-sm backdrop-blur transition duration-300 hover:shadow-md sm:p-6 sm:text-lg sm:leading-8">
             {job.summary}
           </p>
 
-          <h2 className="mt-12 font-serif text-2xl font-bold text-[#061a40]">
-            What you will do
-          </h2>
-          <ul className="mt-5 grid gap-3">
-            {job.responsibilities.map((item, i) => (
-              <li
-                key={item}
-                className="group flex gap-4 rounded-xl border border-slate-200 bg-white/80 p-4 leading-7 text-slate-600 backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:border-[#e85d04] hover:shadow-lg"
-              >
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#e85d04]/10 text-xs font-bold text-[#e85d04] transition duration-300 group-hover:bg-[#e85d04] group-hover:text-white">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span className="transition group-hover:text-[#061a40]">{item}</span>
-              </li>
-            ))}
-          </ul>
+          {/* Row 1: What you will do | What we are looking for */}
+          <div className="mt-10 grid gap-8 md:grid-cols-2 md:gap-6">
+            {job.responsibilities.length > 0 && (
+              <section>
+                <SectionTitle eyebrow="WHAT YOU WILL DO" title="Your day-to-day" />
+                <ul className="mt-4 grid gap-3">
+                  {job.responsibilities.map((item, i) => (
+                    <li
+                      key={item}
+                      className="group flex gap-3 rounded-xl border border-slate-200 bg-white/80 p-3.5 text-sm leading-6 text-slate-600 backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:border-[#e85d04] hover:shadow-lg"
+                    >
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#e85d04]/10 text-[11px] font-bold text-[#e85d04] transition duration-300 group-hover:bg-[#e85d04] group-hover:text-white">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span className="transition group-hover:text-[#061a40]">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
 
-          <h2 className="mt-12 font-serif text-2xl font-bold text-[#061a40]">
-            What we are looking for
-          </h2>
-          <ul className="mt-5 grid gap-3">
-            {job.requirements.map((item) => (
-              <li
-                key={item}
-                className="group flex gap-4 rounded-xl border border-slate-200 bg-white/80 p-4 leading-7 text-slate-600 backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:border-[#061a40] hover:shadow-lg"
-              >
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#061a40]/10 text-sm text-[#061a40] transition duration-300 group-hover:bg-[#061a40] group-hover:text-white">
-                  {"\u2713"}
-                </span>
-                <span className="transition group-hover:text-[#061a40]">{item}</span>
-              </li>
-            ))}
-          </ul>
+            {job.requirements.length > 0 && (
+              <section>
+                <SectionTitle
+                  eyebrow="WHAT WE ARE LOOKING FOR"
+                  title="Skills and mindset"
+                />
+                <ul className="mt-4 grid gap-3">
+                  {job.requirements.map((item) => (
+                    <li
+                      key={item}
+                      className="group flex gap-3 rounded-xl border border-slate-200 bg-white/80 p-3.5 text-sm leading-6 text-slate-600 backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:border-[#061a40] hover:shadow-lg"
+                    >
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#061a40]/10 text-xs text-[#061a40] transition duration-300 group-hover:bg-[#061a40] group-hover:text-white">
+                        {"\u2713"}
+                      </span>
+                      <span className="transition group-hover:text-[#061a40]">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+          </div>
 
-          <div className="mt-14 flex flex-col gap-4 rounded-2xl bg-[#061a40] p-6 sm:flex-row sm:items-center sm:justify-between lg:hidden">
+          {/* Row 2: Nice to have | What we offer */}
+          <div className="mt-10 grid gap-8 md:grid-cols-2 md:gap-6">
+            {job.niceToHave.length > 0 && (
+              <section>
+                <SectionTitle eyebrow="NICE TO HAVE" title="Bonus points" />
+                <ul className="mt-4 grid gap-3">
+                  {job.niceToHave.map((item) => (
+                    <li
+                      key={item}
+                      className="group flex gap-3 rounded-xl border border-dashed border-slate-300 bg-white/60 p-3.5 text-sm leading-6 text-slate-600 backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:border-[#e85d04] hover:bg-white hover:shadow-md"
+                    >
+                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#eaf1ff] text-sm font-bold text-[#061a40] transition duration-300 group-hover:bg-[#e85d04] group-hover:text-white">
+                        +
+                      </span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {job.offer.length > 0 && (
+              <section className="flex flex-col">
+                <SectionTitle eyebrow="WHAT WE OFFER" title="Why join Black Origin" />
+                <div className="relative mt-4 flex-1 overflow-hidden rounded-2xl bg-[#061a40] p-4 shadow-xl sm:p-5">
+                  <div
+                    aria-hidden
+                    className="absolute inset-0 bg-cover bg-center opacity-15"
+                    style={{ backgroundImage: "url('" + BG_URL + "')" }}
+                  />
+                  <div
+                    aria-hidden
+                    className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[#e85d04]/25 blur-3xl"
+                  />
+                  <ul className="relative grid gap-3">
+                    {job.offer.map((item) => (
+                      <li
+                        key={item}
+                        className="group flex gap-3 rounded-xl border border-white/10 bg-white/5 p-3.5 text-sm leading-6 text-slate-100 backdrop-blur transition duration-300 hover:translate-x-1 hover:border-[#e85d04]/60 hover:bg-white/10"
+                      >
+                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#e85d04] text-[11px] text-white shadow-[0_0_0_4px_rgba(232,93,4,0.2)]">
+                          {"\u2713"}
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </section>
+            )}
+          </div>
+
+          <div className="mt-12 flex flex-col gap-4 rounded-2xl bg-[#061a40] p-6 sm:flex-row sm:items-center sm:justify-between lg:hidden">
             <div>
               <p className="text-[10px] font-bold tracking-[0.2em] text-[#e85d04]">
                 READY TO JOIN US?

@@ -1,11 +1,18 @@
 ﻿import type { Metadata } from "next";
-import Link from "next/link";
-import { jobs } from "../../lib/jobs";
+import JobList, { ProfileCta } from "../../components/JobList";
 
 export const metadata: Metadata = {
   title: "Careers | Black Origin",
   description: "Join the Black Origin team. See our open positions.",
 };
+
+// Change this URL to any image you like (office / code / team themed)
+const HERO_BG_URL =
+  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1800&q=60";
+
+// Built-in grid pattern, still shows if the image URL fails
+const GRID =
+  "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M48 0H0v48' fill='none' stroke='%23ffffff' stroke-opacity='0.05'/%3E%3C/svg%3E\")";
 
 const highlights = [
   { label: "CULTURE", value: "Collaborative" },
@@ -16,16 +23,41 @@ const highlights = [
 export default function CareersPage() {
   return (
     <main className="min-h-screen bg-[#f6f8fd]">
-      {/* Hero */}
-      <section className="rounded-b-[2.5rem] bg-[#061a40] px-4 py-14 sm:px-6 md:py-20">
-        <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-[1.2fr_1fr]">
+      {/* Hero: bottom edge curves downwards */}
+      <section
+        className="relative overflow-hidden bg-[#061a40] px-4 py-14 sm:px-6 md:py-20"
+      >
+        {/* Soft background image */}
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-cover bg-center opacity-[0.18]"
+          style={{ backgroundImage: "url('" + HERO_BG_URL + "')" }}
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-gradient-to-br from-[#061a40]/95 via-[#061a40]/85 to-[#0b2a63]/80"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{ backgroundImage: GRID }}
+        />
+        <div
+          aria-hidden
+          className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#e85d04]/15 blur-3xl"
+        />
+        <div
+          aria-hidden
+          className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-sky-400/10 blur-3xl"
+        />
+
+        <div className="relative mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-[1.2fr_1fr]">
           <div>
             <p className="text-xs font-bold tracking-[0.2em] text-[#e85d04]">
               CAREERS AT BLACK ORIGIN
             </p>
             <h1 className="mt-3 font-serif text-4xl font-bold text-white sm:text-5xl">
-              Join our{" "}
-              <span className="text-[#e85d04]">team.</span>
+              Join our <span className="text-[#e85d04]">team.</span>
             </h1>
             <p className="mt-4 max-w-md leading-7 text-slate-300">
               We are building a team of thoughtful designers, engineers, and
@@ -77,56 +109,12 @@ export default function CareersPage() {
         <p className="text-[10px] font-bold tracking-[0.2em] text-[#e85d04]">
           OPEN OPPORTUNITIES
         </p>
-        <h2 className="mt-1 font-serif text-2xl font-bold text-[#061a40] sm:text-3xl">
+        <h2 className="mb-6 mt-1 font-serif text-2xl font-bold text-[#061a40] sm:text-3xl">
           Find your place on the team.
         </h2>
 
-        <div className="mt-6 divide-y divide-slate-200 rounded-2xl bg-white px-5 shadow-sm ring-1 ring-slate-200 sm:px-8">
-          {jobs.map((j) => (
-            <div
-              key={j.slug}
-              className="flex flex-col gap-4 py-6 sm:flex-row sm:items-center sm:gap-8"
-            >
-              <p className="w-32 shrink-0 text-sm font-bold text-[#061a40]">
-                {j.department}
-              </p>
-              <div className="flex-1">
-                <Link
-                  href={"/careers/" + j.slug}
-                  className="font-serif text-xl font-bold text-[#061a40] transition hover:text-[#e85d04] sm:text-2xl"
-                >
-                  {j.title}
-                </Link>
-                <p className="mt-1 text-sm text-slate-500">
-                  {j.mode} / {j.type} / {j.level}
-                </p>
-              </div>
-              <Link
-                href={"/careers/" + j.slug}
-                className="w-full rounded-full border border-slate-300 px-6 py-2.5 text-center text-sm font-semibold text-[#061a40] transition duration-300 hover:border-[#e85d04] hover:bg-[#e85d04] hover:text-white sm:w-auto"
-              >
-                View details
-              </Link>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-6 flex flex-col gap-4 rounded-2xl bg-[#061a40] p-6 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <p className="text-[10px] font-bold tracking-[0.2em] text-[#e85d04]">
-              DON&apos;T SEE YOUR ROLE?
-            </p>
-            <p className="mt-1 text-sm font-medium text-white">
-              Good people are always worth meeting.
-            </p>
-          </div>
-          <Link
-            href="/careers/general/apply"
-            className="rounded-full bg-[#e85d04] px-5 py-2 text-center text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#ff7a1f] hover:shadow-lg"
-          >
-            Send your profile
-          </Link>
-        </div>
+        <JobList />
+        <ProfileCta />
       </section>
     </main>
   );
