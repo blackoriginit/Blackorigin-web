@@ -1,5 +1,6 @@
 
 import AboutUs from "@/components/home/AboutUs";
+import WorkingStack from "@/components/home/WorkingStack";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
 
       {/* About Us Section */}
       <AboutUs />
+      <WorkingStack />
 
       {/* Our Process Section - Team member's component will go here */}
 

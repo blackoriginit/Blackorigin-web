@@ -98,3 +98,64 @@
     color: var(--on-primary);
   }
 }
+
+
+/* ============================================
+  OUR WORKING STACK -  TWO-ROW TECHNOLOGY MARQUEE
+============================================ */
+
+.technology-marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+.technology-track {
+  display: flex;
+  width: max-content;
+  animation: technology-scroll-left 70s linear infinite;
+  will-change: transform;
+}
+
+.technology-track > div {
+  flex-shrink: 0;
+}
+
+.technology-group {
+  display: flex;
+  flex-shrink: 0;
+  width: max-content;
+}
+
+.technology-track-reverse {
+  animation-name: technology-scroll-right;
+}
+
+.technology-marquee:hover .technology-track {
+  animation-play-state: paused;
+}
+
+@keyframes technology-scroll-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes technology-scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .technology-track {
+    animation: none;
+  }
+}
