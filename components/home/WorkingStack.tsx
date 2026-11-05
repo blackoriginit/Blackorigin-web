@@ -1,29 +1,63 @@
+import type { IconType } from "react-icons";
+import {
+  SiNextdotjs,
+  SiReact,
+  SiLaravel,
+  SiNodedotjs,
+  SiTypescript,
+  SiPython,
+  SiDocker,
+  SiGit,
+  SiFigma,
+  SiVuedotjs,
+  SiAngular,
+  SiJavascript,
+  SiTailwindcss,
+  SiPhp,
+  SiExpress,
+  SiMongodb,
+  SiPostgresql,
+  SiFirebase,
+  SiKubernetes,
+  SiGithub,
+  SiFlutter,
+  SiCplusplus,
+} from "react-icons/si";
+import { FaAws } from "react-icons/fa";
 
-const technologies = [
-  { icon: "N", name: "Next.js", className: "bg-white text-[#061A40]" },
-  { icon: "⚛", name: "React", className: "text-[#61DAFB]" },
-  { icon: "L", name: "Laravel", className: "bg-[#FF2D20] text-white" },
-  { icon: "⬢", name: "Node.js", className: "text-[#68A063]" },
-  { icon: "TS", name: "TypeScript", className: "bg-[#3178C6] text-white" },
-  { icon: "🐍", name: "Python", className: "" },
-  { icon: "AWS", name: "AWS", className: "text-white" },
-  { icon: "◈", name: "Docker", className: "text-white" },
-  { icon: "◆", name: "Git", className: "text-[#F05032]" },
-  { icon: "◈", name: "Figma", className: "text-white" },
-  { icon: "V", name: "Vue.js", className: "text-[#42B883]" },
-  { icon: "A", name: "Angular", className: "text-[#DD0031]" },
-  { icon: "JS", name: "JavaScript", className: "bg-[#F7DF1E] text-[#061A40]" },
-  { icon: "TW", name: "Tailwind CSS", className: "text-[#38BDF8]" },
-  { icon: "P", name: "PHP", className: "text-[#777BB4]" },
-  { icon: "E", name: "Express.js", className: "text-white" },
-  { icon: "DB", name: "MongoDB", className: "text-[#47A248]" },
-  { icon: "PG", name: "PostgreSQL", className: "text-[#4169E1]" },
-  { icon: "FB", name: "Firebase", className: "text-[#FFCA28]" },
-  { icon: "K", name: "Kubernetes", className: "text-[#326CE5]" },
-  { icon: "GH", name: "GitHub", className: "text-white" },
-  { icon: "F", name: "Flutter", className: "text-[#54C5F8]" },
-  { icon: "RN", name: "React Native", className: "text-[#61DAFB]" },
-  { icon: "C", name: "C++", className: "text-[#00599C]" },
+type Technology = {
+  name: string;
+  icon: IconType;
+  color: string;
+};
+
+// Official logos. Brand colors are slightly lightened where the
+// original color is too dark to read on the navy background.
+const technologies: Technology[] = [
+  { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
+  { name: "React", icon: SiReact, color: "#61DAFB" },
+  { name: "Laravel", icon: SiLaravel, color: "#FF2D20" },
+  { name: "Node.js", icon: SiNodedotjs, color: "#5FA04E" },
+  { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+  { name: "Python", icon: SiPython, color: "#4B8BBE" },
+  { name: "AWS", icon: FaAws, color: "#FF9900" },
+  { name: "Docker", icon: SiDocker, color: "#2496ED" },
+  { name: "Git", icon: SiGit, color: "#F05032" },
+  { name: "Figma", icon: SiFigma, color: "#F24E1E" },
+  { name: "Vue.js", icon: SiVuedotjs, color: "#42B883" },
+  { name: "Angular", icon: SiAngular, color: "#DD0031" },
+  { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+  { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38BDF8" },
+  { name: "PHP", icon: SiPhp, color: "#8993BE" },
+  { name: "Express.js", icon: SiExpress, color: "#FFFFFF" },
+  { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+  { name: "PostgreSQL", icon: SiPostgresql, color: "#4F7CE8" },
+  { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
+  { name: "Kubernetes", icon: SiKubernetes, color: "#3F7CEB" },
+  { name: "GitHub", icon: SiGithub, color: "#FFFFFF" },
+  { name: "Flutter", icon: SiFlutter, color: "#54C5F8" },
+  { name: "React Native", icon: SiReact, color: "#61DAFB" },
+  { name: "C++", icon: SiCplusplus, color: "#4B9CD3" },
 ];
 
 const stackCategories = [
@@ -58,50 +92,39 @@ const stackCategories = [
   {
     icon: "▯",
     title: "Mobile",
-    description:
-      "Cross-platform mobile apps for better user engagement.",
+    description: "Cross-platform mobile apps for better user engagement.",
     technologies: ["React Native", "Flutter", "iOS", "Android"],
   },
 ];
 
-// Individual technology items
+// One group of technology items (the marquee needs two identical groups)
 function TechnologyItems({ reverse = false }: { reverse?: boolean }) {
   const items = reverse ? [...technologies].reverse() : technologies;
 
   return (
     <div className="technology-group">
-      {items.map((tech) => (
-        <div
-          key={tech.name}
-          className="flex shrink-0 items-center gap-2 px-5"
-        >
-          {tech.name === "AWS" ? (
-            <span className="text-[11px] font-bold text-white">AWS</span>
-          ) : (
-            <>
-              <span
-                className={`flex h-6 min-w-6 items-center justify-center rounded-full text-[10px] font-bold ${tech.className}`}
-              >
-                {tech.icon}
-              </span>
+      {items.map((tech) => {
+        const Icon = tech.icon;
 
-              <span className="text-[11px] font-semibold text-white">
-                {tech.name}
-              </span>
-            </>
-          )}
-        </div>
-      ))}
+        return (
+          <div
+            key={tech.name}
+            className="flex shrink-0 items-center gap-2.5 px-5"
+          >
+            <Icon size={18} color={tech.color} aria-hidden="true" />
+
+            <span className="whitespace-nowrap text-[12px] font-semibold text-white">
+              {tech.name}
+            </span>
+          </div>
+        );
+      })}
     </div>
   );
 }
 
 // Reusable infinite technology marquee
-function TechnologyMarquee({
-  reverse = false,
-}: {
-  reverse?: boolean;
-}) {
+function TechnologyMarquee({ reverse = false }: { reverse?: boolean }) {
   return (
     <div className="technology-marquee">
       <div
@@ -111,6 +134,7 @@ function TechnologyMarquee({
       >
         <TechnologyItems reverse={reverse} />
 
+        {/* Identical second copy, hidden from screen readers */}
         <div aria-hidden="true">
           <TechnologyItems reverse={reverse} />
         </div>
@@ -122,7 +146,7 @@ function TechnologyMarquee({
 export default function WorkingStack() {
   return (
     <section className="border-t border-[#DCE6F3] bg-[#F5F9FF]">
-      <div className="mx-auto max-w-6xl px-6 py-10 md:px-8 md:pt-[102px] md:pb-[75px]">
+      <div className="mx-auto max-w-6xl px-6 py-10 md:px-8 md:pb-[75px] md:pt-[102px]">
         {/* Section Heading */}
         <div className="mb-7">
           <div className="mb-5 flex items-center gap-3">
@@ -166,11 +190,11 @@ export default function WorkingStack() {
                 <span className="text-sm">{category.icon}</span>
               </div>
 
-              <h3 className="text-[17px] font-bold text-[#061A40]">
+              <h3 className="text-[16px] font-bold text-[#061A40]">
                 {category.title}
               </h3>
 
-              <p className="mt-1.5 min-h-[52px] text-[14px] leading-5 text-[#5A6B8C]">
+              <p className="mt-1.5 min-h-[60px] text-[12px] leading-5 text-[#5A6B8C]">
                 {category.description}
               </p>
 
@@ -178,7 +202,7 @@ export default function WorkingStack() {
                 {category.technologies.map((technology) => (
                   <span
                     key={technology}
-                    className="rounded-full bg-[#F5F9FF] px-2 py-1 text-[12px] font-medium text-[#5A6B8C]"
+                    className="rounded-full bg-[#F5F9FF] px-2 py-1 text-[11px] font-medium text-[#5A6B8C]"
                   >
                     {technology}
                   </span>
@@ -190,4 +214,4 @@ export default function WorkingStack() {
       </div>
     </section>
   );
-}     
+}

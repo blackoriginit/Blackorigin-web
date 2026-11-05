@@ -101,7 +101,7 @@
 
 
 /* ============================================
-  OUR WORKING STACK -  TWO-ROW TECHNOLOGY MARQUEE
+  OUR WORKING STACK - TWO-ROW TECHNOLOGY MARQUEE
 ============================================ */
 
 .technology-marquee {
@@ -112,7 +112,7 @@
 .technology-track {
   display: flex;
   width: max-content;
-  animation: technology-scroll-left 70s linear infinite;
+  animation: technology-scroll-left 85s linear infinite;
   will-change: transform;
 }
 
