@@ -424,20 +424,33 @@ export default async function IndustryPage({
     <div className="flex-1 bg-[#F5F9FF]">
       {/* Hero - Different styles per industry */}
       <section
-        className={`relative overflow-hidden bg-gradient-to-br ${industry.heroAccent} text-white`}
+        className={`relative overflow-hidden text-white ${
+          isEducation
+            ? 'bg-gradient-to-br from-[#061A40] via-[#E85D04]/40 to-[#F5F9FF]'
+            : `bg-gradient-to-br ${industry.heroAccent}`
+        }`}
       >
-        <div className="absolute inset-0">
-          <Image
-            src="/images/industries-hero.jpg"
-            alt=""
-            fill
-            preload
-            sizes="100vw"
-            className="object-cover opacity-30 mix-blend-overlay"
-          />
-        </div>
+        {!isEducation && (
+          <div className="absolute inset-0">
+            <Image
+              src="/images/industries-hero.jpg"
+              alt=""
+              fill
+              preload
+              sizes="100vw"
+              className="object-cover opacity-30 mix-blend-overlay"
+            />
+          </div>
+        )}
 
-        <div className="absolute inset-0 bg-gradient-to-r from-[#061A40]/90 via-transparent to-[#061A40]/70" />
+        {isEducation ? (
+          <>
+            <div className="absolute inset-0 bg-gradient-to-b from-[#061A40]/80 via-[#061A40]/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#061A40]/60 via-transparent to-[#F5F9FF]/30" />
+          </>
+        ) : (
+          <div className="absolute inset-0 bg-gradient-to-r from-[#061A40]/90 via-transparent to-[#061A40]/70" />
+        )}
 
         <div className="relative mx-auto w-full max-w-7xl px-6 py-24 pb-32 md:py-32 md:pb-40">
           <div className="max-w-3xl">

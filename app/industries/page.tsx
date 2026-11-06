@@ -134,20 +134,18 @@ export default function IndustriesPage() {
                 <Link
                   key={industry.slug}
                   href={`/industries/${industry.slug}`}
-                  className="group block border-b border-[#061A40]/15 py-7 transition-colors"
+                  className="group block border-b border-[#061A40]/15 py-7 transition-all duration-300 hover:bg-[#061A40]/[0.02]"
                 >
-                  <h3 className="font-serif text-2xl font-semibold tracking-tight text-[#061A40] transition-colors duration-300 group-hover:text-[#E85D04]">
+                  <h3 className="inline-block font-serif text-2xl font-semibold tracking-tight text-[#061A40] transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#E85D04]">
                     {industry.name}
+                    <span className="ml-2 inline-block text-[#E85D04] opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1">
+                      →
+                    </span>
                   </h3>
 
                   <p className="mt-2 max-w-xl text-[#5A6B8C]">
                     {industry.description}
                   </p>
-
-                  <div className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#E85D04] opacity-0 transition-opacity group-hover:opacity-100">
-                    Learn more
-                    <span aria-hidden="true">→</span>
-                  </div>
                 </Link>
               ))}
             </div>
