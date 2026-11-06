@@ -1,5 +1,8 @@
 ﻿export type Job = {
   slug: string;
+  postedOn?: string; // YYYY-MM-DD
+  deadline?: string; // YYYY-MM-DD
+  vacancies?: number;
   department: string;
   title: string;
   mode: string;
@@ -17,6 +20,9 @@
 export const jobs: Job[] = [
   {
     slug: "software-engineer",
+    postedOn: "2027-08-01",
+    deadline: "2027-01-20",
+    vacancies: 10,
     department: "Engineering",
     title: "Software Engineer",
     mode: "Remote",
@@ -53,9 +59,12 @@ export const jobs: Job[] = [
   },
   {
     slug: "trainee-software-engineer",
+    postedOn: "2027-06-01",
+    deadline: "2027-08-25",
+    vacancies: 20,
     department: "Engineering",
     title: "Trainee Software Engineer",
-    mode: "On-site",
+    mode: "Remote",
     type: "Full time",
     level: "Trainee",
     location: "Bangladesh",
@@ -114,3 +123,4 @@ export function findJob(slug: string) {
 export function findApplyTarget(slug: string) {
   return slug === "general" ? generalJob : findJob(slug);
 }
+

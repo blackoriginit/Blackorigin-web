@@ -1,4 +1,5 @@
-﻿import Link from "next/link";
+﻿import { CircularMeta } from "./CircularInfo";
+import Link from "next/link";
 import { jobs } from "../lib/jobs";
 
 export default function JobList() {
@@ -32,6 +33,7 @@ export default function JobList() {
             <h4 className="font-serif text-xl font-bold text-[#061a40] transition-colors duration-300 group-hover:text-[#e85d04] sm:text-2xl">
               {j.title}
             </h4>
+            <div className="mt-3"><CircularMeta job={j} /></div>
             <div className="mt-3 flex flex-wrap gap-2">
               {[j.mode, j.type, j.level].map((chip) => (
                 <span
@@ -88,3 +90,4 @@ export function ProfileCta() {
     </div>
   );
 }
+

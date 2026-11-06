@@ -1,4 +1,5 @@
-﻿import type { Metadata } from "next";
+﻿import { CircularPanel } from "../../../components/CircularInfo";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { findJob, jobs } from "../../../lib/jobs";
@@ -117,11 +118,10 @@ export default async function JobPage({ params }: Props) {
             ))}
           </dl>
 
+          <CircularPanel job={job} />
+
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <Link
-              href={applyHref}
-              className="group inline-flex items-center gap-2 rounded-full bg-[#e85d04] px-8 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#ff7a1f] hover:shadow-[0_10px_30px_rgba(232,93,4,0.45)]"
-            >
+            <Link href={applyHref} className="group inline-flex items-center gap-2 rounded-full bg-[#e85d04] px-8 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#ff7a1f] hover:shadow-[0_10px_30px_rgba(232,93,4,0.45)]">
               Apply now
               <span className="transition duration-300 group-hover:translate-x-1">
                 {"\u2192"}
@@ -262,10 +262,7 @@ export default async function JobPage({ params }: Props) {
                 Send your application for {job.title}.
               </p>
             </div>
-            <Link
-              href={applyHref}
-              className="rounded-full bg-[#e85d04] px-6 py-2.5 text-center text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#ff7a1f] hover:shadow-lg"
-            >
+            <Link href={applyHref} className="rounded-full bg-[#e85d04] px-6 py-2.5 text-center text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#ff7a1f] hover:shadow-lg">
               Apply now
             </Link>
           </div>
@@ -288,10 +285,7 @@ export default async function JobPage({ params }: Props) {
                 <p className="mt-1 text-xs text-slate-300">
                   {job.level} {"\u00b7"} {job.type} {"\u00b7"} {job.mode}
                 </p>
-                <Link
-                  href={applyHref}
-                  className="mt-5 block rounded-full bg-[#e85d04] px-5 py-2.5 text-center text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#ff7a1f] hover:shadow-lg"
-                >
+                <Link href={applyHref} className="mt-5 block rounded-full bg-[#e85d04] px-5 py-2.5 text-center text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#ff7a1f] hover:shadow-lg">
                   Apply now
                 </Link>
               </div>
@@ -325,3 +319,5 @@ export default async function JobPage({ params }: Props) {
     </main>
   );
 }
+
+

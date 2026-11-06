@@ -3,6 +3,8 @@
 import { useState } from "react";
 import type { ChangeEvent, FormEvent, ReactNode } from "react";
 import Link from "next/link";
+import { getCircular } from "../lib/circular";
+import { DeadlineModal } from "./CircularInfo";
 import type { Job } from "../lib/jobs";
 
 // Change this URL to any image you like (shown at the top of the left panel)
@@ -124,6 +126,7 @@ export default function ApplicationForm({ job }: { job: Job }) {
   const [resume, setResume] = useState<File | null>(null);
   const [errors, setErrors] = useState<Errors>({});
   const [submitting, setSubmitting] = useState(false);
+  const [deadlineModal, setDeadlineModal] = useState(false);
 
   const isGeneral = job.slug === "general";
   const backHref = isGeneral ? "/careers" : "/careers/" + job.slug;
@@ -182,6 +185,11 @@ export default function ApplicationForm({ job }: { job: Job }) {
       setErrors(e);
       if (Object.keys(e).length > 0) return;
 
+      if (getCircular(job, new Date())?.state === "closed") {
+        setDeadlineModal(true);
+        return;
+      }
+
       setSubmitting(true);
       // TODO: send "values" and "resume" to your backend / API route here
       await new Promise((r) => setTimeout(r, 900));
@@ -234,6 +242,7 @@ export default function ApplicationForm({ job }: { job: Job }) {
 
   return (
     <div className="mx-auto max-w-5xl">
+      <DeadlineModal open={deadlineModal} onClose={() => setDeadlineModal(false)} job={job} />
       <nav
         aria-label="Breadcrumb"
         className="mb-5 flex flex-wrap items-center gap-2 text-xs text-slate-300"
@@ -590,3 +599,4 @@ export default function ApplicationForm({ job }: { job: Job }) {
     </div>
   );
 }
+
