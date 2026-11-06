@@ -432,10 +432,10 @@ export default async function IndustryPage({
       >
         {isEducation ? (
           <>
-            {/* Smooth blue to orange to white gradient - no harsh lines */}
-            <div className="absolute inset-0 bg-[linear-gradient(135deg,#061A40_0%,#061A40_25%,#0c2d6b_40%,#E85D04_65%,#f4a261_82%,#F5F9FF_100%)]" />
+            {/* Smooth horizontal blue to orange to white gradient */}
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,#061A40_0%,#061A40_30%,#0a2a5e_45%,#d66a1f_62%,#f0a050_78%,#F5F9FF_100%)]" />
             {/* Subtle overlay to keep text readable on left side */}
-            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,26,64,0.45)_0%,rgba(6,26,64,0.15)_45%,rgba(245,249,255,0)_75%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,26,64,0.35)_0%,rgba(6,26,64,0.1)_40%,rgba(245,249,255,0)_70%)]" />
           </>
         ) : (
           <>
