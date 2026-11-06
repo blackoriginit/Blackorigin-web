@@ -1,7 +1,9 @@
+
 export default function AboutUs() {
   return (
     <section className="bg-[#F5F9FF]">
-      <div className="mx-auto max-w-[1448px] px-6 py-8 md:px-10 md:py-10 xl:px-0">
+      {/* Same container alignment as WorkingStack */}
+      <div className="mx-auto max-w-6xl px-6 py-8 md:px-8 md:py-10">
 
         {/* Main About Section */}
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
