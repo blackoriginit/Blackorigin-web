@@ -432,16 +432,25 @@ export default async function IndustryPage({
       >
         {isEducation ? (
           <>
-            {/* Vertical blue to orange to white gradient - first style, smooth */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#061A40] via-[#E85D04]/40 to-[#F5F9FF]" />
-            {/* Layered overlays for smooth transition and text readability */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#061A40]/80 via-[#061A40]/20 to-transparent" />
+            {/* Smooth vertical blue → orange → white (first-style palette), many stops, no overlay seam */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  'linear-gradient(180deg, #061A40 0%, #061A40 8%, #08204d 18%, #0b2d66 28%, #1a3464 36%, #5c3a3a 46%, #9a4a1e 54%, #c45e14 62%, #d9782e 70%, #e89a58 78%, #f0c08e 86%, #f8e4d4 93%, #F5F9FF 100%)',
+              }}
+            />
           </>
         ) : isSaas ? (
           <>
-            {/* Vertical blue to white gradient */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#061A40] via-[#061A40]/60 to-[#F5F9FF]" />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#061A40]/70 via-[#061A40]/15 to-transparent" />
+            {/* Smooth vertical blue → white, transition starts early, many stops */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  'linear-gradient(180deg, #061A40 0%, #061A40 6%, #08204d 14%, #0c2f6a 22%, #134080 30%, #1e5499 38%, #3270b3 46%, #528cc4 54%, #78a8d4 62%, #9fc2e2 70%, #c2d8ed 78%, #ddeaf6 86%, #edf4fb 93%, #F5F9FF 100%)',
+              }}
+            />
           </>
         ) : (
           <>
@@ -477,7 +486,7 @@ export default async function IndustryPage({
               {industry.name}
             </div>
 
-            <h1 className={`font-serif font-bold tracking-tight text-white ${isEducation ? 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl' : 'text-4xl sm:text-5xl md:text-6xl lg:text-7xl'}`}>
+            <h1 className="font-serif text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">
               {industry.heroSubtitle}
             </h1>
 
@@ -499,7 +508,9 @@ export default async function IndustryPage({
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#F5F9FF] to-transparent" />
+        {!isEducation && !isSaas && (
+          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#F5F9FF] via-[#F5F9FF]/70 to-transparent" />
+        )}
       </section>
 
       {/* Overview - Different layouts */}
