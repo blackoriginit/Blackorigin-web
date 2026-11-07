@@ -425,7 +425,7 @@ export default async function IndustryPage({
       {/* Hero - Different styles per industry */}
       <section
         className={`relative overflow-hidden ${
-          isEducation
+          isEducation || isSaas
             ? 'bg-[#061A40] text-white'
             : `bg-gradient-to-br ${industry.heroAccent} text-white`
         }`}
@@ -436,6 +436,12 @@ export default async function IndustryPage({
             <div className="absolute inset-0 bg-gradient-to-b from-[#061A40] via-[#E85D04]/40 to-[#F5F9FF]" />
             {/* Layered overlays for smooth transition and text readability */}
             <div className="absolute inset-0 bg-gradient-to-b from-[#061A40]/80 via-[#061A40]/20 to-transparent" />
+          </>
+        ) : isSaas ? (
+          <>
+            {/* Vertical blue to white gradient */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#061A40] via-[#061A40]/60 to-[#F5F9FF]" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#061A40]/70 via-[#061A40]/15 to-transparent" />
           </>
         ) : (
           <>
@@ -467,7 +473,7 @@ export default async function IndustryPage({
               <span className="text-white">{industry.name}</span>
             </nav>
 
-            <div className="mb-6 inline-flex items-center rounded-full border border-[#E85D04]/50 bg-[#E85D04]/10 px-4 py-1.5 text-sm font-medium text-[#E85D04]">
+            <div className={`mb-6 inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium ${isEducation ? 'bg-[#E85D04]/10 text-[#E85D04]' : 'border border-[#E85D04]/50 bg-[#E85D04]/10 text-[#E85D04]'}`}>
               {industry.name}
             </div>
 
@@ -773,7 +779,7 @@ export default async function IndustryPage({
                   key={index}
                   className="rounded-xl border border-[#061A40]/10 bg-white p-6 shadow-sm"
                 >
-                  <div className="mb-3 h-1 w-12 rounded-full bg-[#E85D04]" />
+                  {/* removed accent line */}
                   <h3 className="text-lg font-semibold text-[#061A40]">
                     {feature.title}
                   </h3>
