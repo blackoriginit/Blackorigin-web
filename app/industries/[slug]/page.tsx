@@ -422,53 +422,9 @@ export default async function IndustryPage({
 
   return (
     <div className="flex-1 bg-[#F5F9FF]">
-      {/* Hero - Different styles per industry */}
-      <section
-        className={`relative overflow-hidden ${
-          isEducation || isSaas
-            ? 'bg-[#061A40] text-white'
-            : `bg-gradient-to-br ${industry.heroAccent} text-white`
-        }`}
-      >
-        {isEducation ? (
-          <>
-            {/* Smooth vertical: #061A40 → #E85D04 → #F5F9FF only (first-style palette) */}
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  'linear-gradient(180deg, #061A40 0%, #061A40 10%, #0b2454 18%, #16315e 26%, #2b3a55 34%, #4e3b3a 42%, #7a3c21 50%, #a74812 58%, #c95509 66%, #E85D04 72%, #eb7a2c 78%, #f0a062 84%, #f6c9a3 90%, #fbebdf 95%, #F5F9FF 100%)',
-              }}
-            />
-          </>
-        ) : isSaas ? (
-          <>
-            {/* Smooth vertical: #061A40 → #F5F9FF only (navy-toned transition) */}
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  'linear-gradient(180deg, #061A40 0%, #061A40 8%, #0f2752 16%, #1b3763 24%, #294a76 32%, #3a5e89 40%, #4f749c 48%, #688daf 56%, #86a6c2 64%, #a6c0d6 72%, #c6d9e8 80%, #e0ebf5 88%, #edf4fb 94%, #F5F9FF 100%)',
-              }}
-            />
-          </>
-        ) : (
-          <>
-            <div className="absolute inset-0">
-              <Image
-                src="/images/industries-hero.jpg"
-                alt=""
-                fill
-                preload
-                sizes="100vw"
-                className="object-cover opacity-30 mix-blend-overlay"
-              />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-r from-[#061A40]/90 via-transparent to-[#061A40]/70" />
-          </>
-        )}
-
-        <div className="relative mx-auto w-full max-w-7xl px-6 py-24 pb-32 md:py-32 md:pb-40">
+      {/* Hero - solid brand blue */}
+      <section className="relative overflow-hidden bg-[#061A40] text-white">
+        <div className="relative mx-auto w-full max-w-7xl px-6 py-24 md:py-32">
           <div className="max-w-3xl">
             <nav className="mb-8 flex items-center gap-2 text-sm text-white/70">
               <Link href="/" className="hover:text-white transition-colors">
@@ -482,7 +438,7 @@ export default async function IndustryPage({
               <span className="text-white">{industry.name}</span>
             </nav>
 
-            <div className={`mb-6 inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium ${isEducation ? 'bg-[#E85D04]/10 text-[#E85D04]' : 'border border-[#E85D04]/50 bg-[#E85D04]/10 text-[#E85D04]'}`}>
+            <div className="mb-6 inline-flex items-center rounded-full border border-[#E85D04]/50 bg-[#E85D04]/10 px-4 py-1.5 text-sm font-medium text-[#E85D04]">
               {industry.name}
             </div>
 
@@ -507,10 +463,6 @@ export default async function IndustryPage({
             </div>
           </div>
         </div>
-
-        {!isEducation && !isSaas && (
-          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#F5F9FF] via-[#F5F9FF]/70 to-transparent" />
-        )}
       </section>
 
       {/* Overview - Different layouts */}
