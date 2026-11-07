@@ -39,7 +39,7 @@ export default function BottomNav() {
 
             <div className="mt-6 flex gap-4 text-sm">
               <a
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/company/black-origin-official/home/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/70 transition-colors hover:text-[#E85D04]"
@@ -48,7 +48,7 @@ export default function BottomNav() {
               </a>
 
               <a
-                href="https://www.youtube.com"
+                href="https://www.youtube.com/@BlackOriginOfficial"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/70 transition-colors hover:text-[#E85D04]"
