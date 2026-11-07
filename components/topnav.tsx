@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import StartProjectButton from '@/components/startprojectmodal'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
@@ -55,12 +56,7 @@ export default function TopNav() {
         </div>
 
         {/* CTA */}
-        <Link
-          href="/contact"
-          className="hidden rounded-full bg-[#E85D04] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#c94f03] lg:inline-flex"
-        >
-          Start a Project <span className="ml-2">→</span>
-        </Link>
+        <StartProjectButton className="hidden rounded-full bg-[#E85D04] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#c94f03] lg:inline-flex">Start a Project <span className="ml-2">→</span></StartProjectButton>
 
         {/* Mobile Menu Button */}
         <button
@@ -97,13 +93,8 @@ export default function TopNav() {
               )
             })}
 
-            <Link
-              href="/contact"
-              onClick={() => setMenuOpen(false)}
-              className="mt-2 rounded-full bg-[#E85D04] px-5 py-3 text-center font-semibold text-white hover:bg-[#c94f03]"
-            >
-              Start a Project →
-            </Link>
+            <StartProjectButton className="mt-2 rounded-full bg-[#E85D04] px-5 py-3 text-center font-semibold text-white hover:bg-[#c94f03]">Start a Project →
+            </StartProjectButton>
           </div>
         </div>
       )}
