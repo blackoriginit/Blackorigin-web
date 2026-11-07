@@ -432,10 +432,10 @@ export default async function IndustryPage({
       >
         {isEducation ? (
           <>
-            {/* Smooth vertical blue to orange to white gradient */}
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,#061A40_0%,#061A40_25%,#0a2a5e_40%,#d66a1f_58%,#f0a050_74%,#F5F9FF_100%)]" />
+            {/* Vertical blue to orange to white gradient - smooth transition */}
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,#061A40_0%,#061A40_20%,#0a2a5e_38%,rgba(232,93,4,0.45)_55%,rgba(232,93,4,0.25)_72%,#F5F9FF_100%)]" />
             {/* Subtle overlay to keep text readable at top */}
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,26,64,0.3)_0%,rgba(6,26,64,0.08)_35%,rgba(245,249,255,0)_65%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,26,64,0.25)_0%,rgba(6,26,64,0.05)_40%,rgba(245,249,255,0)_70%)]" />
           </>
         ) : (
           <>
@@ -471,7 +471,7 @@ export default async function IndustryPage({
               {industry.name}
             </div>
 
-            <h1 className="font-serif text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className={`font-serif font-bold tracking-tight text-white ${isEducation ? 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl' : 'text-4xl sm:text-5xl md:text-6xl lg:text-7xl'}`}>
               {industry.heroSubtitle}
             </h1>
 
@@ -517,12 +517,14 @@ export default async function IndustryPage({
                 </div>
               </div>
               <div className="relative">
-                <div className="absolute -left-4 -top-4 h-full w-full rounded-2xl bg-[#E85D04]/10" />
                 <div className="relative rounded-2xl bg-gradient-to-br from-[#061A40] to-[#0a1f4d] p-10 text-white shadow-xl">
                   <div className="space-y-6">
                     <div className="flex items-start gap-4">
                       <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#E85D04]">
-                        <span className="text-xl">📚</span>
+                        <svg className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                        </svg>
                       </div>
                       <div>
                         <h3 className="text-xl font-semibold">Engaging Experiences</h3>
@@ -533,7 +535,10 @@ export default async function IndustryPage({
                     </div>
                     <div className="flex items-start gap-4">
                       <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#E85D04]">
-                        <span className="text-xl">🎯</span>
+                        <svg className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                          <path d="M3 3v18h18" />
+                          <path d="m19 9-5 5-4-4-3 3" />
+                        </svg>
                       </div>
                       <div>
                         <h3 className="text-xl font-semibold">Measurable Outcomes</h3>
@@ -544,7 +549,10 @@ export default async function IndustryPage({
                     </div>
                     <div className="flex items-start gap-4">
                       <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#E85D04]">
-                        <span className="text-xl">🔒</span>
+                        <svg className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                          <path d="m9 12 2 2 4-4" />
+                        </svg>
                       </div>
                       <div>
                         <h3 className="text-xl font-semibold">Secure & Scalable</h3>
