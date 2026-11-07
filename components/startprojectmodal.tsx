@@ -41,6 +41,7 @@ export default function StartProjectButton({
 
   return (
     <>
+      <style>{"@keyframes bo-pop{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:none}}"}</style>
       <button type="button" onClick={openModal} className={className}>
         {children}
       </button>
@@ -51,9 +52,10 @@ export default function StartProjectButton({
         onClick={(e) => {
           if (e.target === e.currentTarget) e.currentTarget.close();
         }}
-        className="m-auto max-h-[90vh] w-[min(60rem,calc(100%-2rem))] overflow-y-auto rounded-2xl bg-white p-0 shadow-2xl backdrop:bg-black/60"
+        className="m-auto max-h-[90vh] w-[min(60rem,calc(100%-2rem))] overflow-y-auto md:h-[min(90vh,44rem)] md:overflow-hidden rounded-2xl bg-white p-0 shadow-[0_0_0_1px_rgba(232,93,4,0.55),0_30px_90px_-15px_rgba(232,93,4,0.4)] backdrop:bg-black/60 backdrop:backdrop-blur-sm open:animate-[bo-pop_0.25s_ease-out] motion-reduce:open:animate-none"
       >
-        <div className="relative grid md:grid-cols-[2fr_3fr]">
+        <div className="relative grid md:h-full md:grid-cols-[2fr_3fr] md:grid-rows-[minmax(0,1fr)]">
+          <div aria-hidden="true" className="absolute inset-x-0 top-0 z-10 h-1 bg-[#E85D04]" />
           <button
             type="button"
             aria-label="Close"
@@ -87,7 +89,7 @@ export default function StartProjectButton({
             </dl>
           </section>
 
-          <section className="p-8 md:p-10">
+          <section className="p-8 md:overflow-y-auto md:p-10">
             <h2 className="mb-6 font-serif text-2xl font-bold text-[#061A40]">
               Send us a message
             </h2>
