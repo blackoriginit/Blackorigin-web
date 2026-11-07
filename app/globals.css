@@ -1,26 +1,161 @@
 @import "tailwindcss";
 
+/* =================================
+   BLACK ORIGIN - DESIGN SYSTEM
+================================= */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F5F9FF;
+  --surface: #FFFFFF;
+  --on-primary: #FFFFFF;
+
+  --primary: #E85D04;
+  --accent: #E85D04;
+
+  --text: #061A40;
+  --secondary: #061A40;
+  --muted: #5A6B8C;
+
+  --font-heading: Georgia, serif;
+  --font-body: system-ui, sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-surface: var(--surface);
+  --color-on-primary: var(--on-primary);
+
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+
+  --color-text: var(--text);
+  --color-secondary: var(--secondary);
+  --color-muted: var(--muted);
+
+  --font-heading: Georgia, serif;
+  --font-sans: system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* =================================
+   BASE STYLES
+   IMPORTANT: everything is inside @layer base so Tailwind
+   utility classes (text-white, text-primary, etc.) can
+   override it. Unlayered CSS always beats Tailwind utilities.
+================================= */
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background-color: var(--background);
+    color: var(--text);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    color: var(--text);
+  }
+
+  p {
+    font-family: var(--font-body);
+    color: var(--muted);
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font-family: var(--font-body);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  ::selection {
+    background-color: var(--primary);
+    color: var(--on-primary);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+/* ============================================
+  OUR WORKING STACK - TWO-ROW TECHNOLOGY MARQUEE
+============================================ */
+
+.technology-marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+.technology-track {
+  display: flex;
+  width: max-content;
+  animation: technology-scroll-left 85s linear infinite;
+  will-change: transform;
+}
+
+.technology-track > div {
+  flex-shrink: 0;
+}
+
+.technology-group {
+  display: flex;
+  flex-shrink: 0;
+  width: max-content;
+}
+
+.technology-track-reverse {
+  animation-name: technology-scroll-right;
+}
+
+.technology-marquee:hover .technology-track {
+  animation-play-state: paused;
+}
+
+@keyframes technology-scroll-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes technology-scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .technology-track {
+    animation: none;
+  }
 }
