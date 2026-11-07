@@ -432,23 +432,23 @@ export default async function IndustryPage({
       >
         {isEducation ? (
           <>
-            {/* Smooth vertical blue → orange → white (first-style palette), many stops, no overlay seam */}
+            {/* Smooth vertical: #061A40 → #E85D04 → #F5F9FF only (first-style palette) */}
             <div
               className="absolute inset-0"
               style={{
                 background:
-                  'linear-gradient(180deg, #061A40 0%, #061A40 8%, #08204d 18%, #0b2d66 28%, #1a3464 36%, #5c3a3a 46%, #9a4a1e 54%, #c45e14 62%, #d9782e 70%, #e89a58 78%, #f0c08e 86%, #f8e4d4 93%, #F5F9FF 100%)',
+                  'linear-gradient(180deg, #061A40 0%, #061A40 10%, #0b2454 18%, #16315e 26%, #2b3a55 34%, #4e3b3a 42%, #7a3c21 50%, #a74812 58%, #c95509 66%, #E85D04 72%, #eb7a2c 78%, #f0a062 84%, #f6c9a3 90%, #fbebdf 95%, #F5F9FF 100%)',
               }}
             />
           </>
         ) : isSaas ? (
           <>
-            {/* Smooth vertical blue → white, transition starts early, many stops */}
+            {/* Smooth vertical: #061A40 → #F5F9FF only (navy-toned transition) */}
             <div
               className="absolute inset-0"
               style={{
                 background:
-                  'linear-gradient(180deg, #061A40 0%, #061A40 6%, #08204d 14%, #0c2f6a 22%, #134080 30%, #1e5499 38%, #3270b3 46%, #528cc4 54%, #78a8d4 62%, #9fc2e2 70%, #c2d8ed 78%, #ddeaf6 86%, #edf4fb 93%, #F5F9FF 100%)',
+                  'linear-gradient(180deg, #061A40 0%, #061A40 8%, #0f2752 16%, #1b3763 24%, #294a76 32%, #3a5e89 40%, #4f749c 48%, #688daf 56%, #86a6c2 64%, #a6c0d6 72%, #c6d9e8 80%, #e0ebf5 88%, #edf4fb 94%, #F5F9FF 100%)',
               }}
             />
           </>
