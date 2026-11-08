@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import type { CSSProperties } from 'react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
@@ -420,8 +421,55 @@ export default async function IndustryPage({
   const isRealEstate = slug === 'real-estate'
   const isStartups = slug === 'startups-smes'
 
+  const bodyBgs: Record<string, CSSProperties> = {
+    education: {
+      backgroundColor: '#F5F9FF',
+      backgroundImage: 'linear-gradient(180deg, #F5F9FF 0%, #FFFFFF 100%)',
+    },
+    'e-commerce': {
+      backgroundColor: '#F5F9FF',
+      backgroundImage:
+        'linear-gradient(180deg, #F5F9FF 0%, rgba(6, 26, 64, 0.06) 100%)',
+    },
+    saas: {
+      backgroundColor: '#F5F9FF',
+      backgroundImage:
+        'radial-gradient(circle at 4% 100%, rgba(232, 93, 4, 0.12), rgba(232, 93, 4, 0) 55%)',
+    },
+    'professional-services': {
+      backgroundColor: '#F5F9FF',
+      backgroundImage: 'linear-gradient(180deg, #F5F9FF 0%, #FFFFFF 100%)',
+    },
+    healthcare: {
+      backgroundColor: '#F5F9FF',
+      backgroundImage:
+        'linear-gradient(180deg, #F5F9FF 0%, rgba(6, 26, 64, 0.06) 100%)',
+    },
+    fintech: {
+      backgroundColor: '#F5F9FF',
+      backgroundImage:
+        'radial-gradient(circle at 4% 100%, rgba(232, 93, 4, 0.12), rgba(232, 93, 4, 0) 55%)',
+    },
+    logistics: {
+      backgroundColor: '#F5F9FF',
+      backgroundImage: 'linear-gradient(180deg, #F5F9FF 0%, #FFFFFF 100%)',
+    },
+    'real-estate': {
+      backgroundColor: '#F5F9FF',
+      backgroundImage:
+        'linear-gradient(180deg, #F5F9FF 0%, rgba(6, 26, 64, 0.06) 100%)',
+    },
+    'startups-smes': {
+      backgroundColor: '#F5F9FF',
+      backgroundImage:
+        'radial-gradient(circle at 4% 100%, rgba(232, 93, 4, 0.12), rgba(232, 93, 4, 0) 55%)',
+    },
+  }
+
+  const bodyBg = bodyBgs[slug] ?? { backgroundColor: '#F5F9FF' }
+
   return (
-    <div className="flex-1 bg-[#F5F9FF]">
+    <div className="flex-1" style={bodyBg}>
       {/* Hero - brand blue with orange radial glow */}
       <section
         className="relative overflow-hidden text-white"
