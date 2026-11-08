@@ -422,8 +422,15 @@ export default async function IndustryPage({
 
   return (
     <div className="flex-1 bg-[#F5F9FF]">
-      {/* Hero - solid brand blue */}
-      <section className="relative overflow-hidden bg-[#061A40] text-white">
+      {/* Hero - brand blue with orange radial glow */}
+      <section
+        className="relative overflow-hidden text-white"
+        style={{
+          backgroundColor: '#061A40',
+          backgroundImage:
+            'radial-gradient(circle at 88% 0%, rgba(232, 93, 4, 0.55), rgba(232, 93, 4, 0) 55%)',
+        }}
+      >
         <div className="relative mx-auto w-full max-w-7xl px-6 py-24 md:py-32">
           <div className="max-w-3xl">
             <nav className="mb-8 flex items-center gap-2 text-sm text-white/70">
