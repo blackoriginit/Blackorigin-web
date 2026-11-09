@@ -275,7 +275,7 @@ export default function AboutUsPage() {
       {/* ================= HERO ================= */}
 
       <section className="relative overflow-hidden bg-secondary">
-        <div className="relative mx-auto min-h-[340px] max-w-[1100px] overflow-hidden px-6 pb-24 pt-14 md:min-h-[440px] md:px-10 md:pb-36 md:pt-20">
+        <div className="relative mx-auto min-h-[300px] max-w-[1100px] overflow-hidden px-6 pb-16 pt-12 md:min-h-[380px] md:px-10 md:pb-20 md:pt-16">
           <Image
             src="/images/about us (hero).jpg"
             alt="Black Origin workspace"
@@ -305,19 +305,19 @@ export default function AboutUsPage() {
           </div>
         </div>
 
-        <div className="absolute inset-x-0 bottom-0 h-12 rounded-t-[50%_3rem] bg-background" />
+        <div className="absolute inset-x-0 bottom-0 h-12 rounded-none bg-background" />
       </section>
 
       {/* ================= OUR STORY ================= */}
 
       <section className="bg-background">
-        <div className="mx-auto max-w-[1100px] px-6 py-12 md:px-10 md:py-16">
+        <div className="mx-auto max-w-[1100px] px-6 py-14 md:px-10 md:py-16">
           <div className="mb-8 text-center md:mb-12">
             <p className="mb-2 text-[11px] font-bold uppercase tracking-[1.7px] text-primary md:text-[12px]">
               Our Story
             </p>
 
-            <p className="mx-auto max-w-none whitespace-nowrap text-[12px] leading-6 text-muted md:text-[13px]">
+            <p className="mx-auto max-w-none text-[12px] leading-6 text-muted lg:whitespace-nowrap md:text-[13px]">
               A journey shaped by engineering discipline, practical AI and a
               commitment to software that solves real business problems.
             </p>
@@ -408,7 +408,7 @@ export default function AboutUsPage() {
       {/* ================= MISSION & VISION ================= */}
 
       <section className="bg-background">
-        <div className="mx-auto max-w-[1100px] px-6 py-10 md:px-10 md:py-12">
+        <div className="mx-auto max-w-[1100px] px-6 py-14 md:px-10 md:py-16">
           <div className="mt-2 grid gap-6 md:grid-cols-2">
             {[
               {
@@ -450,7 +450,7 @@ export default function AboutUsPage() {
       {/* ================= CORE VALUES ================= */}
 
       <section className="bg-surface">
-        <div className="mx-auto max-w-[1100px] px-6 py-12 md:px-10 md:py-14">
+        <div className="mx-auto max-w-[1100px] px-6 py-14 md:px-10 md:py-16">
           <div className="mb-10 text-center md:mb-12">
             <h2 className="text-2xl font-bold leading-tight tracking-tight text-text md:text-4xl">
               Core Values We Live By
@@ -488,7 +488,7 @@ export default function AboutUsPage() {
       {/* ================= FOUNDER ================= */}
 
       <section className="bg-background">
-        <div className="mx-auto max-w-[1100px] px-6 py-12 md:px-10 md:py-14">
+        <div className="mx-auto max-w-[1100px] px-6 py-14 md:px-10 md:py-16">
           <div className="mb-8 text-center md:mb-10">
             <p className="mb-2 text-[11px] font-bold uppercase tracking-[1.7px] text-primary md:text-[12px]">
               Meet the Founder
@@ -577,7 +577,7 @@ export default function AboutUsPage() {
       {/* ================= OUR TEAM CAROUSEL ================= */}
 
       <section className="bg-surface">
-        <div className="mx-auto max-w-[1100px] px-6 py-12 md:px-10 md:py-14">
+        <div className="mx-auto max-w-[1100px] px-6 py-14 md:px-10 md:py-16">
           <div className="mb-8 text-center md:mb-10">
             <p className="mb-2 text-[11px] font-bold uppercase tracking-[1.7px] text-primary md:text-[12px]">
               Our Team
@@ -590,7 +590,7 @@ export default function AboutUsPage() {
             </p>
           </div>
 
-          <div className="relative px-9 sm:px-12">
+          <div className="relative px-10 sm:px-12">
             {!isBeginning && (
               <button
                 type="button"
@@ -640,11 +640,11 @@ export default function AboutUsPage() {
               speed={600}
               grabCursor={true}
               watchOverflow={true}
-              className="team-swiper"
+              className="!overflow-x-clip !overflow-y-visible px-3 pb-8 pt-10 sm:!px-4"
             >
               {team.map((member) => (
-                <SwiperSlide key={member.name} className="h-auto">
-                  <div className="h-full overflow-hidden rounded-md bg-surface shadow-[0_6px_24px_rgba(6,26,64,0.09)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(6,26,64,0.13)]">
+                <SwiperSlide key={member.name} className="!h-auto">
+                  <div className="h-full overflow-hidden rounded-md border border-[#DCE6F3] bg-surface shadow-[0_6px_24px_rgba(6,26,64,0.09)] transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-[0_12px_30px_rgba(6,26,64,0.13)]">
                     <div className="relative aspect-[4/3] overflow-hidden">
                       <Image
                         src={member.image}
@@ -701,23 +701,19 @@ export default function AboutUsPage() {
               ))}
             </Swiper>
           </div>
-
-          <p className="mt-3 text-center text-[10px] text-muted md:hidden">
-            Swipe left or right to explore our team
-          </p>
         </div>
       </section>
 
       {/* ================= OUR EXPERTISE ================= */}
 
       <section className="bg-background">
-        <div className="mx-auto max-w-[1100px] px-6 py-11 md:px-10 md:py-12">
+        <div className="mx-auto max-w-[1100px] px-6 py-14 md:px-10 md:py-16">
           <div className="mb-8">
             <p className="mb-2 text-[11px] font-bold uppercase tracking-[1.7px] text-primary">
               Our Expertise
             </p>
 
-            <p className="max-w-none whitespace-nowrap text-[11px] leading-5 text-muted md:text-[12px]">
+            <p className="max-w-none text-[11px] leading-5 text-muted lg:whitespace-nowrap md:text-[12px]">
               We bring together talented people, modern tools and proven
               processes to build high-quality digital solutions.
             </p>
@@ -733,7 +729,6 @@ export default function AboutUsPage() {
                     : ""
                 } ${index === 0 ? "md:pl-0" : ""}`}
               >
-                {/* ICON: uses your original text-text color */}
                 <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-white text-text shadow-sm">
                   <item.Icon />
                 </div>
@@ -765,7 +760,7 @@ export default function AboutUsPage() {
                 Have a project in mind?
               </h2>
 
-              <p className="mt-2 max-w-none whitespace-nowrap text-[11px] leading-5 text-on-primary/65 md:text-[12px]">
+              <p className="mt-2 max-w-none text-[11px] leading-5 text-on-primary/65 lg:whitespace-nowrap md:text-[12px]">
                 We&apos;d love to hear from you. Let&apos;s discuss how we can
                 help turn your ideas into reality.
               </p>
