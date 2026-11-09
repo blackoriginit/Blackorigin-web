@@ -19,21 +19,21 @@ const heroCards = [
 export default function InsightsPage() {
   return (
     <main>
-      <section className="relative overflow-hidden bg-slate-900 text-white">
+      <section className="relative overflow-hidden bg-[#061A40] text-white">
         <div className="absolute inset-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            className="h-full w-full object-cover opacity-40"
+            className="h-full w-full object-cover opacity-50"
             src="/insights/hero/bg.jpg"
             alt=""
           />
         </div>
-        <div className="absolute inset-0 bg-slate-900/50" />
+        <div className="absolute inset-0 bg-[#061A40]/30" />
 
-        <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-24">
+        <div className="relative mx-auto max-w-6xl px-6 py-16 md:py-24">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <div className="relative">
-              <h1 className="text-6xl font-extrabold leading-tight tracking-tight text-white md:text-7xl">
+              <h1 className="font-heading text-6xl font-bold leading-tight tracking-tight text-white md:text-7xl">
                 Insights
               </h1>
               <div className="mt-8 cursor-pointer rounded-2xl border border-white/20 bg-white/10 p-6 shadow-lg transition-all duration-300 hover:border-orange-500 hover:bg-orange-500/30 active:bg-orange-500">
@@ -46,7 +46,7 @@ export default function InsightsPage() {
               <div className="mt-9">
                 <a
                   href="#start-project"
-                  className="inline-block rounded-full bg-orange-500 px-7 py-3 font-semibold text-white transition hover:bg-orange-600"
+                  className="inline-block rounded-lg bg-[#E85D04] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#c94f03]"
                 >
                   Start a Project
                 </a>
@@ -76,23 +76,22 @@ export default function InsightsPage() {
           </div>
         </div>
 
-        <div className="absolute inset-x-0 bottom-0 h-12 rounded-t-[50%_3rem] bg-white" />
+        <div className="absolute inset-x-0 bottom-0 h-12 rounded-t-[50%_3rem] bg-[#F5F9FF]" />
       </section>
 
-      <section className="bg-white py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="mx-auto mb-16 max-w-3xl text-center">
-            <h2 className="mb-5 text-4xl font-bold tracking-tight text-slate-950 md:text-5xl">
+      <section className="bg-[#F5F9FF] py-20 md:py-28">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto mb-20 max-w-3xl text-center">
+            <h2 className="font-heading mb-5 text-4xl font-bold tracking-tight text-[#061A40] md:text-5xl">
               Latest articles
             </h2>
-            <p className="mx-auto max-w-2xl text-lg leading-8 text-slate-500">
-              Practical notes on technology, process, AI, design and how we work,
-              from the people who build the software.
+            <p className="mx-auto max-w-2xl text-lg leading-8 text-[#5A6B8C]">
+              Three threads run through our writing: how we plan and deliver
+              software, the technology behind it, and project stories from the
+              field.
             </p>
           </div>
-          <div className="mx-auto max-w-7xl">
-            <InsightsBrowser articles={insights} />
-          </div>
+          <InsightsBrowser articles={insights} />
         </div>
       </section>
 

@@ -1,20 +1,15 @@
 import Link from "next/link";
-import {
-  type Article,
-  categoryLabels,
-  formatDate,
-  imageUrl,
-} from "@/lib/insights-data";
+import { type Article, formatDate, imageUrl } from "@/lib/insights-data";
 
 export default function InsightsGrid({ articles }: { articles: Article[] }) {
   return (
-    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-2 lg:grid-cols-3">
       {articles.map((a) => {
         const href = `/insights/${a.category}/${a.slug}`;
         return (
           <article
             key={a.slug}
-            className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            className="group overflow-hidden rounded-[14px] border border-[#061A40]/10 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
           >
             <Link href={href} className="block overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -22,27 +17,34 @@ export default function InsightsGrid({ articles }: { articles: Article[] }) {
                 src={imageUrl(a)}
                 alt={a.title}
                 loading="lazy"
-                className="h-52 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </Link>
-            <div className="flex flex-1 flex-col p-6">
-              <span className="mb-3 text-xs font-semibold uppercase tracking-wider text-orange-600">
-                {categoryLabels[a.category]}
+
+            <div className="p-5">
+              <span className="mb-2 block text-xs font-medium uppercase tracking-wider text-[#E85D04]">
+                Insights
               </span>
-              <h3 className="mb-3 text-xl font-bold leading-snug text-slate-950">
+
+              <h3 className="font-heading mb-2 text-xl font-bold leading-snug text-[#061A40]">
                 <Link href={href}>{a.title}</Link>
               </h3>
-              <p className="mb-5 flex-1 text-sm leading-6 text-slate-500">
+
+              <p className="mb-2 line-clamp-2 text-sm leading-6 text-[#5A6B8C]">
                 {a.excerpt}
               </p>
-              <p className="text-xs text-slate-400">
-                Black Origin IT Team · {formatDate(a.date)} · {a.readTime} min read
-              </p>
+
+              <div className="flex flex-wrap gap-x-3 text-xs text-[#5A6B8C]">
+                <span>Black Origin IT Team</span>
+                <span>{formatDate(a.date)}</span>
+                <span>{a.readTime} min read</span>
+              </div>
+
               <Link
                 href={href}
-                className="mt-4 text-sm font-semibold text-orange-600 hover:underline"
+                className="mt-3 inline-block text-sm font-semibold text-[#E85D04] hover:underline"
               >
-                View →
+                View
               </Link>
             </div>
           </article>

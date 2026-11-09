@@ -395,3 +395,13 @@ export const insights: Article[] = [
     ],
   },
 ];
+// for article detail pages
+export const articles = insights;
+
+export const getArticle = (category: string, slug: string) => {
+  return insights.find(
+    (article) =>
+      article.category === category &&
+      article.slug === slug
+  );
+};

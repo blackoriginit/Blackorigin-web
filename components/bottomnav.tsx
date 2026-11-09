@@ -1,4 +1,8 @@
+'use client'
+
+import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const companyLinks = [
   { name: 'About', href: '/about-us' },
@@ -23,14 +27,23 @@ const serviceLinks = [
 const legalLinks = ['Privacy Policy', 'Terms of Service', 'Cookie Policy']
 
 export default function BottomNav() {
+  const pathname = usePathname()
+
   return (
     <footer className="bg-[#061A40] text-white">
       <div className="mx-auto max-w-none px-6 py-12">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5">
           {/* Brand Section */}
           <div className="lg:col-span-1">
-            <Link href="/" className="text-2xl font-bold tracking-tight">
-              Black Origin<span className="text-[#E85D04]">.</span>
+            <Link href="/" className="flex items-center gap-3 text-xl font-bold tracking-tight">
+              <Image
+                src="/logo.png"
+                alt="Black Origin logo"
+                width={40}
+                height={40}
+                className="h-10 w-auto"
+              />
+              <span>Black Origin IT</span>
             </Link>
 
             <p className="mt-4 max-w-xs text-sm leading-7 text-white/65">
@@ -42,7 +55,7 @@ export default function BottomNav() {
                 href="https://www.linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/70 transition-colors hover:text-[#E85D04]"
+                className="font-semibold text-white transition-colors hover:text-[#E85D04]"
               >
                 LinkedIn
               </a>
@@ -51,7 +64,7 @@ export default function BottomNav() {
                 href="https://www.youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/70 transition-colors hover:text-[#E85D04]"
+                className="font-semibold text-white transition-colors hover:text-[#E85D04]"
               >
                 YouTube
               </a>
@@ -60,25 +73,32 @@ export default function BottomNav() {
 
           {/* Company */}
           <div>
-            <h3 className="mb-5 font-semibold">Company</h3>
+            <h3 className="font-heading mb-5 font-semibold">Company</h3>
 
             <ul className="space-y-3">
-              {companyLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white/65 transition-colors hover:text-[#E85D04]"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
+              {companyLinks.map((link) => {
+                const isActive =
+                  pathname === link.href || pathname.startsWith(link.href + '/')
+
+                return (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className={`text-sm transition-colors hover:text-[#E85D04] ${
+                        isActive ? 'font-bold text-white' : 'text-white/65'
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                )
+              })}
             </ul>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="mb-5 font-semibold">Services</h3>
+            <h3 className="font-heading mb-5 font-semibold">Services</h3>
 
             <ul className="space-y-3">
               {serviceLinks.map((service) => (
@@ -91,7 +111,7 @@ export default function BottomNav() {
 
           {/* Contact */}
           <div>
-            <h3 className="mb-5 font-semibold">Contact</h3>
+            <h3 className="font-heading mb-5 font-semibold">Contact</h3>
 
             <ul className="space-y-3 text-sm text-white/65">
               <li>
@@ -114,13 +134,13 @@ export default function BottomNav() {
                 </a>
               </li>
 
-              <li>Bangladesh</li>
+              <li>Country: Bangladesh</li>
             </ul>
           </div>
 
           {/* Legal */}
           <div>
-            <h3 className="mb-5 font-semibold">Legal</h3>
+            <h3 className="font-heading mb-5 font-semibold">Legal</h3>
 
             <ul className="space-y-3">
               {legalLinks.map((link) => (
@@ -133,11 +153,9 @@ export default function BottomNav() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 border-t border-white/15 pt-6">
-          <p className="text-center text-sm text-white/55">
-            © 2026 Black Origin IT. All rights reserved.
-          </p>
-        </div>
+        <p className="mt-16 text-left text-sm text-white/55">
+          © 2026 Black Origin IT. All rights reserved.
+        </p>
       </div>
     </footer>
   )
