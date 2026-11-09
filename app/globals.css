@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #F5F9FF;
   --foreground: #171717;
+  /* Body font: system font (Segoe UI on Windows). Inter removed to match the sample design. */
+  --font-body: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  --font-heading: Georgia, "Times New Roman", serif;
 }
 
 @theme inline {
@@ -19,8 +22,201 @@
   }
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  margin: 0;
+}
+
+/* Serif heading font (used as the class "font-heading") */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+/* ==============================
+   Article detail page
+================================ */
+
+.article-detail-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #F5F8FF;
+  color: #071a3b;
+  padding: 24px 0 72px;
+  font-family: var(--font-body);
+}
+
+.article-detail-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.article-detail-column {
+  width: 100%;
+  max-width: 830px;
+}
+
+.article-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 14px;
+  color: #6b7890;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.article-breadcrumb a {
+  color: #6b7890;
+  text-decoration: none;
+}
+
+.article-breadcrumb a:hover {
+  color: #e85d04;
+}
+
+.breadcrumb-current {
+  color: #071a3b;
+  font-weight: 700;
+}
+
+.article-detail-header {
+  margin: 0 0 24px;
+  text-align: left;
+}
+
+.article-detail-header h1 {
+  margin: 0 0 12px;
+  color: #071a3b;
+  font-family: var(--font-heading);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.5px;
+}
+
+.article-detail-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
+  color: #75839b;
+  font-size: 14px;
+}
+
+.article-detail-excerpt {
+  margin: 0;
+  color: #6b7890;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.article-detail-cover {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 3 / 4;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  margin: 0 0 40px;
+  border-radius: 12px;
+  background-color: #dce6f2;
+}
+
+.article-detail-body {
+  color: #243b5c;
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.article-detail-body > h2 {
+  margin: 0 0 12px;
+  color: #071a3b;
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.article-detail-body > p {
+  margin: 0 0 24px;
+}
+
+.article-detail-body section {
+  margin: 32px 0;
+}
+
+.article-detail-body section h3 {
+  margin: 0 0 10px;
+  color: #071a3b;
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.article-detail-body section p {
+  margin: 0;
+}
+
+.article-inline-cta {
+  margin-top: 32px !important;
+  color: #243b5c;
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.article-inline-cta strong {
+  color: #071a3b;
+}
+
+/* ==============================
+   Responsive layout
+================================ */
+
+@media (max-width: 600px) {
+  .article-detail-page {
+    padding: 20px 0 48px;
+  }
+
+  .article-detail-container {
+    padding: 0 16px;
+  }
+
+  .article-breadcrumb {
+    font-size: 12px;
+  }
+
+  .article-detail-header h1 {
+    font-size: 28px;
+  }
+
+  .article-detail-excerpt {
+    font-size: 16px;
+  }
+
+  .article-detail-body {
+    font-size: 16px;
+  }
+
+  .article-detail-body > h2 {
+    font-size: 24px;
+  }
+
+  .article-detail-body section h3 {
+    font-size: 20px;
+  }
+
+  .article-inline-cta {
+    font-size: 16px;
+  }
 }
