@@ -547,79 +547,201 @@ export const servicesData: ServiceDetail[] = [
     shortDesc:
       "Multi-tenant SaaS products with billing, onboarding and the operational tooling behind them.",
     atAGlance: {
-      bestFor: "B2B and B2C software startups and corporate venture spin-outs",
-      engagement: "End-to-end MVP build or scaling existing architecture",
-      typicalStack: "Next.js, TypeScript, Stripe, Prisma, PostgreSQL, Docker",
+      bestFor: "Founders and teams building a subscription product",
+      engagement: "Project delivery with ongoing product support",
+      typicalStack: "React, Next.js, Laravel, PostgreSQL",
     },
     overview: [
-      "Turning an idea into a scalable subscription business requires bulletproof multi-tenancy, self-serve billing, customer onboarding, and administrative control panels.",
-      "We design SaaS systems engineered from day one to handle tiered subscriptions, tenant data isolation, and low operational overhead.",
+      "A SaaS product is not just an application; it is a business. Tenancy, billing, onboarding and the admin tooling behind the scenes decide whether it can grow without the team drowning in manual work.",
+      "We build the product and the operational layer together, so launching a new customer or changing a plan is a routine action rather than a support ticket.",
     ],
     whatWeDeliver: [
       {
-        title: "Multi-tenant Architecture",
-        description: "Isolated database schemas or row-level tenant security.",
+        title: "Multi-tenancy",
+        description:
+          "Clear separation of customer data and configuration.",
       },
       {
-        title: "Subscription & Invoicing",
-        description: "Tiered pricing, recurring payments, and automated billing via Stripe.",
+        title: "Billing and plans",
+        description:
+          "Subscriptions, plan changes and the states around them.",
       },
       {
-        title: "User Management & RBAC",
-        description: "Role-based permissions, invitations, and secure team management.",
+        title: "Onboarding",
+        description:
+          "A first-run experience that gets customers to value quickly.",
+      },
+      {
+        title: "Operations tooling",
+        description:
+          "Admin screens for the team running the product.",
+      },
+      {
+        title: "APIs",
+        description:
+          "A clean API the product and integrations can build on.",
+      },
+      {
+        title: "Scalability",
+        description:
+          "Choices that hold as usage and customers grow.",
       },
     ],
-    technologies: ["Next.js", "TypeScript", "Stripe", "PostgreSQL", "Docker", "Tailwind CSS"],
-    industries: ["B2B SaaS", "EdTech", "Productivity"],
+    technologies: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Laravel",
+      "Node.js",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
+      "Cloudflare",
+      "AWS",
+    ],
+    industries: [
+      "SaaS",
+      "FinTech",
+      "Startups & SMEs",
+      "Education",
+    ],
     faqs: [
       {
-        question: "How do you handle data privacy across different tenants?",
+        question: "Can you start from an early idea?",
         answer:
-          "We use strict tenant-isolation patterns at the database layer ensuring organizations can only query their own records.",
+          "Yes. We can help scope a first version that is genuinely usable, then grow it as the product finds its market.",
+      },
+      {
+        question: "How is billing handled?",
+        answer:
+          "We integrate a billing provider and build the product side: plans, entitlements and the states around subscription changes.",
+      },
+      {
+        question: "Who runs it after launch?",
+        answer:
+          "That is your choice. We can hand over with documentation, or run and improve it as a managed service.",
       },
     ],
-    relatedCaseStudies: [],
+    relatedCaseStudies: [
+      {
+        tag: "CASE STUDY",
+        title: "Multi-Vendor Marketplaces: Listings, Orders and Payouts",
+        link: "/case-studies/multi-vendor-marketplaces-listings-orders-and-payouts",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "Payments and Inventory: The Engine Room of E-commerce",
+        link: "/case-studies/payments-and-inventory-the-engine-room-of-e-commerce",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "Checkout Reliability: Designing for the Moment of Payment",
+        link: "/case-studies/checkout-reliability-designing-for-the-moment-of-payment",
+      },
+    ],
   },
   {
     id: "7",
     slug: "api-backend-development",
     number: "07",
-    title: "API & Backend Development",
+    title: "API & Backend Engineering",
     shortDesc:
       "Secure APIs and backend systems that connect your products, teams and third-party services.",
     atAGlance: {
-      bestFor: "High-throughput APIs, microservices, database design, and legacy modernization",
-      engagement: "Backend squad or infrastructure modernization sprint",
-      typicalStack: "Node.js, Express, NestJS, PostgreSQL, Redis, Docker",
+      bestFor: "Products that need a reliable backend and integrations",
+      engagement: "Project delivery, team extension or managed service",
+      typicalStack: "Laravel, Node.js, PostgreSQL, Redis",
     },
     overview: [
-      "A fast frontend is only as reliable as the backend beneath it. We build robust, scalable APIs engineered for data integrity, security, and low latency.",
-      "From database indexing to caching layers, we ensure your backend scales smoothly under peak traffic.",
+      "The backend is where a product's rules, data and integrations live. Done well it is quiet: contracts hold, jobs run, and the parts that talk to each other keep working when something is slow.",
+      "We design APIs and data models deliberately, secure them properly, and build the background work that keeps everything in step.",
     ],
     whatWeDeliver: [
       {
-        title: "REST & GraphQL APIs",
-        description: "Cleanly versioned, documented APIs adhering to OpenAPI standards.",
+        title: "API design",
+        description:
+          "Clear, documented contracts that clients can rely on.",
       },
       {
-        title: "Database Modeling",
-        description: "Optimized schemas, query efficiency, indexing, and transactional safety.",
+        title: "Authentication and authorisation",
+        description:
+          "Secure access with roles and scoped permissions.",
       },
       {
-        title: "Caching & Queues",
-        description: "Background processing and Redis caching for high availability.",
+        title: "Data modelling",
+        description:
+          "Schemas that stay correct as the product changes.",
+      },
+      {
+        title: "Integrations",
+        description:
+          "Connecting third-party services without fragile glue.",
+      },
+      {
+        title: "Background jobs",
+        description:
+          "Queues and scheduled work that run reliably.",
+      },
+      {
+        title: "Monitoring",
+        description:
+          "Visibility into errors, performance and failures.",
       },
     ],
-    technologies: ["Node.js", "NestJS", "PostgreSQL", "Redis", "Docker", "AWS"],
-    industries: ["Fintech", "Telecom", "HealthTech"],
+    technologies: [
+      "Laravel",
+      "PHP",
+      "Node.js",
+      "Python",
+      "PostgreSQL",
+      "MySQL",
+      "Redis",
+      "Docker",
+      "AWS",
+      "DigitalOcean",
+      "Sentry",
+    ],
+    industries: [
+      "FinTech",
+      "E-commerce",
+      "SaaS",
+      "Logistics",
+    ],
     faqs: [
       {
-        question: "Do you supply interactive API documentation?",
+        question: "Can you document an existing API?",
         answer:
-          "Yes, all APIs include interactive Swagger/OpenAPI documentation and automated contract tests.",
+          "Yes. We can document and evaluate an existing API, or design a new one that current clients can migrate to carefully.",
+      },
+      {
+        question: "How do you handle third-party failures?",
+        answer:
+          "Integrations are built to degrade gracefully, with retries, queues and clear errors rather than silent data loss.",
+      },
+      {
+        question: "Is it secure?",
+        answer:
+          "Security is part of the work: authentication, authorisation, input validation, rate limiting and monitoring.",
       },
     ],
-    relatedCaseStudies: [],
+    relatedCaseStudies: [
+      {
+        tag: "CASE STUDY",
+        title: "Connecting a New Front End to a Legacy System",
+        link: "/case-studies/connecting-a-new-front-end-to-a-legacy-system",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "Payments and Inventory: The Engine Room of E-commerce",
+        link: "/case-studies/payments-and-inventory-the-engine-room-of-e-commerce",
+      },
+      {
+        tag: "CASE STUDY",
+        title:
+          "Role-Based Access Control: Who Sees What in a Business System",
+        link: "/case-studies/role-based-access-control-who-sees-what-in-a-business-system",
+      },
+    ],
   },
   {
     id: "8",
