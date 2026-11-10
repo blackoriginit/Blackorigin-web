@@ -107,36 +107,36 @@ export const servicesData: ServiceDetail[] = [
       {
         question: "How long does a custom software project take?",
         answer:
-          "Timelines typically range between 6 to 16 weeks depending on project scope, architecture complexity, and milestone requirements. We deliver in bi-weekly increments so you see functional releases throughout the project.",
+          "It depends on scope. We start with a short discovery so we can give you a realistic plan rather than a guess, and you see working software in increments rather than only at the end.",
       },
       {
         question: "Can you improve a system we already have?",
         answer:
-          "Yes, we frequently audit, refactor, and modernize legacy software, add APIs, or build new customer-facing front-ends on top of existing backends.",
+          "Yes. We can extend, modernise or integrate an existing system, and we will tell you honestly when rebuilding is the better option.",
       },
       {
         question: "How are changes handled during a project?",
         answer:
-          "We use an agile sprint-based framework. Scope changes are evaluated for timeline impact and prioritized collaboratively at the start of each sprint cycle.",
+          "Scope changes are normal. We agree how a change affects time and cost before it is built, so there are no surprises later.",
       },
     ],
     relatedCaseStudies: [
       {
         tag: "CASE STUDY",
         title: "Management Systems: Turning Spreadsheets into an EMS",
-        link: "/case-studies",
+        link: "/case-studies/management-systems-turning-spreadsheets-into-an-ems"
       },
       {
         tag: "CASE STUDY",
         title: "Dashboards and Reporting in a Management System",
-        link: "/case-studies",
+        link: "/case-studies/dashboards-and-reporting-in-a-management-system"
       },
       {
         tag: "CASE STUDY",
         title: "Connecting a New Front End to a Legacy System",
-        link: "/case-studies",
-      },
-    ],
+        link: "/case-studies/connecting-a-new-front-end-to-a-legacy-system"
+      }
+    ]
   },
   {
     id: "2",
@@ -146,51 +146,99 @@ export const servicesData: ServiceDetail[] = [
     shortDesc:
       "Fast, reliable web applications built on modern frameworks and designed to scale with usage.",
     atAGlance: {
-      bestFor: "Customer portals, SaaS frontends, and dynamic web applications",
-      engagement: "Project delivery or dedicated team extension",
-      typicalStack: "Next.js, React, TypeScript, Tailwind CSS, REST APIs",
+      bestFor: "Customer portals, dashboards and web products",
+      engagement: "Project delivery, team extension or managed service",
+      typicalStack: "React, Next.js, TypeScript, Node.js, PostgreSQL",
     },
     overview: [
-      "Web applications are the core interface through which users interact with your digital products. We build responsive, accessible, and high-performance applications designed to grow alongside your user base.",
-      "By leveraging server-side rendering, static caching, and modern frontend pipelines, we deliver lightning-fast page loads and resilient user experiences.",
+      "A web application is more than a set of pages. It has accounts, permissions, data that has to stay consistent, and a release process you can trust. We build the whole application, not just the visible part.",
+      "We use modern frameworks on the front end with a clear backend underneath, so the application stays fast as it grows and remains maintainable for the team that owns it after launch.",
     ],
     whatWeDeliver: [
       {
-        title: "Frontend Architecture",
-        description: "Maintainable component design systems and state management.",
+        title: "Application architecture",
+        description:
+          "Structure that keeps features independent and the codebase understandable.",
       },
       {
-        title: "Responsive Interface",
-        description: "Pixel-perfect experiences across desktop, tablet, and mobile browsers.",
+        title: "Responsive interfaces",
+        description:
+          "Layouts that work from a phone to a large monitor.",
       },
       {
-        title: "API Integration",
-        description: "Clean data fetching, optimistic UI updates, and error boundaries.",
+        title: "Accounts and permissions",
+        description:
+          "Sign-in, roles and access that match how your organisation works.",
       },
       {
-        title: "Performance Audits",
-        description: "Optimized Core Web Vitals, asset compression, and bundle analysis.",
+        title: "APIs and data modelling",
+        description:
+          "A data model and API the rest of the product can build on.",
+      },
+      {
+        title: "Performance and SEO",
+        description:
+          "Pages that load quickly and are found, with sensible caching.",
+      },
+      {
+        title: "Deployment and monitoring",
+        description:
+          "A repeatable release path and visibility after launch.",
       },
     ],
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "GraphQL"],
-    industries: ["Fintech", "E-commerce", "Education", "Healthcare"],
+    technologies: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Laravel",
+      "PHP",
+      "PostgreSQL",
+      "MySQL",
+      "Redis",
+      "Docker",
+      "Cloudflare",
+      "AWS",
+      "Sentry",
+    ],
+    industries: [
+      "E-commerce",
+      "SaaS",
+      "Professional Services",
+      "Real Estate",
+    ],
     faqs: [
       {
-        question: "Why choose Next.js for web application development?",
+        question: "Can you work with our existing design?",
         answer:
-          "Next.js combines server-side rendering for speed and SEO with rich client-side interactivity, making it ideal for modern production applications.",
+          "Yes. If you have designs or a design system we build against them; if not, interface design is part of the work.",
       },
       {
-        question: "Do you ensure cross-browser compatibility?",
+        question: "How do you keep a web application fast?",
         answer:
-          "Yes, all web applications undergo testing across Chrome, Safari, Firefox, and Edge on multiple operating systems.",
+          "Performance is designed in, with sensible caching and asset handling, and monitored after launch so regressions are caught early.",
+      },
+      {
+        question: "Do we own the code?",
+        answer:
+          "Yes. You own the code and the data, and we hand over documentation and a working deployment.",
       },
     ],
     relatedCaseStudies: [
       {
         tag: "CASE STUDY",
-        title: "Connecting a New Front End to a Legacy System",
-        link: "/case-studies",
+        title: "An E-commerce Build: From Catalogue to Checkout",
+        link: "/case-studies/an-ecommerce-build-from-catalogue-to-checkout",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "Portfolio and Blogging Platforms: Structure, Content and Speed",
+        link: "/case-studies/portfolio-and-blogging-platforms-structure-content-and-speed",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "Multi-Vendor Marketplaces: Listings, Orders and Payouts",
+        link: "/case-studies/multi-vendor-marketplaces-listings-orders-and-payouts",
       },
     ],
   },

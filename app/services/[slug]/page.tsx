@@ -1,6 +1,10 @@
+"use client";
+
+import { use, useState } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { servicesData } from "@/data/services";
+import ContactModal from "@/components/ContactModal";
 
 interface PageProps {
   params: Promise<{
@@ -8,30 +12,15 @@ interface PageProps {
   }>;
 }
 
-// Generate static routes for all services at build time
-export async function generateStaticParams() {
-  return servicesData.map((service) => ({
-    slug: service.slug,
-  }));
-}
-
-// Generate dynamic browser tab titles and SEO metadata
-export async function generateMetadata({ params }: PageProps) {
-  const { slug } = await params;
-  const service = servicesData.find((s) => s.slug === slug);
-  if (!service) return { title: "Service Not Found | Black Origin" };
-
-  return {
-    title: `${service.title} | Black Origin`,
-    description: service.shortDesc,
-  };
-}
-
-export default async function ServiceDetailPage({ params }: PageProps) {
-  const { slug } = await params;
+export default function ServiceDetailPage({ params }: PageProps) {
+  // In Next.js 15/16, unwrap the params promise
+  const resolvedParams = use(params);
+  const slug = resolvedParams.slug;
   const service = servicesData.find((s) => s.slug === slug);
 
-  // If someone enters an invalid URL, show Next.js 404 page
+  // State to control opening and closing the popup modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   if (!service) {
     notFound();
   }
@@ -48,6 +37,13 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen bg-[#F8FAFC]">
+      {/* 0. INTERACTIVE CONTACT MODAL (Opens when 'Start a Project' is clicked) */}
+      <ContactModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        defaultService={service.title}
+      />
+
       {/* 1. BREADCRUMB */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-8 pb-4 text-xs text-slate-500">
         <nav className="flex items-center gap-2">
@@ -80,16 +76,18 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               {service.shortDesc}
             </p>
 
+            {/* BUTTONS: 'Start a Project' opens Modal | 'Contact Black Origin' links to /contact */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
-              <Link
-                href="/contact"
-                className="bg-[#E8590C] hover:bg-[#d04f0a] transition-colors text-white text-sm font-medium px-6 py-3 rounded-md shadow-sm"
+              <button
+                type="button"
+                onClick={() => setIsModalOpen(true)}
+                className="bg-[#E8590C] hover:bg-[#d04f0a] transition-colors text-white text-sm font-medium px-6 py-3 rounded-md shadow-sm cursor-pointer"
               >
                 Start a Project
-              </Link>
+              </button>
               <Link
                 href="/contact"
-                className="bg-white border border-slate-300 text-[#06182C] hover:bg-slate-50 transition-colors text-sm font-medium px-6 py-3 rounded-md"
+                className="bg-white border border-slate-300 text-[#06182C] hover:bg-slate-50 transition-colors text-sm font-medium px-6 py-3 rounded-md inline-block"
               >
                 Contact Black Origin
               </Link>
@@ -182,7 +180,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           </div>
         </div>
 
-        <div>
+       <div>
           <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#06182C] mb-2">
             Industries
           </h2>
@@ -190,14 +188,23 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             Where this service is used most often.
           </p>
           <div className="flex flex-wrap gap-2.5">
-            {service.industries.map((ind, idx) => (
-              <span
-                key={idx}
-                className="bg-white border border-slate-300 text-[#06182C] text-xs font-medium px-4 py-1.5 rounded-lg shadow-2xs"
-              >
-                {ind}
-              </span>
-            ))}
+            {service.industries.map((ind, idx) => {
+              // Create clean URL slug: "E-commerce" -> "ecommerce", "Real Estate" -> "real-estate"
+              const industrySlug = ind
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, "-")
+                .replace(/^-|-$/g, "");
+
+              return (
+                <Link
+                  key={idx}
+                  href={`/industries/${industrySlug}`}
+                  className="bg-white border border-slate-300 text-[#06182C] text-xs font-medium px-4 py-1.5 rounded-lg shadow-2xs hover:border-[#E8590C] hover:text-[#E8590C] hover:shadow-sm transition-all inline-block"
+                >
+                  {ind}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -258,7 +265,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         </section>
       )}
 
-      {/* 8. FREQUENTLY ASKED QUESTIONS */}
+     {/* 8. FREQUENTLY ASKED QUESTIONS (Matches Prototype 1:1) */}
       {service.faqs && service.faqs.length > 0 && (
         <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-12">
           <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#06182C] mb-8">
@@ -268,17 +275,15 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             {service.faqs.map((faq, idx) => (
               <details
                 key={idx}
-                className="group border border-slate-300 rounded-xl bg-white p-5 open:shadow-sm cursor-pointer transition-all"
+                className="group border border-slate-300 rounded-2xl bg-white p-6 open:shadow-xs cursor-pointer transition-all"
               >
-                <summary className="font-medium text-sm md:text-base text-[#06182C] flex items-center justify-between list-none">
-                  <span className="flex items-center gap-3">
-                    <span className="text-[#E8590C] transition-transform group-open:rotate-90">
-                      &#9654;
-                    </span>
-                    {faq.question}
+                <summary className="font-serif font-bold text-base md:text-lg text-[#06182C] flex items-center gap-3 list-none select-none">
+                  <span className="text-xs transition-transform duration-200 group-open:rotate-90 inline-block">
+                    &#9654;
                   </span>
+                  <span>{faq.question}</span>
                 </summary>
-                <div className="pt-4 pl-6 text-xs md:text-sm text-slate-600 leading-relaxed border-t border-slate-100 mt-3">
+                <div className="pt-3 pl-6 text-xs md:text-sm text-slate-600 leading-relaxed font-normal">
                   {faq.answer}
                 </div>
               </details>
@@ -297,15 +302,16 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             Tell us what you are trying to build. We will reply with a clear next step.
           </p>
           <div className="flex justify-center gap-4 pt-4">
-            <Link
-              href="/contact"
-              className="bg-[#E8590C] hover:bg-[#d04f0a] transition-colors text-white font-medium text-sm px-6 py-3 rounded-md"
+            <button
+              type="button"
+              onClick={() => setIsModalOpen(true)}
+              className="bg-[#E8590C] hover:bg-[#d04f0a] transition-colors text-white font-medium text-sm px-6 py-3 rounded-md cursor-pointer"
             >
               Start a Project
-            </Link>
+            </button>
             <Link
               href="/contact"
-              className="bg-transparent border border-white/30 hover:bg-white/10 transition-colors text-white font-medium text-sm px-6 py-3 rounded-md"
+              className="bg-transparent border border-white/30 hover:bg-white/10 transition-colors text-white font-medium text-sm px-6 py-3 rounded-md inline-block"
             >
               Contact Black Origin
             </Link>
