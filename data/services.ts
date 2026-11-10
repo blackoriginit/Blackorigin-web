@@ -348,40 +348,95 @@ export const servicesData: ServiceDetail[] = [
     number: "04",
     title: "AI & Machine Learning",
     shortDesc:
-      "Practical AI features - prediction, classification and assistants - built on your own data.",
+      "Practical AI features: prediction, classification and assistants, built on your own data.",
     atAGlance: {
-      bestFor: "Predictive analytics, custom recommendation engines, and specialized NLP models",
-      engagement: "Discovery spike, model engineering, or deployment support",
-      typicalStack: "Python, PyTorch, LangChain, HuggingFace, FastAPI, pgvector",
+      bestFor:
+        "Prediction, classification and assistant features on your own data",
+      engagement: "Discovery, delivery or research-led engagement",
+      typicalStack: "Python, PostgreSQL, Docker, AWS",
     },
     overview: [
-      "AI creates value only when it solves a concrete business bottleneck. We build pragmatic machine learning workflows tailored to your specific organizational datasets.",
-      "We prioritize data privacy, model interpretability, and robust evaluation pipelines over hype.",
+      "We build AI features around a specific problem, not around the label. That starts with framing the question: what decision or task should improve, and what data do we actually have to work with?",
+      "From there the work is disciplined engineering: preparing and evaluating data, training and testing a model, then deploying it where it is used and monitoring it so quality stays visible over time.",
     ],
     whatWeDeliver: [
       {
-        title: "Custom Model Training",
-        description: "Fine-tuned models tailored to domain-specific terminology and formats.",
+        title: "Problem framing",
+        description:
+          "Turning a business question into something measurable.",
       },
       {
-        title: "Data Pipelines",
-        description: "Automated ingestion, cleaning, and preparation workflows.",
+        title: "Data preparation",
+        description:
+          "Collecting, cleaning and labelling the data the model depends on.",
       },
       {
-        title: "Evaluation & Monitoring",
-        description: "Drift detection, benchmark tracking, and accuracy metrics in production.",
+        title: "Training and evaluation",
+        description:
+          "Building and testing models against agreed measures.",
+      },
+      {
+        title: "Deployment and serving",
+        description:
+          "Putting the model behind an API your product can use.",
+      },
+      {
+        title: "Monitoring",
+        description:
+          "Watching accuracy and drift once the feature is live.",
+      },
+      {
+        title: "Human review",
+        description:
+          "Keeping people in control where the stakes require it.",
       },
     ],
-    technologies: ["Python", "FastAPI", "OpenAI", "PyTorch", "PostgreSQL", "Docker"],
-    industries: ["Finance", "Healthcare", "Legal", "E-commerce"],
+    technologies: [
+      "Python",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
+      "AWS",
+      "Node.js",
+      "REST APIs",
+    ],
+    industries: [
+      "E-commerce",
+      "FinTech",
+      "Healthcare",
+      "SaaS",
+    ],
     faqs: [
       {
-        question: "How do you protect our private company data?",
+        question: "How much data do we need?",
         answer:
-          "We run self-hosted models or private enterprise VPC endpoints where your data is never used for external model retraining.",
+          "It depends on the problem. We look at what you have during discovery and tell you honestly whether there is enough to build something useful.",
+      },
+      {
+        question: "Will this replace our staff?",
+        answer:
+          "Our aim is to assist people, not replace judgement. Features are designed with review and escalation where decisions matter.",
+      },
+      {
+        question: "How do you know the model works?",
+        answer:
+          "We agree the measures before building, evaluate against them, and keep monitoring after deployment.",
       },
     ],
-    relatedCaseStudies: [],
+    relatedCaseStudies: [
+      {
+        tag: "CASE STUDY",
+        title:
+          "AI and Deep Learning Projects: From Experiment to Application",
+        link: "/case-studies/ai-and-deep-learning-projects-from-experiment-to-application",
+      },
+      {
+        tag: "CASE STUDY",
+        title:
+          "Search, Recommendations and Ranking with Machine Learning",
+        link: "/case-studies/search-recommendations-and-ranking-with-machine-learning",
+      },
+    ],
   },
   {
     id: "5",
