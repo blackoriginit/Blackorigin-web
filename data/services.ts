@@ -446,38 +446,98 @@ export const servicesData: ServiceDetail[] = [
     shortDesc:
       "Turn repetitive business processes into intelligent, automated workflows that save hours every week.",
     atAGlance: {
-      bestFor: "Back-office workflow optimization, document classification, automated reporting",
-      engagement: "Turnkey automation build or workflow audit",
-      typicalStack: "Python, n8n, LangChain, Webhooks, OpenAI API, AWS Lambda",
+      bestFor:
+        "Repetitive, rules-based work that consumes staff time",
+      engagement:
+        "Discovery and delivery, then ongoing improvement",
+      typicalStack: "Python, Node.js, PostgreSQL, Redis",
     },
     overview: [
-      "Repetitive copy-pasting, invoice sorting, and manual email handling consume valuable hours. AI automation transforms these tasks into hands-off, intelligent pipelines.",
-      "We connect your software ecosystem so events trigger automated actions that review documents, update databases, and notify stakeholders automatically.",
+      "Automation pays off when it is aimed at the right task. We map the process first, work out where time is actually lost, and automate the parts that are repetitive and predictable.",
+      "Where a task needs judgement, we keep a person in the loop: the system drafts, sorts or extracts, and someone confirms. That is how automation stays useful and safe.",
     ],
     whatWeDeliver: [
       {
-        title: "Intelligent Document Processing",
-        description: "Automatic parsing of PDFs, receipts, and emails into structured records.",
+        title: "Process mapping",
+        description:
+          "Finding the steps worth automating and the ones to leave alone.",
       },
       {
-        title: "Automated Workflows",
-        description: "Trigger-action pipelines orchestrating CRMs, ERPs, and databases.",
+        title: "Workflow automation",
+        description:
+          "Connecting the tools you already use so work moves by itself.",
       },
       {
-        title: "Agentic Assistants",
-        description: "Context-aware bots that handle multi-step customer and internal workflows.",
+        title: "Document and data extraction",
+        description:
+          "Pulling structured information out of documents and messages.",
+      },
+      {
+        title: "Assistants",
+        description:
+          "Assistants that draft and summarise, with a person in control.",
+      },
+      {
+        title: "Integrations",
+        description:
+          "Working through the systems you already rely on rather than replacing them.",
+      },
+      {
+        title: "Monitoring",
+        description:
+          "Visibility into what the automation did and where it failed.",
       },
     ],
-    technologies: ["Python", "n8n", "OpenAI", "REST APIs", "AWS Lambda", "PostgreSQL"],
-    industries: ["Logistics", "Real Estate", "Professional Services"],
+    technologies: [
+      "Python",
+      "Node.js",
+      "REST APIs",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
+      "AWS",
+    ],
+    industries: [
+      "Professional Services",
+      "FinTech",
+      "Logistics",
+      "Education",
+    ],
     faqs: [
       {
-        question: "Can automation hook into our existing CRM and email system?",
+        question: "Which tasks should we automate?",
         answer:
-          "Yes, we build secure webhook and API bridges into tools like HubSpot, Salesforce, Outlook, and Google Workspace.",
+          "Start with work that is repetitive, predictable and time consuming. We map the process during discovery and recommend where automation genuinely pays off.",
+      },
+      {
+        question: "Will it work with our current tools?",
+        answer:
+          "In most cases yes. We automate through the tools you already use rather than forcing a replacement.",
+      },
+      {
+        question: "How is it kept safe?",
+        answer:
+          "Automated steps are monitored, and steps that carry risk keep a human in the loop for confirmation.",
       },
     ],
-    relatedCaseStudies: [],
+    relatedCaseStudies: [
+      {
+        tag: "CASE STUDY",
+        title:
+          "AI and Deep Learning Projects: From Experiment to Application",
+        link: "/case-studies/ai-and-deep-learning-projects-from-experiment-to-application",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "Connecting a New Front End to a Legacy System",
+        link: "/case-studies/connecting-a-new-front-end-to-a-legacy-system",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "Dashboards and Reporting in a Management System",
+        link: "/case-studies/dashboards-and-reporting-in-a-management-system",
+      },
+    ],
   },
   {
     id: "6",
