@@ -250,38 +250,97 @@ export const servicesData: ServiceDetail[] = [
     shortDesc:
       "Cross-platform mobile apps for iOS and Android built from a single, maintainable codebase.",
     atAGlance: {
-      bestFor: "On-the-go consumer apps, internal workforce mobility, and offline-first tools",
-      engagement: "Full lifecycle build or feature sprint extension",
-      typicalStack: "React Native, Flutter, TypeScript, Swift, Kotlin",
+      bestFor: "Apps for customers, field teams and internal operations",
+      engagement: "Project delivery or team extension",
+      typicalStack: "Flutter, Dart, Node.js, PostgreSQL",
     },
     overview: [
-      "Mobile apps need to be fluid, battery-efficient, and dependable across thousands of device models. We build cross-platform mobile apps that give you native performance while maintaining a single codebase for both iOS and Android.",
-      "From biometric authentication to offline synchronization, we engineer mobile applications that delight end users and streamline business operations.",
+      "We build mobile apps from a single codebase for both iOS and Android using Flutter, so you reach both stores without maintaining two separate products.",
+      "The work goes beyond the screens: offline behaviour, permissions, store requirements and the backend the app talks to are all part of planning a release that actually ships.",
     ],
     whatWeDeliver: [
       {
-        title: "Cross-platform engineering",
-        description: "Shared business logic and UI components across iOS and Android.",
+        title: "Cross-platform builds",
+        description:
+          "One codebase for iOS and Android, released to both stores.",
       },
       {
-        title: "Offline-first sync",
-        description: "Local data storage and seamless synchronization upon reconnecting.",
+        title: "Native-quality experience",
+        description:
+          "Interfaces that feel at home on each platform.",
       },
       {
-        title: "App Store & Play Store release",
-        description: "Complete build, signing, and submission pipeline management.",
+        title: "Offline and sync",
+        description:
+          "Apps that keep working when the connection does not, and reconcile when it returns.",
+      },
+      {
+        title: "Notifications",
+        description:
+          "Push messages that reach the right people at the right time.",
+      },
+      {
+        title: "Store release",
+        description:
+          "Preparing and submitting the build, with the store requirements handled.",
+      },
+      {
+        title: "Maintenance",
+        description:
+          "Fixes and updates for new operating system versions after launch.",
       },
     ],
-    technologies: ["React Native", "Flutter", "iOS", "Android", "Firebase", "SQLite"],
-    industries: ["Logistics", "On-demand Services", "Healthcare", "Fintech"],
+    technologies: [
+      "Flutter",
+      "Dart",
+      "Node.js",
+      "Python",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
+      "AWS",
+      "Sentry",
+    ],
+    industries: [
+      "E-commerce",
+      "Logistics",
+      "Healthcare",
+      "Real Estate",
+    ],
     faqs: [
       {
-        question: "Can a single codebase truly match native performance?",
+        question: "Should we build native or cross-platform?",
         answer:
-          "Yes. With modern frameworks like React Native and Flutter, the native rendering bridge achieves 60fps animations and direct hardware access.",
+          "It depends on the app. Cross-platform suits most business applications because it reaches both stores from one codebase; we will say so when a native build is genuinely the better choice.",
+      },
+      {
+        question: "Can the app work offline?",
+        answer:
+          "Yes. For field and on-site work we design local storage, sync and conflict handling from the start.",
+      },
+      {
+        question: "Do you handle app store submission?",
+        answer:
+          "Yes. Preparing the build, the listing requirements and the submission are part of the work.",
       },
     ],
-    relatedCaseStudies: [],
+    relatedCaseStudies: [
+      {
+        tag: "CASE STUDY",
+        title: "Offline-First Design for Field Work",
+        link: "/case-studies/offline-first-design-for-field-work",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "Multi-Vendor Marketplaces: Listings, Orders and Payouts",
+        link: "/case-studies/multi-vendor-marketplaces-listings-orders-and-payouts",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "An E-commerce Build: From Catalogue to Checkout",
+        link: "/case-studies/an-ecommerce-build-from-catalogue-to-checkout",
+      },
+    ],
   },
   {
     id: "4",
