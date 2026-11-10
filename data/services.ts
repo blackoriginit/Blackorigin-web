@@ -34,6 +34,7 @@ export interface ServiceDetail {
 }
 
 export const servicesData: ServiceDetail[] = [
+  // 01. Custom Software Development
   {
     id: "1",
     slug: "custom-software-development",
@@ -124,20 +125,22 @@ export const servicesData: ServiceDetail[] = [
       {
         tag: "CASE STUDY",
         title: "Management Systems: Turning Spreadsheets into an EMS",
-        link: "/case-studies/management-systems-turning-spreadsheets-into-an-ems"
+        link: "/case-studies/management-systems-turning-spreadsheets-into-an-ems",
       },
       {
         tag: "CASE STUDY",
         title: "Dashboards and Reporting in a Management System",
-        link: "/case-studies/dashboards-and-reporting-in-a-management-system"
+        link: "/case-studies/dashboards-and-reporting-in-a-management-system",
       },
       {
         tag: "CASE STUDY",
         title: "Connecting a New Front End to a Legacy System",
-        link: "/case-studies/connecting-a-new-front-end-to-a-legacy-system"
-      }
-    ]
+        link: "/case-studies/connecting-a-new-front-end-to-a-legacy-system",
+      },
+    ],
   },
+
+  // 02. Web Application Development
   {
     id: "2",
     slug: "web-application-development",
@@ -162,8 +165,7 @@ export const servicesData: ServiceDetail[] = [
       },
       {
         title: "Responsive interfaces",
-        description:
-          "Layouts that work from a phone to a large monitor.",
+        description: "Layouts that work from a phone to a large monitor.",
       },
       {
         title: "Accounts and permissions",
@@ -172,8 +174,7 @@ export const servicesData: ServiceDetail[] = [
       },
       {
         title: "APIs and data modelling",
-        description:
-          "A data model and API the rest of the product can build on.",
+        description: "A data model and API the rest of the product can build on.",
       },
       {
         title: "Performance and SEO",
@@ -182,8 +183,7 @@ export const servicesData: ServiceDetail[] = [
       },
       {
         title: "Deployment and monitoring",
-        description:
-          "A repeatable release path and visibility after launch.",
+        description: "A repeatable release path and visibility after launch.",
       },
     ],
     technologies: [
@@ -201,12 +201,7 @@ export const servicesData: ServiceDetail[] = [
       "AWS",
       "Sentry",
     ],
-    industries: [
-      "E-commerce",
-      "SaaS",
-      "Professional Services",
-      "Real Estate",
-    ],
+    industries: ["E-commerce", "SaaS", "Professional Services", "Real Estate"],
     faqs: [
       {
         question: "Can you work with our existing design?",
@@ -232,7 +227,8 @@ export const servicesData: ServiceDetail[] = [
       },
       {
         tag: "CASE STUDY",
-        title: "Portfolio and Blogging Platforms: Structure, Content and Speed",
+        title:
+          "Portfolio and Blogging Platforms: Structure, Content and Speed",
         link: "/case-studies/portfolio-and-blogging-platforms-structure-content-and-speed",
       },
       {
@@ -242,6 +238,8 @@ export const servicesData: ServiceDetail[] = [
       },
     ],
   },
+
+  // 03. Mobile Application Development
   {
     id: "3",
     slug: "mobile-application-development",
@@ -266,8 +264,7 @@ export const servicesData: ServiceDetail[] = [
       },
       {
         title: "Native-quality experience",
-        description:
-          "Interfaces that feel at home on each platform.",
+        description: "Interfaces that feel at home on each platform.",
       },
       {
         title: "Offline and sync",
@@ -301,12 +298,7 @@ export const servicesData: ServiceDetail[] = [
       "AWS",
       "Sentry",
     ],
-    industries: [
-      "E-commerce",
-      "Logistics",
-      "Healthcare",
-      "Real Estate",
-    ],
+    industries: ["E-commerce", "Logistics", "Healthcare", "Real Estate"],
     faqs: [
       {
         question: "Should we build native or cross-platform?",
@@ -342,6 +334,8 @@ export const servicesData: ServiceDetail[] = [
       },
     ],
   },
+
+  // 04. AI & Machine Learning
   {
     id: "4",
     slug: "ai-machine-learning",
@@ -362,8 +356,7 @@ export const servicesData: ServiceDetail[] = [
     whatWeDeliver: [
       {
         title: "Problem framing",
-        description:
-          "Turning a business question into something measurable.",
+        description: "Turning a business question into something measurable.",
       },
       {
         title: "Data preparation",
@@ -372,23 +365,19 @@ export const servicesData: ServiceDetail[] = [
       },
       {
         title: "Training and evaluation",
-        description:
-          "Building and testing models against agreed measures.",
+        description: "Building and testing models against agreed measures.",
       },
       {
         title: "Deployment and serving",
-        description:
-          "Putting the model behind an API your product can use.",
+        description: "Putting the model behind an API your product can use.",
       },
       {
         title: "Monitoring",
-        description:
-          "Watching accuracy and drift once the feature is live.",
+        description: "Watching accuracy and drift once the feature is live.",
       },
       {
         title: "Human review",
-        description:
-          "Keeping people in control where the stakes require it.",
+        description: "Keeping people in control where the stakes require it.",
       },
     ],
     technologies: [
@@ -400,12 +389,7 @@ export const servicesData: ServiceDetail[] = [
       "Node.js",
       "REST APIs",
     ],
-    industries: [
-      "E-commerce",
-      "FinTech",
-      "Healthcare",
-      "SaaS",
-    ],
+    industries: ["E-commerce", "FinTech", "Healthcare", "SaaS"],
     faqs: [
       {
         question: "How much data do we need?",
@@ -426,18 +410,18 @@ export const servicesData: ServiceDetail[] = [
     relatedCaseStudies: [
       {
         tag: "CASE STUDY",
-        title:
-          "AI and Deep Learning Projects: From Experiment to Application",
+        title: "AI and Deep Learning Projects: From Experiment to Application",
         link: "/case-studies/ai-and-deep-learning-projects-from-experiment-to-application",
       },
       {
         tag: "CASE STUDY",
-        title:
-          "Search, Recommendations and Ranking with Machine Learning",
+        title: "Search, Recommendations and Ranking with Machine Learning",
         link: "/case-studies/search-recommendations-and-ranking-with-machine-learning",
       },
     ],
   },
+
+  // 05. AI Automation
   {
     id: "5",
     slug: "ai-automation",
@@ -446,10 +430,8 @@ export const servicesData: ServiceDetail[] = [
     shortDesc:
       "Turn repetitive business processes into intelligent, automated workflows that save hours every week.",
     atAGlance: {
-      bestFor:
-        "Repetitive, rules-based work that consumes staff time",
-      engagement:
-        "Discovery and delivery, then ongoing improvement",
+      bestFor: "Repetitive, rules-based work that consumes staff time",
+      engagement: "Discovery and delivery, then ongoing improvement",
       typicalStack: "Python, Node.js, PostgreSQL, Redis",
     },
     overview: [
@@ -497,12 +479,7 @@ export const servicesData: ServiceDetail[] = [
       "Docker",
       "AWS",
     ],
-    industries: [
-      "Professional Services",
-      "FinTech",
-      "Logistics",
-      "Education",
-    ],
+    industries: ["Professional Services", "FinTech", "Logistics", "Education"],
     faqs: [
       {
         question: "Which tasks should we automate?",
@@ -523,8 +500,7 @@ export const servicesData: ServiceDetail[] = [
     relatedCaseStudies: [
       {
         tag: "CASE STUDY",
-        title:
-          "AI and Deep Learning Projects: From Experiment to Application",
+        title: "AI and Deep Learning Projects: From Experiment to Application",
         link: "/case-studies/ai-and-deep-learning-projects-from-experiment-to-application",
       },
       {
@@ -539,6 +515,8 @@ export const servicesData: ServiceDetail[] = [
       },
     ],
   },
+
+  // 06. SaaS Development
   {
     id: "6",
     slug: "saas-development",
@@ -558,8 +536,7 @@ export const servicesData: ServiceDetail[] = [
     whatWeDeliver: [
       {
         title: "Multi-tenancy",
-        description:
-          "Clear separation of customer data and configuration.",
+        description: "Clear separation of customer data and configuration.",
       },
       {
         title: "Billing and plans",
@@ -573,18 +550,15 @@ export const servicesData: ServiceDetail[] = [
       },
       {
         title: "Operations tooling",
-        description:
-          "Admin screens for the team running the product.",
+        description: "Admin screens for the team running the product.",
       },
       {
         title: "APIs",
-        description:
-          "A clean API the product and integrations can build on.",
+        description: "A clean API the product and integrations can build on.",
       },
       {
         title: "Scalability",
-        description:
-          "Choices that hold as usage and customers grow.",
+        description: "Choices that hold as usage and customers grow.",
       },
     ],
     technologies: [
@@ -599,12 +573,7 @@ export const servicesData: ServiceDetail[] = [
       "Cloudflare",
       "AWS",
     ],
-    industries: [
-      "SaaS",
-      "FinTech",
-      "Startups & SMEs",
-      "Education",
-    ],
+    industries: ["SaaS", "FinTech", "Startups & SMEs", "Education"],
     faqs: [
       {
         question: "Can you start from an early idea?",
@@ -640,6 +609,8 @@ export const servicesData: ServiceDetail[] = [
       },
     ],
   },
+
+  // 07. API & Backend Engineering
   {
     id: "7",
     slug: "api-backend-development",
@@ -659,18 +630,15 @@ export const servicesData: ServiceDetail[] = [
     whatWeDeliver: [
       {
         title: "API design",
-        description:
-          "Clear, documented contracts that clients can rely on.",
+        description: "Clear, documented contracts that clients can rely on.",
       },
       {
         title: "Authentication and authorisation",
-        description:
-          "Secure access with roles and scoped permissions.",
+        description: "Secure access with roles and scoped permissions.",
       },
       {
         title: "Data modelling",
-        description:
-          "Schemas that stay correct as the product changes.",
+        description: "Schemas that stay correct as the product changes.",
       },
       {
         title: "Integrations",
@@ -679,13 +647,11 @@ export const servicesData: ServiceDetail[] = [
       },
       {
         title: "Background jobs",
-        description:
-          "Queues and scheduled work that run reliably.",
+        description: "Queues and scheduled work that run reliably.",
       },
       {
         title: "Monitoring",
-        description:
-          "Visibility into errors, performance and failures.",
+        description: "Visibility into errors, performance and failures.",
       },
     ],
     technologies: [
@@ -701,12 +667,7 @@ export const servicesData: ServiceDetail[] = [
       "DigitalOcean",
       "Sentry",
     ],
-    industries: [
-      "FinTech",
-      "E-commerce",
-      "SaaS",
-      "Logistics",
-    ],
+    industries: ["FinTech", "E-commerce", "SaaS", "Logistics"],
     faqs: [
       {
         question: "Can you document an existing API?",
@@ -743,86 +704,181 @@ export const servicesData: ServiceDetail[] = [
       },
     ],
   },
+
+  // 08. UI/UX Engineering
   {
     id: "8",
     slug: "ui-ux-design",
     number: "08",
-    title: "UI/UX Design",
+    title: "UI/UX Engineering",
     shortDesc:
       "Research-driven interface design that makes complex software clear and pleasant to use.",
     atAGlance: {
-      bestFor: "Enterprise dashboards, SaaS UX revamps, and mobile interface design",
-      engagement: "Design sprint, full design system, or usability audit",
-      typicalStack: "Figma, Design Tokens, FigJam, Prototyping",
+      bestFor: "Complex software that needs to be clear to use",
+      engagement: "Design project or embedded with a delivery team",
+      typicalStack: "Figma, React, Tailwind CSS",
     },
     overview: [
-      "We design intuitive digital products that make complex business workflows feel effortless. Our design process is rooted in user research and engineering feasibility.",
-      "Every prototype we craft uses clean design systems and auto-layout ready for direct developer handoff.",
+      "Interface design is where business requirements become something people can actually use. We start with the requirements and the users, then work out the flows before any detail is settled.",
+      "The result is a design system a development team can build from without guessing: components, states and edge cases described clearly enough to implement.",
     ],
     whatWeDeliver: [
       {
-        title: "Design Systems",
-        description: "Reusable component libraries aligned with Tailwind CSS design tokens.",
+        title: "Discovery and research",
+        description:
+          "Understanding the users and the jobs they are trying to do.",
       },
       {
-        title: "Clickable Prototypes",
-        description: "High-fidelity Figma prototypes for usability testing and stakeholder sign-off.",
+        title: "Flows and structure",
+        description:
+          "Information architecture and user flows that make sense.",
       },
       {
-        title: "User Journey Audits",
-        description: "Mapping friction points to improve task completion and retention.",
+        title: "Wireframes and prototypes",
+        description: "Cheap versions to test before committing to build.",
+      },
+      {
+        title: "Design systems",
+        description:
+          "Reusable components with consistent spacing and states.",
+      },
+      {
+        title: "Accessibility",
+        description:
+          "Interfaces that work with keyboards and screen readers.",
+      },
+      {
+        title: "Handoff",
+        description: "Specifications a development team can build from.",
       },
     ],
-    technologies: ["Figma", "Design Tokens", "Wireframing", "WCAG Accessibility"],
-    industries: ["Enterprise", "SaaS", "Healthcare"],
+    technologies: ["Figma", "React", "Next.js", "Tailwind CSS", "TypeScript"],
+    industries: ["SaaS", "E-commerce", "Professional Services", "Education"],
     faqs: [
       {
-        question: "Can your designs be directly implemented in Tailwind CSS?",
+        question: "Do you design and build?",
         answer:
-          "Yes, our design components are structured around standard Tailwind spacing, typography, and color tokens.",
+          "We can do either. Many clients have us design and then build; others take our design system to their own team.",
+      },
+      {
+        question: "How do you handle accessibility?",
+        answer:
+          "Accessibility is designed in from the start: structure, contrast, keyboard use and clear states, rather than checked at the end.",
+      },
+      {
+        question: "Can you improve an existing product's interface?",
+        answer:
+          "Yes. We can audit what you have, fix the highest-impact problems and establish a system for future work.",
       },
     ],
-    relatedCaseStudies: [],
+    relatedCaseStudies: [
+      {
+        tag: "CASE STUDY",
+        title:
+          "Portfolio and Blogging Platforms: Structure, Content and Speed",
+        link: "/case-studies/portfolio-and-blogging-platforms-structure-content-and-speed",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "Giving Instructors Control of Their Content",
+        link: "/case-studies/giving-instructors-control-of-their-content",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "Dashboards and Reporting in a Management System",
+        link: "/case-studies/dashboards-and-reporting-in-a-management-system",
+      },
+    ],
   },
+
+  // 09. Software Maintenance & Support
   {
     id: "9",
     slug: "software-maintenance",
     number: "09",
-    title: "Software Maintenance",
+    title: "Software Maintenance & Support",
     shortDesc:
       "Monitoring, fixes and continuous improvement so your software keeps performing after launch.",
     atAGlance: {
-      bestFor: "Production applications requiring continuous uptime, security updates, and SLAs",
-      engagement: "Monthly retainer or managed support SLA",
-      typicalStack: "Sentry, Datadog, GitHub Actions, AWS CloudWatch, Docker",
+      bestFor: "Software that is live and business-critical",
+      engagement: "Ongoing monthly support",
+      typicalStack: "Sentry, Docker, Cloudflare, AWS",
     },
     overview: [
-      "Launching software is only step one. We provide proactive monitoring, bug fixes, dependency upgrades, and performance tuning so your systems stay reliable 24/7.",
-      "With agreed response times and uptime SLAs, your internal team can stay focused on core business priorities.",
+      "Software is never finished. A live system needs monitoring, occasional fixes, security updates and steady improvement. Maintenance is the cheapest way to protect an investment.",
+      "We keep systems healthy with visibility into what is happening, a clear route for issues, and regular improvements rather than waiting for a crisis.",
     ],
     whatWeDeliver: [
       {
-        title: "Proactive Monitoring",
-        description: "Real-time error tracking, logging, and health alerts before users notice.",
+        title: "Monitoring and alerts",
+        description: "Knowing about problems before users report them.",
       },
       {
-        title: "Security Patches",
-        description: "Regular package audits, CVE vulnerability updates, and framework upgrades.",
+        title: "Bug fixes",
+        description: "Investigating and resolving issues when they arise.",
       },
       {
-        title: "Performance Tuning",
-        description: "Database maintenance, server scaling, and continuous code improvements.",
+        title: "Security updates",
+        description: "Keeping dependencies and servers up to date.",
+      },
+      {
+        title: "Performance",
+        description: "Finding and fixing the slow parts.",
+      },
+      {
+        title: "Backups and recovery",
+        description: "Being able to restore if something goes wrong.",
+      },
+      {
+        title: "Continuous improvement",
+        description:
+          "Small, regular improvements rather than a rescue.",
       },
     ],
-    technologies: ["Sentry", "AWS CloudWatch", "Docker", "GitHub Actions", "PostgreSQL"],
-    industries: ["All Industries", "Enterprise", "Startups"],
+    technologies: [
+      "Sentry",
+      "Docker",
+      "Cloudflare",
+      "AWS",
+      "DigitalOcean",
+      "PostgreSQL",
+      "Redis",
+      "Git",
+    ],
+    industries: ["E-commerce", "SaaS", "Healthcare", "FinTech"],
     faqs: [
       {
-        question: "What SLAs do you provide for urgent bug fixes?",
+        question: "What does a support plan cover?",
         answer:
-          "We offer tiered SLAs covering critical response times ranging from 1 to 4 hours.",
+          "Monitoring, a route for issues, fixes within agreed response times, security updates and a measured amount of improvement work each month.",
+      },
+      {
+        question: "Can you take over a system built by someone else?",
+        answer:
+          "Yes. We start with an audit to understand the system, the risks and what needs attention first.",
+      },
+      {
+        question: "Do we have to commit long term?",
+        answer:
+          "No. Support runs in clear periods, and you can stop when you are ready.",
       },
     ],
-    relatedCaseStudies: [],
+    relatedCaseStudies: [
+      {
+        tag: "CASE STUDY",
+        title: "Connecting a New Front End to a Legacy System",
+        link: "/case-studies/connecting-a-new-front-end-to-a-legacy-system",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "Dashboards and Reporting in a Management System",
+        link: "/case-studies/dashboards-and-reporting-in-a-management-system",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "Payments and Inventory: The Engine Room of E-commerce",
+        link: "/case-studies/payments-and-inventory-the-engine-room-of-e-commerce",
+      },
+    ],
   },
 ];
