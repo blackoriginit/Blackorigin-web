@@ -1,6 +1,8 @@
 import Hero from '@/components/home/Hero'
 import Testimonials from '@/components/home/Testimonials'
 import TrustedBy from '@/components/home/TrustedBy'
+import AboutUs from '@/components/home/AboutUs'
+import WorkingStack from '@/components/home/WorkingStack'
 import OurProcess from '@/components/OurProcess'
 
 /**
@@ -12,12 +14,12 @@ import OurProcess from '@/components/OurProcess'
  *   3. Services "What We Do"
  *   4. About us                → components/home/AboutUs.tsx   (branch: kashpia)
  *   5. Our process             → components/OurProcess.tsx      (branch: sunaina)
- *   6. Working stack
+ *   6. Working stack           → components/home/WorkingStack.tsx (branch: kashpia)
  *   7. Case studies
  *   8. Testimonials
  *   9. Final CTA
  *
- * Sections 3 and 6-9 are owned by other teammates. Import and place them here
+ * Sections 3 and 7-9 are owned by other teammates. Import and place them here
  * as their branches land — the file is intentionally a thin assembly layer.
  */
 export default function Home() {
@@ -27,9 +29,9 @@ export default function Home() {
       <TrustedBy />
 
       {/* 3. Services — "What We Do" */}
-      {/* 4. <AboutUs /> */}
+      <AboutUs />
       <OurProcess />
-      {/* 6. Working stack */}
+      <WorkingStack />
       {/* 7. Case studies */}
       <Testimonials />
       {/* 9. Final CTA */}
