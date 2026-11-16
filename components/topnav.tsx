@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import StartProjectButton from '@/components/startprojectmodal'
 import { usePathname } from 'next/navigation'
@@ -22,13 +23,21 @@ export default function TopNav() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[#061A40]/10 bg-[#F5F9FF]/80 backdrop-blur-md">
       <nav className="mx-auto flex h-20 max-w-none items-center justify-between px-6">
-        {/* Brand */}
+        {/* Brand: put your red "B" emblem at /public/logo.png */}
         <Link
           href="/"
-          className="shrink-0 text-2xl font-bold tracking-tight text-[#061A40]"
+          className="flex shrink-0 items-center gap-3 text-2xl font-bold tracking-tight text-[#061A40]"
           onClick={() => setMenuOpen(false)}
         >
-          Black Origin<span className="text-[#E85D04]">.</span>
+          <Image
+            src="/logo.png"
+            alt="Black Origin logo"
+            width={56}
+            height={56}
+            className="h-14 w-auto"
+            priority
+          />
+          <span>Black Origin</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -43,10 +52,8 @@ export default function TopNav() {
                 key={link.href}
                 href={link.href}
                 aria-current={isActive ? 'page' : undefined}
-                className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                  isActive
-                    ? 'bg-[#061A40] text-white'
-                    : 'text-[#061A40] hover:bg-[#061A40]/10'
+                className={`rounded-full px-4 py-2 text-sm font-medium text-[#061A40] transition-colors ${
+                  isActive ? 'bg-[#061A40]/10' : 'hover:bg-[#061A40]/5'
                 }`}
               >
                 {link.name}
@@ -75,17 +82,17 @@ export default function TopNav() {
         <div className="border-t border-[#061A40]/10 bg-[#F5F9FF] px-6 py-4 lg:hidden">
           <div className="flex flex-col gap-2">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href
+              const isActive =
+                pathname === link.href ||
+                (link.href !== '/' && pathname.startsWith(link.href + '/'))
 
               return (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className={`rounded-lg px-4 py-3 text-sm font-medium ${
-                    isActive
-                      ? 'bg-[#061A40] text-white'
-                      : 'text-[#061A40] hover:bg-[#061A40]/10'
+                  className={`rounded-lg px-4 py-3 text-sm font-medium text-[#061A40] ${
+                    isActive ? 'bg-[#061A40]/10' : 'hover:bg-[#061A40]/5'
                   }`}
                 >
                   {link.name}
