@@ -35,8 +35,10 @@ export default function CountUp({
     ).matches
 
     if (prefersReducedMotion) {
-      setCurrent(value)
-      return
+      // Paint the final number on the next frame instead of synchronously
+      // inside the effect (which would cascade an extra render).
+      const jump = requestAnimationFrame(() => setCurrent(value))
+      return () => cancelAnimationFrame(jump)
     }
 
     let frame = 0

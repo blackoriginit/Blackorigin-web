@@ -5,6 +5,7 @@ import AboutUs from '@/components/home/AboutUs'
 import WorkingStack from '@/components/home/WorkingStack'
 import OurProcess from '@/components/OurProcess'
 import Services from '@/components/Service/service'
+import ProjectCTA from '@/components/projectcta'
 
 /**
  * Home page assembly.
@@ -16,12 +17,9 @@ import Services from '@/components/Service/service'
  *   4. About us                → components/home/AboutUs.tsx       (branch: kashpia)
  *   5. Our process             → components/OurProcess.tsx         (branch: sunaina)
  *   6. Working stack           → components/home/WorkingStack.tsx  (branch: kashpia)
- *   7. Case studies
- *   8. Testimonials
- *   9. Final CTA
- *
- * Sections 7-9 are owned by other teammates. Import and place them here
- * as their branches land — the file is intentionally a thin assembly layer.
+ *   7. Case studies            → still unbuilt, see /case-studies (branch: tasfia, empty)
+ *   8. Testimonials            → components/home/Testimonials.tsx  (branch: tani)
+ *   9. Final CTA               → components/projectcta.tsx         (branch: aziza)
  */
 export default function Home() {
   return (
@@ -34,9 +32,9 @@ export default function Home() {
       <AboutUs />
       <OurProcess />
       <WorkingStack />
-      {/* 7. Case studies */}
+      {/* 7. Case studies — no home section yet; /case-studies is the index */}
       <Testimonials />
-      {/* 9. Final CTA */}
+      <ProjectCTA />
     </>
   )
 }

@@ -121,8 +121,8 @@ export default async function ArticleDetailPage({
                   <p>
                     Queues, object storage, email delivery, managed
                     databases and monitoring are areas where a
-                    provider's reliability and operations are usually
-                    better than a small team's. The dependency is real,
+                    provider&apos;s reliability and operations are usually
+                    better than a small team&apos;s. The dependency is real,
                     but the alternative is running it yourself, which
                     is also a dependency, just one you own.
                   </p>

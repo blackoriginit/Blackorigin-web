@@ -12,7 +12,10 @@ type CircularJob = Pick<Job, "postedOn" | "deadline" | "vacancies">;
 function useNow() {
   const [now, setNow] = useState<Date | null>(null);
   useEffect(() => {
-    setNow(new Date());
+    // Deferred to a frame so the server-rendered markup (no clock) stays
+    // stable and React does not schedule a cascading render mid-effect.
+    const id = requestAnimationFrame(() => setNow(new Date()));
+    return () => cancelAnimationFrame(id);
   }, []);
   return now;
 }
@@ -205,7 +208,10 @@ export function DeadlineModal({
 }) {
   const primary = useRef<HTMLAnchorElement>(null);
   const closeRef = useRef(onClose);
-  closeRef.current = onClose;
+
+  useEffect(() => {
+    closeRef.current = onClose;
+  }, [onClose]);
 
   useEffect(() => {
     if (!open) return;

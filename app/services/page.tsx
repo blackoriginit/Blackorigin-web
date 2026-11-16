@@ -134,7 +134,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column */}
           <div className="lg:col-span-7 space-y-6">
-            <span className="inline-block bg-[#E8590C] text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+            <span className="inline-block bg-[#E85D04] text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
               Our Services
             </span>
 
@@ -150,7 +150,7 @@ export default function ServicesPage() {
             <div className="pt-2">
               <Link
                 href="/contact"
-                className="inline-block bg-[#E8590C] hover:bg-[#d04f0a] transition-colors text-white font-medium text-sm md:text-base px-7 py-3 rounded-md shadow-md"
+                className="inline-block bg-[#E85D04] hover:bg-[#c94f03] transition-colors text-white font-medium text-sm md:text-base px-7 py-3 rounded-md shadow-md"
               >
                 Talk to our team
               </Link>
@@ -210,7 +210,7 @@ export default function ServicesPage() {
               <div>
                 <Link
                   href={item.link}
-                  className="text-sm font-semibold text-[#E8590C] hover:underline inline-flex items-center"
+                  className="text-sm font-semibold text-[#E85D04] hover:underline inline-flex items-center"
                 >
                   Learn More
                 </Link>
@@ -241,10 +241,10 @@ export default function ServicesPage() {
               className="flex flex-col justify-between group"
             >
               <div>
-                <span className="text-4xl font-serif font-bold text-slate-300 group-hover:text-[#E8590C]/70 transition-colors block mb-2">
+                <span className="text-4xl font-serif font-bold text-slate-300 group-hover:text-[#E85D04]/70 transition-colors block mb-2">
                   {service.number}
                 </span>
-                <h3 className="text-xl font-serif font-bold text-[#06182C] mb-3 group-hover:text-[#E8590C] transition-colors">
+                <h3 className="text-xl font-serif font-bold text-[#06182C] mb-3 group-hover:text-[#E85D04] transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-slate-600 text-sm leading-relaxed mb-6">
@@ -254,7 +254,7 @@ export default function ServicesPage() {
               <div>
                 <Link
                   href={`/services/${service.slug}`}
-                  className="text-sm font-semibold text-[#06182C] group-hover:text-[#E8590C] transition-colors inline-flex items-center"
+                  className="text-sm font-semibold text-[#06182C] group-hover:text-[#E85D04] transition-colors inline-flex items-center"
                 >
                   View service
                 </Link>
@@ -280,7 +280,7 @@ export default function ServicesPage() {
             <div className="pt-2">
               <Link
                 href="/contact"
-                className="inline-block bg-[#E8590C] hover:bg-[#d04f0a] transition-colors text-white font-medium px-6 py-3 rounded-md text-sm"
+                className="inline-block bg-[#E85D04] hover:bg-[#c94f03] transition-colors text-white font-medium px-6 py-3 rounded-md text-sm"
               >
                 Start a Project
               </Link>
@@ -294,7 +294,7 @@ export default function ServicesPage() {
          ========================================= */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-12 pb-24">
         <div className="mb-8">
-          <span className="text-xs uppercase font-bold text-[#E8590C] tracking-wider block mb-1">
+          <span className="text-xs uppercase font-bold text-[#E85D04] tracking-wider block mb-1">
             Articles
           </span>
           <h2 className="text-3xl font-serif font-bold text-[#06182C]">
@@ -333,7 +333,7 @@ export default function ServicesPage() {
                 </span>
                 <Link
                   href={art.link}
-                  className="font-semibold text-[#E8590C] hover:underline"
+                  className="font-semibold text-[#E85D04] hover:underline"
                 >
                   Read article
                 </Link>

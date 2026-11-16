@@ -66,8 +66,17 @@ function validate(values: Values): Errors {
   return errors;
 }
 
-export default function ContactForm({ simple = false }: { simple?: boolean }) {
-  const [values, setValues] = useState<Values>(initialValues);
+export default function ContactForm({
+  simple = false,
+  defaultService = "",
+}: {
+  simple?: boolean;
+  defaultService?: string;
+}) {
+  const [values, setValues] = useState<Values>({
+    ...initialValues,
+    service: defaultService,
+  });
   const [errors, setErrors] = useState<Errors>({});
 
   function handleChange(

@@ -1,10 +1,6 @@
 // components/Services.tsx
 import Image from "next/image";
 import Link from "next/link";
-import { Gelasio, Inter } from "next/font/google";
-
-const serif = Gelasio({ subsets: ["latin"], weight: ["700"] });
-const sans = Inter({ subsets: ["latin"] });
 
 type TextCell = { type: "text"; title: string; body: string };
 type ImageCell = { type: "image"; src: string; alt: string };
@@ -47,22 +43,22 @@ const cells: Cell[] = [
 
 export default function Services() {
   return (
-    <section className={`${sans.className} bg-[#F5F8FF] px-6 py-12`}>
+    <section className="bg-[#F5F9FF] px-6 py-12">
       <div className="mx-auto max-w-[1056px]">
         {/* Header */}
         <div className="flex items-end justify-between gap-4">
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#E0561B]">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#E85D04]">
               Services
             </p>
-            <h2 className={`${serif.className} mt-2 text-5xl leading-none text-[#0A1F44] md:text-[52px]`}>
+            <h2 className="mt-2 text-5xl leading-none text-[#061A40] md:text-[52px]">
               What We Do
             </h2>
           </div>
 
           <Link
             href="/services"
-            className="rounded-lg border border-[#0A1F44] px-[16px] py-[8px] text-sm font-semibold text-[#0A1F44] transition-colors hover:bg-[#0A1F44] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0A1F44]"
+            className="rounded-lg border border-[#061A40] px-[16px] py-[8px] text-sm font-semibold text-[#061A40] transition-colors hover:bg-[#061A40] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#061A40]"
           >
             View all services
           </Link>
@@ -86,10 +82,10 @@ export default function Services() {
               </div>
             ) : (
               <div key={i} className="flex flex-col justify-center px-2 py-2 md:h-[180px]">
-                <h3 className={`${serif.className} text-[22px] leading-tight text-[#0A1F44]`}>
+                <h3 className="text-[22px] leading-tight text-[#061A40]">
                   {cell.title}
                 </h3>
-                <p className="mt-3 text-[14px] leading-[20px] text-[#5B6B85]">
+                <p className="mt-3 text-[14px] leading-[20px] text-[#5A6B8C]">
                   {cell.body}
                 </p>
               </div>

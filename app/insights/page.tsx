@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import InsightsBrowser from "@/components/insights/insights-browser";
-import StartProjectModal from "@/components/insights/start-project-modal";
+import StartProjectButton from "@/components/startprojectmodal";
 import { insights } from "@/lib/insights-data";
 
 export const metadata: Metadata = {
@@ -44,12 +44,9 @@ export default function InsightsPage() {
                 </p>
               </div>
               <div className="mt-9">
-                <a
-                  href="#start-project"
-                  className="inline-block rounded-lg bg-[#E85D04] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#c94f03]"
-                >
+                <StartProjectButton className="inline-block rounded-lg bg-[#E85D04] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#c94f03]">
                   Start a Project
-                </a>
+                </StartProjectButton>
               </div>
             </div>
 
@@ -94,8 +91,6 @@ export default function InsightsPage() {
           <InsightsBrowser articles={insights} />
         </div>
       </section>
-
-      <StartProjectModal />
     </main>
   );
 }

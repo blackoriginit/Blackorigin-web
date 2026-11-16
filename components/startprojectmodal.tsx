@@ -7,6 +7,8 @@ type Props = {
   children?: React.ReactNode;
   className?: string;
   onOpen?: () => void;
+  /** Pre-selects a service in the form (used by the service detail pages) */
+  defaultService?: string;
 };
 
 // TODO: confirm with the team which email should be public
@@ -20,6 +22,7 @@ export default function StartProjectButton({
   children = "Start a Project",
   className = "",
   onOpen,
+  defaultService = "",
 }: Props) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [open, setOpen] = useState(false);
@@ -93,7 +96,7 @@ export default function StartProjectButton({
             <h2 className="mb-6 font-serif text-2xl font-bold text-[#061A40]">
               Send us a message
             </h2>
-            {open && <ContactForm />}
+            {open && <ContactForm defaultService={defaultService} />}
           </section>
         </div>
       </dialog>
