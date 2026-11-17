@@ -1,120 +1,259 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { caseStudies, findCaseStudy } from "@/lib/case-studies";
-import { servicesData } from "@/data/services";
-import ProjectCTA from "@/components/projectcta";
+import { caseStudies } from "@/data/caseStudies";
 
-interface PageProps {
+type Props = {
   params: Promise<{ slug: string }>;
-}
+};
 
 export function generateStaticParams() {
-  return caseStudies.map((study) => ({ slug: study.slug }));
+  return caseStudies.map((study) => ({
+    slug: study.slug,
+  }));
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: Props): Promise<Metadata> {
   const { slug } = await params;
-  const study = findCaseStudy(slug);
-  if (!study) return { title: "Case study not found" };
+
+  const study = caseStudies.find(
+    (item) => item.slug === slug
+  );
+
+  if (!study) {
+    return { title: "Case Study Not Found | Black Origin" };
+  }
 
   return {
-    title: study.title,
-    description: study.title,
+    title: `${study.title} | Black Origin`,
+    description: study.description,
   };
 }
 
-export default async function CaseStudyPage({ params }: PageProps) {
+export default async function CaseStudyDetailPage({
+  params,
+}: Props) {
   const { slug } = await params;
-  const study = findCaseStudy(slug);
+
+  const study = caseStudies.find(
+    (item) => item.slug === slug
+  );
 
   if (!study) {
     notFound();
   }
 
-  const related = study.services
-    .map(({ slug: serviceSlug }) => servicesData.find((s) => s.slug === serviceSlug))
-    .filter((service): service is (typeof servicesData)[number] => Boolean(service));
+  const relatedStudies = caseStudies
+    .filter(
+      (item) =>
+        item.slug !== study.slug &&
+        item.category === study.category
+    )
+    .slice(0, 3);
 
   return (
-    <main>
-      <section className="bg-[#061A40] px-6 py-14 text-white md:py-16">
-        <div className="mx-auto max-w-4xl">
-          <nav className="flex flex-wrap items-center gap-2 text-xs text-white/60">
-            <Link href="/" className="transition-colors hover:text-white">
-              Home
-            </Link>
-            <span>/</span>
-            <Link href="/case-studies" className="transition-colors hover:text-white">
-              Case Studies
-            </Link>
-          </nav>
+    <div className="case-detail-page">
 
-          <p className="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-[#E85D04]">
-            {study.tag}
-          </p>
-          <h1 className="mt-4 font-serif text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
-            {study.title}
-          </h1>
-        </div>
-      </section>
+      {/* DETAIL HERO */}
+      <section
+        className="detail-hero"
+        style={{ backgroundImage: `url("${study.image}")` }}
+      >
+        <div className="detail-hero-overlay" />
 
-      <section className="bg-[#F5F9FF] px-6 py-14 md:py-16">
-        <div className="mx-auto grid max-w-4xl gap-10 md:grid-cols-[2fr_1fr]">
-          <div>
-            <p className="text-lg leading-8 text-[#5A6B8C]">
-              This write-up is still being prepared by our team. In the meantime,
-              the service line that delivered this work is linked here, with the
-              approach, deliverables and typical stack behind it.
-            </p>
+        <div className="detail-hero-content">
 
-            <h2 className="mt-10 font-serif text-2xl font-bold text-[#061A40]">
-              What this study covers
-            </h2>
-            <p className="mt-3 leading-7 text-[#5A6B8C]">
-              The problem as the client described it, the constraints we worked
-              inside, the system we built, and the measurable outcome after launch.
-            </p>
+          <Link
+            href="/case-studies"
+            className="detail-back-link"
+          >
+            ← Back to Case Studies
+          </Link>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href={`/case-studies`}
-                className="rounded-lg border border-[#061A40]/20 px-5 py-3 text-sm font-semibold text-[#061A40] transition hover:border-[#061A40]/40"
-              >
-                All case studies
-              </Link>
-              <Link
-                href="/contact"
-                className="rounded-lg bg-[#E85D04] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#c94f03]"
-              >
-                Talk to our team
-              </Link>
-            </div>
+          <span className="detail-category">
+            {study.type}
+          </span>
+
+          <h1>{study.title}</h1>
+
+          <p>{study.description}</p>
+
+          <div className="detail-tags">
+            {study.tags.map((tag) => (
+              <span key={tag}>{tag}</span>
+            ))}
           </div>
 
-          <aside className="space-y-4">
-            <h2 className="font-serif text-lg font-bold text-[#061A40]">
-              Delivered by
-            </h2>
-            {related.map((service) => (
-              <Link
-                key={service.slug}
-                href={`/services/${service.slug}`}
-                className="block rounded-xl border border-[#061A40]/10 bg-white p-5 transition hover:border-[#E85D04]/40 hover:shadow-md"
-              >
-                <p className="font-serif text-base font-bold text-[#061A40]">
-                  {service.title}
-                </p>
-                <p className="mt-2 text-sm leading-6 text-[#5A6B8C]">
-                  {service.shortDesc}
-                </p>
-              </Link>
-            ))}
-          </aside>
         </div>
       </section>
 
-      <ProjectCTA />
-    </main>
+      {/* PROJECT OVERVIEW */}
+      <section className="detail-overview">
+        <div className="detail-overview-main">
+          <span className="case-orange-label">
+            PROJECT OVERVIEW
+          </span>
+
+          <h2>Understanding the project</h2>
+
+          <p>{study.description}</p>
+
+          <p>
+            This project-type write-up explains the challenges,
+            technical considerations and solution approach
+            involved in this kind of engagement.
+          </p>
+        </div>
+
+        <aside className="detail-info-card">
+          <div>
+            <span>PROJECT TYPE</span>
+            <strong>{study.category}</strong>
+          </div>
+
+          <div>
+            <span>CLIENT / PROJECT</span>
+            <strong>{study.client}</strong>
+          </div>
+
+          <div>
+            <span>OUR SERVICES</span>
+            <strong>{study.services.join(", ")}</strong>
+          </div>
+
+          <div>
+            <span>TECHNOLOGIES</span>
+            <strong>{study.technologies.join(", ")}</strong>
+          </div>
+        </aside>
+      </section>
+
+      {/* CHALLENGE */}
+      <section className="detail-content-section">
+        <div className="detail-number">01</div>
+
+        <div>
+          <span className="case-orange-label">
+            THE CHALLENGE
+          </span>
+
+          <h2>The problem to solve</h2>
+
+          <p>{study.challenge}</p>
+        </div>
+      </section>
+
+      {/* APPROACH */}
+      <section className="detail-content-section detail-light">
+        <div className="detail-number">02</div>
+
+        <div>
+          <span className="case-orange-label">
+            OUR APPROACH
+          </span>
+
+          <h2>How we approached it</h2>
+
+          <p>{study.approach}</p>
+        </div>
+      </section>
+
+      {/* SOLUTION */}
+      <section className="detail-content-section">
+        <div className="detail-number">03</div>
+
+        <div>
+          <span className="case-orange-label">
+            THE SOLUTION
+          </span>
+
+          <h2>Building the right solution</h2>
+
+          <p>{study.solution}</p>
+        </div>
+      </section>
+
+      {/* OUTCOME */}
+      <section className="detail-outcome">
+        <span className="case-orange-label">
+          THE OUTCOME
+        </span>
+
+        <h2>What the solution delivers</h2>
+
+        <p>{study.outcome}</p>
+      </section>
+
+      {/* RELATED CASE STUDIES */}
+      {relatedStudies.length > 0 && (
+        <section className="related-section">
+
+          <div className="case-section-heading">
+            <span className="case-orange-label">
+              EXPLORE MORE
+            </span>
+
+            <h2>Related case studies</h2>
+
+            <p>
+              Explore more projects from this category.
+            </p>
+          </div>
+
+          <div className="case-grid">
+            {relatedStudies.map((item) => (
+              <Link
+                key={item.slug}
+                href={`/case-studies/${item.slug}`}
+                className="related-card"
+              >
+                <div
+                  className="related-card-image"
+                  style={{
+                    backgroundImage: `url("${item.image}")`,
+                  }}
+                />
+
+                <div className="related-card-content">
+                  <span>{item.type}</span>
+                  <h3>{item.title}</h3>
+                  <p>Read case study →</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+        </section>
+      )}
+
+      {/* FINAL CTA */}
+      <section className="case-cta">
+        <div>
+          <span className="case-orange-label">
+            LET&apos;S WORK TOGETHER
+          </span>
+
+          <h2>Have a similar project in mind?</h2>
+
+          <p>
+            Let&apos;s discuss your idea and explore how we can
+            build the right solution for your business.
+          </p>
+
+          <div className="case-cta-buttons">
+            <Link href="/contact" className="case-btn-primary">
+              Start a Project →
+            </Link>
+
+            <Link href="/case-studies" className="case-btn-secondary">
+              Explore All Case Studies
+            </Link>
+          </div>
+        </div>
+      </section>
+
+    </div>
   );
 }

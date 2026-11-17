@@ -17,7 +17,7 @@ import ProjectCTA from '@/components/projectcta'
  *   4. About us                → components/home/AboutUs.tsx       (branch: kashpia)
  *   5. Our process             → components/OurProcess.tsx         (branch: sunaina)
  *   6. Working stack           → components/home/WorkingStack.tsx  (branch: kashpia)
- *   7. Case studies            → still unbuilt, see /case-studies (branch: tasfia, empty)
+ *   7. Case studies            → no home section yet; /case-studies (branch: tasfia)
  *   8. Testimonials            → components/home/Testimonials.tsx  (branch: tani)
  *   9. Final CTA               → components/projectcta.tsx         (branch: aziza)
  */
@@ -32,7 +32,7 @@ export default function Home() {
       <AboutUs />
       <OurProcess />
       <WorkingStack />
-      {/* 7. Case studies — no home section yet; /case-studies is the index */}
+      {/* 7. Case studies — full index at /case-studies (branch: tasfia) */}
       <Testimonials />
       <ProjectCTA />
     </>
