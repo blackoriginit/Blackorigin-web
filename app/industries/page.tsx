@@ -104,7 +104,6 @@ export default function IndustriesPage() {
           </div>
         </div>
 
-        <div className="absolute inset-x-0 bottom-0 h-12 rounded-t-[50%_3rem] bg-[#F5F9FF]" />
       </section>
 
       {/* Industries list */}

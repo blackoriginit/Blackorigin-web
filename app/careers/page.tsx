@@ -23,7 +23,7 @@ const highlights = [
 export default function CareersPage() {
   return (
     <main className="min-h-screen bg-[#f6f8fd]">
-      {/* Hero: bottom edge curves downwards */}
+      {/* Hero */}
       <section
         className="relative overflow-hidden bg-[#061a40] px-4 py-14 sm:px-6 md:py-20"
       >

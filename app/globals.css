@@ -412,6 +412,7 @@
   font-size: clamp(42px, 6vw, 68px);
   line-height: 1.1;
   font-weight: 700;
+  color: white;
   margin-bottom: 22px;
 }
 
@@ -697,6 +698,7 @@
   font-family: Georgia, serif;
   font-size: clamp(36px, 5vw, 58px);
   line-height: 1.15;
+  color: white;
   margin-bottom: 20px;
 }
 

@@ -90,40 +90,6 @@ const servicesList = [
   },
 ];
 
-// Related articles data
-const articles = [
-  {
-    title: "What a Web Application Needs Before It Goes Live",
-    excerpt:
-      "Accounts, errors, backups, monitoring and a release plan: the unglamorous checklist that separates a demo from a product.",
-    date: "2 Nov 2026",
-    readTime: "2 min read",
-    link: "/insights",
-    image:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=600&auto=format&fit=crop",
-  },
-  {
-    title: "Native or Cross-Platform: Choosing a Mobile Approach",
-    excerpt:
-      "Two approaches, different trade-offs in performance, reach and cost. A practical framework for choosing before development...",
-    date: "2 Nov 2026",
-    readTime: "2 min read",
-    link: "/insights",
-    image:
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=600&auto=format&fit=crop",
-  },
-  {
-    title: "From Data to Model: How an AI Project Actually Runs",
-    excerpt:
-      "The lifecycle of a machine learning project, from problem definition and data collection to evaluation, deployment and monitoring.",
-    date: "2 Nov 2026",
-    readTime: "2 min read",
-    link: "/insights",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop",
-  },
-];
-
 export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-[#F8FAFC]">
@@ -289,59 +255,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* =========================================
-          5. RELATED ARTICLES SECTION
-         ========================================= */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-12 pb-24">
-        <div className="mb-8">
-          <span className="text-xs uppercase font-bold text-[#E85D04] tracking-wider block mb-1">
-            Articles
-          </span>
-          <h2 className="text-3xl font-serif font-bold text-[#06182C]">
-            Related articles
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {articles.map((art, idx) => (
-            <div
-              key={idx}
-              className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 flex flex-col justify-between hover:shadow-md transition-shadow"
-            >
-              <div>
-                <div className="relative h-48 w-full">
-                  <Image
-                    src={art.image}
-                    alt={art.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6 space-y-3">
-                  <h3 className="font-serif font-bold text-lg text-[#06182C] leading-snug">
-                    {art.title}
-                  </h3>
-                  <p className="text-slate-600 text-xs leading-relaxed line-clamp-3">
-                    {art.excerpt}
-                  </p>
-                </div>
-              </div>
-
-              <div className="px-6 pb-6 pt-3 flex items-center justify-between text-xs text-slate-400 border-t border-slate-100">
-                <span>
-                  {art.date} &bull; {art.readTime}
-                </span>
-                <Link
-                  href={art.link}
-                  className="font-semibold text-[#E85D04] hover:underline"
-                >
-                  Read article
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
     </div>
   );
 }
