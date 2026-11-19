@@ -233,7 +233,7 @@ export default function ServicesPage() {
             <div className="pt-2">
               <Link
                 href="/contact"
-                className="inline-block bg-[#E85D04] hover:bg-[#c94f03] transition-colors text-white font-medium px-6 py-3 rounded-md text-sm"
+                className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-7 font-semibold text-white"
               >
                 Start a Project
               </Link>

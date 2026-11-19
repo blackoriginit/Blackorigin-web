@@ -58,7 +58,7 @@ export default function Services() {
 
           <Link
             href="/services"
-            className="rounded-lg border border-[#061A40] px-[16px] py-[8px] text-sm font-semibold text-[#061A40] transition-colors hover:bg-[#061A40] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#061A40]"
+            className="inline-flex h-9 shrink-0 items-center justify-center rounded-md border border-secondary px-4 text-sm font-medium text-secondary"
           >
             View all services
           </Link>

@@ -579,7 +579,7 @@ export default function ApplicationForm({ job }: { job: Job }) {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="rounded-full bg-[#e85d04] px-7 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#ff7a1f] hover:shadow-[0_10px_30px_rgba(232,93,4,0.4)] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
+                  className="w-full h-11 rounded-lg bg-primary text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 disabled:opacity-60"
                 >
                   {step === 1
                     ? "Continue"

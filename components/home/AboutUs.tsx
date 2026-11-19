@@ -31,9 +31,9 @@ export default function AboutUs() {
 
             <a
               href="/about-us"
-              className="mt-6 inline-flex items-center justify-center rounded-lg bg-[#E85D04] px-5 py-2.5 text-[13px] font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#061A40] hover:shadow-lg"
+              className="mt-7 inline-flex items-center gap-4 rounded-md bg-[#E85D04] px-6 py-3.5 text-[13px] font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#061A40] hover:shadow-lg"
             >
-              Learn More About Us
+              Learn More About Us <span aria-hidden="true">→</span>
             </a>
           </div>
 

@@ -243,11 +243,11 @@ export default async function CaseStudyDetailPage({
           </p>
 
           <div className="case-cta-buttons">
-            <Link href="/contact" className="case-btn-primary">
+            <Link href="/contact" className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-7 font-semibold text-white">
               Start a Project →
             </Link>
 
-            <Link href="/case-studies" className="case-btn-secondary">
+            <Link href="/case-studies" className="inline-flex h-12 items-center justify-center rounded-md border border-[#3a4a6b] px-7 font-semibold text-white">
               Explore All Case Studies
             </Link>
           </div>

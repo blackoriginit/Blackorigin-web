@@ -170,9 +170,9 @@ export default function ContactForm({
 
       <button
         type="submit"
-        className="rounded-xl bg-[#E85D04] px-8 py-4 font-semibold text-white transition hover:opacity-90"
+        className="w-full h-11 rounded-lg bg-primary text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 disabled:opacity-60"
       >
-        Send message
+        Send
       </button>
     </form>
   );

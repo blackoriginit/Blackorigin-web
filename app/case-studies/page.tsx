@@ -76,11 +76,11 @@ export default function CaseStudiesPage() {
           </p>
 
           <div className="case-cta-buttons">
-            <Link href="/contact" className="case-btn-primary">
+            <Link href="/contact" className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-7 font-semibold text-white">
               Start a Project →
             </Link>
 
-            <Link href="/services" className="case-btn-secondary">
+            <Link href="/services" className="inline-flex h-12 items-center justify-center rounded-md border border-[#3a4a6b] px-7 font-semibold text-white">
               Explore Services →
             </Link>
           </div>

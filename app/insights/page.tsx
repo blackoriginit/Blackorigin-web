@@ -44,7 +44,7 @@ export default function InsightsPage() {
                 </p>
               </div>
               <div className="mt-9">
-                <StartProjectButton className="inline-block rounded-lg bg-[#E85D04] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#c94f03]">
+                <StartProjectButton className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-7 font-semibold text-white">
                   Start a Project
                 </StartProjectButton>
               </div>

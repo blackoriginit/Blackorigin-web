@@ -66,10 +66,10 @@ const industries = [
 ]
 
 const primaryButton =
-  'inline-flex items-center justify-center rounded-md bg-[#E85D04] px-5 py-2.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-[#c94f03]'
+  'inline-flex h-12 items-center justify-center rounded-md bg-primary px-7 font-semibold text-white'
 
 const secondaryButton =
-  'inline-flex items-center justify-center rounded-md border-2 border-[#E85D04] bg-transparent px-5 py-2.5 text-base font-semibold text-[#E85D04] transition-colors hover:bg-[#E85D04] hover:text-white'
+  'inline-flex h-12 items-center justify-center rounded-md border border-[#3a4a6b] px-7 font-semibold text-white'
 
 export default function IndustriesPage() {
   return (

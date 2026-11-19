@@ -29,6 +29,7 @@
   --color-on-primary: var(--on-primary);
 
   --color-primary: var(--primary);
+  --color-primary-foreground: #ffffff;
   --color-accent: var(--accent);
 
   --color-text: var(--text);
@@ -563,10 +564,12 @@
 }
 
 .case-card-link-text {
-  display: inline-block;
-  color: #ff650b;
-  font-size: 12px;
-  font-weight: 700;
+  display: block;
+  margin-top: auto;
+  padding-top: 24px;
+  color: #e85d04;
+  font-size: 14px;
+  font-weight: 600;
   transition: color 0.2s ease;
 }
 

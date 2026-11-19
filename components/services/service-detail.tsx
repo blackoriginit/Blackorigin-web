@@ -54,13 +54,13 @@ export default function ServiceDetail({ service }: { service: Service }) {
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <StartProjectButton
                 defaultService={service.title}
-                className="bg-[#E85D04] hover:bg-[#c94f03] transition-colors text-white text-sm font-medium px-6 py-3 rounded-md shadow-sm cursor-pointer"
+                className="inline-flex cursor-pointer items-center gap-3 rounded-md bg-[#E85D04] px-6 py-3 text-[13px] font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#061A40] hover:shadow-lg"
               >
                 Start a Project
               </StartProjectButton>
               <Link
                 href="/contact"
-                className="bg-white border border-slate-300 text-[#06182C] hover:bg-slate-50 transition-colors text-sm font-medium px-6 py-3 rounded-md inline-block"
+                className="inline-flex h-12 items-center justify-center rounded-md border border-[#d9e0ea] bg-white px-6 font-semibold text-[#071d49]"
               >
                 Contact Black Origin
               </Link>
@@ -277,13 +277,13 @@ export default function ServiceDetail({ service }: { service: Service }) {
           <div className="flex justify-center gap-4 pt-4">
             <StartProjectButton
               defaultService={service.title}
-              className="bg-[#E85D04] hover:bg-[#c94f03] transition-colors text-white font-medium text-sm px-6 py-3 rounded-md cursor-pointer"
+              className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-7 font-semibold text-white"
             >
               Start a Project
             </StartProjectButton>
             <Link
               href="/contact"
-              className="bg-transparent border border-white/30 hover:bg-white/10 transition-colors text-white font-medium text-sm px-6 py-3 rounded-md inline-block"
+              className="inline-flex h-12 items-center justify-center rounded-md border border-[#3a4a6b] px-7 font-semibold text-white"
             >
               Contact Black Origin
             </Link>

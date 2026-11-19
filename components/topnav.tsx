@@ -16,17 +16,23 @@ const navLinks = [
   { name: 'Careers', href: '/careers' },
 ]
 
+const navCtaClass =
+  'inline-flex items-center justify-center transition bg-primary text-text border border-text rounded-full px-5 py-2.5 text-base font-bold shadow-sm hover:bg-text hover:text-primary hover:bg-[#061A40] hover:text-white hover:transition-colors hover:duration-1000 hover:ease-in-out'
+
 export default function TopNav() {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
 
+  const isActive = (href: string) =>
+    pathname === href ||
+    (href !== '/' && pathname.startsWith(href + '/'))
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[#061A40]/10 bg-[#F5F9FF]/80 backdrop-blur-md">
-      <nav className="mx-auto flex h-20 max-w-none items-center justify-between px-6">
-        {/* Brand: put your red "B" emblem at /public/logo.png */}
+    <header className="relative bg-background/80 backdrop-blur-md text-text">
+      <div className="mx-auto max-w-none px-6 flex w-full items-center gap-4 h-20">
         <Link
           href="/"
-          className="flex shrink-0 items-center gap-3 text-2xl font-bold tracking-tight text-[#061A40]"
+          className="flex shrink-0 items-center gap-3 font-bold tracking-tight text-2xl "
           onClick={() => setMenuOpen(false)}
         >
           <Image
@@ -41,68 +47,59 @@ export default function TopNav() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden items-center gap-1 lg:flex">
-          {navLinks.map((link) => {
-            const isActive =
-              pathname === link.href ||
-              (link.href !== '/' && pathname.startsWith(link.href + '/'))
+        <nav className="hidden items-center gap-4 md:flex md:flex-1 md:justify-center">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              aria-current={isActive(link.href) ? 'page' : undefined}
+              className={`text-sm font-medium transition rounded-full px-3 py-1.5 ${
+                isActive(link.href)
+                  ? 'bg-text/10 font-semibold'
+                  : 'opacity-80 hover:opacity-100'
+              }`}
+            >
+              {link.name}
+            </Link>
+          ))}
+        </nav>
 
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                aria-current={isActive ? 'page' : undefined}
-                className={`rounded-full px-4 py-2 text-sm font-medium text-[#061A40] transition-colors ${
-                  isActive ? 'bg-[#061A40]/10' : 'hover:bg-[#061A40]/5'
-                }`}
-              >
-                {link.name}
-              </Link>
-            )
-          })}
-        </div>
+        <StartProjectButton className={`${navCtaClass} hidden md:inline-flex`}>
+          Start a Project
+        </StartProjectButton>
 
-        {/* CTA */}
-        <StartProjectButton className="hidden rounded-full bg-[#E85D04] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#c94f03] lg:inline-flex">Start a Project <span className="ml-2">→</span></StartProjectButton>
-
-        {/* Mobile Menu Button */}
+        {/* Mobile menu */}
         <button
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
-          className="flex h-10 w-10 items-center justify-center rounded-lg text-2xl text-[#061A40] hover:bg-[#061A40]/10 lg:hidden"
+          className="flex h-9 w-9 cursor-pointer select-none list-none items-center justify-center rounded-full hover:bg-text/10 [&::-webkit-details-marker]:hidden md:hidden"
         >
-          {menuOpen ? '×' : '☰'}
+          <span className="text-2xl leading-none">{menuOpen ? '×' : '☰'}</span>
         </button>
-      </nav>
+      </div>
 
-      {/* Mobile Navigation */}
       {menuOpen && (
-        <div className="border-t border-[#061A40]/10 bg-[#F5F9FF] px-6 py-4 lg:hidden">
-          <div className="flex flex-col gap-2">
-            {navLinks.map((link) => {
-              const isActive =
-                pathname === link.href ||
-                (link.href !== '/' && pathname.startsWith(link.href + '/'))
+        <div className="absolute inset-x-0 top-full z-50 flex max-h-[80vh] flex-col gap-1 overflow-y-auto border-b px-6 py-4 shadow-lg bg-background text-text border-text/10 md:hidden">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setMenuOpen(false)}
+              className={`text-base font-medium transition py-2 ${
+                isActive(link.href)
+                  ? 'rounded-lg bg-text/10 px-3 font-semibold'
+                  : 'opacity-80 hover:opacity-100'
+              }`}
+            >
+              {link.name}
+            </Link>
+          ))}
 
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className={`rounded-lg px-4 py-3 text-sm font-medium text-[#061A40] ${
-                    isActive ? 'bg-[#061A40]/10' : 'hover:bg-[#061A40]/5'
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              )
-            })}
-
-            <StartProjectButton className="mt-2 rounded-full bg-[#E85D04] px-5 py-3 text-center font-semibold text-white hover:bg-[#c94f03]">Start a Project →
-            </StartProjectButton>
-          </div>
+          <StartProjectButton className={`${navCtaClass} mt-2 w-full`}>
+            Start a Project
+          </StartProjectButton>
         </div>
       )}
     </header>
