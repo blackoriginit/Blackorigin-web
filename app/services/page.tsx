@@ -96,7 +96,7 @@ export default function ServicesPage() {
       {/* =========================================
           1. HERO SECTION (Dark Navy)
          ========================================= */}
-      <section className="relative bg-[#06182C] text-white pt-16 pb-28 md:pb-36 px-6 md:px-12 lg:px-20 overflow-hidden">
+      <section className="relative bg-[#061A40] text-white pt-16 pb-16 md:pb-24 px-6 md:px-12 lg:px-20 overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column */}
           <div className="lg:col-span-7 space-y-6">
@@ -137,26 +137,13 @@ export default function ServicesPage() {
           </div>
         </div>
 
-        {/* Curved Wave Divider */}
-        <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none pointer-events-none">
-          <svg
-            className="relative block w-full h-8 md:h-16 text-[#F8FAFC]"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0,0 C300,90 900,90 1200,0 L1200,120 L0,120 Z"
-              fill="currentColor"
-            />
-          </svg>
-        </div>
       </section>
 
       {/* =========================================
           2. COLLABORATION MODELS
          ========================================= */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-16">
-        <h2 className="text-3xl font-serif font-bold text-[#06182C] mb-10">
+        <h2 className="text-3xl font-serif font-bold text-[#061A40] mb-10">
           Collaboration Models
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -166,7 +153,7 @@ export default function ServicesPage() {
               className="border-t border-slate-300 pt-6 flex flex-col justify-between"
             >
               <div>
-                <h3 className="text-xl font-serif font-bold text-[#06182C] mb-3">
+                <h3 className="text-xl font-serif font-bold text-[#061A40] mb-3">
                   {item.title}
                 </h3>
                 <p className="text-slate-600 text-sm leading-relaxed mb-6">
@@ -191,7 +178,7 @@ export default function ServicesPage() {
          ========================================= */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-12">
         <div className="mb-12">
-          <h2 className="text-3xl font-serif font-bold text-[#06182C] mb-3">
+          <h2 className="text-3xl font-serif font-bold text-[#061A40] mb-3">
             Our Services
           </h2>
           <p className="text-slate-600 text-base max-w-2xl">
@@ -210,7 +197,7 @@ export default function ServicesPage() {
                 <span className="text-4xl font-serif font-bold text-slate-300 group-hover:text-[#E85D04]/70 transition-colors block mb-2">
                   {service.number}
                 </span>
-                <h3 className="text-xl font-serif font-bold text-[#06182C] mb-3 group-hover:text-[#E85D04] transition-colors">
+                <h3 className="text-xl font-serif font-bold text-[#061A40] mb-3 group-hover:text-[#E85D04] transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-slate-600 text-sm leading-relaxed mb-6">
@@ -220,7 +207,7 @@ export default function ServicesPage() {
               <div>
                 <Link
                   href={`/services/${service.slug}`}
-                  className="text-sm font-semibold text-[#06182C] group-hover:text-[#E85D04] transition-colors inline-flex items-center"
+                  className="text-sm font-semibold text-[#061A40] group-hover:text-[#E85D04] transition-colors inline-flex items-center"
                 >
                   View service
                 </Link>
@@ -234,9 +221,9 @@ export default function ServicesPage() {
           4. CTA BANNER (Not sure where to start?)
          ========================================= */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-12">
-        <div className="bg-[#06182C] text-white rounded-2xl p-8 md:p-14 shadow-lg">
+        <div className="bg-[#061A40] text-white rounded-2xl p-8 md:p-14 shadow-lg">
           <div className="max-w-2xl space-y-4">
-            <h2 className="text-2xl md:text-3xl font-serif font-bold">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-white">
               Not sure where to start?
             </h2>
             <p className="text-slate-300 text-sm md:text-base leading-relaxed">
