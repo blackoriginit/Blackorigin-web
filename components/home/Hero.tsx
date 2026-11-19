@@ -1,7 +1,5 @@
 import Link from 'next/link'
 
-import CountUp from '@/components/CountUp'
-
 const PHOTO_A = '/images/hero-team-1.webp'
 const PHOTO_B = '/images/hero-team-2.webp'
 
@@ -51,11 +49,10 @@ function Stat({
   return (
     <div className={`flex flex-col justify-end ${className}`}>
       <span className={labelClassName}>{label}</span>
-      <CountUp
-        value={value}
-        suffix={suffix}
-        className={`inline-block ${valueClassName}`}
-      />
+      <span className={`inline-block ${valueClassName}`}>
+        {value}
+        {suffix}
+      </span>
     </div>
   )
 }

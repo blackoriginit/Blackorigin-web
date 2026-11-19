@@ -43,7 +43,6 @@ export default function BottomNav() {
                 height={264}
                 className="h-8 w-auto"
               />
-              <span>Black Origin IT</span>
             </Link>
 
             <p className="mt-4 max-w-xs text-sm leading-7 text-white/65">

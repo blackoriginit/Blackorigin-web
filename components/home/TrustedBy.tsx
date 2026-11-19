@@ -19,6 +19,8 @@ const clients: { name: string; src?: string }[] = [
   { name: 'Vantage' },
   { name: 'Orbit Labs' },
   { name: 'Meridian' },
+  { name: 'Carnival City' },
+  { name: 'Kings Decorators Marchent Ltd' },
 ]
 
 export default function TrustedBy() {
@@ -35,7 +37,7 @@ export default function TrustedBy() {
           Trusted by teams at
         </p>
 
-        <ul className="mt-8 grid grid-cols-3 items-center justify-items-center gap-x-6 gap-y-8 lg:grid-cols-6">
+        <ul className="mt-8 grid grid-cols-3 items-center justify-items-center gap-x-6 gap-y-8 md:grid-cols-4">
           {clients.map((client) => (
             <li
               key={client.name}
