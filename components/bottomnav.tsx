@@ -37,11 +37,11 @@ export default function BottomNav() {
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 text-xl font-bold tracking-tight">
               <Image
-                src="/logo.png"
-                alt="Black Origin logo"
-                width={40}
-                height={40}
-                className="h-10 w-auto"
+                src="/logo-white.png"
+                alt="Black Origin"
+                width={1191}
+                height={264}
+                className="h-8 w-auto"
               />
               <span>Black Origin IT</span>
             </Link>
