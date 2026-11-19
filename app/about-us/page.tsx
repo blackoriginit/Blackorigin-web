@@ -275,18 +275,18 @@ export default function AboutUsPage() {
       {/* ================= HERO ================= */}
 
       <section className="relative overflow-hidden bg-secondary">
-        <div className="relative mx-auto min-h-[300px] max-w-[1100px] overflow-hidden px-6 pb-16 pt-12 md:min-h-[380px] md:px-10 md:pb-20 md:pt-16">
-          <Image
-            src="/images/about us (hero).jpg"
-            alt="Black Origin workspace"
-            fill
-            priority
-            className="object-cover opacity-75"
-            sizes="100vw"
-          />
+        <Image
+          src="/images/about us (hero).jpg"
+          alt="Black Origin workspace"
+          fill
+          priority
+          className="object-cover opacity-75"
+          sizes="100vw"
+        />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-secondary/35" />
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-secondary/35" />
 
+        <div className="relative mx-auto min-h-[300px] max-w-[1100px] px-6 pb-16 pt-12 md:min-h-[380px] md:px-10 md:pb-20 md:pt-16">
           <div className="relative max-w-xl">
             <p className="mb-4 text-[10px] font-bold uppercase tracking-[1.7px] text-primary">
               About Us
