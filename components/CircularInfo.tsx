@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
@@ -147,7 +147,7 @@ export function CircularPanel({ job }: { job: CircularJob }) {
           <div className="flex items-center gap-4 border-b border-white/10 px-5 py-5 sm:flex-col sm:items-start sm:justify-center sm:gap-1 sm:border-b-0 sm:border-r sm:px-6">
             <p
               className={
-                "font-serif text-5xl font-bold leading-none " +
+                "text-[32px] font-medium leading-[1.25] tracking-[-0.5px] sm:text-[40px] lg:text-[48px] " +
                 (closed ? "text-slate-400" : "text-[#ff8a3d]")
               }
             >
@@ -261,7 +261,7 @@ export function DeadlineModal({
           </p>
           <h2
             id="deadline-title"
-            className="mt-1 font-serif text-2xl font-bold text-[#061a40]"
+            className="mt-1 text-xl font-semibold text-[#061a40]"
           >
             Application deadline has passed
           </h2>

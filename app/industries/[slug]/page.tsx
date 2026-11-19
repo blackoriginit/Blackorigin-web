@@ -455,7 +455,7 @@ export default async function IndustryPage({
               {industry.name}
             </div>
 
-            <h1 className="font-serif text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">
+            <h1 className="text-[32px] font-medium leading-[1.25] tracking-[-0.5px] text-white sm:text-[40px] lg:text-[48px]">
               {industry.heroSubtitle}
             </h1>
 
@@ -487,7 +487,7 @@ export default async function IndustryPage({
                 <div className="mb-4 inline-flex items-center rounded-full bg-[#E85D04]/10 px-4 py-1.5 text-sm font-semibold text-[#E85D04]">
                   Overview
                 </div>
-                <h2 className="font-serif text-4xl font-bold tracking-tight text-[#061A40] md:text-5xl">
+                <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-[#061A40]">
                   {industry.overviewTitle}
                 </h2>
                 <div className="mt-6 space-y-4">
@@ -558,7 +558,7 @@ export default async function IndustryPage({
               <div className="mb-4 inline-flex items-center rounded-full bg-[#E85D04]/10 px-4 py-1.5 text-sm font-semibold text-[#E85D04]">
                 Overview
               </div>
-              <h2 className="font-serif text-4xl font-bold tracking-tight text-[#061A40] md:text-5xl">
+              <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-[#061A40]">
                 {industry.overviewTitle}
               </h2>
               <div className="mx-auto mt-6 max-w-3xl space-y-4">
@@ -602,7 +602,7 @@ export default async function IndustryPage({
                 <div className="mb-4 inline-flex items-center rounded-full bg-[#E85D04]/10 px-4 py-1.5 text-sm font-semibold text-[#E85D04]">
                   Overview
                 </div>
-                <h2 className="font-serif text-4xl font-bold tracking-tight text-[#061A40] md:text-5xl">
+                <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-[#061A40]">
                   {industry.overviewTitle}
                 </h2>
                 <div className="mt-6 space-y-4">
@@ -659,7 +659,7 @@ export default async function IndustryPage({
               <div className="mb-4 inline-flex items-center rounded-full bg-[#E85D04]/10 px-4 py-1.5 text-sm font-semibold text-[#E85D04]">
                 Overview
               </div>
-              <h2 className="font-serif text-4xl font-bold tracking-tight text-[#061A40] md:text-5xl">
+              <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-[#061A40]">
                 {industry.overviewTitle}
               </h2>
               <div className="mt-6 space-y-4">
@@ -678,7 +678,7 @@ export default async function IndustryPage({
       <section className="pb-20">
         <div className="mx-auto w-full max-w-7xl px-6">
           <div className="mb-12 text-center">
-            <h2 className="font-serif text-3xl font-bold tracking-tight text-[#061A40] md:text-4xl">
+            <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-[#061A40]">
               What We Deliver
             </h2>
             <p className="mt-4 text-lg text-[#5A6B8C]">
@@ -777,7 +777,7 @@ export default async function IndustryPage({
               <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#E85D04]/20 blur-3xl" />
               <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-[#E85D04]/10 blur-3xl" />
               <div className="relative">
-                <h2 className="font-serif text-3xl font-bold md:text-4xl">
+                <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
                   {industry.ctaTitle}
                 </h2>
                 <p className="mt-4 text-lg text-white/80">
@@ -798,7 +798,7 @@ export default async function IndustryPage({
             </div>
           ) : isStartups ? (
             <div className="rounded-2xl border-2 border-[#E85D04] bg-white p-12 text-center shadow-lg">
-              <h2 className="font-serif text-3xl font-bold text-[#061A40] md:text-4xl">
+              <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-[#061A40]">
                 {industry.ctaTitle}
               </h2>
               <p className="mt-4 text-lg text-[#5A6B8C]">
@@ -815,7 +815,7 @@ export default async function IndustryPage({
             </div>
           ) : (
             <div className="rounded-xl bg-[#061A40] p-10 text-center text-white">
-              <h2 className="font-serif text-2xl font-bold md:text-3xl">
+              <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
                 {industry.ctaTitle}
               </h2>
               <p className="mt-3 text-white/80">{industry.ctaSubtitle}</p>

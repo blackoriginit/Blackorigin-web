@@ -16,12 +16,12 @@ export default function AboutUs() {
               </p>
             </div>
 
-            <h2 className="max-w-[520px] text-[30px] font-bold leading-[1.12] tracking-tight text-[#061A40] sm:text-[36px] lg:text-[40px]">
+            <h2 className="max-w-[520px] text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-[#061A40]">
               <span className="block">Turning ideas into</span>
               <span className="block">real solutions.</span>
             </h2>
 
-            <p className="mt-5 max-w-[500px] text-[13px] leading-[1.85] text-[#5A6B8C] md:text-[14px]">
+            <p className="mt-5 max-w-[500px] text-sm leading-[1.85] text-[#5A6B8C]">
               Black Origin IT is a software engineering firm that helps
               organizations grow with custom digital products, AI systems
               and automation. We combine engineering discipline, practical
@@ -60,30 +60,30 @@ export default function AboutUs() {
         <div className="mt-12 grid gap-7 border-t border-[#DCE6F3] pt-7 sm:grid-cols-3">
 
           <div>
-            <h3 className="text-[16px] font-semibold text-[#061A40]">
+            <h3 className="text-xl font-semibold text-[#061A40]">
               Engineering-first
             </h3>
-            <p className="mt-2 text-[13px] leading-6 text-[#5A6B8C]">
+            <p className="mt-2 text-sm leading-6 text-[#5A6B8C]">
               Senior engineers lead every project - the people you talk to
               are the people building your software.
             </p>
           </div>
 
           <div>
-            <h3 className="text-[16px] font-semibold text-[#061A40]">
+            <h3 className="text-xl font-semibold text-[#061A40]">
               AI where it earns its place
             </h3>
-            <p className="mt-2 text-[13px] leading-6 text-[#5A6B8C]">
+            <p className="mt-2 text-sm leading-6 text-[#5A6B8C]">
               We use AI and automation where they measurably improve a
               workflow, never as a buzzword.
             </p>
           </div>
 
           <div>
-            <h3 className="text-[16px] font-semibold text-[#061A40]">
+            <h3 className="text-xl font-semibold text-[#061A40]">
               Built for the long term
             </h3>
-            <p className="mt-2 text-[13px] leading-6 text-[#5A6B8C]">
+            <p className="mt-2 text-sm leading-6 text-[#5A6B8C]">
               Clean architecture, documentation and support so the
               software keeps serving you after launch.
             </p>

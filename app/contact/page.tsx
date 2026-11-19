@@ -42,7 +42,7 @@ export default function ContactPage() {
             }}
           />
           <div className="relative mx-auto max-w-6xl">
-            <h1 className="font-serif text-5xl font-bold sm:text-7xl">Contact Us</h1>
+            <h1 className="text-[32px] font-medium leading-[1.25] tracking-[-0.5px] sm:text-[40px] lg:text-[48px]">Contact Us</h1>
             <div className="bo-bar mt-6 h-1 w-24 bg-[#E85D04]" />
             <p className="mt-6 max-w-xl text-lg text-white/75">
               Tell us what you are trying to build. We will reply with a clear

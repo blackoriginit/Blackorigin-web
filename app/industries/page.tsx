@@ -91,7 +91,7 @@ export default function IndustriesPage() {
 
         <div className="relative mx-auto w-full max-w-6xl px-6 py-20 pb-28 md:py-28 md:pb-36">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="font-serif text-5xl font-bold tracking-tight text-white md:text-6xl">
+            <h1 className="text-[32px] font-medium leading-[1.25] tracking-[-0.5px] text-white sm:text-[40px] lg:text-[48px]">
               Industries
             </h1>
 
@@ -111,7 +111,7 @@ export default function IndustriesPage() {
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="grid gap-12 lg:grid-cols-[300px_minmax(0,1fr)] lg:gap-16">
             <div className="lg:sticky lg:top-28 lg:self-start">
-              <h2 className="font-serif text-3xl font-bold tracking-tight text-[#061A40]">
+              <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-[#061A40]">
                 Industries we serve
               </h2>
 
@@ -135,7 +135,7 @@ export default function IndustriesPage() {
                   href={`/industries/${industry.slug}`}
                   className="group block border-b border-[#061A40]/15 py-7 transition-all duration-300 hover:bg-[#061A40]/[0.02]"
                 >
-                  <h3 className="inline-block font-serif text-2xl font-semibold tracking-tight text-[#061A40] transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#E85D04]">
+                  <h3 className="inline-block text-xl font-semibold text-[#061A40] transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#E85D04]">
                     {industry.name}
                     <span className="ml-2 inline-block text-[#E85D04] opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1">
                       →
@@ -152,7 +152,7 @@ export default function IndustriesPage() {
 
           {/* CTA */}
           <div className="mt-20 rounded-xl bg-[#061A40] p-10 text-center text-white">
-            <h2 className="font-serif text-2xl font-bold">
+            <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
               Have a project in mind?
             </h2>
 

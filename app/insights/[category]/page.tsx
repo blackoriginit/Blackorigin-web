@@ -41,7 +41,7 @@ export default async function CategoryPage({ params }: Props) {
         >
           ← All insights
         </Link>
-        <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-slate-950 md:text-5xl">
+        <h1 className="mt-6 text-[32px] font-medium leading-[1.25] tracking-[-0.5px] sm:text-[40px] lg:text-[48px] text-slate-950">
           {categoryLabels[category]}
         </h1>
         <p className="mb-12 mt-3 text-slate-500">

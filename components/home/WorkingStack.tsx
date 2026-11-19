@@ -257,14 +257,11 @@ export default function WorkingStack() {
             </p>
           </div>
 
-          <h2
-            className="text-4xl font-semibold leading-tight tracking-tight text-[#061A40] md:text-5xl"
-            style={{ fontFamily: "Georgia, serif" }}
-          >
+          <h2 className="font-heading text-4xl font-semibold leading-tight tracking-tight text-[#061A40] md:text-5xl">
             Modern Tools. Greater Possibilities.
           </h2>
 
-          <p className="mt-2 max-w-none text-[12px] leading-5 text-[#5A6B8C] md:whitespace-nowrap md:text-[13px]">
+          <p className="mt-2 max-w-none text-sm leading-5 text-[#5A6B8C]">
             We use the latest technologies and industry-leading tools to build
             scalable, secure and high-performing digital solutions.
           </p>
@@ -296,11 +293,11 @@ export default function WorkingStack() {
                   <Icon />
                 </div>
 
-                <h3 className="text-[16px] font-bold text-[#061A40]">
+                <h3 className="text-xl font-semibold text-[#061A40]">
                   {category.title}
                 </h3>
 
-                <p className="mt-1.5 min-h-[60px] text-[12px] leading-5 text-[#5A6B8C]">
+                <p className="mt-1.5 min-h-[60px] text-sm leading-5 text-[#5A6B8C]">
                   {category.description}
                 </p>
 

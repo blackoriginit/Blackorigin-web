@@ -48,10 +48,10 @@ export default function Services() {
         {/* Header */}
         <div className="flex items-end justify-between gap-4">
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#E85D04]">
+            <p className="text-[11px] font-bold uppercase tracking-[2px] text-[#E85D04]">
               Services
             </p>
-            <h2 className="mt-2 text-5xl leading-none text-[#061A40] md:text-[52px]">
+            <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-[#061A40]">
               What We Do
             </h2>
           </div>
@@ -82,10 +82,10 @@ export default function Services() {
               </div>
             ) : (
               <div key={i} className="flex flex-col justify-center px-2 py-2 md:h-[180px]">
-                <h3 className="text-[22px] leading-tight text-[#061A40]">
+                <h3 className="text-xl font-semibold text-[#061A40]">
                   {cell.title}
                 </h3>
-                <p className="mt-3 text-[14px] leading-[20px] text-[#5A6B8C]">
+                <p className="mt-3 text-sm leading-6 text-[#5A6B8C]">
                   {cell.body}
                 </p>
               </div>

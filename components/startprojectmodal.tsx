@@ -71,7 +71,7 @@ export default function StartProjectButton({
           <section className="flex flex-col justify-between gap-10 bg-[#061A40] p-8 text-white md:p-10">
             <div>
               <p className="text-lg font-bold">Black Origin IT</p>
-              <h2 className="mt-8 font-serif text-3xl font-bold leading-tight md:text-4xl">
+              <h2 className="mt-8 text-[32px] font-medium leading-[1.25] tracking-[-0.5px] md:text-[40px]">
                 Talk to an engineer
               </h2>
               <p className="mt-4 text-white/75">
@@ -93,7 +93,7 @@ export default function StartProjectButton({
           </section>
 
           <section className="p-8 md:overflow-y-auto md:p-10">
-            <h2 className="mb-6 font-serif text-2xl font-bold text-[#061A40]">
+            <h2 className="mb-6 text-xl font-semibold text-[#061A40]">
               Send us a message
             </h2>
             {open && <ContactForm defaultService={defaultService} />}

@@ -1,4 +1,4 @@
-﻿import { CircularPanel } from "../../../components/CircularInfo";
+import { CircularPanel } from "../../../components/CircularInfo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -36,7 +36,7 @@ function SectionTitle({ eyebrow, title }: { eyebrow: string; title: string }) {
       <p className="text-[10px] font-bold tracking-[0.2em] text-[#e85d04]">
         {eyebrow}
       </p>
-      <h2 className="mt-1 font-serif text-xl font-bold text-[#061a40] sm:text-2xl">
+      <h2 className="mt-1 text-xl font-semibold text-[#061a40]">
         {title}
       </h2>
     </div>
@@ -98,7 +98,7 @@ export default async function JobPage({ params }: Props) {
             <span className="font-semibold text-[#e85d04]">{job.department}</span>
           </nav>
 
-          <h1 className="mt-5 font-serif text-4xl font-bold text-white sm:text-5xl md:text-6xl">
+          <h1 className="mt-5 text-[32px] font-medium leading-[1.25] tracking-[-0.5px] text-white sm:text-[40px] lg:text-[48px]">
             {job.title}
           </h1>
 
@@ -281,7 +281,7 @@ export default async function JobPage({ params }: Props) {
                 <p className="text-[10px] font-bold tracking-[0.2em] text-[#e85d04]">
                   READY TO JOIN US?
                 </p>
-                <p className="mt-2 font-serif text-xl font-bold">{job.title}</p>
+                <p className="mt-2 text-xl font-semibold">{job.title}</p>
                 <p className="mt-1 text-xs text-slate-300">
                   {job.level} {"\u00b7"} {job.type} {"\u00b7"} {job.mode}
                 </p>

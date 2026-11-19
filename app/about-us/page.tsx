@@ -245,7 +245,7 @@ function ValueItem({
         <span className="text-xl font-bold">{value.icon}</span>
       </div>
 
-      <h3 className="text-[16px] font-bold leading-tight text-text md:text-[18px]">
+      <h3 className="text-xl font-semibold text-text">
         {value.title.map((line, i) =>
           value.title.length > 1 ? (
             <span key={i} className="block">{line}</span>
@@ -255,7 +255,7 @@ function ValueItem({
         )}
       </h3>
 
-      <p className="mx-auto mt-4 max-w-[230px] text-[11px] leading-5 text-muted md:text-[12px]">
+      <p className="mx-auto mt-4 max-w-[230px] text-sm leading-5 text-muted">
         {value.description}
       </p>
     </div>
@@ -292,12 +292,12 @@ export default function AboutUsPage() {
               About Us
             </p>
 
-            <h1 className="text-3xl font-bold leading-[1.1] tracking-tight text-on-primary md:text-[42px]">
+            <h1 className="text-[32px] font-medium leading-[1.25] tracking-[-0.5px] text-on-primary sm:text-[40px] lg:text-[48px]">
               <span className="block">Building technology</span>
               <span className="block">for a better tomorrow.</span>
             </h1>
 
-            <p className="mt-4 max-w-lg text-[12px] leading-6 text-on-primary/75 md:text-[13px]">
+            <p className="mt-4 max-w-lg text-sm leading-6 text-on-primary/75">
               Black Origin IT is a software engineering firm that builds
               custom digital products, AI systems and automation for
               organizations that want to solve real business problems.
@@ -317,7 +317,7 @@ export default function AboutUsPage() {
               Our Story
             </p>
 
-            <p className="mx-auto max-w-none text-[12px] leading-6 text-muted lg:whitespace-nowrap md:text-[13px]">
+            <p className="mx-auto max-w-none text-[12px] leading-6 text-muted md:text-[13px]">
               A journey shaped by engineering discipline, practical AI and a
               commitment to software that solves real business problems.
             </p>
@@ -333,19 +333,19 @@ export default function AboutUsPage() {
                   Our Journey
                 </p>
 
-                <h2 className="text-[24px] font-bold leading-[1.1] tracking-tight text-text md:text-[27px]">
+                <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-text">
                   From a Vision
                   <span className="block">to a Growing Engineering Team</span>
                 </h2>
 
-                <p className="mt-4 text-[12px] leading-[1.8] text-muted">
+                <p className="mt-4 text-sm leading-[1.8] text-muted">
                   Black Origin IT began with a simple vision — to bring
                   engineering discipline, practical AI and thoughtful
                   problem-solving together to build software that makes a real
                   business difference.
                 </p>
 
-                <p className="mt-3 text-[12px] leading-[1.8] text-muted">
+                <p className="mt-3 text-sm leading-[1.8] text-muted">
                   What started as an idea has grown into a focused engineering
                   team that helps businesses turn ideas into reliable software
                   products and lasting operational advantage.
@@ -381,18 +381,18 @@ export default function AboutUsPage() {
                   Our Philosophy
                 </p>
 
-                <h2 className="text-[24px] font-bold leading-[1.1] tracking-tight text-text md:text-[27px]">
+                <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-text">
                   Technology With
                   <span className="block">Purpose</span>
                 </h2>
 
-                <p className="mt-4 text-[12px] leading-[1.8] text-muted">
+                <p className="mt-4 text-sm leading-[1.8] text-muted">
                   We believe technology should do more than look good or follow
                   trends. It should solve real problems, create meaningful
                   experiences and deliver measurable value.
                 </p>
 
-                <p className="mt-3 text-[12px] leading-[1.8] text-muted">
+                <p className="mt-3 text-sm leading-[1.8] text-muted">
                   Our approach brings together engineering discipline, applied
                   AI and long-term partnership to build solutions that are
                   useful today, adaptable tomorrow and valuable for the people
@@ -432,7 +432,7 @@ export default function AboutUsPage() {
                   </div>
 
                   <div className="pt-1">
-                    <h3 className="text-[15px] font-bold text-text md:text-[16px]">
+                    <h3 className="text-xl font-semibold text-text">
                       {item.title}
                     </h3>
 
@@ -452,12 +452,12 @@ export default function AboutUsPage() {
       <section className="bg-surface">
         <div className="mx-auto max-w-[1100px] px-6 py-14 md:px-10 md:py-16">
           <div className="mb-10 text-center md:mb-12">
-            <h2 className="text-2xl font-bold leading-tight tracking-tight text-text md:text-4xl">
+            <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-text">
               Core Values We Live By
             </h2>
           </div>
 
-          <div className="grid items-center gap-10 md:grid-cols-[1fr_360px_1fr] md:gap-8">
+          <div className="grid items-center gap-10 lg:grid-cols-[1fr_360px_1fr] md:gap-8">
             <div className="flex h-full flex-col justify-between gap-10 md:gap-16">
               {valuesLeft.map((v, i) => (
                 <ValueItem key={v.icon} value={v} divider={i === 0} />
@@ -494,13 +494,13 @@ export default function AboutUsPage() {
               Meet the Founder
             </p>
 
-            <p className="mx-auto max-w-2xl text-[12px] leading-6 text-muted md:text-[13px]">
+            <p className="mx-auto max-w-2xl text-sm leading-6 text-muted">
               The engineer and researcher guiding the technical direction of
               Black Origin IT.
             </p>
           </div>
 
-          <div className="grid items-center gap-8 rounded-md bg-surface p-5 shadow-[0_8px_25px_rgba(6,26,64,0.10)] md:grid-cols-[280px_1fr] md:gap-10 md:p-5">
+          <div className="grid items-center gap-8 rounded-md bg-surface p-5 shadow-[0_8px_25px_rgba(6,26,64,0.10)] lg:grid-cols-[280px_1fr] md:gap-10 md:p-5">
             <div className="relative mx-auto aspect-[3/4] w-full max-w-[300px] overflow-hidden rounded-md md:max-w-none">
               <Image
                 src="/images/core values.jpg"
@@ -516,7 +516,7 @@ export default function AboutUsPage() {
                 Founder &amp; Technical Director
               </p>
 
-              <h2 className="text-[26px] font-bold leading-[1.1] tracking-tight text-text md:text-[32px]">
+              <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-text">
                 Abdullah Al Sobail
               </h2>
 
@@ -526,7 +526,7 @@ export default function AboutUsPage() {
 
               <div className="my-5 h-px w-full bg-secondary/10" />
 
-              <p className="text-[12px] leading-[1.8] text-muted md:text-[12.5px]">
+              <p className="text-sm leading-[1.8] text-muted">
                 Abdullah Al Sobail is a software engineer and AI and deep
                 learning researcher with experience across software
                 development, technical training, artificial intelligence,
@@ -583,7 +583,7 @@ export default function AboutUsPage() {
               Our Team
             </p>
 
-            <p className="mx-auto max-w-2xl text-[12px] leading-6 text-muted md:text-[13px]">
+            <p className="mx-auto max-w-2xl text-sm leading-6 text-muted">
               Meet the people behind our engineering, development and
               technical innovation. Our team works together to turn ideas into
               reliable digital solutions.
@@ -660,11 +660,11 @@ export default function AboutUsPage() {
                         {member.role}
                       </p>
 
-                      <h3 className="text-[16px] font-bold text-text">
+                      <h3 className="text-xl font-semibold text-text">
                         {member.name}
                       </h3>
 
-                      <p className="mt-2 text-[12px] leading-5 text-muted">
+                      <p className="mt-2 text-sm leading-5 text-muted">
                         Dhaka Office
                       </p>
 
@@ -713,7 +713,7 @@ export default function AboutUsPage() {
               Our Expertise
             </p>
 
-            <p className="max-w-none text-[11px] leading-5 text-muted lg:whitespace-nowrap md:text-[12px]">
+            <p className="max-w-none text-[11px] leading-5 text-muted md:text-[12px]">
               We bring together talented people, modern tools and proven
               processes to build high-quality digital solutions.
             </p>
@@ -733,11 +733,11 @@ export default function AboutUsPage() {
                   <item.Icon />
                 </div>
 
-                <h3 className="text-[11px] font-bold text-text md:text-[12px]">
+                <h3 className="text-base font-semibold text-text">
                   {item.title}
                 </h3>
 
-                <p className="mt-2 max-w-[160px] text-[10px] leading-5 text-muted md:text-[11px]">
+                <p className="mt-2 max-w-[160px] text-sm leading-5 text-muted">
                   {item.description}
                 </p>
               </div>
@@ -756,11 +756,11 @@ export default function AboutUsPage() {
                 Let&apos;s Work Together
               </p>
 
-              <h2 className="text-xl font-bold text-on-primary md:text-[28px]">
+              <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-on-primary">
                 Have a project in mind?
               </h2>
 
-              <p className="mt-2 max-w-none text-[11px] leading-5 text-on-primary/65 lg:whitespace-nowrap md:text-[12px]">
+              <p className="mt-2 max-w-none text-[11px] leading-5 text-on-primary/65 md:text-[12px]">
                 We&apos;d love to hear from you. Let&apos;s discuss how we can
                 help turn your ideas into reality.
               </p>

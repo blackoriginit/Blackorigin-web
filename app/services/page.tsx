@@ -104,7 +104,7 @@ export default function ServicesPage() {
               Our Services
             </span>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-[1.15] tracking-tight text-white">
+            <h1 className="text-[32px] font-medium leading-[1.25] tracking-[-0.5px] text-white sm:text-[40px] lg:text-[48px]">
               Technology services built around your business
             </h1>
 
@@ -143,7 +143,7 @@ export default function ServicesPage() {
           2. COLLABORATION MODELS
          ========================================= */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-16">
-        <h2 className="text-3xl font-serif font-bold text-[#061A40] mb-10">
+        <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-[#061A40] mb-10">
           Collaboration Models
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -153,7 +153,7 @@ export default function ServicesPage() {
               className="border-t border-slate-300 pt-6 flex flex-col justify-between"
             >
               <div>
-                <h3 className="text-xl font-serif font-bold text-[#061A40] mb-3">
+                <h3 className="text-xl font-semibold text-[#061A40] mb-3">
                   {item.title}
                 </h3>
                 <p className="text-slate-600 text-sm leading-relaxed mb-6">
@@ -178,7 +178,7 @@ export default function ServicesPage() {
          ========================================= */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-12">
         <div className="mb-12">
-          <h2 className="text-3xl font-serif font-bold text-[#061A40] mb-3">
+          <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-[#061A40] mb-3">
             Our Services
           </h2>
           <p className="text-slate-600 text-base max-w-2xl">
@@ -194,10 +194,10 @@ export default function ServicesPage() {
               className="flex flex-col justify-between group"
             >
               <div>
-                <span className="text-4xl font-serif font-bold text-slate-300 group-hover:text-[#E85D04]/70 transition-colors block mb-2">
+                <span className="text-4xl font-semibold text-slate-300 group-hover:text-[#E85D04]/70 transition-colors block mb-2">
                   {service.number}
                 </span>
-                <h3 className="text-xl font-serif font-bold text-[#061A40] mb-3 group-hover:text-[#E85D04] transition-colors">
+                <h3 className="text-xl font-semibold text-[#061A40] mb-3 group-hover:text-[#E85D04] transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-slate-600 text-sm leading-relaxed mb-6">
@@ -223,7 +223,7 @@ export default function ServicesPage() {
       <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-12">
         <div className="bg-[#061A40] text-white rounded-2xl p-8 md:p-14 shadow-lg">
           <div className="max-w-2xl space-y-4">
-            <h2 className="text-2xl md:text-3xl font-serif font-bold text-white">
+            <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-white">
               Not sure where to start?
             </h2>
             <p className="text-slate-300 text-sm md:text-base leading-relaxed">

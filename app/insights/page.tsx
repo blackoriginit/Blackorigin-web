@@ -33,7 +33,7 @@ export default function InsightsPage() {
         <div className="relative mx-auto max-w-6xl px-6 py-16 md:py-24">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <div className="relative">
-              <h1 className="font-heading text-6xl font-bold leading-tight tracking-tight text-white md:text-7xl">
+              <h1 className="font-heading text-[32px] font-medium leading-[1.25] tracking-[-0.5px] text-white sm:text-[40px] lg:text-[48px]">
                 Insights
               </h1>
               <div className="mt-8 cursor-pointer rounded-2xl border border-white/20 bg-white/10 p-6 shadow-lg transition-all duration-300 hover:border-orange-500 hover:bg-orange-500/30 active:bg-orange-500">
@@ -78,7 +78,7 @@ export default function InsightsPage() {
       <section className="bg-[#F5F9FF] py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mx-auto mb-20 max-w-3xl text-center">
-            <h2 className="font-heading mb-5 text-4xl font-bold tracking-tight text-[#061A40] md:text-5xl">
+            <h2 className="font-heading mb-5 text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-[#061A40]">
               Latest articles
             </h2>
             <p className="mx-auto max-w-2xl text-lg leading-8 text-[#5A6B8C]">

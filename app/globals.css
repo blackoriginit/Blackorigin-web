@@ -17,8 +17,8 @@
   --secondary: #061A40;
   --muted: #5A6B8C;
 
-  /* Body font: system font (Segoe UI on Windows). Inter removed to match the sample design. */
-  --font-body: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  /* Body font: the system UI font, matching the live CMS. */
+  --font-body: system-ui, sans-serif;
   --font-heading: Georgia, "Times New Roman", serif;
 }
 
@@ -36,7 +36,8 @@
   --color-secondary: var(--secondary);
   --color-muted: var(--muted);
 
-  --font-heading: Georgia, serif;
+  --font-heading: Georgia, "Times New Roman", serif;
+  --font-serif: Georgia, "Times New Roman", serif;
   --font-sans: system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
 }
@@ -110,6 +111,38 @@
   font-family: var(--font-heading);
 }
 
+/* ============================================
+   COUNT-UP STATS (identical to the live CMS)
+   ============================================ */
+
+@property --ec-c {
+  syntax: '<integer>';
+  inherits: false;
+  initial-value: 0;
+}
+
+@keyframes ec-cu {
+  from {
+    --ec-c: 0;
+  }
+}
+
+.ec-cu {
+  counter-reset: ec-c var(--ec-c);
+  animation: ec-cu 2.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-play-state: paused;
+}
+
+.ec-cu::before {
+  content: counter(ec-c);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ec-cu {
+    animation: none;
+  }
+}
+
 /* ==============================
    Article detail page
 =============================== */
@@ -152,7 +185,7 @@
 }
 
 .article-breadcrumb a:hover {
-  color: #e85d04;
+  color: #E85D04;
 }
 
 .breadcrumb-current {
@@ -170,8 +203,8 @@
   color: #071a3b;
   font-family: var(--font-heading);
   font-size: 40px;
-  font-weight: 700;
-  line-height: 1.12;
+  font-weight: 500;
+  line-height: 1.25;
   letter-spacing: -0.5px;
 }
 
@@ -187,7 +220,7 @@
 .article-detail-excerpt {
   margin: 0;
   color: #6b7890;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.7;
 }
 
@@ -206,7 +239,7 @@
 
 .article-detail-body {
   color: #243b5c;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.75;
 }
 
@@ -214,8 +247,8 @@
   margin: 0 0 12px;
   color: #071a3b;
   font-family: var(--font-heading);
-  font-size: 32px;
-  font-weight: 700;
+  font-size: 36px;
+  font-weight: 600;
   line-height: 1.2;
 }
 
@@ -231,8 +264,8 @@
   margin: 0 0 10px;
   color: #071a3b;
   font-family: var(--font-heading);
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 600;
   line-height: 1.3;
 }
 
@@ -243,7 +276,7 @@
 .article-inline-cta {
   margin-top: 32px !important;
   color: #243b5c;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.75;
 }
 
@@ -269,7 +302,7 @@
   }
 
   .article-detail-header h1 {
-    font-size: 28px;
+    font-size: 32px;
   }
 
   .article-detail-excerpt {
@@ -281,7 +314,7 @@
   }
 
   .article-detail-body > h2 {
-    font-size: 24px;
+    font-size: 30px;
   }
 
   .article-detail-body section h3 {
@@ -401,18 +434,18 @@
 .case-eyebrow,
 .case-orange-label {
   display: block;
-  color: #ed5b00;
+  color: #E85D04;
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 2px;
   margin-bottom: 18px;
 }
 
 .case-hero h1 {
-  font-family: Georgia, serif;
-  font-size: clamp(42px, 6vw, 68px);
-  line-height: 1.1;
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.25;
+  font-weight: 500;
   color: white;
   margin-bottom: 22px;
 }
@@ -420,7 +453,7 @@
 .case-hero-content > p {
   max-width: 560px;
   margin: auto;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.8;
   color: #e5edfa;
 }
@@ -440,8 +473,8 @@
 }
 
 .case-section-heading h2 {
-  font-family: Georgia, serif;
-  font-size: clamp(30px, 4vw, 42px);
+  font-family: var(--font-heading);
+  font-size: clamp(30px, 4vw, 48px);
   color: #061a40;
   margin-bottom: 18px;
 }
@@ -521,19 +554,20 @@
 
 .case-card-category {
   display: inline-block;
-  background: #ed5b00;
+  background: #E85D04;
   color: white;
   padding: 5px 10px;
   border-radius: 30px;
-  font-size: 9px;
-  font-weight: 800;
+  font-size: 11px;
+  font-weight: 700;
   letter-spacing: 0.5px;
   margin-bottom: 13px;
 }
 
 .case-card-content h2 {
-  font-family: Georgia, serif;
-  font-size: 19px;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 600;
   line-height: 1.3;
   margin-bottom: 10px;
   color: white;
@@ -541,7 +575,7 @@
 
 .case-card-content > p {
   color: #d6e0ef;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.7;
   margin-bottom: 14px;
 }
@@ -559,7 +593,7 @@
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 30px;
   padding: 5px 10px;
-  font-size: 10px;
+  font-size: 11px;
   color: #ffffff;
 }
 
@@ -567,7 +601,7 @@
   display: block;
   margin-top: auto;
   padding-top: 24px;
-  color: #e85d04;
+  color: #E85D04;
   font-size: 14px;
   font-weight: 600;
   transition: color 0.2s ease;
@@ -591,8 +625,8 @@
 }
 
 .case-cta h2 {
-  font-family: Georgia, serif;
-  font-size: clamp(27px, 4vw, 36px);
+  font-family: var(--font-heading);
+  font-size: clamp(30px, 4vw, 48px);
   margin-bottom: 18px;
   color: #061a40;
 }
@@ -625,7 +659,7 @@
 }
 
 .case-btn-primary {
-  background: #ed5b00;
+  background: #E85D04;
   color: white;
 }
 
@@ -634,7 +668,7 @@
 }
 
 .case-btn-secondary {
-  color: #ed5b00;
+  color: #E85D04;
   border: 1px solid #061a40;
   background: transparent;
 }
@@ -685,22 +719,23 @@
 }
 
 .detail-back-link:hover {
-  color: #ff650b;
+  color: #E85D04;
 }
 
 .detail-category {
   display: block;
-  color: #ff650b;
+  color: #E85D04;
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 2px;
   margin-bottom: 18px;
 }
 
 .detail-hero h1 {
-  font-family: Georgia, serif;
-  font-size: clamp(36px, 5vw, 58px);
-  line-height: 1.15;
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.25;
+  font-weight: 500;
   color: white;
   margin-bottom: 20px;
 }
@@ -708,7 +743,7 @@
 .detail-hero-content > p {
   max-width: 620px;
   color: #dbeafe;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.9;
 }
 
@@ -732,9 +767,10 @@
 .detail-overview-main h2,
 .detail-content-section h2,
 .detail-outcome h2 {
-  font-family: Georgia, serif;
-  font-size: clamp(28px, 4vw, 40px);
+  font-family: var(--font-heading);
+  font-size: clamp(30px, 4vw, 48px);
   line-height: 1.2;
+  font-weight: 600;
   color: #061a40;
   margin-bottom: 22px;
 }
@@ -743,8 +779,8 @@
 .detail-content-section p,
 .detail-outcome p {
   color: #64748b;
-  font-size: 15px;
-  line-height: 2;
+  font-size: 14px;
+  line-height: 1.8;
   margin-bottom: 15px;
 }
 
@@ -772,15 +808,15 @@
 }
 
 .detail-info-card span {
-  font-size: 10px;
-  color: #ed5b00;
-  font-weight: 800;
+  font-size: 11px;
+  color: #E85D04;
+  font-weight: 700;
   letter-spacing: 1px;
 }
 
 .detail-info-card strong {
   color: #061a40;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.7;
 }
 
@@ -800,10 +836,10 @@
 }
 
 .detail-number {
-  font-family: Georgia, serif;
+  font-family: var(--font-heading);
   font-size: 42px;
   font-weight: 700;
-  color: #ed5b00;
+  color: #E85D04;
   opacity: 0.8;
 }
 
@@ -868,20 +904,21 @@
 }
 
 .related-card-content span {
-  color: #ff650b;
-  font-size: 10px;
-  font-weight: 800;
+  color: #E85D04;
+  font-size: 11px;
+  font-weight: 700;
 }
 
 .related-card-content h3 {
-  font-family: Georgia, serif;
-  font-size: 19px;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 600;
   margin: 12px 0;
 }
 
 .related-card-content p {
-  color: #ff650b;
-  font-size: 12px;
+  color: #E85D04;
+  font-size: 14px;
 }
 
 /* =========================================

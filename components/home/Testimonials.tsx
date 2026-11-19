@@ -41,7 +41,7 @@ export default function Testimonials() {
 
           <h2
             id="testimonials-heading"
-            className="text-4xl font-semibold leading-none tracking-tight text-[#061A40] md:text-5xl"
+            className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-[#061A40]"
           >
             What our partners say.
           </h2>

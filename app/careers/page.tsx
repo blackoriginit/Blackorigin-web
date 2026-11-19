@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import JobList, { ProfileCta } from "../../components/JobList";
 
 export const metadata: Metadata = {
@@ -56,7 +56,7 @@ export default function CareersPage() {
             <p className="text-xs font-bold tracking-[0.2em] text-[#e85d04]">
               CAREERS AT BLACK ORIGIN
             </p>
-            <h1 className="mt-3 font-serif text-4xl font-bold text-white sm:text-5xl">
+            <h1 className="mt-3 text-[32px] font-medium leading-[1.25] tracking-[-0.5px] text-white sm:text-[40px] lg:text-[48px]">
               Join our <span className="text-[#e85d04]">team.</span>
             </h1>
             <p className="mt-4 max-w-md leading-7 text-slate-300">
@@ -109,7 +109,7 @@ export default function CareersPage() {
         <p className="text-[10px] font-bold tracking-[0.2em] text-[#e85d04]">
           OPEN OPPORTUNITIES
         </p>
-        <h2 className="mb-6 mt-1 font-serif text-2xl font-bold text-[#061a40] sm:text-3xl">
+        <h2 className="mb-6 mt-1 text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-[#061a40]">
           Find your place on the team.
         </h2>
 

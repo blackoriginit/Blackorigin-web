@@ -37,7 +37,7 @@ export default function TrustedBy() {
           Trusted by teams at
         </p>
 
-        <ul className="mt-8 grid grid-cols-3 items-center justify-items-center gap-x-6 gap-y-8 md:grid-cols-4">
+        <ul className="mt-8 grid grid-cols-2 items-center justify-items-center gap-x-6 gap-y-8 text-center sm:grid-cols-3 lg:grid-cols-4">
           {clients.map((client) => (
             <li
               key={client.name}
@@ -51,7 +51,7 @@ export default function TrustedBy() {
                   className="h-7 w-auto max-w-[120px] object-contain md:h-8"
                 />
               ) : (
-                <span className="text-[15px] font-semibold tracking-tight text-[#061A40] md:text-[17px]">
+                <span className="text-sm font-semibold tracking-tight text-[#061A40] break-words md:text-base">
                   {client.name}
                 </span>
               )}

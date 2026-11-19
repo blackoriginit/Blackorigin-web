@@ -14,7 +14,7 @@ export default function LegalPage({ title, intro, sections }: LegalPageProps) {
     <div>
       <section className="bg-[#061A40] px-6 py-16 text-white">
         <div className="mx-auto max-w-3xl">
-          <h1 className="font-serif text-4xl font-bold sm:text-5xl">{title}</h1>
+          <h1 className="text-[32px] font-medium leading-[1.25] tracking-[-0.5px] sm:text-[40px] lg:text-[48px]">{title}</h1>
           <p className="mt-4 text-lg text-white/80">{intro}</p>
         </div>
       </section>
@@ -23,7 +23,7 @@ export default function LegalPage({ title, intro, sections }: LegalPageProps) {
         <div className="mx-auto max-w-3xl space-y-10">
           {sections.map((section) => (
             <div key={section.heading}>
-              <h2 className="font-serif text-2xl font-bold text-[#061A40]">
+              <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-[#061A40]">
                 {section.heading}
               </h2>
               {section.paragraphs.map((text, i) => (

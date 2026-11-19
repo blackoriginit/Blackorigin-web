@@ -29,7 +29,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
             Services
           </Link>
           <span>/</span>
-          <span className="text-[#06182C] font-semibold">{service.title}</span>
+          <span className="text-[#061A40] font-semibold">{service.title}</span>
         </nav>
       </div>
 
@@ -42,7 +42,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
               Service
             </span>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#06182C] leading-tight tracking-tight">
+            <h1 className="text-[32px] font-medium leading-[1.25] tracking-[-0.5px] sm:text-[40px] lg:text-[48px] text-[#061A40]">
               {service.title}
             </h1>
 
@@ -68,8 +68,8 @@ export default function ServiceDetail({ service }: { service: Service }) {
           </div>
 
           {/* Right Navy "At a glance" Card */}
-          <div className="lg:col-span-5 bg-[#06182C] text-white rounded-2xl p-7 md:p-8 space-y-6 shadow-xl border border-white/10">
-            <h2 className="text-xl font-serif font-bold border-b border-white/10 pb-3">
+          <div className="lg:col-span-5 bg-[#061A40] text-white rounded-2xl p-7 md:p-8 space-y-6 shadow-xl border border-white/10">
+            <h2 className="text-xl font-semibold border-b border-white/10 pb-3">
               At a glance
             </h2>
 
@@ -101,7 +101,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
 
       {/* 3. OVERVIEW SECTION */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-8">
-        <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#06182C] mb-6">
+        <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-[#061A40] mb-6">
           Overview
         </h2>
         <div className="space-y-4 text-slate-700 text-sm md:text-base leading-relaxed max-w-4xl">
@@ -114,13 +114,13 @@ export default function ServiceDetail({ service }: { service: Service }) {
       {/* 4. WHAT WE DELIVER */}
       {service.whatWeDeliver && service.whatWeDeliver.length > 0 && (
         <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-12">
-          <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#06182C] mb-8">
+          <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-[#061A40] mb-8">
             What we deliver
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {service.whatWeDeliver.map((item, idx) => (
               <div key={idx} className="border-t border-slate-300 pt-4">
-                <h3 className="font-serif font-bold text-lg text-[#06182C] mb-2">
+                <h3 className="text-xl font-semibold text-[#061A40] mb-2">
                   {item.title}
                 </h3>
                 <p className="text-slate-600 text-xs md:text-sm leading-relaxed">
@@ -135,7 +135,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
       {/* 5. TECHNOLOGIES & INDUSTRIES */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-8 space-y-10">
         <div>
-          <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#06182C] mb-2">
+          <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-[#061A40] mb-2">
             Technologies
           </h2>
           <p className="text-slate-600 text-xs md:text-sm mb-4">
@@ -145,7 +145,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
             {service.technologies.map((tech, idx) => (
               <span
                 key={idx}
-                className="bg-white border border-slate-300 text-[#06182C] text-xs font-medium px-4 py-1.5 rounded-lg shadow-2xs"
+                className="bg-white border border-slate-300 text-[#061A40] text-xs font-medium px-4 py-1.5 rounded-lg shadow-2xs"
               >
                 {tech}
               </span>
@@ -154,7 +154,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
         </div>
 
        <div>
-          <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#06182C] mb-2">
+          <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-[#061A40] mb-2">
             Industries
           </h2>
           <p className="text-slate-600 text-xs md:text-sm mb-4">
@@ -172,7 +172,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
                 <Link
                   key={idx}
                   href={`/industries/${industrySlug}`}
-                  className="bg-white border border-slate-300 text-[#06182C] text-xs font-medium px-4 py-1.5 rounded-lg shadow-2xs hover:border-[#E85D04] hover:text-[#E85D04] hover:shadow-sm transition-all inline-block"
+                  className="bg-white border border-slate-300 text-[#061A40] text-xs font-medium px-4 py-1.5 rounded-lg shadow-2xs hover:border-[#E85D04] hover:text-[#E85D04] hover:shadow-sm transition-all inline-block"
                 >
                   {ind}
                 </Link>
@@ -184,9 +184,9 @@ export default function ServiceDetail({ service }: { service: Service }) {
 
       {/* 6. HOW WE WORK (7 Steps Navy Card) */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-12">
-        <div className="bg-[#06182C] text-white rounded-2xl p-8 md:p-12 space-y-8 shadow-xl">
+        <div className="bg-[#061A40] text-white rounded-2xl p-8 md:p-12 space-y-8 shadow-xl">
           <div>
-            <h2 className="text-2xl md:text-3xl font-serif font-bold mb-3">
+            <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl mb-3">
               How we work
             </h2>
             <p className="text-slate-300 text-sm max-w-2xl leading-relaxed">
@@ -200,7 +200,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
                 <span className="text-xs font-bold text-[#E85D04] block mb-1">
                   {st.num}
                 </span>
-                <span className="text-sm font-serif font-bold block text-white">
+                <span className="text-base font-semibold block text-white">
                   {st.title}
                 </span>
               </div>
@@ -212,7 +212,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
       {/* 7. RELATED CASE STUDIES */}
       {service.relatedCaseStudies && service.relatedCaseStudies.length > 0 && (
         <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-12">
-          <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#06182C] mb-8">
+          <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-[#061A40] mb-8">
             Related case studies
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -222,7 +222,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
                   <span className="text-[11px] font-bold text-[#E85D04] uppercase tracking-wider block mb-2">
                     {cs.tag}
                   </span>
-                  <h3 className="font-serif font-bold text-lg text-[#06182C] mb-4">
+                  <h3 className="font-heading font-bold text-lg text-[#061A40] mb-4">
                     {cs.title}
                   </h3>
                 </div>
@@ -241,7 +241,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
      {/* 8. FREQUENTLY ASKED QUESTIONS (Matches Prototype 1:1) */}
       {service.faqs && service.faqs.length > 0 && (
         <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-12">
-          <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#06182C] mb-8">
+          <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-[#061A40] mb-8">
             Frequently asked questions
           </h2>
           <div className="space-y-4 max-w-4xl">
@@ -250,7 +250,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
                 key={idx}
                 className="group border border-slate-300 rounded-2xl bg-white p-6 open:shadow-xs cursor-pointer transition-all"
               >
-                <summary className="font-serif font-bold text-base md:text-lg text-[#06182C] flex items-center gap-3 list-none select-none">
+                <summary className="text-xl font-semibold text-[#061A40] flex items-center gap-3 list-none select-none">
                   <span className="text-xs transition-transform duration-200 group-open:rotate-90 inline-block">
                     &#9654;
                   </span>
@@ -266,9 +266,9 @@ export default function ServiceDetail({ service }: { service: Service }) {
       )}
 
       {/* 9. BOTTOM BANNER */}
-      <section className="bg-[#06182C] text-white py-20 px-6 text-center">
+      <section className="bg-[#061A40] text-white py-20 px-6 text-center">
         <div className="max-w-2xl mx-auto space-y-4">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold">
+          <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
             Have a project in mind?
           </h2>
           <p className="text-slate-300 text-sm md:text-base leading-relaxed">

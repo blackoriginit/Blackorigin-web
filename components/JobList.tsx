@@ -1,4 +1,4 @@
-﻿import { CircularMeta } from "./CircularInfo";
+import { CircularMeta } from "./CircularInfo";
 import Link from "next/link";
 import { jobs } from "../lib/jobs";
 
@@ -30,7 +30,7 @@ export default function JobList() {
 
           {/* Title, tags, summary */}
           <div className="min-w-0 flex-1">
-            <h4 className="font-serif text-xl font-bold text-[#061a40] transition-colors duration-300 group-hover:text-[#e85d04] sm:text-2xl">
+            <h4 className="text-xl font-semibold text-[#061a40] transition-colors duration-300 group-hover:text-[#E85D04]">
               {j.title}
             </h4>
             <div className="mt-3"><CircularMeta job={j} /></div>

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import type { ChangeEvent, FormEvent, ReactNode } from "react";
@@ -205,7 +205,7 @@ export default function ApplicationForm({ job }: { job: Job }) {
         <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#e85d04] text-3xl text-white shadow-[0_0_0_8px_rgba(232,93,4,0.15)]">
           {"\u2713"}
         </div>
-        <h1 className="mt-6 font-serif text-3xl font-bold text-[#061a40]">
+        <h1 className="mt-6 text-[32px] font-medium leading-[1.25] tracking-[-0.5px] text-[#061a40]">
           Application received
         </h1>
         <p className="mt-3 leading-7 text-slate-500">
@@ -280,9 +280,9 @@ export default function ApplicationForm({ job }: { job: Job }) {
                 <p className="text-[10px] font-bold tracking-[0.2em] text-[#e85d04]">
                   {job.department.toUpperCase()}
                 </p>
-                <h1 className="mt-1 font-serif text-2xl font-bold text-white">
+                <h2 className="mt-1 text-xl font-semibold text-white">
                   {job.title}
-                </h1>
+                </h2>
               </div>
             </div>
 
@@ -327,8 +327,15 @@ export default function ApplicationForm({ job }: { job: Job }) {
         <div className="overflow-hidden rounded-3xl bg-white/95 shadow-2xl ring-1 ring-white/20 backdrop-blur">
           <div className="h-1.5 bg-gradient-to-r from-[#e85d04] via-[#ff7a1f] to-[#0b2a63]" />
           <div className="p-6 sm:p-8">
+            <h1 className="font-heading text-[32px] font-medium leading-[1.25] tracking-[-0.5px] text-[#061a40] sm:text-[40px]">
+              Apply for {job.title}
+            </h1>
+            <p className="mt-2 text-sm leading-6 text-slate-500">
+              Tell us a little about yourself. It only takes a few minutes.
+            </p>
+
             {/* Stepper */}
-            <ol className="mb-8 flex items-center gap-3">
+            <ol className="mb-8 mt-8 flex items-center gap-3">
               {stepLabels.map((label, i) => {
                 const n = i + 1;
                 const done = step > n;
@@ -371,7 +378,7 @@ export default function ApplicationForm({ job }: { job: Job }) {
             <form noValidate onSubmit={handleSubmit} className="grid gap-5">
               {step === 1 && (
                 <>
-                  <h2 className="font-serif text-xl font-bold text-[#061a40]">
+                  <h2 className="text-xl font-semibold text-[#061a40]">
                     Your details
                   </h2>
 
@@ -452,7 +459,7 @@ export default function ApplicationForm({ job }: { job: Job }) {
 
               {step === 2 && (
                 <>
-                  <h2 className="font-serif text-xl font-bold text-[#061a40]">
+                  <h2 className="text-xl font-semibold text-[#061a40]">
                     Resume &amp; more
                   </h2>
 

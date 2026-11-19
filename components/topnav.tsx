@@ -29,7 +29,7 @@ export default function TopNav() {
 
   return (
     <header className="relative bg-background/80 backdrop-blur-md text-text">
-      <div className="mx-auto max-w-none px-6 flex w-full items-center gap-4 h-20">
+      <div className="mx-auto flex h-20 w-full max-w-none items-center gap-2 px-4 lg:gap-4 lg:px-6">
         <Link
           href="/"
           className="flex shrink-0 items-center gap-3 font-bold tracking-tight text-2xl "
@@ -46,13 +46,13 @@ export default function TopNav() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-4 md:flex md:flex-1 md:justify-center">
+        <nav className="hidden items-center gap-2 md:flex md:flex-1 md:justify-center lg:gap-4">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               aria-current={isActive(link.href) ? 'page' : undefined}
-              className={`text-sm font-medium transition rounded-full px-3 py-1.5 ${
+              className={`rounded-full px-2 py-1.5 text-sm font-medium transition lg:px-3 ${
                 isActive(link.href)
                   ? 'bg-text/10 font-semibold'
                   : 'opacity-80 hover:opacity-100'

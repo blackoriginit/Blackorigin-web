@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useRef, useState } from "react";
 
@@ -84,7 +84,7 @@ export default function OurProcess() {
             <p className="text-[10px] font-bold tracking-[0.2em] text-[#e85d04]">
               OUR PROCESS
             </p>
-            <h2 className="mt-4 font-serif text-3xl font-bold leading-tight sm:text-4xl">
+            <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
               A clearer way to move from idea to launch.
             </h2>
             <p className="mt-5 text-xs leading-6 text-slate-300 sm:text-sm">
@@ -159,10 +159,10 @@ export default function OurProcess() {
                     <p className="text-[9px] font-bold tracking-[0.2em] text-[#e85d04]">
                       {s.tag}
                     </p>
-                    <h3 className="mt-1 font-serif text-base font-bold text-[#061a40] sm:text-lg">
+                    <h3 className="mt-1 text-xl font-semibold text-[#061a40]">
                       {s.title}
                     </h3>
-                    <p className="mt-1.5 text-xs leading-6 text-slate-500 sm:text-[13px]">
+                    <p className="mt-1.5 text-sm leading-6 text-slate-500">
                       {s.text}
                     </p>
 
