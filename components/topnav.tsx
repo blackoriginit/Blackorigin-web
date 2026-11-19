@@ -38,9 +38,9 @@ export default function TopNav() {
           <Image
             src="/logo.png"
             alt="Black Origin"
-            width={1191}
-            height={264}
-            className="h-11 w-auto"
+            width={430}
+            height={512}
+            className="h-14 w-auto"
             priority
           />
         </Link>
