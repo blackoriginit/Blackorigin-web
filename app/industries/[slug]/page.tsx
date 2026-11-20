@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import type { CSSProperties } from 'react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import StartProjectButton from '@/components/startprojectmodal'
 
 type Industry = {
   slug: string
@@ -464,9 +465,9 @@ export default async function IndustryPage({
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
-              <Link href="/contact" className={primaryButton}>
+              <StartProjectButton className={primaryButton}>
                 Start Your Project
-              </Link>
+              </StartProjectButton>
               <Link
                 href="/industries"
                 className="inline-flex items-center justify-center rounded-md border border-white/30 bg-white/10 px-5 py-2.5 text-base font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/20"
@@ -784,9 +785,9 @@ export default async function IndustryPage({
                   {industry.ctaSubtitle}
                 </p>
                 <div className="mt-8 flex flex-wrap justify-center gap-4">
-                  <Link href="/contact" className={primaryButton}>
+                  <StartProjectButton className={primaryButton}>
                     Get Started Today
-                  </Link>
+                  </StartProjectButton>
                   <Link
                     href="/industries"
                     className="inline-flex items-center justify-center rounded-md border border-white/30 px-5 py-2.5 text-base font-semibold text-white transition-colors hover:bg-white/10"
@@ -805,9 +806,9 @@ export default async function IndustryPage({
                 {industry.ctaSubtitle}
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
-                <Link href="/contact" className={primaryButton}>
+                <StartProjectButton className={primaryButton}>
                   Let&apos;s Build Together
-                </Link>
+                </StartProjectButton>
                 <Link href="/industries" className={secondaryButton}>
                   View All Industries
                 </Link>
@@ -820,9 +821,9 @@ export default async function IndustryPage({
               </h2>
               <p className="mt-3 text-white/80">{industry.ctaSubtitle}</p>
               <div className="mt-6 flex flex-wrap justify-center gap-4">
-                <Link href="/contact" className={primaryButton}>
+                <StartProjectButton className={primaryButton}>
                   Start a Project
-                </Link>
+                </StartProjectButton>
                 <Link href="/industries" className={secondaryButton}>
                   View All Industries
                 </Link>

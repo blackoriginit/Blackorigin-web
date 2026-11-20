@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import ContactForm from "@/components/contactform";
 
@@ -70,7 +71,14 @@ export default function StartProjectButton({
 
           <section className="flex flex-col justify-between gap-10 bg-[#061A40] p-8 text-white md:p-10">
             <div>
-              <p className="text-lg font-bold">Black Origin IT</p>
+              <Image
+                src="/logo-white.png"
+                alt="Black Origin"
+                width={640}
+                height={150}
+                className="h-9 w-auto sm:h-10"
+                priority
+              />
               <h2 className="mt-8 text-[32px] font-medium leading-[1.25] tracking-[-0.5px] md:text-[40px]">
                 Talk to an engineer
               </h2>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import StartProjectButton from '@/components/startprojectmodal'
 
 export const metadata: Metadata = {
   title: 'Industries | Black Origin',
@@ -122,9 +123,9 @@ export default function IndustriesPage() {
               </p>
 
               <div className="mt-8">
-                <Link href="/contact" className={primaryButton}>
+                <StartProjectButton className={primaryButton}>
                   Start a Project
-                </Link>
+                </StartProjectButton>
               </div>
             </div>
 
@@ -161,9 +162,9 @@ export default function IndustriesPage() {
             </p>
 
             <div className="mt-6 flex flex-wrap justify-center gap-4">
-              <Link href="/contact" className={primaryButton}>
+              <StartProjectButton className={primaryButton}>
                 Start a Project
-              </Link>
+              </StartProjectButton>
 
               <Link href="/services" className={secondaryButton}>
                 Explore Services

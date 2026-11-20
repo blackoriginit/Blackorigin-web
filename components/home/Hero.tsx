@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 import CountUp from '@/components/CountUp'
+import StartProjectButton from '@/components/startprojectmodal'
 
 const PHOTO_A = '/images/hero-team-1.webp'
 const PHOTO_B = '/images/hero-team-2.webp'
@@ -85,12 +86,9 @@ export default function Hero() {
           </p>
 
           <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href="/contact"
-              className="inline-flex cursor-pointer items-center gap-3 rounded-md bg-[#E85D04] px-6 py-3 text-[13px] font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#061A40] hover:shadow-lg"
-            >
+            <StartProjectButton className="inline-flex cursor-pointer items-center gap-3 rounded-md bg-[#E85D04] px-6 py-3 text-[13px] font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#061A40] hover:shadow-lg">
               Start a Project<span aria-hidden="true">→</span>
-            </Link>
+            </StartProjectButton>
             <Link
               href="/case-studies"
               className="inline-flex cursor-pointer items-center gap-3 rounded-md border border-[#E85D04] px-6 py-3 text-[13px] font-semibold text-[#E85D04] transition duration-300 hover:-translate-y-1 hover:bg-[#E85D04] hover:text-white"
