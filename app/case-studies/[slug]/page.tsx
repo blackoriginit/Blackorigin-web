@@ -232,22 +232,22 @@ export default async function CaseStudyDetailPage({
       <section className="case-cta">
         <div>
           <span className="case-orange-label">
-            LET'S WORK TOGETHER
+            LET&apos;S WORK TOGETHER
           </span>
 
           <h2>Have a similar project in mind?</h2>
 
           <p>
-            Let's discuss your idea and explore how we can
+            Let&apos;s discuss your idea and explore how we can
             build the right solution for your business.
           </p>
 
           <div className="case-cta-buttons">
-            <Link href="/contact" className="case-btn-primary">
+            <Link href="/contact" className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-7 font-semibold text-white">
               Start a Project →
             </Link>
 
-            <Link href="/case-studies" className="case-btn-secondary">
+            <Link href="/case-studies" className="inline-flex h-12 items-center justify-center rounded-md border border-[#3a4a6b] px-7 font-semibold text-white">
               Explore All Case Studies
             </Link>
           </div>

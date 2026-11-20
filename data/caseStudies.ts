@@ -17,7 +17,7 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
-    slug: "instructor-content-control",
+    slug: "giving-instructors-control-of-their-content",
     category: "Training Platforms",
     type: "CONTENT MANAGEMENT",
     title: "Giving Instructors Control of Their Content",
@@ -39,7 +39,7 @@ export const caseStudies: CaseStudy[] = [
     technologies: ["React", "TypeScript", "Node.js"],
   },
   {
-    slug: "machine-learning-search",
+    slug: "search-recommendations-and-ranking-with-machine-learning",
     category: "AI & Deep Learning",
     type: "MACHINE LEARNING",
     title: "Search, Recommendations and Ranking with Machine Learning",
@@ -61,7 +61,7 @@ export const caseStudies: CaseStudy[] = [
     technologies: ["Python", "Machine Learning", "API"],
   },
   {
-    slug: "ai-deep-learning-projects",
+    slug: "ai-and-deep-learning-projects-from-experiment-to-application",
     category: "AI & Deep Learning",
     type: "MACHINE LEARNING",
     title: "AI and Deep Learning Projects: From Experiment to Application",
@@ -83,7 +83,7 @@ export const caseStudies: CaseStudy[] = [
     technologies: ["Python", "Deep Learning", "REST API"],
   },
   {
-    slug: "multi-vendor-marketplace",
+    slug: "multi-vendor-marketplaces-listings-orders-and-payouts",
     category: "E-commerce",
     type: "WEB APPLICATION",
     title: "Multi-Vendor Marketplaces: Listings, Orders and Payouts",
@@ -105,7 +105,7 @@ export const caseStudies: CaseStudy[] = [
     technologies: ["Next.js", "Node.js", "MySQL"],
   },
   {
-    slug: "portfolio-blogging-platforms",
+    slug: "portfolio-and-blogging-platforms-structure-content-and-speed",
     category: "Web Development",
     type: "CONTENT PLATFORM",
     title: "Portfolio and Blogging Platforms: Structure, Content and Speed",
@@ -127,7 +127,7 @@ export const caseStudies: CaseStudy[] = [
     technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
   },
   {
-    slug: "offline-first-field-work",
+    slug: "offline-first-design-for-field-work",
     category: "Mobile Applications",
     type: "MOBILE APPLICATION",
     title: "Offline-First Design for Field Work",
@@ -171,7 +171,7 @@ export const caseStudies: CaseStudy[] = [
     technologies: ["Next.js", "React Native", "Node.js"],
   },
   {
-    slug: "legacy-system-integration",
+    slug: "connecting-a-new-front-end-to-a-legacy-system",
     category: "Business Systems",
     type: "SYSTEM INTEGRATION",
     title: "Connecting a New Front End to a Legacy System",
@@ -193,7 +193,7 @@ export const caseStudies: CaseStudy[] = [
     technologies: ["REST API", "Node.js", "SQL"],
   },
   {
-    slug: "management-dashboards-reporting",
+    slug: "dashboards-and-reporting-in-a-management-system",
     category: "Business Systems",
     type: "BUSINESS SYSTEM",
     title: "Dashboards and Reporting in a Management System",
@@ -215,7 +215,7 @@ export const caseStudies: CaseStudy[] = [
     technologies: ["React", "Charts", "SQL"],
   },
   {
-    slug: "management-spreadsheets-ems",
+    slug: "management-systems-turning-spreadsheets-into-an-ems",
     category: "Business Systems",
     type: "BUSINESS SYSTEM",
     title: "Management Systems: Turning Spreadsheets into an EMS",
@@ -237,7 +237,7 @@ export const caseStudies: CaseStudy[] = [
     technologies: ["Next.js", "PHP", "MySQL"],
   },
   {
-    slug: "role-based-access-control",
+    slug: "role-based-access-control-who-sees-what-in-a-business-system",
     category: "Business Systems",
     type: "BUSINESS SYSTEM",
     title: "Role-Based Access Control: Who Sees What in a Business System",
@@ -259,7 +259,7 @@ export const caseStudies: CaseStudy[] = [
     technologies: ["Authentication", "RBAC", "Database"],
   },
   {
-    slug: "payments-inventory-ecommerce",
+    slug: "payments-and-inventory-the-engine-room-of-e-commerce",
     category: "E-commerce",
     type: "E-COMMERCE",
     title: "Payments and Inventory: The Engine Room of E-commerce",
@@ -281,7 +281,7 @@ export const caseStudies: CaseStudy[] = [
     technologies: ["Node.js", "MySQL", "Payment APIs"],
   },
   {
-    slug: "checkout-reliability",
+    slug: "checkout-reliability-designing-for-the-moment-of-payment",
     category: "E-commerce",
     type: "WEB APPLICATION",
     title: "Checkout Reliability: Designing for the Moment of Payment",
@@ -303,7 +303,7 @@ export const caseStudies: CaseStudy[] = [
     technologies: ["JavaScript", "REST API", "Payment Gateway"],
   },
   {
-    slug: "ecommerce-catalogue-checkout",
+    slug: "an-ecommerce-build-from-catalogue-to-checkout",
     category: "E-commerce",
     type: "WEB APPLICATION",
     title: "An E-commerce Build: From Catalogue to Checkout",

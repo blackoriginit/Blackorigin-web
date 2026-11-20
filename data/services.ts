@@ -1,0 +1,884 @@
+export interface DeliverableItem {
+  title: string;
+  description: string;
+}
+
+export interface CaseStudyItem {
+  tag: string;
+  title: string;
+  link: string;
+}
+
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export interface ServiceDetail {
+  id: string;
+  slug: string;
+  number: string;
+  title: string;
+  shortDesc: string;
+  atAGlance: {
+    bestFor: string;
+    engagement: string;
+    typicalStack: string;
+  };
+  overview: string[];
+  whatWeDeliver: DeliverableItem[];
+  technologies: string[];
+  industries: string[];
+  faqs: FAQItem[];
+  relatedCaseStudies: CaseStudyItem[];
+}
+
+export const servicesData: ServiceDetail[] = [
+  // 01. Custom Software Development
+  {
+    id: "1",
+    slug: "custom-software-development",
+    number: "01",
+    title: "Custom Software Development",
+    shortDesc:
+      "Purpose-built software for your specific workflows, from internal tools to customer-facing platforms.",
+    atAGlance: {
+      bestFor: "Internal tools, management systems and customer-facing platforms",
+      engagement: "Project delivery, team extension or managed service",
+      typicalStack: "React, Next.js, Laravel, Node.js, PostgreSQL",
+    },
+    overview: [
+      "Custom software is built around how your business actually works, not the other way round. We start with the problem and the people who live with it every day, then design a system that fits the workflow instead of forcing the workflow to fit a tool.",
+      "That covers internal tools and management systems as much as customer-facing platforms: a system of record with clear roles, an operational dashboard, or a product your customers use directly. We work in increments, so you see progress early and the scope stays honest.",
+    ],
+    whatWeDeliver: [
+      {
+        title: "Discovery and scoping",
+        description:
+          "We map the problem, the users and the constraints before any code is written.",
+      },
+      {
+        title: "Internal tools",
+        description:
+          "Systems of record that follow the workflows your team already uses.",
+      },
+      {
+        title: "Customer-facing platforms",
+        description:
+          "Products your customers use directly, built to be maintained, not just launched.",
+      },
+      {
+        title: "Integrations",
+        description:
+          "Connecting the new system to the tools and data you already rely on.",
+      },
+      {
+        title: "Roles and permissions",
+        description:
+          "Access control, approvals and a clear history of who changed what.",
+      },
+      {
+        title: "Reporting and dashboards",
+        description:
+          "The numbers you need, defined once and agreed by everyone who uses them.",
+      },
+    ],
+    technologies: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Laravel",
+      "PHP",
+      "Python",
+      "PostgreSQL",
+      "MySQL",
+      "Redis",
+      "Docker",
+      "AWS",
+    ],
+    industries: [
+      "Education",
+      "E-commerce",
+      "Professional Services",
+      "Healthcare",
+      "Logistics",
+    ],
+    faqs: [
+      {
+        question: "How long does a custom software project take?",
+        answer:
+          "It depends on scope. We start with a short discovery so we can give you a realistic plan rather than a guess, and you see working software in increments rather than only at the end.",
+      },
+      {
+        question: "Can you improve a system we already have?",
+        answer:
+          "Yes. We can extend, modernise or integrate an existing system, and we will tell you honestly when rebuilding is the better option.",
+      },
+      {
+        question: "How are changes handled during a project?",
+        answer:
+          "Scope changes are normal. We agree how a change affects time and cost before it is built, so there are no surprises later.",
+      },
+    ],
+    relatedCaseStudies: [
+      {
+        tag: "CASE STUDY",
+        title: "Management Systems: Turning Spreadsheets into an EMS",
+        link: "/case-studies/management-systems-turning-spreadsheets-into-an-ems",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "Dashboards and Reporting in a Management System",
+        link: "/case-studies/dashboards-and-reporting-in-a-management-system",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "Connecting a New Front End to a Legacy System",
+        link: "/case-studies/connecting-a-new-front-end-to-a-legacy-system",
+      },
+    ],
+  },
+
+  // 02. Web Application Development
+  {
+    id: "2",
+    slug: "web-application-development",
+    number: "02",
+    title: "Web Application Development",
+    shortDesc:
+      "Fast, reliable web applications built on modern frameworks and designed to scale with usage.",
+    atAGlance: {
+      bestFor: "Customer portals, dashboards and web products",
+      engagement: "Project delivery, team extension or managed service",
+      typicalStack: "React, Next.js, TypeScript, Node.js, PostgreSQL",
+    },
+    overview: [
+      "A web application is more than a set of pages. It has accounts, permissions, data that has to stay consistent, and a release process you can trust. We build the whole application, not just the visible part.",
+      "We use modern frameworks on the front end with a clear backend underneath, so the application stays fast as it grows and remains maintainable for the team that owns it after launch.",
+    ],
+    whatWeDeliver: [
+      {
+        title: "Application architecture",
+        description:
+          "Structure that keeps features independent and the codebase understandable.",
+      },
+      {
+        title: "Responsive interfaces",
+        description: "Layouts that work from a phone to a large monitor.",
+      },
+      {
+        title: "Accounts and permissions",
+        description:
+          "Sign-in, roles and access that match how your organisation works.",
+      },
+      {
+        title: "APIs and data modelling",
+        description: "A data model and API the rest of the product can build on.",
+      },
+      {
+        title: "Performance and SEO",
+        description:
+          "Pages that load quickly and are found, with sensible caching.",
+      },
+      {
+        title: "Deployment and monitoring",
+        description: "A repeatable release path and visibility after launch.",
+      },
+    ],
+    technologies: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Laravel",
+      "PHP",
+      "PostgreSQL",
+      "MySQL",
+      "Redis",
+      "Docker",
+      "Cloudflare",
+      "AWS",
+      "Sentry",
+    ],
+    industries: ["E-commerce", "SaaS", "Professional Services", "Real Estate"],
+    faqs: [
+      {
+        question: "Can you work with our existing design?",
+        answer:
+          "Yes. If you have designs or a design system we build against them; if not, interface design is part of the work.",
+      },
+      {
+        question: "How do you keep a web application fast?",
+        answer:
+          "Performance is designed in, with sensible caching and asset handling, and monitored after launch so regressions are caught early.",
+      },
+      {
+        question: "Do we own the code?",
+        answer:
+          "Yes. You own the code and the data, and we hand over documentation and a working deployment.",
+      },
+    ],
+    relatedCaseStudies: [
+      {
+        tag: "CASE STUDY",
+        title: "An E-commerce Build: From Catalogue to Checkout",
+        link: "/case-studies/an-ecommerce-build-from-catalogue-to-checkout",
+      },
+      {
+        tag: "CASE STUDY",
+        title:
+          "Portfolio and Blogging Platforms: Structure, Content and Speed",
+        link: "/case-studies/portfolio-and-blogging-platforms-structure-content-and-speed",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "Multi-Vendor Marketplaces: Listings, Orders and Payouts",
+        link: "/case-studies/multi-vendor-marketplaces-listings-orders-and-payouts",
+      },
+    ],
+  },
+
+  // 03. Mobile Application Development
+  {
+    id: "3",
+    slug: "mobile-application-development",
+    number: "03",
+    title: "Mobile Application Development",
+    shortDesc:
+      "Cross-platform mobile apps for iOS and Android built from a single, maintainable codebase.",
+    atAGlance: {
+      bestFor: "Apps for customers, field teams and internal operations",
+      engagement: "Project delivery or team extension",
+      typicalStack: "Flutter, Dart, Node.js, PostgreSQL",
+    },
+    overview: [
+      "We build mobile apps from a single codebase for both iOS and Android using Flutter, so you reach both stores without maintaining two separate products.",
+      "The work goes beyond the screens: offline behaviour, permissions, store requirements and the backend the app talks to are all part of planning a release that actually ships.",
+    ],
+    whatWeDeliver: [
+      {
+        title: "Cross-platform builds",
+        description:
+          "One codebase for iOS and Android, released to both stores.",
+      },
+      {
+        title: "Native-quality experience",
+        description: "Interfaces that feel at home on each platform.",
+      },
+      {
+        title: "Offline and sync",
+        description:
+          "Apps that keep working when the connection does not, and reconcile when it returns.",
+      },
+      {
+        title: "Notifications",
+        description:
+          "Push messages that reach the right people at the right time.",
+      },
+      {
+        title: "Store release",
+        description:
+          "Preparing and submitting the build, with the store requirements handled.",
+      },
+      {
+        title: "Maintenance",
+        description:
+          "Fixes and updates for new operating system versions after launch.",
+      },
+    ],
+    technologies: [
+      "Flutter",
+      "Dart",
+      "Node.js",
+      "Python",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
+      "AWS",
+      "Sentry",
+    ],
+    industries: ["E-commerce", "Logistics", "Healthcare", "Real Estate"],
+    faqs: [
+      {
+        question: "Should we build native or cross-platform?",
+        answer:
+          "It depends on the app. Cross-platform suits most business applications because it reaches both stores from one codebase; we will say so when a native build is genuinely the better choice.",
+      },
+      {
+        question: "Can the app work offline?",
+        answer:
+          "Yes. For field and on-site work we design local storage, sync and conflict handling from the start.",
+      },
+      {
+        question: "Do you handle app store submission?",
+        answer:
+          "Yes. Preparing the build, the listing requirements and the submission are part of the work.",
+      },
+    ],
+    relatedCaseStudies: [
+      {
+        tag: "CASE STUDY",
+        title: "Offline-First Design for Field Work",
+        link: "/case-studies/offline-first-design-for-field-work",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "Multi-Vendor Marketplaces: Listings, Orders and Payouts",
+        link: "/case-studies/multi-vendor-marketplaces-listings-orders-and-payouts",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "An E-commerce Build: From Catalogue to Checkout",
+        link: "/case-studies/an-ecommerce-build-from-catalogue-to-checkout",
+      },
+    ],
+  },
+
+  // 04. AI & Machine Learning
+  {
+    id: "4",
+    slug: "ai-machine-learning",
+    number: "04",
+    title: "AI & Machine Learning",
+    shortDesc:
+      "Practical AI features: prediction, classification and assistants, built on your own data.",
+    atAGlance: {
+      bestFor:
+        "Prediction, classification and assistant features on your own data",
+      engagement: "Discovery, delivery or research-led engagement",
+      typicalStack: "Python, PostgreSQL, Docker, AWS",
+    },
+    overview: [
+      "We build AI features around a specific problem, not around the label. That starts with framing the question: what decision or task should improve, and what data do we actually have to work with?",
+      "From there the work is disciplined engineering: preparing and evaluating data, training and testing a model, then deploying it where it is used and monitoring it so quality stays visible over time.",
+    ],
+    whatWeDeliver: [
+      {
+        title: "Problem framing",
+        description: "Turning a business question into something measurable.",
+      },
+      {
+        title: "Data preparation",
+        description:
+          "Collecting, cleaning and labelling the data the model depends on.",
+      },
+      {
+        title: "Training and evaluation",
+        description: "Building and testing models against agreed measures.",
+      },
+      {
+        title: "Deployment and serving",
+        description: "Putting the model behind an API your product can use.",
+      },
+      {
+        title: "Monitoring",
+        description: "Watching accuracy and drift once the feature is live.",
+      },
+      {
+        title: "Human review",
+        description: "Keeping people in control where the stakes require it.",
+      },
+    ],
+    technologies: [
+      "Python",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
+      "AWS",
+      "Node.js",
+      "REST APIs",
+    ],
+    industries: ["E-commerce", "FinTech", "Healthcare", "SaaS"],
+    faqs: [
+      {
+        question: "How much data do we need?",
+        answer:
+          "It depends on the problem. We look at what you have during discovery and tell you honestly whether there is enough to build something useful.",
+      },
+      {
+        question: "Will this replace our staff?",
+        answer:
+          "Our aim is to assist people, not replace judgement. Features are designed with review and escalation where decisions matter.",
+      },
+      {
+        question: "How do you know the model works?",
+        answer:
+          "We agree the measures before building, evaluate against them, and keep monitoring after deployment.",
+      },
+    ],
+    relatedCaseStudies: [
+      {
+        tag: "CASE STUDY",
+        title: "AI and Deep Learning Projects: From Experiment to Application",
+        link: "/case-studies/ai-and-deep-learning-projects-from-experiment-to-application",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "Search, Recommendations and Ranking with Machine Learning",
+        link: "/case-studies/search-recommendations-and-ranking-with-machine-learning",
+      },
+    ],
+  },
+
+  // 05. AI Automation
+  {
+    id: "5",
+    slug: "ai-automation",
+    number: "05",
+    title: "AI Automation",
+    shortDesc:
+      "Turn repetitive business processes into intelligent, automated workflows that save hours every week.",
+    atAGlance: {
+      bestFor: "Repetitive, rules-based work that consumes staff time",
+      engagement: "Discovery and delivery, then ongoing improvement",
+      typicalStack: "Python, Node.js, PostgreSQL, Redis",
+    },
+    overview: [
+      "Automation pays off when it is aimed at the right task. We map the process first, work out where time is actually lost, and automate the parts that are repetitive and predictable.",
+      "Where a task needs judgement, we keep a person in the loop: the system drafts, sorts or extracts, and someone confirms. That is how automation stays useful and safe.",
+    ],
+    whatWeDeliver: [
+      {
+        title: "Process mapping",
+        description:
+          "Finding the steps worth automating and the ones to leave alone.",
+      },
+      {
+        title: "Workflow automation",
+        description:
+          "Connecting the tools you already use so work moves by itself.",
+      },
+      {
+        title: "Document and data extraction",
+        description:
+          "Pulling structured information out of documents and messages.",
+      },
+      {
+        title: "Assistants",
+        description:
+          "Assistants that draft and summarise, with a person in control.",
+      },
+      {
+        title: "Integrations",
+        description:
+          "Working through the systems you already rely on rather than replacing them.",
+      },
+      {
+        title: "Monitoring",
+        description:
+          "Visibility into what the automation did and where it failed.",
+      },
+    ],
+    technologies: [
+      "Python",
+      "Node.js",
+      "REST APIs",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
+      "AWS",
+    ],
+    industries: ["Professional Services", "FinTech", "Logistics", "Education"],
+    faqs: [
+      {
+        question: "Which tasks should we automate?",
+        answer:
+          "Start with work that is repetitive, predictable and time consuming. We map the process during discovery and recommend where automation genuinely pays off.",
+      },
+      {
+        question: "Will it work with our current tools?",
+        answer:
+          "In most cases yes. We automate through the tools you already use rather than forcing a replacement.",
+      },
+      {
+        question: "How is it kept safe?",
+        answer:
+          "Automated steps are monitored, and steps that carry risk keep a human in the loop for confirmation.",
+      },
+    ],
+    relatedCaseStudies: [
+      {
+        tag: "CASE STUDY",
+        title: "AI and Deep Learning Projects: From Experiment to Application",
+        link: "/case-studies/ai-and-deep-learning-projects-from-experiment-to-application",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "Connecting a New Front End to a Legacy System",
+        link: "/case-studies/connecting-a-new-front-end-to-a-legacy-system",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "Dashboards and Reporting in a Management System",
+        link: "/case-studies/dashboards-and-reporting-in-a-management-system",
+      },
+    ],
+  },
+
+  // 06. SaaS Development
+  {
+    id: "6",
+    slug: "saas-development",
+    number: "06",
+    title: "SaaS Development",
+    shortDesc:
+      "Multi-tenant SaaS products with billing, onboarding and the operational tooling behind them.",
+    atAGlance: {
+      bestFor: "Founders and teams building a subscription product",
+      engagement: "Project delivery with ongoing product support",
+      typicalStack: "React, Next.js, Laravel, PostgreSQL",
+    },
+    overview: [
+      "A SaaS product is not just an application; it is a business. Tenancy, billing, onboarding and the admin tooling behind the scenes decide whether it can grow without the team drowning in manual work.",
+      "We build the product and the operational layer together, so launching a new customer or changing a plan is a routine action rather than a support ticket.",
+    ],
+    whatWeDeliver: [
+      {
+        title: "Multi-tenancy",
+        description: "Clear separation of customer data and configuration.",
+      },
+      {
+        title: "Billing and plans",
+        description:
+          "Subscriptions, plan changes and the states around them.",
+      },
+      {
+        title: "Onboarding",
+        description:
+          "A first-run experience that gets customers to value quickly.",
+      },
+      {
+        title: "Operations tooling",
+        description: "Admin screens for the team running the product.",
+      },
+      {
+        title: "APIs",
+        description: "A clean API the product and integrations can build on.",
+      },
+      {
+        title: "Scalability",
+        description: "Choices that hold as usage and customers grow.",
+      },
+    ],
+    technologies: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Laravel",
+      "Node.js",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
+      "Cloudflare",
+      "AWS",
+    ],
+    industries: ["SaaS", "FinTech", "Startups & SMEs", "Education"],
+    faqs: [
+      {
+        question: "Can you start from an early idea?",
+        answer:
+          "Yes. We can help scope a first version that is genuinely usable, then grow it as the product finds its market.",
+      },
+      {
+        question: "How is billing handled?",
+        answer:
+          "We integrate a billing provider and build the product side: plans, entitlements and the states around subscription changes.",
+      },
+      {
+        question: "Who runs it after launch?",
+        answer:
+          "That is your choice. We can hand over with documentation, or run and improve it as a managed service.",
+      },
+    ],
+    relatedCaseStudies: [
+      {
+        tag: "CASE STUDY",
+        title: "Multi-Vendor Marketplaces: Listings, Orders and Payouts",
+        link: "/case-studies/multi-vendor-marketplaces-listings-orders-and-payouts",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "Payments and Inventory: The Engine Room of E-commerce",
+        link: "/case-studies/payments-and-inventory-the-engine-room-of-e-commerce",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "Checkout Reliability: Designing for the Moment of Payment",
+        link: "/case-studies/checkout-reliability-designing-for-the-moment-of-payment",
+      },
+    ],
+  },
+
+  // 07. API & Backend Engineering
+  {
+    id: "7",
+    slug: "api-backend-development",
+    number: "07",
+    title: "API & Backend Engineering",
+    shortDesc:
+      "Secure APIs and backend systems that connect your products, teams and third-party services.",
+    atAGlance: {
+      bestFor: "Products that need a reliable backend and integrations",
+      engagement: "Project delivery, team extension or managed service",
+      typicalStack: "Laravel, Node.js, PostgreSQL, Redis",
+    },
+    overview: [
+      "The backend is where a product's rules, data and integrations live. Done well it is quiet: contracts hold, jobs run, and the parts that talk to each other keep working when something is slow.",
+      "We design APIs and data models deliberately, secure them properly, and build the background work that keeps everything in step.",
+    ],
+    whatWeDeliver: [
+      {
+        title: "API design",
+        description: "Clear, documented contracts that clients can rely on.",
+      },
+      {
+        title: "Authentication and authorisation",
+        description: "Secure access with roles and scoped permissions.",
+      },
+      {
+        title: "Data modelling",
+        description: "Schemas that stay correct as the product changes.",
+      },
+      {
+        title: "Integrations",
+        description:
+          "Connecting third-party services without fragile glue.",
+      },
+      {
+        title: "Background jobs",
+        description: "Queues and scheduled work that run reliably.",
+      },
+      {
+        title: "Monitoring",
+        description: "Visibility into errors, performance and failures.",
+      },
+    ],
+    technologies: [
+      "Laravel",
+      "PHP",
+      "Node.js",
+      "Python",
+      "PostgreSQL",
+      "MySQL",
+      "Redis",
+      "Docker",
+      "AWS",
+      "DigitalOcean",
+      "Sentry",
+    ],
+    industries: ["FinTech", "E-commerce", "SaaS", "Logistics"],
+    faqs: [
+      {
+        question: "Can you document an existing API?",
+        answer:
+          "Yes. We can document and evaluate an existing API, or design a new one that current clients can migrate to carefully.",
+      },
+      {
+        question: "How do you handle third-party failures?",
+        answer:
+          "Integrations are built to degrade gracefully, with retries, queues and clear errors rather than silent data loss.",
+      },
+      {
+        question: "Is it secure?",
+        answer:
+          "Security is part of the work: authentication, authorisation, input validation, rate limiting and monitoring.",
+      },
+    ],
+    relatedCaseStudies: [
+      {
+        tag: "CASE STUDY",
+        title: "Connecting a New Front End to a Legacy System",
+        link: "/case-studies/connecting-a-new-front-end-to-a-legacy-system",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "Payments and Inventory: The Engine Room of E-commerce",
+        link: "/case-studies/payments-and-inventory-the-engine-room-of-e-commerce",
+      },
+      {
+        tag: "CASE STUDY",
+        title:
+          "Role-Based Access Control: Who Sees What in a Business System",
+        link: "/case-studies/role-based-access-control-who-sees-what-in-a-business-system",
+      },
+    ],
+  },
+
+  // 08. UI/UX Engineering
+  {
+    id: "8",
+    slug: "ui-ux-design",
+    number: "08",
+    title: "UI/UX Engineering",
+    shortDesc:
+      "Research-driven interface design that makes complex software clear and pleasant to use.",
+    atAGlance: {
+      bestFor: "Complex software that needs to be clear to use",
+      engagement: "Design project or embedded with a delivery team",
+      typicalStack: "Figma, React, Tailwind CSS",
+    },
+    overview: [
+      "Interface design is where business requirements become something people can actually use. We start with the requirements and the users, then work out the flows before any detail is settled.",
+      "The result is a design system a development team can build from without guessing: components, states and edge cases described clearly enough to implement.",
+    ],
+    whatWeDeliver: [
+      {
+        title: "Discovery and research",
+        description:
+          "Understanding the users and the jobs they are trying to do.",
+      },
+      {
+        title: "Flows and structure",
+        description:
+          "Information architecture and user flows that make sense.",
+      },
+      {
+        title: "Wireframes and prototypes",
+        description: "Cheap versions to test before committing to build.",
+      },
+      {
+        title: "Design systems",
+        description:
+          "Reusable components with consistent spacing and states.",
+      },
+      {
+        title: "Accessibility",
+        description:
+          "Interfaces that work with keyboards and screen readers.",
+      },
+      {
+        title: "Handoff",
+        description: "Specifications a development team can build from.",
+      },
+    ],
+    technologies: ["Figma", "React", "Next.js", "Tailwind CSS", "TypeScript"],
+    industries: ["SaaS", "E-commerce", "Professional Services", "Education"],
+    faqs: [
+      {
+        question: "Do you design and build?",
+        answer:
+          "We can do either. Many clients have us design and then build; others take our design system to their own team.",
+      },
+      {
+        question: "How do you handle accessibility?",
+        answer:
+          "Accessibility is designed in from the start: structure, contrast, keyboard use and clear states, rather than checked at the end.",
+      },
+      {
+        question: "Can you improve an existing product's interface?",
+        answer:
+          "Yes. We can audit what you have, fix the highest-impact problems and establish a system for future work.",
+      },
+    ],
+    relatedCaseStudies: [
+      {
+        tag: "CASE STUDY",
+        title:
+          "Portfolio and Blogging Platforms: Structure, Content and Speed",
+        link: "/case-studies/portfolio-and-blogging-platforms-structure-content-and-speed",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "Giving Instructors Control of Their Content",
+        link: "/case-studies/giving-instructors-control-of-their-content",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "Dashboards and Reporting in a Management System",
+        link: "/case-studies/dashboards-and-reporting-in-a-management-system",
+      },
+    ],
+  },
+
+  // 09. Software Maintenance & Support
+  {
+    id: "9",
+    slug: "software-maintenance",
+    number: "09",
+    title: "Software Maintenance & Support",
+    shortDesc:
+      "Monitoring, fixes and continuous improvement so your software keeps performing after launch.",
+    atAGlance: {
+      bestFor: "Software that is live and business-critical",
+      engagement: "Ongoing monthly support",
+      typicalStack: "Sentry, Docker, Cloudflare, AWS",
+    },
+    overview: [
+      "Software is never finished. A live system needs monitoring, occasional fixes, security updates and steady improvement. Maintenance is the cheapest way to protect an investment.",
+      "We keep systems healthy with visibility into what is happening, a clear route for issues, and regular improvements rather than waiting for a crisis.",
+    ],
+    whatWeDeliver: [
+      {
+        title: "Monitoring and alerts",
+        description: "Knowing about problems before users report them.",
+      },
+      {
+        title: "Bug fixes",
+        description: "Investigating and resolving issues when they arise.",
+      },
+      {
+        title: "Security updates",
+        description: "Keeping dependencies and servers up to date.",
+      },
+      {
+        title: "Performance",
+        description: "Finding and fixing the slow parts.",
+      },
+      {
+        title: "Backups and recovery",
+        description: "Being able to restore if something goes wrong.",
+      },
+      {
+        title: "Continuous improvement",
+        description:
+          "Small, regular improvements rather than a rescue.",
+      },
+    ],
+    technologies: [
+      "Sentry",
+      "Docker",
+      "Cloudflare",
+      "AWS",
+      "DigitalOcean",
+      "PostgreSQL",
+      "Redis",
+      "Git",
+    ],
+    industries: ["E-commerce", "SaaS", "Healthcare", "FinTech"],
+    faqs: [
+      {
+        question: "What does a support plan cover?",
+        answer:
+          "Monitoring, a route for issues, fixes within agreed response times, security updates and a measured amount of improvement work each month.",
+      },
+      {
+        question: "Can you take over a system built by someone else?",
+        answer:
+          "Yes. We start with an audit to understand the system, the risks and what needs attention first.",
+      },
+      {
+        question: "Do we have to commit long term?",
+        answer:
+          "No. Support runs in clear periods, and you can stop when you are ready.",
+      },
+    ],
+    relatedCaseStudies: [
+      {
+        tag: "CASE STUDY",
+        title: "Connecting a New Front End to a Legacy System",
+        link: "/case-studies/connecting-a-new-front-end-to-a-legacy-system",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "Dashboards and Reporting in a Management System",
+        link: "/case-studies/dashboards-and-reporting-in-a-management-system",
+      },
+      {
+        tag: "CASE STUDY",
+        title: "Payments and Inventory: The Engine Room of E-commerce",
+        link: "/case-studies/payments-and-inventory-the-engine-room-of-e-commerce",
+      },
+    ],
+  },
+];
