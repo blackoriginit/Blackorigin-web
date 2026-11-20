@@ -65,9 +65,22 @@ export default function ContactPage() {
             <span className={hoverBar} />
             <h2 className="text-xl font-semibold text-[#061A40]">Follow Us</h2>
             <div className="flex gap-5 text-lg text-gray-700">
-              {/* TODO: replace # with the real social links */}
-              <a href="#" className="hover:text-[#E85D04]">LinkedIn</a>
-              <a href="#" className="hover:text-[#E85D04]">YouTube</a>
+              <a
+                href="https://www.linkedin.com/company/black-origin-official/home/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#E85D04]"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://www.youtube.com/@BlackOriginOfficial"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#E85D04]"
+              >
+                YouTube
+              </a>
             </div>
           </div>
         </section>
