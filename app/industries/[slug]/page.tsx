@@ -500,7 +500,7 @@ export default async function IndustryPage({
                 </div>
               </div>
               <div className="relative">
-                <div className="relative rounded-2xl bg-gradient-to-br from-[#061A40] to-[#0a1f4d] p-10 text-white shadow-xl">
+                <div className="relative rounded-2xl bg-gradient-to-br from-[#061A40] to-[#0a1f4d] p-6 text-white shadow-xl sm:p-10">
                   <div className="space-y-6">
                     <div className="flex items-start gap-4">
                       <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#E85D04]">
@@ -774,7 +774,7 @@ export default async function IndustryPage({
       <section className="pb-20">
         <div className="mx-auto w-full max-w-7xl px-6">
           {isFintech || isHealthcare ? (
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#061A40] to-[#0a1f4d] p-12 text-center text-white">
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#061A40] to-[#0a1f4d] p-6 text-center text-white sm:p-10 md:p-12">
               <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#E85D04]/20 blur-3xl" />
               <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-[#E85D04]/10 blur-3xl" />
               <div className="relative">
@@ -798,7 +798,7 @@ export default async function IndustryPage({
               </div>
             </div>
           ) : isStartups ? (
-            <div className="rounded-2xl border-2 border-[#E85D04] bg-white p-12 text-center shadow-lg">
+            <div className="rounded-2xl border-2 border-[#E85D04] bg-white p-6 text-center shadow-lg sm:p-10 md:p-12">
               <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-[#061A40]">
                 {industry.ctaTitle}
               </h2>
@@ -815,7 +815,7 @@ export default async function IndustryPage({
               </div>
             </div>
           ) : (
-            <div className="rounded-xl bg-[#061A40] p-10 text-center text-white">
+            <div className="rounded-xl bg-[#061A40] p-6 text-center text-white sm:p-10">
               <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
                 {industry.ctaTitle}
               </h2>

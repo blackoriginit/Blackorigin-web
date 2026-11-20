@@ -65,7 +65,7 @@ export default function CareersPage() {
               work.
             </p>
 
-            <div className="mt-8 grid grid-cols-3 gap-4 border-t border-white/15 pt-6 text-white">
+            <div className="mt-8 grid grid-cols-1 gap-4 border-t border-white/15 pt-6 text-white sm:grid-cols-3">
               {highlights.map((h) => (
                 <div key={h.label}>
                   <p className="text-[10px] tracking-widest text-slate-400">

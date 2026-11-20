@@ -295,7 +295,7 @@ export default function ApplicationForm({ job }: { job: Job }) {
                   <dt className="text-[9px] tracking-widest text-slate-300">
                     {s.label.toUpperCase()}
                   </dt>
-                  <dd className="mt-1 text-xs font-semibold text-white">
+                  <dd className="mt-1 break-words text-xs font-semibold text-white">
                     {s.value}
                   </dd>
                 </div>
@@ -335,7 +335,10 @@ export default function ApplicationForm({ job }: { job: Job }) {
             </p>
 
             {/* Stepper */}
-            <ol className="mb-8 mt-8 flex items-center gap-3">
+            <p className="mb-3 mt-8 text-xs font-semibold text-slate-500 sm:hidden">
+              Step {step} of {stepLabels.length}
+            </p>
+            <ol className="mb-8 mt-3 flex items-center gap-2 sm:mt-8 sm:gap-3">
               {stepLabels.map((label, i) => {
                 const n = i + 1;
                 const done = step > n;
@@ -343,7 +346,7 @@ export default function ApplicationForm({ job }: { job: Job }) {
                 return (
                   <li
                     key={label}
-                    className="flex flex-1 items-center gap-3 last:flex-none"
+                    className="flex min-w-0 flex-1 items-center gap-2 last:flex-none sm:gap-3"
                   >
                     <span
                       className={
@@ -357,7 +360,7 @@ export default function ApplicationForm({ job }: { job: Job }) {
                     </span>
                     <span
                       className={
-                        "text-sm font-semibold " +
+                        "hidden whitespace-nowrap text-sm font-semibold sm:inline " +
                         (current ? "text-[#061a40]" : "text-slate-400")
                       }
                     >

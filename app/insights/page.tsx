@@ -51,7 +51,7 @@ export default function InsightsPage() {
             </div>
 
             <div className="rounded-3xl border border-white/20 bg-white/10 p-5 shadow-2xl md:p-7">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {heroCards.map((c) => (
                   <div
                     key={c.label}
@@ -59,12 +59,12 @@ export default function InsightsPage() {
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      className="h-36 w-full object-cover"
+                      className="h-28 w-full object-cover sm:h-36"
                       src={`/insights/hero/${c.file}.jpg`}
                       alt={c.label}
                     />
                     <div className="p-4">
-                      <p className="text-sm font-semibold">{c.label}</p>
+                      <p className="break-words text-sm font-semibold">{c.label}</p>
                     </div>
                   </div>
                 ))}
@@ -78,7 +78,7 @@ export default function InsightsPage() {
       <section className="bg-[#F5F9FF] py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mx-auto mb-20 max-w-3xl text-center">
-            <h2 className="font-heading mb-5 text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-[#061A40]">
+            <h2 className="font-heading mb-5 text-3xl font-semibold leading-tight tracking-tight text-[#061A40] sm:text-4xl md:text-5xl">
               Latest articles
             </h2>
             <p className="mx-auto max-w-2xl text-lg leading-8 text-[#5A6B8C]">

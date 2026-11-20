@@ -17,7 +17,7 @@ const navLinks = [
 ]
 
 const navCtaClass =
-  'inline-flex items-center justify-center transition bg-primary text-text border border-text rounded-full px-5 py-2.5 text-base font-bold shadow-sm hover:bg-text hover:text-primary hover:bg-[#061A40] hover:text-white hover:transition-colors hover:duration-1000 hover:ease-in-out'
+  'inline-flex shrink-0 items-center justify-center whitespace-nowrap transition bg-primary text-text border border-text rounded-full px-5 py-2.5 text-base font-bold shadow-sm hover:bg-text hover:text-primary hover:bg-[#061A40] hover:text-white hover:transition-colors hover:duration-1000 hover:ease-in-out'
 
 export default function TopNav() {
   const pathname = usePathname()
@@ -46,13 +46,13 @@ export default function TopNav() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-1 md:flex md:flex-1 md:justify-center lg:gap-4">
+        <nav className="hidden items-center gap-1 lg:flex lg:flex-1 lg:justify-center xl:gap-4">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               aria-current={isActive(link.href) ? 'page' : undefined}
-              className={`rounded-full px-1 py-1.5 text-sm font-medium transition lg:px-3 ${
+              className={`whitespace-nowrap rounded-full px-2 py-1.5 text-sm font-medium transition xl:px-3 ${
                 isActive(link.href)
                   ? 'bg-text/10 font-semibold'
                   : 'opacity-80 hover:opacity-100'
@@ -63,7 +63,7 @@ export default function TopNav() {
           ))}
         </nav>
 
-        <StartProjectButton className={`${navCtaClass} hidden md:inline-flex`}>
+        <StartProjectButton className={`${navCtaClass} hidden lg:inline-flex`}>
           Start a Project
         </StartProjectButton>
 
@@ -73,14 +73,14 @@ export default function TopNav() {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
-          className="flex h-9 w-9 cursor-pointer select-none list-none items-center justify-center rounded-full hover:bg-text/10 [&::-webkit-details-marker]:hidden md:hidden"
+          className="flex h-9 w-9 cursor-pointer select-none list-none items-center justify-center rounded-full hover:bg-text/10 [&::-webkit-details-marker]:hidden lg:hidden"
         >
           <span className="text-2xl leading-none">{menuOpen ? '×' : '☰'}</span>
         </button>
       </div>
 
       {menuOpen && (
-        <div className="absolute inset-x-0 top-full z-50 flex max-h-[80vh] flex-col gap-1 overflow-y-auto border-b px-6 py-4 shadow-lg bg-background text-text border-text/10 md:hidden">
+        <div className="absolute inset-x-0 top-full z-50 flex max-h-[80vh] flex-col gap-1 overflow-y-auto border-b px-6 py-4 shadow-lg bg-background text-text border-text/10 lg:hidden">
           {navLinks.map((link) => (
             <Link
               key={link.href}

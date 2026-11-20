@@ -112,7 +112,7 @@ export default function IndustriesPage() {
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="grid gap-12 lg:grid-cols-[300px_minmax(0,1fr)] lg:gap-16">
             <div className="lg:sticky lg:top-28 lg:self-start">
-              <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-[#061A40]">
+              <h2 className="font-heading text-3xl font-semibold leading-tight tracking-tight text-[#061A40] sm:text-4xl md:text-5xl">
                 Industries we serve
               </h2>
 
@@ -152,7 +152,7 @@ export default function IndustriesPage() {
           </div>
 
           {/* CTA */}
-          <div className="mt-20 rounded-xl bg-[#061A40] p-10 text-center text-white">
+          <div className="mt-20 rounded-xl bg-[#061A40] p-6 text-center text-white sm:p-10">
             <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
               Have a project in mind?
             </h2>
