@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import StartProjectButton from '@/components/startprojectmodal'
+import ThemeToggle from '@/components/ThemeToggle'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
@@ -28,7 +29,7 @@ export default function TopNav() {
     (href !== '/' && pathname.startsWith(href + '/'))
 
   return (
-    <header className="relative bg-background/80 backdrop-blur-md text-text">
+    <header className="sticky top-0 z-50 border-b border-text/10 bg-background/85 text-text backdrop-blur-md">
       <div className="mx-auto flex h-20 w-full max-w-none items-center gap-2 px-4 lg:gap-4 lg:px-6">
         <Link
           href="/"
@@ -46,13 +47,13 @@ export default function TopNav() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-1 md:flex md:flex-1 md:justify-center lg:gap-4">
+        <nav className="hidden items-center gap-1 md:flex md:flex-1 md:justify-center lg:gap-2">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               aria-current={isActive(link.href) ? 'page' : undefined}
-              className={`rounded-full px-1 py-1.5 text-sm font-medium transition lg:px-3 ${
+              className={`rounded-full px-1 py-1.5 text-sm font-medium transition lg:px-2 ${
                 isActive(link.href)
                   ? 'bg-text/10 font-semibold'
                   : 'opacity-80 hover:opacity-100'
@@ -62,6 +63,8 @@ export default function TopNav() {
             </Link>
           ))}
         </nav>
+
+        <ThemeToggle className="hidden lg:block" />
 
         <StartProjectButton className={`${navCtaClass} hidden md:inline-flex`}>
           Start a Project
@@ -95,6 +98,8 @@ export default function TopNav() {
               {link.name}
             </Link>
           ))}
+
+          <ThemeToggle variant="menu" className="mt-2" />
 
           <StartProjectButton className={`${navCtaClass} mt-2 w-full`}>
             Start a Project

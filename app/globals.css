@@ -43,6 +43,120 @@
 }
 
 /* =================================
+   DARK MODE
+   Toggle: navbar theme menu (Light / Dark / System).
+   Choice is stored in localStorage as `blackorigin-theme`.
+   ================================= */
+html.dark {
+  color-scheme: dark;
+  --background: #071226;
+  --foreground: #f8fafc;
+  --surface: #0d1b33;
+  --on-primary: #ffffff;
+  --primary: #ff7a1f;
+  --accent: #ff7a1f;
+  --text: #e8eef9;
+  --secondary: #e8eef9;
+  --muted: #a9b8d0;
+
+  scroll-padding-top: 5rem;
+}
+
+html.dark body {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+html.dark p {
+  color: var(--muted);
+}
+
+/* Solid light surfaces -> dark surfaces */
+html.dark .bg-white,
+html.dark .bg-slate-100,
+html.dark .bg-\[\#F5F9FF\],
+html.dark .bg-\[\#f5f9ff\],
+html.dark .bg-\[\#f6f8fd\],
+html.dark .bg-\[\#F6F8FD\],
+html.dark .bg-\[\#F8FAFC\],
+html.dark .bg-\[\#F4F7FF\],
+html.dark .bg-\[\#F8FBFF\],
+html.dark .bg-\[\#eaf1ff\] {
+  background-color: var(--surface) !important;
+}
+
+/* Secondary is a light text color in dark mode, so dark bg bands must be
+   overridden explicitly to stay dark (they use the same token). */
+html.dark .bg-secondary {
+  background-color: #0a1730 !important;
+}
+
+/* CMS case-study section: white wrapper + navy heading would break dark mode. */
+html.dark .case-list-section,
+html.dark .related-section {
+  background-color: var(--background) !important;
+}
+html.dark .case-section-heading h2 {
+  color: var(--text) !important;
+}
+html.dark .case-section-heading p {
+  color: var(--muted) !important;
+}
+
+/* Navy text on light cards -> light text */
+html.dark .text-\[\#061A40\],
+html.dark .text-\[\#061a40\],
+html.dark .text-\[\#071d49\],
+html.dark .text-gray-900,
+html.dark .text-text {
+  color: var(--text) !important;
+}
+
+/* Muted text -> readable slate */
+html.dark .text-\[\#5A6B8C\],
+html.dark .text-\[\#526583\],
+html.dark .text-\[\#8296b3\],
+html.dark .text-slate-600,
+html.dark .text-slate-500,
+html.dark .text-muted {
+  color: var(--muted) !important;
+}
+
+/* Light borders -> subtle white borders */
+html.dark .border-slate-200,
+html.dark .border-\[\#DCE6F3\],
+html.dark .border-\[\#EAF1F8\],
+html.dark .border-\[\#d9e0ea\],
+html.dark .border-\[\#061A40\]\/10,
+html.dark .border-\[\#061a40\]\/15,
+html.dark .border-\[\#061A40\]\/20 {
+  border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+/* Brand orange stays vivid on dark */
+html.dark .text-\[\#E85D04\],
+html.dark .text-\[\#e85d04\] {
+  color: var(--primary) !important;
+}
+html.dark .bg-\[\#E85D04\],
+html.dark .bg-\[\#e85d04\] {
+  background-color: var(--primary) !important;
+}
+
+/* Form controls */
+html.dark input,
+html.dark textarea,
+html.dark select {
+  background-color: #0a1730;
+  color: var(--text);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #7e90ae;
+}
+
+/* =================================
    BASE STYLES
    IMPORTANT: everything is inside @layer base so Tailwind
    utility classes (text-white, text-primary, etc.) can
@@ -56,6 +170,7 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
   }
 
   body {

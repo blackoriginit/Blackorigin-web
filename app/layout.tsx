@@ -26,6 +26,17 @@ export const metadata: Metadata = {
   description: 'Software Engineering & AI Automation',
 }
 
+const themeInitScript = `
+(function () {
+  try {
+    var stored = localStorage.getItem('blackorigin-theme') || 'system';
+    var dark = stored === 'dark' || (stored === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    document.documentElement.classList.toggle('dark', dark);
+    document.documentElement.dataset.theme = stored;
+  } catch (e) {}
+})();
+`
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -34,8 +45,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} h-full antialiased`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className="min-h-full flex flex-col">
         <TopNav />
 
