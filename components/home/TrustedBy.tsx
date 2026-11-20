@@ -1,8 +1,9 @@
 /**
- * "Trusted by" name marquee.
+ * "Trusted by" static name strip.
  *
- * A single slow-moving row that follows the same marquee system as the
- * Working Stack section, but keeps the client list clean and text-only.
+ * A single, non-moving row of client names on the same navy panel used by the
+ * Working Stack marquee. The motion is intentionally removed for a calmer,
+ * more stable feel.
  */
 const clients = [
   'Nexora',
@@ -14,24 +15,6 @@ const clients = [
   'Carnival City',
   'Kings Decorators Marchent Ltd',
 ]
-
-function ClientItems() {
-  return (
-    <div className="technology-group">
-      {clients.map((client) => (
-        <div
-          key={client}
-          className="flex shrink-0 items-center gap-5 px-4"
-        >
-          <span className="whitespace-nowrap text-[13px] font-semibold text-white/90 transition-colors duration-300 hover:text-[#E85D04]">
-            {client}
-          </span>
-          <span aria-hidden="true" className="h-3 w-px bg-white/20" />
-        </div>
-      ))}
-    </div>
-  )
-}
 
 export default function TrustedBy() {
   return (
@@ -57,15 +40,21 @@ export default function TrustedBy() {
           </p>
         </div>
 
-        <div className="overflow-hidden rounded-xl bg-[#061A40] py-4 shadow-[0_8px_25px_rgba(6,26,64,0.12)]">
-          <div className="technology-marquee">
-            <div className="technology-track">
-              <ClientItems />
-
-              <div aria-hidden="true">
-                <ClientItems />
-              </div>
-            </div>
+        <div className="overflow-hidden rounded-xl bg-[#061A40] px-4 py-4 shadow-[0_8px_25px_rgba(6,26,64,0.12)] sm:px-6">
+          <div className="flex items-center justify-center gap-3 sm:gap-5">
+            {clients.map((client, index) => (
+              <span
+                key={client}
+                className="flex shrink-0 items-center gap-3 sm:gap-5"
+              >
+                <span className="whitespace-nowrap text-[12px] font-semibold tracking-tight text-white/90 transition-colors duration-300 hover:text-[#E85D04] sm:text-[13px]">
+                  {client}
+                </span>
+                {index < clients.length - 1 && (
+                  <span aria-hidden="true" className="h-3 w-px bg-white/20" />
+                )}
+              </span>
+            ))}
           </div>
         </div>
       </div>
