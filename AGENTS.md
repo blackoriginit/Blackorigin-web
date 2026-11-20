@@ -1,3 +1,12 @@
+# Branch workflow (project rule)
+
+- `dev` is the integration branch. Merge all work — feature branches, fixes and teammate PRs — into `dev` first.
+- Never merge directly into `main`. Ask the user for explicit confirmation before every merge to `main`.
+- `main` stays untouched until that confirmation is given.
+- Work in `C:\Users\nowri\blackorigin\demo-all-prs` on branch `dev`. Do not push without explicit approval.
+
+---
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 ## This is NOT the Next.js you know
