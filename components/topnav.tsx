@@ -38,21 +38,21 @@ export default function TopNav() {
           <Image
             src="/logo.png"
             alt="Black Origin"
-            width={430}
-            height={512}
-            className="h-14 w-auto"
+            width={640}
+            height={150}
+            className="h-8 w-auto sm:h-9 lg:h-11 xl:h-12"
             priority
           />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-2 md:flex md:flex-1 md:justify-center lg:gap-4">
+        <nav className="hidden items-center gap-1 md:flex md:flex-1 md:justify-center lg:gap-4">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               aria-current={isActive(link.href) ? 'page' : undefined}
-              className={`rounded-full px-2 py-1.5 text-sm font-medium transition lg:px-3 ${
+              className={`rounded-full px-1 py-1.5 text-sm font-medium transition lg:px-3 ${
                 isActive(link.href)
                   ? 'bg-text/10 font-semibold'
                   : 'opacity-80 hover:opacity-100'

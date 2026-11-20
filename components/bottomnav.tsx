@@ -39,9 +39,9 @@ export default function BottomNav() {
               <Image
                 src="/logo-white.png"
                 alt="Black Origin"
-                width={430}
-                height={512}
-                className="h-10 w-auto"
+                width={640}
+                height={150}
+                className="h-10 w-auto sm:h-12"
               />
             </Link>
 
