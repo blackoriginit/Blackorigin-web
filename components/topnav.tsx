@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import StartProjectButton from '@/components/startprojectmodal'
+import ThemeToggle from '@/components/ThemeToggle'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
@@ -62,6 +63,8 @@ export default function TopNav() {
           ))}
         </nav>
 
+        <ThemeToggle className="hidden lg:block" />
+
         <StartProjectButton className={`${navCtaClass} hidden lg:inline-flex`}>
           Start a Project
         </StartProjectButton>
@@ -94,6 +97,8 @@ export default function TopNav() {
               {link.name}
             </Link>
           ))}
+
+          <ThemeToggle variant="menu" className="mt-2" />
 
           <StartProjectButton className={`${navCtaClass} mt-2 w-full`}>
             Start a Project
