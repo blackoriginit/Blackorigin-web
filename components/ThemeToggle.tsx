@@ -41,6 +41,20 @@ function getServerSnapshot(): Theme {
   return 'system'
 }
 
+function subscribeToSystem(callback: () => void) {
+  const media = window.matchMedia('(prefers-color-scheme: dark)')
+  media.addEventListener('change', callback)
+  return () => media.removeEventListener('change', callback)
+}
+
+function getSystemSnapshot() {
+  return window.matchMedia('(prefers-color-scheme: dark)').matches
+}
+
+function getSystemServerSnapshot() {
+  return false
+}
+
 export default function ThemeToggle({
   variant = 'button',
   className = '',
@@ -49,23 +63,21 @@ export default function ThemeToggle({
   className?: string
 }) {
   const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
+  const systemDark = useSyncExternalStore(
+    subscribeToSystem,
+    getSystemSnapshot,
+    getSystemServerSnapshot,
+  )
   const [open, setOpen] = useState(false)
   const wrapRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const media = window.matchMedia('(prefers-color-scheme: dark)')
-    const apply = () => {
-      const isDark =
-        theme === 'dark' || (theme === 'system' && media.matches)
-      const root = document.documentElement
-      root.dataset.theme = isDark ? 'dark' : 'light'
-      root.dataset.themePreference = theme
-    }
-
-    apply()
-    media.addEventListener('change', apply)
-    return () => media.removeEventListener('change', apply)
-  }, [theme])
+    const isDark = theme === 'dark' || (theme === 'system' && systemDark)
+    const root = document.documentElement
+    root.dataset.theme = isDark ? 'dark' : 'light'
+    root.dataset.themePreference = theme
+    root.classList.add('theme-ready')
+  }, [theme, systemDark])
 
   useEffect(() => {
     if (!open) return
@@ -87,7 +99,9 @@ export default function ThemeToggle({
   }
 
   const current = options.find((option) => option.value === theme) ?? options[2]
-  const CurrentIcon = current.Icon
+  // The button itself always speaks in Sun / Moon, the two visible themes.
+  const isDark = theme === 'dark' || (theme === 'system' && systemDark)
+  const CurrentIcon = isDark ? Moon : Sun
 
   if (variant === 'menu') {
     return (

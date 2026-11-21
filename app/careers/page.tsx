@@ -85,7 +85,7 @@ export default function CareersPage() {
                 className="h-full w-full bg-cover bg-center transition duration-500 group-hover:scale-105"
                 style={{
                   backgroundImage:
-                    "url('/team.avif'), linear-gradient(135deg, #0b2a63, #061a40)",
+                    "url('/team.avif'), linear-gradient(135deg, var(--hero-bg-deep), var(--hero-bg))",
                 }}
               />
             </div>

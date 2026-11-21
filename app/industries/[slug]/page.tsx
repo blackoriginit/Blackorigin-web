@@ -420,9 +420,9 @@ export default async function IndustryPage({
   const isStartups = slug === 'startups-smes'
 
   const bodyBg: CSSProperties = {
-    backgroundColor: '#F5F9FF',
+    backgroundColor: 'var(--background)',
     backgroundImage:
-      'radial-gradient(circle at 4% 100%, rgba(232, 93, 4, 0.12), rgba(232, 93, 4, 0) 55%)',
+      'radial-gradient(circle at 4% 100%, rgb(var(--primary-rgb) / 0.12), rgb(var(--primary-rgb) / 0) 55%)',
   }
 
   return (
@@ -431,9 +431,9 @@ export default async function IndustryPage({
       <section
         className="relative overflow-hidden text-white"
         style={{
-          backgroundColor: '#061A40',
+          backgroundColor: 'var(--hero-bg)',
           backgroundImage:
-            'radial-gradient(circle at 88% 0%, rgba(232, 93, 4, 0.55), rgba(232, 93, 4, 0) 55%)',
+            'radial-gradient(circle at 88% 0%, rgb(var(--primary-rgb) / 0.55), rgb(var(--primary-rgb) / 0) 55%)',
         }}
       >
         <div className="relative mx-auto w-full max-w-7xl px-6 py-24 md:py-32">

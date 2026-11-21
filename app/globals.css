@@ -23,6 +23,7 @@
   --surface-rgb: 255 255 255;
   --surface-muted: #f3f7fd;
   --surface-muted-rgb: 243 247 253;
+  --surface-elevated: #ffffff;
 
   --text: #061a40;
   --text-rgb: 6 26 64;
@@ -42,10 +43,11 @@
   --border: rgba(6, 26, 64, 0.14);
   --border-strong: rgba(6, 26, 64, 0.25);
 
-  /* Navy brand bands stay navy in both themes. */
+  /* Brand bands. Navy is intentional here in the original design. */
   --hero-bg: #061a40;
   --hero-rgb: 6 26 64;
   --hero-bg-deep: #0a1f4d;
+  --brand-navy: #061a40;
 
   /* Solid button hover: navy -> white text in light mode. */
   --solid-hover-bg: #061a40;
@@ -61,6 +63,8 @@
 
   --foreground: #171717;
   --on-primary: #ffffff;
+  /* Text on orange surfaces. Light keeps the original white label. */
+  --on-accent: #ffffff;
   --secondary: #061a40;
   --accent: #e85d04;
 
@@ -72,41 +76,47 @@
 [data-theme='dark'] {
   color-scheme: dark;
 
-  --background: #071226;
-  --background-rgb: 7 18 38;
+  /* Neutral charcoal/black base — no blue wash. */
+  --background: #101318;
+  --background-rgb: 16 19 24;
 
-  --surface: #0d1b33;
-  --surface-rgb: 13 27 51;
-  --surface-muted: #11203c;
-  --surface-muted-rgb: 17 32 60;
+  --surface: #1b2128;
+  --surface-rgb: 27 33 40;
+  --surface-muted: #151a20;
+  --surface-muted-rgb: 21 26 32;
+  --surface-elevated: #222a33;
 
-  --text: #e8eef9;
-  --text-rgb: 232 238 249;
-  --muted: #a9b8d0;
-  --muted-rgb: 169 184 208;
-  --muted-strong: #c3d0e2;
+  --text: #f3f5f8;
+  --text-rgb: 243 245 248;
+  --muted: #b0bac8;
+  --muted-rgb: 176 186 200;
+  --muted-strong: #c8d1dd;
 
-  --primary: #ff7a1f;
-  --primary-rgb: 255 122 31;
-  --primary-hover: #ffb067;
+  --primary: #ff7a2f;
+  --primary-rgb: 255 122 47;
+  --primary-hover: #ff914d;
   --primary-deep: #e85d04;
 
   --inverse: #ffffff;
   --inverse-rgb: 255 255 255;
-  --inverse-muted: #c7d6ec;
+  --inverse-muted: #c9d2de;
 
-  --border: rgba(255, 255, 255, 0.14);
-  --border-strong: rgba(255, 255, 255, 0.26);
+  --border: #303944;
+  --border-strong: #3d4754;
 
-  --hero-bg: #08152e;
-  --hero-rgb: 8 21 46;
-  --hero-bg-deep: #0a1b39;
+  /* Large bands become charcoal in dark mode so navy is not every section.
+     The footer keeps a deliberate deep-navy brand band via --brand-navy. */
+  --hero-bg: #151a20;
+  --hero-rgb: 21 26 32;
+  --hero-bg-deep: #222a33;
+  --brand-navy: #0a1424;
 
-  /* Solid button hover: white -> dark text in dark mode. */
-  --solid-hover-bg: #f8fafc;
-  --solid-hover-fg: #071226;
+  /* Solid buttons stay the exact brand orange; charcoal labels keep
+     them readable (white on #ff7a2f is only ~2.6:1). */
+  --solid-hover-bg: #e85d04;
+  --solid-hover-fg: #101318;
 
-  --backdrop: rgba(0, 0, 0, 0.72);
+  --backdrop: rgba(0, 0, 0, 0.74);
   --danger: #f87171;
   --danger-rgb: 248 113 113;
   --danger-surface: #3a1620;
@@ -114,10 +124,12 @@
   --info: #38bdf8;
   --shadow-rgb: 0 0 0;
 
-  --foreground: #f8fafc;
+  --foreground: #f3f5f8;
   --on-primary: #ffffff;
-  --secondary: #08152e;
-  --accent: #ff7a1f;
+  /* Charcoal text on the bright orange accent — readable and on-brand. */
+  --on-accent: #101318;
+  --secondary: #151a20;
+  --accent: #ff7a2f;
 }
 
 @theme inline {
@@ -126,9 +138,10 @@
   --color-surface: var(--surface);
   --color-surface-muted: var(--surface-muted);
   --color-on-primary: var(--on-primary);
+  --color-on-accent: var(--on-accent);
 
   --color-primary: var(--primary);
-  --color-primary-foreground: var(--on-primary);
+  --color-primary-foreground: var(--on-accent);
   --color-primary-hover: var(--primary-hover);
   --color-accent: var(--accent);
 
@@ -351,9 +364,11 @@
 [class~="text-red-600"] {
   color: var(--danger) !important;
 }
-[class~="text-on-primary"],
-[class~="text-primary-foreground"] {
+[class~="text-on-primary"] {
   color: var(--on-primary) !important;
+}
+[class~="text-primary-foreground"] {
+  color: var(--on-accent) !important;
 }
 
 /* Inverse text on navy bands */
@@ -394,6 +409,24 @@
 }
 [class~="text-on-primary/75"] {
   color: rgb(var(--inverse-rgb) / 0.75) !important;
+}
+
+/* ------------------------------------------------------------
+   READABLE LABELS ON ORANGE (dark theme only)
+   White text on the bright #ff7a2f accent is ~2.6:1. Keep the
+   exact brand orange and flip only the label to charcoal. Light
+   theme is untouched, so its original appearance is preserved.
+   ------------------------------------------------------------ */
+[data-theme='dark'] [class~="bg-[#E85D04]"][class~="text-white"],
+[data-theme='dark'] [class~="bg-[#e85d04]"][class~="text-white"],
+[data-theme='dark'] [class~="bg-[#ff7a1f]"][class~="text-white"],
+[data-theme='dark'] [class~="bg-[#c94f03]"][class~="text-white"],
+[data-theme='dark'] [class~="bg-primary"][class~="text-white"],
+[data-theme='dark'] [class*="from-[#E85D04]"][class~="text-white"],
+[data-theme='dark'] .group:hover [class~="group-hover:bg-[#e85d04]"][class~="group-hover:text-white"],
+[data-theme='dark'] .group:hover [class~="group-hover:bg-[#e85d04]"][class~="active:text-white"],
+[data-theme='dark'] .group\/p:hover [class~="group-hover/p:bg-[#e85d04]"][class~="group-hover/p:text-white"] {
+  color: var(--on-accent) !important;
 }
 
 /* Borders */
@@ -552,6 +585,117 @@ textarea::placeholder {
 }
 [class~="hover:border-blue-400"]:hover {
   border-color: var(--primary-hover) !important;
+}
+
+/* ============================================================
+   GRADIENT STOPS -> THEME VARIABLES
+   Tailwind v4 bakes literal colors into --tw-gradient-* on the
+   element. Overriding those custom properties keeps every
+   gradient in sync with the palette (alpha modifiers included).
+   ============================================================ */
+
+/* Navy band gradients (heroes, careers, CTA panels) */
+[class*="from-[#061A40]"],
+[class*="from-[#061a40]"],
+[class*="from-secondary"] {
+  --tw-gradient-from: var(--hero-bg) var(--tw-gradient-from-position, 0%) !important;
+  --tw-gradient-to: rgb(var(--hero-rgb) / 0) var(--tw-gradient-to-position, 100%) !important;
+}
+[class*="via-[#061a40]"],
+[class*="via-[#0a1f4d]"],
+[class*="via-[#001122]"],
+[class*="via-[#0f1419]"],
+[class*="via-[#0a1a2f]"],
+[class*="via-[#000814]"],
+[class*="via-[#1a0f00]"],
+[class*="via-[#1a1400]"],
+[class*="via-[#0a0a1a]"],
+[class*="via-secondary"] {
+  --tw-gradient-via: var(--hero-bg-deep) var(--tw-gradient-via-position, 50%) !important;
+}
+[class*="to-[#061A40]"],
+[class*="to-[#061a40]"],
+[class*="to-[#0a1f4d]"],
+[class*="to-[#0b2a63]"],
+[class*="to-secondary"] {
+  --tw-gradient-to: var(--hero-bg-deep) var(--tw-gradient-to-position, 100%) !important;
+}
+
+/* Orange accent gradients */
+[class*="from-[#E85D04]"],
+[class*="from-[#e85d04]"],
+[class*="from-[#ff7a1f]"] {
+  --tw-gradient-from: var(--primary) var(--tw-gradient-from-position, 0%) !important;
+}
+[class*="via-[#ff7a1f]"] {
+  --tw-gradient-via: var(--primary-hover) var(--tw-gradient-via-position, 50%) !important;
+}
+[class*="to-[#E85D04]"],
+[class*="to-[#e85d04]"] {
+  --tw-gradient-to: var(--primary) var(--tw-gradient-to-position, 100%) !important;
+}
+[class*="to-[#c94f03]"] {
+  --tw-gradient-to: var(--primary-deep) var(--tw-gradient-to-position, 100%) !important;
+}
+[class*="to-[#ffb067]"] {
+  --tw-gradient-to: var(--primary-hover) var(--tw-gradient-to-position, 100%) !important;
+}
+[class*="from-white"] {
+  --tw-gradient-from: var(--surface) var(--tw-gradient-from-position, 0%) !important;
+}
+[class*="via-[#F5F9FF]"],
+[class*="via-[#f5f9ff]"] {
+  --tw-gradient-via: var(--surface) var(--tw-gradient-via-position, 50%) !important;
+}
+[class*="to-[#F5F9FF]"],
+[class*="to-[#f5f9ff]"] {
+  --tw-gradient-to: var(--surface) var(--tw-gradient-to-position, 100%) !important;
+}
+
+/* The footer is the one brand band that stays navy in both themes. */
+footer[class~="bg-[#061A40]"] {
+  background-color: var(--brand-navy) !important;
+}
+
+/* ============================================================
+   THEME LOGO
+   Light theme uses the original dark logo; dark theme uses the
+   existing white version with the orange brand mark intact.
+   No filters — the source artwork keeps its real colors.
+   ============================================================ */
+
+.theme-logo-dark {
+  display: none;
+}
+
+[data-theme='dark'] .theme-logo-light {
+  display: none;
+}
+
+[data-theme='dark'] .theme-logo-dark {
+  display: block;
+}
+
+/* ============================================================
+   SUBTLE THEME TRANSITION
+   Color-only transitions; nothing that affects layout or the
+   existing section animations.
+   ============================================================ */
+
+@media (prefers-reduced-motion: no-preference) {
+  html.theme-ready body,
+  html.theme-ready header,
+  html.theme-ready footer,
+  html.theme-ready .bo-btn,
+  html.theme-ready .case-btn-primary,
+  html.theme-ready .case-btn-secondary,
+  html.theme-ready input,
+  html.theme-ready textarea,
+  html.theme-ready select,
+  html.theme-ready .bo-modal {
+    transition: background-color 220ms ease, border-color 220ms ease,
+      color 220ms ease;
+  }
 }
 
 /* =================================
@@ -908,7 +1052,7 @@ textarea::placeholder {
 .case-detail-page {
   width: 100%;
   overflow: hidden;
-  color: var(--hero-bg);
+  color: var(--text);
 }
 
 /* HERO */
@@ -988,7 +1132,7 @@ textarea::placeholder {
 .case-section-heading h2 {
   font-family: var(--font-heading);
   font-size: clamp(30px, 4vw, 48px);
-  color: var(--hero-bg);
+  color: var(--text);
   margin-bottom: 18px;
 }
 
@@ -1068,7 +1212,7 @@ textarea::placeholder {
 .case-card-category {
   display: inline-block;
   background: var(--primary);
-  color: var(--inverse);
+  color: var(--on-accent);
   padding: 5px 10px;
   border-radius: 30px;
   font-size: 11px;
@@ -1141,7 +1285,7 @@ textarea::placeholder {
   font-family: var(--font-heading);
   font-size: clamp(30px, 4vw, 48px);
   margin-bottom: 18px;
-  color: var(--hero-bg);
+  color: var(--text);
 }
 
 .case-cta p {
@@ -1190,7 +1334,7 @@ textarea::placeholder {
 .bo-btn-primary {
   background-color: var(--primary);
   border-color: var(--primary);
-  color: var(--on-primary);
+  color: var(--on-accent);
 }
 
 .bo-btn-primary:hover {
@@ -1219,9 +1363,9 @@ textarea::placeholder {
 }
 
 .bo-btn-outline:hover {
-  background-color: var(--inverse);
-  border-color: var(--inverse);
-  color: var(--hero-bg);
+  background-color: var(--surface);
+  border-color: var(--surface);
+  color: var(--text);
 }
 
 .bo-btn-dark {
@@ -1233,7 +1377,7 @@ textarea::placeholder {
 .bo-btn-dark:hover {
   background-color: var(--primary);
   border-color: var(--primary);
-  color: var(--on-primary);
+  color: var(--on-accent);
 }
 
 .bo-btn-quiet {
@@ -1289,7 +1433,7 @@ textarea::placeholder {
 .case-btn-primary {
   background: var(--primary);
   border: 1px solid var(--primary);
-  color: var(--on-primary);
+  color: var(--on-accent);
 }
 
 .case-btn-primary:hover {
@@ -1404,7 +1548,7 @@ textarea::placeholder {
   font-size: clamp(30px, 4vw, 48px);
   line-height: 1.2;
   font-weight: 600;
-  color: var(--hero-bg);
+  color: var(--text);
   margin-bottom: 22px;
 }
 
@@ -1448,7 +1592,7 @@ textarea::placeholder {
 }
 
 .detail-info-card strong {
-  color: var(--hero-bg);
+  color: var(--text);
   font-size: 14px;
   line-height: 1.7;
 }

@@ -40,7 +40,15 @@ export default function TopNav() {
             alt="Black Origin"
             width={640}
             height={150}
-            className="h-8 w-auto sm:h-9 lg:h-11 xl:h-12"
+            className="theme-logo-light h-8 w-auto sm:h-9 lg:h-11 xl:h-12"
+            priority
+          />
+          <Image
+            src="/logo-white.png"
+            alt="Black Origin"
+            width={640}
+            height={150}
+            className="theme-logo-dark h-8 w-auto sm:h-9 lg:h-11 xl:h-12"
             priority
           />
         </Link>
