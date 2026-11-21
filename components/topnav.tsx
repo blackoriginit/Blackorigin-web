@@ -16,8 +16,7 @@ const navLinks = [
   { name: 'Careers', href: '/careers' },
 ]
 
-const navCtaClass =
-  'inline-flex shrink-0 items-center justify-center whitespace-nowrap transition bg-primary text-text border border-text rounded-full px-5 py-2.5 text-base font-bold shadow-sm hover:bg-text hover:text-primary hover:bg-[#061A40] hover:text-white hover:transition-colors hover:duration-1000 hover:ease-in-out'
+const navCtaClass = 'bo-btn bo-btn-primary shrink-0'
 
 export default function TopNav() {
   const pathname = usePathname()

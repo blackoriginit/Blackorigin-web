@@ -29,11 +29,8 @@ export default function AboutUs() {
               real business problems.
             </p>
 
-            <a
-              href="/about-us"
-              className="mt-7 inline-flex items-center gap-4 rounded-md bg-[#E85D04] px-6 py-3.5 text-[13px] font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#061A40] hover:shadow-lg"
-            >
-              Learn More About Us <span aria-hidden="true">→</span>
+            <a href="/about-us" className="bo-btn bo-btn-primary mt-7">
+              Learn More About Us
             </a>
           </div>
 

@@ -50,16 +50,7 @@ export default function JobList() {
           </div>
 
           {/* View details: color fills from bottom to top */}
-          <span className="relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border border-[#061a40]/20 px-6 py-3 text-sm font-semibold text-[#061a40] transition-colors duration-300 group-hover:border-[#e85d04] group-hover:text-white group-active:border-[#e85d04] group-active:text-white">
-            <span
-              aria-hidden="true"
-              className="absolute inset-x-0 bottom-0 h-0 bg-[#e85d04] transition-all duration-300 ease-out group-hover:h-full group-active:h-full"
-            />
-            <span className="relative z-10">View details</span>
-            <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">
-              {"\u2192"}
-            </span>
-          </span>
+          <span className="bo-btn bo-btn-secondary">View details</span>
         </Link>
       ))}
     </div>
@@ -77,15 +68,8 @@ export function ProfileCta() {
           Good people are always worth meeting.
         </p>
       </div>
-      <Link
-        href="/careers/general/apply"
-        className="group/cta relative inline-flex items-center justify-center overflow-hidden rounded-full bg-[#e85d04] px-7 py-3 text-sm font-semibold text-white transition-colors duration-300 hover:text-[#061a40] active:text-[#061a40]"
-      >
-        <span
-          aria-hidden="true"
-          className="absolute inset-x-0 bottom-0 h-0 bg-white transition-all duration-300 ease-out group-hover/cta:h-full group-active/cta:h-full"
-        />
-        <span className="relative z-10">Send your profile</span>
+      <Link href="/careers/general/apply" className="bo-btn bo-btn-primary">
+        Send your profile
       </Link>
     </div>
   );

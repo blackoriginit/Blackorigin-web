@@ -36,7 +36,7 @@ export default function CaseStudyCard({ study }: Props) {
           </div>
 
           <span className="case-card-link-text">
-            Read case study →
+            Read case study
           </span>
         </div>
       </Link>

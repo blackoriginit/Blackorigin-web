@@ -170,7 +170,7 @@ export default function ContactForm({
 
       <button
         type="submit"
-        className="w-full h-11 rounded-lg bg-primary text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 disabled:opacity-60"
+        className="bo-btn bo-btn-primary w-full"
       >
         Send
       </button>

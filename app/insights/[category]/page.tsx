@@ -39,7 +39,7 @@ export default async function CategoryPage({ params }: Props) {
           href="/insights"
           className="text-sm font-semibold text-orange-600 hover:underline"
         >
-          ← All insights
+          All insights
         </Link>
         <h1 className="mt-6 text-[32px] font-medium leading-[1.25] tracking-[-0.5px] sm:text-[40px] lg:text-[48px] text-slate-950">
           {categoryLabels[category]}

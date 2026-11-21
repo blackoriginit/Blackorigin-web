@@ -66,11 +66,9 @@ const industries = [
   },
 ]
 
-const primaryButton =
-  'inline-flex h-12 items-center justify-center rounded-md bg-primary px-7 font-semibold text-white'
+const primaryButton = 'bo-btn bo-btn-primary'
 
-const secondaryButton =
-  'inline-flex h-12 items-center justify-center rounded-md border border-[#3a4a6b] px-7 font-semibold text-white'
+const secondaryButton = 'bo-btn bo-btn-outline'
 
 export default function IndustriesPage() {
   return (
@@ -136,11 +134,8 @@ export default function IndustriesPage() {
                   href={`/industries/${industry.slug}`}
                   className="group block border-b border-[#061A40]/15 py-7 transition-all duration-300 hover:bg-[#061A40]/[0.02]"
                 >
-                  <h3 className="inline-block text-xl font-semibold text-[#061A40] transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#E85D04]">
+                  <h3 className="text-xl font-semibold text-[#061A40] transition-colors duration-300 group-hover:text-[#E85D04]">
                     {industry.name}
-                    <span className="ml-2 inline-block text-[#E85D04] opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1">
-                      →
-                    </span>
                   </h3>
 
                   <p className="mt-2 max-w-xl text-[#5A6B8C]">

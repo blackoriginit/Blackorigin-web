@@ -44,7 +44,7 @@ export default function InsightsPage() {
                 </p>
               </div>
               <div className="mt-9">
-                <StartProjectButton className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-7 font-semibold text-white">
+                <StartProjectButton className="bo-btn bo-btn-primary">
                   Start a Project
                 </StartProjectButton>
               </div>

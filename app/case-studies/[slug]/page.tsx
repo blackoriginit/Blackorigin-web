@@ -70,7 +70,7 @@ export default async function CaseStudyDetailPage({
             href="/case-studies"
             className="detail-back-link"
           >
-            ← Back to Case Studies
+            Back to Case Studies
           </Link>
 
           <span className="detail-category">
@@ -220,7 +220,7 @@ export default async function CaseStudyDetailPage({
                 <div className="related-card-content">
                   <span>{item.type}</span>
                   <h3>{item.title}</h3>
-                  <p>Read case study →</p>
+                  <p>Read case study</p>
                 </div>
               </Link>
             ))}
@@ -245,7 +245,7 @@ export default async function CaseStudyDetailPage({
 
           <div className="case-cta-buttons">
             <StartProjectButton className="case-btn-primary">
-              Start a Project →
+              Start a Project
             </StartProjectButton>
 
             <Link href="/case-studies" className="case-btn-secondary">

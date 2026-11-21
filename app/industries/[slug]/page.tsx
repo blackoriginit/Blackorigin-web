@@ -392,11 +392,9 @@ export async function generateMetadata({
   }
 }
 
-const primaryButton =
-  'inline-flex h-12 items-center justify-center rounded-md bg-primary px-7 font-semibold text-white'
+const primaryButton = 'bo-btn bo-btn-primary'
 
-const secondaryButton =
-  'inline-flex h-12 items-center justify-center rounded-md border border-[#3a4a6b] px-7 font-semibold text-white'
+const secondaryButton = 'bo-btn bo-btn-outline'
 
 export default async function IndustryPage({
   params,
@@ -790,7 +788,7 @@ export default async function IndustryPage({
                   </StartProjectButton>
                   <Link
                     href="/industries"
-                    className="inline-flex items-center justify-center rounded-md border border-white/30 px-5 py-2.5 text-base font-semibold text-white transition-colors hover:bg-white/10"
+                    className="bo-btn bo-btn-outline"
                   >
                     Back to Industries
                   </Link>

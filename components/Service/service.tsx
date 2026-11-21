@@ -56,10 +56,7 @@ export default function Services() {
             </h2>
           </div>
 
-          <Link
-            href="/services"
-            className="inline-flex h-9 shrink-0 items-center justify-center rounded-md border border-secondary px-4 text-sm font-medium text-secondary"
-          >
+          <Link href="/services" className="bo-btn bo-btn-secondary shrink-0">
             View all services
           </Link>
         </div>

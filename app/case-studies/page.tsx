@@ -78,11 +78,11 @@ export default function CaseStudiesPage() {
 
           <div className="case-cta-buttons">
             <StartProjectButton className="case-btn-primary">
-              Start a Project →
+              Start a Project
             </StartProjectButton>
 
             <Link href="/services" className="case-btn-secondary">
-              Explore Services →
+              Explore Services
             </Link>
           </div>
         </div>

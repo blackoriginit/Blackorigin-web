@@ -23,12 +23,12 @@ export default function ProjectCTA({
         <p className="mt-6 text-lg text-white/80">{description}</p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <StartProjectButton className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-7 font-semibold text-white">
+          <StartProjectButton className="bo-btn bo-btn-primary">
             {primaryLabel}
           </StartProjectButton>
           <Link
             href={secondaryHref}
-            className="inline-flex h-12 items-center justify-center rounded-md border border-[#3a4a6b] px-7 font-semibold text-white"
+            className="bo-btn bo-btn-outline"
           >
             {secondaryLabel}
           </Link>

@@ -215,16 +215,10 @@ export default function ApplicationForm({ job }: { job: Job }) {
           review your profile and get back to you at {values.email}.
         </p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-          <Link
-            href="/careers"
-            className="rounded-full bg-[#e85d04] px-6 py-2.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#ff7a1f] hover:shadow-lg"
-          >
+          <Link href="/careers" className="bo-btn bo-btn-primary">
             Browse more roles
           </Link>
-          <Link
-            href="/"
-            className="rounded-full border border-slate-300 px-6 py-2.5 text-sm font-semibold text-[#061a40] transition duration-300 hover:-translate-y-0.5 hover:border-[#e85d04] hover:text-[#e85d04]"
-          >
+          <Link href="/" className="bo-btn bo-btn-secondary">
             Back to home
           </Link>
         </div>
@@ -483,7 +477,14 @@ export default function ApplicationForm({ job }: { job: Job }) {
                       }
                     >
                       <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#e85d04]/10 text-xl text-[#e85d04] transition duration-300 group-hover:bg-[#e85d04] group-hover:text-white">
-                        {resume ? "\u2713" : "\u2191"}
+                        {resume ? (
+                          "\u2713"
+                        ) : (
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6" aria-hidden="true">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <path d="M14 2v6h6" />
+                          </svg>
+                        )}
                       </span>
                       <span className="mt-3 text-sm font-semibold text-[#061a40]">
                         {resume ? resume.name : "Click to upload or drag your CV here"}
@@ -567,10 +568,7 @@ export default function ApplicationForm({ job }: { job: Job }) {
               {/* Actions */}
               <div className="mt-2 flex items-center justify-between border-t border-slate-200 pt-6">
                 {step === 1 ? (
-                  <Link
-                    href={backHref}
-                    className="text-sm font-semibold text-slate-500 transition hover:text-[#061a40]"
-                  >
+                  <Link href={backHref} className="bo-btn bo-btn-quiet">
                     Cancel
                   </Link>
                 ) : (
@@ -580,16 +578,16 @@ export default function ApplicationForm({ job }: { job: Job }) {
                       setStep(1);
                       setErrors({});
                     }}
-                    className="text-sm font-semibold text-slate-500 transition hover:text-[#061a40]"
+                    className="bo-btn bo-btn-quiet"
                   >
-                    {"\u2190"} Back
+                    Back
                   </button>
                 )}
 
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full h-11 rounded-lg bg-primary text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 disabled:opacity-60"
+                  className="bo-btn bo-btn-primary w-full"
                 >
                   {step === 1
                     ? "Continue"

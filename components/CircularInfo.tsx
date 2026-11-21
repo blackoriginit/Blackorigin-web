@@ -247,7 +247,7 @@ export function DeadlineModal({
           type="button"
           onClick={onClose}
           aria-label="Close"
-          className="absolute right-4 top-5 flex h-8 w-8 items-center justify-center rounded-full text-slate-400 transition hover:bg-slate-100 hover:text-[#061a40]"
+          className="bo-btn bo-btn-icon absolute right-4 top-5 text-slate-400 hover:bg-slate-100 hover:text-[#061a40]"
         >
           {"\u2715"}
         </button>
@@ -279,20 +279,20 @@ export function DeadlineModal({
             <Link
               ref={primary}
               href="/careers/general/apply"
-              className="rounded-full bg-[#e85d04] px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#ff7a1f] hover:shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-[#e85d04]/30"
+              className="bo-btn bo-btn-primary"
             >
               Send your profile instead
             </Link>
             <Link
               href="/careers"
-              className="rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-[#061a40] transition duration-300 hover:-translate-y-0.5 hover:border-[#e85d04] hover:text-[#e85d04]"
+              className="bo-btn bo-btn-secondary"
             >
               View other openings
             </Link>
             <button
               type="button"
               onClick={onClose}
-              className="text-sm font-semibold text-slate-500 transition hover:text-[#061a40]"
+              className="bo-btn bo-btn-quiet"
             >
               Close
             </button>
