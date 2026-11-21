@@ -60,24 +60,6 @@ function EyeIcon() {
   );
 }
 
-/* ---------- Carousel Arrow Icons ---------- */
-
-function ChevronLeft() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5" aria-hidden="true">
-      <path d="m15 18-6-6 6-6" />
-    </svg>
-  );
-}
-
-function ChevronRight() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5" aria-hidden="true">
-      <path d="m9 18 6-6-6-6" />
-    </svg>
-  );
-}
-
 /* ---------- Our Expertise Icons ---------- */
 
 function WebDevelopmentIcon() {
@@ -596,9 +578,9 @@ export default function AboutUsPage() {
                 type="button"
                 onClick={() => teamSwiperRef.current?.slidePrev()}
                 aria-label="Previous team members"
-                className="absolute left-0 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-secondary/20 bg-surface text-secondary shadow-md transition duration-300 hover:border-primary hover:bg-primary hover:text-on-primary sm:h-10 sm:w-10"
+                className="bo-btn bo-btn-secondary absolute left-0 top-1/2 z-10 -translate-y-1/2 shadow-md"
               >
-                <ChevronLeft />
+                Prev
               </button>
             )}
 
@@ -607,9 +589,9 @@ export default function AboutUsPage() {
                 type="button"
                 onClick={() => teamSwiperRef.current?.slideNext()}
                 aria-label="Next team members"
-                className="absolute right-0 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-secondary/20 bg-surface text-secondary shadow-md transition duration-300 hover:border-primary hover:bg-primary hover:text-on-primary sm:h-10 sm:w-10"
+                className="bo-btn bo-btn-secondary absolute right-0 top-1/2 z-10 -translate-y-1/2 shadow-md"
               >
-                <ChevronRight />
+                Next
               </button>
             )}
 
@@ -766,12 +748,8 @@ export default function AboutUsPage() {
               </p>
             </div>
 
-            <Link
-              href="/contact"
-              className="inline-flex w-fit items-center gap-3 rounded-full bg-primary px-5 py-2.5 text-[11px] font-semibold text-on-primary transition duration-300 hover:bg-surface hover:text-secondary"
-            >
-              <span>Get in Touch</span>
-              <span className="text-base">→</span>
+            <Link href="/contact" className="bo-btn bo-btn-primary">
+              Get in Touch
             </Link>
           </div>
         </div>

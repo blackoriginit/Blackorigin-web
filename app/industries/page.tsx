@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import StartProjectButton from '@/components/startprojectmodal'
 
 export const metadata: Metadata = {
   title: 'Industries | Black Origin',
@@ -65,11 +66,9 @@ const industries = [
   },
 ]
 
-const primaryButton =
-  'inline-flex h-12 items-center justify-center rounded-md bg-primary px-7 font-semibold text-white'
+const primaryButton = 'bo-btn bo-btn-primary'
 
-const secondaryButton =
-  'inline-flex h-12 items-center justify-center rounded-md border border-[#3a4a6b] px-7 font-semibold text-white'
+const secondaryButton = 'bo-btn bo-btn-outline'
 
 export default function IndustriesPage() {
   return (
@@ -111,7 +110,7 @@ export default function IndustriesPage() {
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="grid gap-12 lg:grid-cols-[300px_minmax(0,1fr)] lg:gap-16">
             <div className="lg:sticky lg:top-28 lg:self-start">
-              <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-[#061A40]">
+              <h2 className="font-heading text-3xl font-semibold leading-tight tracking-tight text-[#061A40] sm:text-4xl md:text-5xl">
                 Industries we serve
               </h2>
 
@@ -122,9 +121,9 @@ export default function IndustriesPage() {
               </p>
 
               <div className="mt-8">
-                <Link href="/contact" className={primaryButton}>
+                <StartProjectButton className={primaryButton}>
                   Start a Project
-                </Link>
+                </StartProjectButton>
               </div>
             </div>
 
@@ -135,11 +134,8 @@ export default function IndustriesPage() {
                   href={`/industries/${industry.slug}`}
                   className="group block border-b border-[#061A40]/15 py-7 transition-all duration-300 hover:bg-[#061A40]/[0.02]"
                 >
-                  <h3 className="inline-block text-xl font-semibold text-[#061A40] transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#E85D04]">
+                  <h3 className="text-xl font-semibold text-[#061A40] transition-colors duration-300 group-hover:text-[#E85D04]">
                     {industry.name}
-                    <span className="ml-2 inline-block text-[#E85D04] opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1">
-                      →
-                    </span>
                   </h3>
 
                   <p className="mt-2 max-w-xl text-[#5A6B8C]">
@@ -151,7 +147,7 @@ export default function IndustriesPage() {
           </div>
 
           {/* CTA */}
-          <div className="mt-20 rounded-xl bg-[#061A40] p-10 text-center text-white">
+          <div className="mt-20 rounded-xl bg-[#061A40] p-6 text-center text-white sm:p-10">
             <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
               Have a project in mind?
             </h2>
@@ -161,9 +157,9 @@ export default function IndustriesPage() {
             </p>
 
             <div className="mt-6 flex flex-wrap justify-center gap-4">
-              <Link href="/contact" className={primaryButton}>
+              <StartProjectButton className={primaryButton}>
                 Start a Project
-              </Link>
+              </StartProjectButton>
 
               <Link href="/services" className={secondaryButton}>
                 Explore Services

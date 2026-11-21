@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import StartProjectButton from "@/components/startprojectmodal";
 import { caseStudies } from "@/data/caseStudies";
 
 type Props = {
@@ -69,7 +70,7 @@ export default async function CaseStudyDetailPage({
             href="/case-studies"
             className="detail-back-link"
           >
-            ← Back to Case Studies
+            Back to Case Studies
           </Link>
 
           <span className="detail-category">
@@ -219,7 +220,7 @@ export default async function CaseStudyDetailPage({
                 <div className="related-card-content">
                   <span>{item.type}</span>
                   <h3>{item.title}</h3>
-                  <p>Read case study →</p>
+                  <p>Read case study</p>
                 </div>
               </Link>
             ))}
@@ -243,11 +244,11 @@ export default async function CaseStudyDetailPage({
           </p>
 
           <div className="case-cta-buttons">
-            <Link href="/contact" className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-7 font-semibold text-white">
-              Start a Project →
-            </Link>
+            <StartProjectButton className="case-btn-primary">
+              Start a Project
+            </StartProjectButton>
 
-            <Link href="/case-studies" className="inline-flex h-12 items-center justify-center rounded-md border border-[#3a4a6b] px-7 font-semibold text-white">
+            <Link href="/case-studies" className="case-btn-secondary">
               Explore All Case Studies
             </Link>
           </div>

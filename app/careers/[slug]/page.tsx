@@ -123,9 +123,6 @@ export default async function JobPage({ params }: Props) {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link href={applyHref} className="group inline-flex items-center gap-2 rounded-full bg-[#e85d04] px-8 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#ff7a1f] hover:shadow-[0_10px_30px_rgba(232,93,4,0.45)]">
               Apply now
-              <span className="transition duration-300 group-hover:translate-x-1">
-                {"\u2192"}
-              </span>
             </Link>
             <Link
               href="/careers"
@@ -239,7 +236,7 @@ export default async function JobPage({ params }: Props) {
                     {job.offer.map((item) => (
                       <li
                         key={item}
-                        className="group flex gap-3 rounded-xl border border-white/10 bg-white/5 p-3.5 text-sm leading-6 text-slate-100 backdrop-blur transition duration-300 hover:translate-x-1 hover:border-[#e85d04]/60 hover:bg-white/10"
+                        className="group flex gap-3 rounded-xl border border-white/10 bg-white/5 p-3.5 text-sm leading-6 text-slate-100 backdrop-blur transition duration-300 hover:border-[#e85d04]/60 hover:bg-white/10"
                       >
                         <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#e85d04] text-[11px] text-white shadow-[0_0_0_4px_rgba(232,93,4,0.2)]">
                           {"\u2713"}
@@ -304,9 +301,6 @@ export default async function JobPage({ params }: Props) {
                         className="group flex items-center justify-between rounded-lg px-3 py-2 text-sm font-semibold text-[#061a40] transition duration-300 hover:bg-[#f6f8fd] hover:text-[#e85d04]"
                       >
                         {o.title}
-                        <span className="transition duration-300 group-hover:translate-x-1">
-                          {"\u2192"}
-                        </span>
                       </Link>
                     </li>
                   ))}

@@ -54,13 +54,13 @@ export default function ServiceDetail({ service }: { service: Service }) {
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <StartProjectButton
                 defaultService={service.title}
-                className="inline-flex cursor-pointer items-center gap-3 rounded-md bg-[#E85D04] px-6 py-3 text-[13px] font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#061A40] hover:shadow-lg"
+                className="bo-btn bo-btn-primary"
               >
                 Start a Project
               </StartProjectButton>
               <Link
                 href="/contact"
-                className="inline-flex h-12 items-center justify-center rounded-md border border-[#d9e0ea] bg-white px-6 font-semibold text-[#071d49]"
+                className="bo-btn bo-btn-secondary"
               >
                 Contact Black Origin
               </Link>
@@ -230,7 +230,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
                   href={cs.link}
                   className="text-xs font-semibold text-[#E85D04] hover:underline"
                 >
-                  Read the case study &rarr;
+                  Read the case study
                 </Link>
               </div>
             ))}
@@ -251,8 +251,8 @@ export default function ServiceDetail({ service }: { service: Service }) {
                 className="group border border-slate-300 rounded-2xl bg-white p-6 open:shadow-xs cursor-pointer transition-all"
               >
                 <summary className="text-xl font-semibold text-[#061A40] flex items-center gap-3 list-none select-none">
-                  <span className="text-xs transition-transform duration-200 group-open:rotate-90 inline-block">
-                    &#9654;
+                  <span className="text-base leading-none" aria-hidden="true">
+                    +
                   </span>
                   <span>{faq.question}</span>
                 </summary>
@@ -277,13 +277,13 @@ export default function ServiceDetail({ service }: { service: Service }) {
           <div className="flex justify-center gap-4 pt-4">
             <StartProjectButton
               defaultService={service.title}
-              className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-7 font-semibold text-white"
+              className="bo-btn bo-btn-primary"
             >
               Start a Project
             </StartProjectButton>
             <Link
               href="/contact"
-              className="inline-flex h-12 items-center justify-center rounded-md border border-[#3a4a6b] px-7 font-semibold text-white"
+              className="bo-btn bo-btn-outline"
             >
               Contact Black Origin
             </Link>

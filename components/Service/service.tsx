@@ -46,20 +46,17 @@ export default function Services() {
     <section className="bg-[#F5F9FF] px-6 py-12">
       <div className="mx-auto max-w-[1056px]">
         {/* Header */}
-        <div className="flex items-end justify-between gap-4">
+        <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[2px] text-[#E85D04]">
               Services
             </p>
-            <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-[#061A40]">
+            <h2 className="font-heading text-3xl font-semibold leading-tight tracking-tight text-[#061A40] sm:text-4xl md:text-5xl">
               What We Do
             </h2>
           </div>
 
-          <Link
-            href="/services"
-            className="inline-flex h-9 shrink-0 items-center justify-center rounded-md border border-secondary px-4 text-sm font-medium text-secondary"
-          >
+          <Link href="/services" className="bo-btn bo-btn-secondary shrink-0">
             View all services
           </Link>
         </div>

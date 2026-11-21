@@ -16,8 +16,7 @@ const navLinks = [
   { name: 'Careers', href: '/careers' },
 ]
 
-const navCtaClass =
-  'inline-flex items-center justify-center transition bg-primary text-text border border-text rounded-full px-5 py-2.5 text-base font-bold shadow-sm hover:bg-text hover:text-primary hover:bg-[#061A40] hover:text-white hover:transition-colors hover:duration-1000 hover:ease-in-out'
+const navCtaClass = 'bo-btn bo-btn-primary shrink-0'
 
 export default function TopNav() {
   const pathname = usePathname()
@@ -28,7 +27,7 @@ export default function TopNav() {
     (href !== '/' && pathname.startsWith(href + '/'))
 
   return (
-    <header className="relative bg-background/80 backdrop-blur-md text-text">
+    <header className="sticky top-0 z-50 border-b border-text/10 bg-background/85 text-text backdrop-blur-md">
       <div className="mx-auto flex h-20 w-full max-w-none items-center gap-2 px-4 lg:gap-4 lg:px-6">
         <Link
           href="/"
@@ -38,21 +37,21 @@ export default function TopNav() {
           <Image
             src="/logo.png"
             alt="Black Origin"
-            width={430}
-            height={512}
-            className="h-14 w-auto"
+            width={640}
+            height={150}
+            className="h-8 w-auto sm:h-9 lg:h-11 xl:h-12"
             priority
           />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-2 md:flex md:flex-1 md:justify-center lg:gap-4">
+        <nav className="hidden items-center gap-1 lg:flex lg:flex-1 lg:justify-center xl:gap-4">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               aria-current={isActive(link.href) ? 'page' : undefined}
-              className={`rounded-full px-2 py-1.5 text-sm font-medium transition lg:px-3 ${
+              className={`whitespace-nowrap rounded-full px-2 py-1.5 text-sm font-medium transition xl:px-3 ${
                 isActive(link.href)
                   ? 'bg-text/10 font-semibold'
                   : 'opacity-80 hover:opacity-100'
@@ -63,7 +62,7 @@ export default function TopNav() {
           ))}
         </nav>
 
-        <StartProjectButton className={`${navCtaClass} hidden md:inline-flex`}>
+        <StartProjectButton className={`${navCtaClass} hidden lg:inline-flex`}>
           Start a Project
         </StartProjectButton>
 
@@ -73,14 +72,14 @@ export default function TopNav() {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
-          className="flex h-9 w-9 cursor-pointer select-none list-none items-center justify-center rounded-full hover:bg-text/10 [&::-webkit-details-marker]:hidden md:hidden"
+          className="flex h-9 w-9 cursor-pointer select-none list-none items-center justify-center rounded-full hover:bg-text/10 [&::-webkit-details-marker]:hidden lg:hidden"
         >
           <span className="text-2xl leading-none">{menuOpen ? '×' : '☰'}</span>
         </button>
       </div>
 
       {menuOpen && (
-        <div className="absolute inset-x-0 top-full z-50 flex max-h-[80vh] flex-col gap-1 overflow-y-auto border-b px-6 py-4 shadow-lg bg-background text-text border-text/10 md:hidden">
+        <div className="absolute inset-x-0 top-full z-50 flex max-h-[80vh] flex-col gap-1 overflow-y-auto border-b px-6 py-4 shadow-lg bg-background text-text border-text/10 lg:hidden">
           {navLinks.map((link) => (
             <Link
               key={link.href}

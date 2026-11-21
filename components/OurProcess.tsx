@@ -104,7 +104,7 @@ export default function OurProcess() {
                 {principles.map((p) => (
                   <li
                     key={p}
-                    className="group/p flex items-center gap-3 text-xs text-slate-200 transition duration-300 hover:translate-x-1 hover:text-white"
+                    className="group/p flex items-center gap-3 text-xs text-slate-200 transition duration-300 hover:text-white"
                   >
                     <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#e85d04]/20 text-[10px] text-[#e85d04] transition duration-300 group-hover/p:bg-[#e85d04] group-hover/p:text-white">
                       {"\u2713"}

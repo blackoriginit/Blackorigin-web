@@ -56,9 +56,6 @@ export default function JobList() {
               className="absolute inset-x-0 bottom-0 h-0 bg-[#e85d04] transition-all duration-300 ease-out group-hover:h-full group-active:h-full"
             />
             <span className="relative z-10">View details</span>
-            <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">
-              {"\u2192"}
-            </span>
           </span>
         </Link>
       ))}

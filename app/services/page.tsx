@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import StartProjectButton from "@/components/startprojectmodal";
 
 // Collaboration models data
 const collaborationModels = [
@@ -114,12 +115,9 @@ export default function ServicesPage() {
             </p>
 
             <div className="pt-2">
-              <Link
-                href="/contact"
-                className="inline-block bg-[#E85D04] hover:bg-[#c94f03] transition-colors text-white font-medium text-sm md:text-base px-7 py-3 rounded-md shadow-md"
-              >
+              <StartProjectButton className="inline-block bg-[#E85D04] hover:bg-[#c94f03] transition-colors text-white font-medium text-sm md:text-base px-7 py-3 rounded-md shadow-md">
                 Talk to our team
-              </Link>
+              </StartProjectButton>
             </div>
           </div>
 
@@ -231,12 +229,9 @@ export default function ServicesPage() {
               the right technology approach - no obligation.
             </p>
             <div className="pt-2">
-              <Link
-                href="/contact"
-                className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-7 font-semibold text-white"
-              >
+              <StartProjectButton className="bo-btn bo-btn-primary">
                 Start a Project
-              </Link>
+              </StartProjectButton>
             </div>
           </div>
         </div>

@@ -1,63 +1,62 @@
 /**
- * "Trusted by" logo strip.
+ * "Trusted by" static name strip.
  *
- * The live site does not have this section yet, so it is built in the same
- * visual language as the rest of the home page.
- *
- * To use real client logos:
- *   1. Drop the files in `public/images/clients/` (SVG preferred, otherwise a
- *      transparent-background PNG that is ~2x the display height).
- *   2. Set `src` below, e.g. { name: 'Acme', src: '/images/clients/acme.svg' }.
- *
- * Logos are shown greyscale at 60% opacity so mixed-colour logos still look
- * uniform; they return to full colour on hover.
+ * A single, non-moving row of client names on the same navy panel used by the
+ * Working Stack marquee. The motion is intentionally removed for a calmer,
+ * more stable feel.
  */
-const clients: { name: string; src?: string }[] = [
-  { name: 'Nexora' },
-  { name: 'Fieldstone' },
-  { name: 'Kanso' },
-  { name: 'Vantage' },
-  { name: 'Orbit Labs' },
-  { name: 'Meridian' },
-  { name: 'Carnival City' },
-  { name: 'Kings Decorators Marchent Ltd' },
+const clients = [
+  'Nexora',
+  'Fieldstone',
+  'Kanso',
+  'Vantage',
+  'Orbit Labs',
+  'Meridian',
+  'Carnival City',
+  'Kings Decorators Marchent Ltd',
 ]
 
 export default function TrustedBy() {
   return (
-    <section
-      aria-labelledby="trusted-by-heading"
-      className="border-y border-[#DCE6F3] bg-white"
-    >
-      <div className="mx-auto max-w-[1448px] px-6 py-10 md:px-10 md:py-12">
-        <p
-          id="trusted-by-heading"
-          className="text-center text-[11px] font-semibold uppercase tracking-[2.5px] text-[#5A6B8C]"
-        >
-          Trusted by teams at
-        </p>
+    <section className="border-y border-[#DCE6F3] bg-[#F5F9FF]">
+      <div className="mx-auto max-w-6xl px-6 py-12 md:px-8 md:pb-16 md:pt-16">
+        <div className="mb-7">
+          <div className="mb-5">
+            <p className="text-[11px] font-bold uppercase tracking-[2px] text-[#E85D04]">
+              Trusted by teams at
+            </p>
+          </div>
 
-        <ul className="mt-8 grid grid-cols-2 items-center justify-items-center gap-x-6 gap-y-8 text-center sm:grid-cols-3 lg:grid-cols-4">
-          {clients.map((client) => (
-            <li
-              key={client.name}
-              className="opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
-            >
-              {client.src ? (
-                <img
-                  src={client.src}
-                  alt={client.name}
-                  loading="lazy"
-                  className="h-7 w-auto max-w-[120px] object-contain md:h-8"
-                />
-              ) : (
-                <span className="text-sm font-semibold tracking-tight text-[#061A40] break-words md:text-base">
-                  {client.name}
+          <h2
+            id="trusted-by-heading"
+            className="font-heading text-3xl font-semibold leading-tight tracking-tight text-[#061A40] sm:text-4xl md:text-5xl"
+          >
+            Partners Who Trust Our Work.
+          </h2>
+
+          <p className="mt-2 max-w-none text-sm leading-5 text-[#5A6B8C]">
+            From growing startups to established teams, we build software that
+            people rely on every day.
+          </p>
+        </div>
+
+        <div className="overflow-x-auto overscroll-x-contain rounded-xl bg-[#061A40] px-4 py-4 shadow-[0_8px_25px_rgba(6,26,64,0.12)] sm:px-6 lg:overflow-hidden [scrollbar-color:rgba(255,255,255,0.28)_transparent] [scrollbar-width:thin]">
+          <div className="flex w-max items-center gap-3 sm:gap-5 lg:mx-auto lg:w-auto lg:justify-center">
+            {clients.map((client, index) => (
+              <span
+                key={client}
+                className="flex shrink-0 items-center gap-3 sm:gap-5"
+              >
+                <span className="whitespace-nowrap text-[12px] font-semibold tracking-tight text-white/90 transition-colors duration-300 hover:text-[#E85D04] sm:text-[13px]">
+                  {client}
                 </span>
-              )}
-            </li>
-          ))}
-        </ul>
+                {index < clients.length - 1 && (
+                  <span aria-hidden="true" className="h-3 w-px bg-white/20" />
+                )}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   )

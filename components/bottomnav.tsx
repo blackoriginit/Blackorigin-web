@@ -24,7 +24,11 @@ const serviceLinks = [
   'Software Maintenance & Support',
 ]
 
-const legalLinks = ['Privacy Policy', 'Terms of Service', 'Cookie Policy']
+const legalLinks = [
+  { name: 'Privacy Policy', href: '/privacy-policy' },
+  { name: 'Terms of Service', href: '/terms-of-service' },
+  { name: 'Cookie Policy', href: '/cookie-policy' },
+]
 
 export default function BottomNav() {
   const pathname = usePathname()
@@ -39,9 +43,9 @@ export default function BottomNav() {
               <Image
                 src="/logo-white.png"
                 alt="Black Origin"
-                width={430}
-                height={512}
-                className="h-10 w-auto"
+                width={640}
+                height={150}
+                className="h-10 w-auto sm:h-12"
               />
             </Link>
 
@@ -142,11 +146,23 @@ export default function BottomNav() {
             <h3 className="font-heading mb-5 font-semibold">Legal</h3>
 
             <ul className="space-y-3">
-              {legalLinks.map((link) => (
-                <li key={link} className="text-sm text-white/65">
-                  {link}
-                </li>
-              ))}
+              {legalLinks.map((link) => {
+                const isActive =
+                  pathname === link.href || pathname.startsWith(link.href + '/')
+
+                return (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className={`text-sm transition-colors hover:text-[#E85D04] ${
+                        isActive ? 'font-bold text-white' : 'text-white/65'
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                )
+              })}
             </ul>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import StartProjectButton from "@/components/startprojectmodal";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import { caseStudies } from "@/data/caseStudies";
 
@@ -76,12 +77,12 @@ export default function CaseStudiesPage() {
           </p>
 
           <div className="case-cta-buttons">
-            <Link href="/contact" className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-7 font-semibold text-white">
-              Start a Project →
-            </Link>
+            <StartProjectButton className="case-btn-primary">
+              Start a Project
+            </StartProjectButton>
 
-            <Link href="/services" className="inline-flex h-12 items-center justify-center rounded-md border border-[#3a4a6b] px-7 font-semibold text-white">
-              Explore Services →
+            <Link href="/services" className="case-btn-secondary">
+              Explore Services
             </Link>
           </div>
         </div>
