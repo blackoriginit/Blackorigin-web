@@ -730,7 +730,7 @@ export default function AboutUsPage() {
 
       {/* ================= CONTACT CTA ================= */}
 
-      <section className="bg-secondary">
+      <section className="theme-ash-panel bg-secondary">
         <div className="mx-auto max-w-[1100px] px-6 py-9 md:px-10 md:py-10">
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div>

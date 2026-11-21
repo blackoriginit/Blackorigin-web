@@ -40,7 +40,7 @@ export default function TrustedBy() {
           </p>
         </div>
 
-        <div className="overflow-x-auto overscroll-x-contain rounded-xl bg-[#061A40] px-4 py-4 shadow-[0_8px_25px_rgba(6,26,64,0.12)] sm:px-6 lg:overflow-hidden [scrollbar-color:rgba(255,255,255,0.28)_transparent] [scrollbar-width:thin]">
+        <div className="theme-ash-panel overflow-x-auto overscroll-x-contain rounded-xl bg-[#061A40] px-4 py-4 shadow-[0_8px_25px_rgba(6,26,64,0.12)] sm:px-6 lg:overflow-hidden [scrollbar-color:rgba(255,255,255,0.28)_transparent] [scrollbar-width:thin]">
           <div className="flex w-max items-center gap-3 sm:gap-5 lg:mx-auto lg:w-auto lg:justify-center">
             {clients.map((client, index) => (
               <span

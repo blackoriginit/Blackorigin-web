@@ -772,7 +772,7 @@ export default async function IndustryPage({
       <section className="pb-20">
         <div className="mx-auto w-full max-w-7xl px-6">
           {isFintech || isHealthcare ? (
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#061A40] to-[#0a1f4d] p-6 text-center text-white sm:p-10 md:p-12">
+            <div className="theme-ash-panel relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#061A40] to-[#0a1f4d] p-6 text-center text-white sm:p-10 md:p-12">
               <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#E85D04]/20 blur-3xl" />
               <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-[#E85D04]/10 blur-3xl" />
               <div className="relative">
@@ -813,7 +813,7 @@ export default async function IndustryPage({
               </div>
             </div>
           ) : (
-            <div className="rounded-xl bg-[#061A40] p-6 text-center text-white sm:p-10">
+            <div className="theme-ash-panel rounded-xl bg-[#061A40] p-6 text-center text-white sm:p-10">
               <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
                 {industry.ctaTitle}
               </h2>

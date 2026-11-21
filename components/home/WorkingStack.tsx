@@ -269,7 +269,7 @@ export default function WorkingStack() {
 
         {/* Two-Row Technology Marquee */}
 
-        <div className="mb-5 overflow-hidden rounded-xl bg-[#061A40] py-4 shadow-[0_8px_25px_rgba(6,26,64,0.12)]">
+        <div className="theme-ash-panel mb-5 overflow-hidden rounded-xl bg-[#061A40] py-4 shadow-[0_8px_25px_rgba(6,26,64,0.12)]">
           <div className="flex flex-col gap-5">
             <TechnologyMarquee />
             <TechnologyMarquee reverse />

@@ -130,6 +130,17 @@
   --on-accent: #101318;
   --secondary: #151a20;
   --accent: #ff7a2f;
+
+  /* Light-ash highlight panels (trusted-by strip, moving stack bars,
+     project CTAs). They lift out of the charcoal without going pure white. */
+  --panel-ash: #e6eaf0;
+  --panel-ash-text: #101318;
+  --panel-ash-muted: #4a5563;
+  --panel-ash-divider: rgba(16, 19, 24, 0.16);
+  --panel-ash-accent: #b8430a;
+
+  /* Softer ash for job titles so they don't read as stark white. */
+  --job-title: #ccd4df;
 }
 
 @theme inline {
@@ -427,6 +438,66 @@
 [data-theme='dark'] .group:hover [class~="group-hover:bg-[#e85d04]"][class~="active:text-white"],
 [data-theme='dark'] .group\/p:hover [class~="group-hover/p:bg-[#e85d04]"][class~="group-hover/p:text-white"] {
   color: var(--on-accent) !important;
+}
+
+/* ------------------------------------------------------------
+   LIGHT-ASH HIGHLIGHT PANELS (dark theme only)
+   Used for the trusted-by name bar, the moving stack bars and the
+   "Have a project in mind?" CTA cards. Light theme keeps the
+   original navy panels untouched.
+   ------------------------------------------------------------ */
+[data-theme='dark'] .theme-ash-panel {
+  background-color: var(--panel-ash) !important;
+  background-image: none !important;
+  color: var(--panel-ash-text) !important;
+  border-color: var(--panel-ash-divider) !important;
+}
+[data-theme='dark'] .theme-ash-panel[class~="text-white"],
+[data-theme='dark'] .theme-ash-panel [class~="text-white"],
+[data-theme='dark'] .theme-ash-panel [class~="text-white/90"],
+[data-theme='dark'] .theme-ash-panel [class~="text-on-primary"],
+[data-theme='dark'] .theme-ash-panel h1,
+[data-theme='dark'] .theme-ash-panel h2,
+[data-theme='dark'] .theme-ash-panel h3,
+[data-theme='dark'] .theme-ash-panel h4 {
+  color: var(--panel-ash-text) !important;
+}
+[data-theme='dark'] .theme-ash-panel [class~="text-white/80"],
+[data-theme='dark'] .theme-ash-panel [class~="text-white/75"],
+[data-theme='dark'] .theme-ash-panel [class~="text-on-primary/65"],
+[data-theme='dark'] .theme-ash-panel [class~="text-on-primary/75"],
+[data-theme='dark'] .theme-ash-panel [class~="text-[#5A6B8C]"] {
+  color: var(--panel-ash-muted) !important;
+}
+/* Orange labels stay orange, deepened so they read on the light panel. */
+[data-theme='dark'] .theme-ash-panel [class~="text-primary"],
+[data-theme='dark'] .theme-ash-panel [class~="text-[#E85D04]"],
+[data-theme='dark'] .theme-ash-panel [class~="text-[#e85d04]"] {
+  color: var(--panel-ash-accent) !important;
+}
+[data-theme='dark'] .theme-ash-panel [class~="bg-white/20"] {
+  background-color: var(--panel-ash-divider) !important;
+}
+[data-theme='dark'] .theme-ash-panel {
+  scrollbar-color: var(--panel-ash-divider) transparent;
+}
+[data-theme='dark'] .theme-ash-panel svg[color="#FFFFFF"] {
+  color: var(--panel-ash-text) !important;
+}
+[data-theme='dark'] .theme-ash-panel [class~="hover:text-[#E85D04]"]:hover {
+  color: var(--panel-ash-accent) !important;
+}
+[data-theme='dark'] .theme-ash-panel .bo-btn-outline {
+  color: var(--panel-ash-text) !important;
+  border-color: var(--panel-ash-divider) !important;
+}
+[data-theme='dark'] .theme-ash-panel .bo-btn-outline:hover {
+  color: var(--text) !important;
+}
+
+/* Softer, ash-toned job titles on the careers pages. */
+[data-theme='dark'] .bo-job-title {
+  color: var(--job-title) !important;
 }
 
 /* Borders */

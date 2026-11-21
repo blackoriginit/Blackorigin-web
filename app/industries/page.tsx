@@ -147,7 +147,7 @@ export default function IndustriesPage() {
           </div>
 
           {/* CTA */}
-          <div className="mt-20 rounded-xl bg-[#061A40] p-6 text-center text-white sm:p-10">
+          <div className="theme-ash-panel mt-20 rounded-xl bg-[#061A40] p-6 text-center text-white sm:p-10">
             <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
               Have a project in mind?
             </h2>

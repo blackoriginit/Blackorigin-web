@@ -17,7 +17,7 @@ export default function ProjectCTA({
   secondaryHref = "/contact",
 }: ProjectCTAProps) {
   return (
-    <section className="bg-[#061A40] px-6 py-16 text-center text-white">
+    <section className="theme-ash-panel bg-[#061A40] px-6 py-16 text-center text-white">
       <div className="mx-auto max-w-3xl">
         <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl">{title}</h2>
         <p className="mt-6 text-lg text-white/80">{description}</p>

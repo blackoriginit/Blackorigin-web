@@ -30,7 +30,7 @@ export default function JobList() {
 
           {/* Title, tags, summary */}
           <div className="min-w-0 flex-1">
-            <h4 className="text-xl font-semibold text-[#061a40] transition-colors duration-300 group-hover:text-[#E85D04]">
+            <h4 className="bo-job-title text-xl font-semibold text-[#061a40] transition-colors duration-300 group-hover:text-[#E85D04]">
               {j.title}
             </h4>
             <div className="mt-3"><CircularMeta job={j} /></div>
@@ -65,7 +65,7 @@ export default function JobList() {
 
 export function ProfileCta() {
   return (
-    <div className="mt-6 flex flex-col gap-4 rounded-2xl bg-[#061a40] p-6 sm:flex-row sm:items-center sm:justify-between sm:p-7">
+    <div className="theme-ash-panel mt-6 flex flex-col gap-4 rounded-2xl bg-[#061a40] p-6 sm:flex-row sm:items-center sm:justify-between sm:p-7">
       <div>
         <p className="text-[10px] font-bold tracking-[0.2em] text-[#e85d04]">
           DON&apos;T SEE YOUR ROLE?
