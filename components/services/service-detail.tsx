@@ -266,7 +266,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
       )}
 
       {/* 9. BOTTOM BANNER */}
-      <section className="bg-[#061A40] text-white py-20 px-6 text-center">
+      <section className="theme-ash-panel bg-[#061A40] text-white py-20 px-6 text-center">
         <div className="max-w-2xl mx-auto space-y-4">
           <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
             Have a project in mind?

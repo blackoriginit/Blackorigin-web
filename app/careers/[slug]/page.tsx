@@ -98,7 +98,7 @@ export default async function JobPage({ params }: Props) {
             <span className="font-semibold text-[#e85d04]">{job.department}</span>
           </nav>
 
-          <h1 className="mt-5 text-[32px] font-medium leading-[1.25] tracking-[-0.5px] text-white sm:text-[40px] lg:text-[48px]">
+          <h1 className="bo-job-title mt-5 text-[32px] font-medium leading-[1.25] tracking-[-0.5px] text-white sm:text-[40px] lg:text-[48px]">
             {job.title}
           </h1>
 

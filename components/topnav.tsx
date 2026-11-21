@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import StartProjectButton from '@/components/startprojectmodal'
+import ThemeToggle from '@/components/ThemeToggle'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
@@ -39,7 +40,15 @@ export default function TopNav() {
             alt="Black Origin"
             width={640}
             height={150}
-            className="h-8 w-auto sm:h-9 lg:h-11 xl:h-12"
+            className="theme-logo-light h-8 w-auto sm:h-9 lg:h-11 xl:h-12"
+            priority
+          />
+          <Image
+            src="/logo-white.png"
+            alt="Black Origin"
+            width={640}
+            height={150}
+            className="theme-logo-dark h-8 w-auto sm:h-9 lg:h-11 xl:h-12"
             priority
           />
         </Link>
@@ -61,6 +70,8 @@ export default function TopNav() {
             </Link>
           ))}
         </nav>
+
+        <ThemeToggle className="hidden lg:block" />
 
         <StartProjectButton className={`${navCtaClass} hidden lg:inline-flex`}>
           Start a Project
@@ -94,6 +105,8 @@ export default function TopNav() {
               {link.name}
             </Link>
           ))}
+
+          <ThemeToggle variant="menu" className="mt-2" />
 
           <StartProjectButton className={`${navCtaClass} mt-2 w-full`}>
             Start a Project

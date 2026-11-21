@@ -219,7 +219,7 @@ export default function ServicesPage() {
           4. CTA BANNER (Not sure where to start?)
          ========================================= */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-12">
-        <div className="bg-[#061A40] text-white rounded-2xl p-8 md:p-14 shadow-lg">
+        <div className="theme-ash-panel bg-[#061A40] text-white rounded-2xl p-8 md:p-14 shadow-lg">
           <div className="max-w-2xl space-y-4">
             <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl text-white">
               Not sure where to start?

@@ -420,9 +420,9 @@ export default async function IndustryPage({
   const isStartups = slug === 'startups-smes'
 
   const bodyBg: CSSProperties = {
-    backgroundColor: '#F5F9FF',
+    backgroundColor: 'var(--background)',
     backgroundImage:
-      'radial-gradient(circle at 4% 100%, rgba(232, 93, 4, 0.12), rgba(232, 93, 4, 0) 55%)',
+      'radial-gradient(circle at 4% 100%, rgb(var(--primary-rgb) / 0.12), rgb(var(--primary-rgb) / 0) 55%)',
   }
 
   return (
@@ -431,9 +431,9 @@ export default async function IndustryPage({
       <section
         className="relative overflow-hidden text-white"
         style={{
-          backgroundColor: '#061A40',
+          backgroundColor: 'var(--hero-bg)',
           backgroundImage:
-            'radial-gradient(circle at 88% 0%, rgba(232, 93, 4, 0.55), rgba(232, 93, 4, 0) 55%)',
+            'radial-gradient(circle at 88% 0%, rgb(var(--primary-rgb) / 0.55), rgb(var(--primary-rgb) / 0) 55%)',
         }}
       >
         <div className="relative mx-auto w-full max-w-7xl px-6 py-24 md:py-32">
@@ -772,7 +772,7 @@ export default async function IndustryPage({
       <section className="pb-20">
         <div className="mx-auto w-full max-w-7xl px-6">
           {isFintech || isHealthcare ? (
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#061A40] to-[#0a1f4d] p-6 text-center text-white sm:p-10 md:p-12">
+            <div className="theme-ash-panel relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#061A40] to-[#0a1f4d] p-6 text-center text-white sm:p-10 md:p-12">
               <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#E85D04]/20 blur-3xl" />
               <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-[#E85D04]/10 blur-3xl" />
               <div className="relative">
@@ -813,7 +813,7 @@ export default async function IndustryPage({
               </div>
             </div>
           ) : (
-            <div className="rounded-xl bg-[#061A40] p-6 text-center text-white sm:p-10">
+            <div className="theme-ash-panel rounded-xl bg-[#061A40] p-6 text-center text-white sm:p-10">
               <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
                 {industry.ctaTitle}
               </h2>
