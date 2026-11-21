@@ -10,7 +10,7 @@ export default function JobList() {
           key={j.slug}
           href={"/careers/" + j.slug}
           aria-label={"View details: " + j.title}
-          className="group relative flex flex-col gap-5 border-b border-slate-200 px-6 py-7 outline-none transition duration-300 last:border-b-0 hover:bg-[#f6f8fd] focus-visible:bg-[#f6f8fd] active:bg-[#eef3fc] sm:flex-row sm:items-center sm:gap-8 sm:px-8"
+          className="bo-job-card group relative flex flex-col gap-5 border-b border-slate-200 px-6 py-7 outline-none last:border-b-0 hover:bg-[#f6f8fd] focus-visible:bg-[#f6f8fd] active:bg-[#eef3fc] sm:flex-row sm:items-center sm:gap-8 sm:px-8"
         >
           {/* Accent bar: grows from bottom to top */}
           <span
@@ -50,12 +50,12 @@ export default function JobList() {
           </div>
 
           {/* View details: color fills from bottom to top */}
-          <span className="relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border border-[#061a40]/20 px-6 py-3 text-sm font-semibold text-[#061a40] transition-colors duration-300 group-hover:border-[#e85d04] group-hover:text-white group-active:border-[#e85d04] group-active:text-white">
+          <span className="bo-view-details relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border border-[#061a40]/20 px-6 py-3 text-sm font-semibold text-[#061a40] transition-colors duration-300 group-hover:border-[#e85d04] group-active:border-[#e85d04]">
             <span
               aria-hidden="true"
-              className="absolute inset-x-0 bottom-0 h-0 bg-[#e85d04] transition-all duration-300 ease-out group-hover:h-full group-active:h-full"
+              className="bo-fill-layer absolute inset-x-0 bottom-0 h-0 bg-[#e85d04] group-hover:h-full group-active:h-full"
             />
-            <span className="relative z-10">View details</span>
+            <span className="bo-fill-label relative z-10">View details</span>
           </span>
         </Link>
       ))}
@@ -76,13 +76,13 @@ export function ProfileCta() {
       </div>
       <Link
         href="/careers/general/apply"
-        className="group/cta relative inline-flex items-center justify-center overflow-hidden rounded-full bg-[#e85d04] px-7 py-3 text-sm font-semibold text-white transition-colors duration-300 hover:text-[#061a40] active:text-[#061a40]"
+        className="bo-profile-cta group/cta relative inline-flex items-center justify-center overflow-hidden rounded-full bg-[#e85d04] px-7 py-3 text-sm font-semibold text-white"
       >
         <span
           aria-hidden="true"
-          className="absolute inset-x-0 bottom-0 h-0 bg-white transition-all duration-300 ease-out group-hover/cta:h-full group-active/cta:h-full"
+          className="bo-fill-layer absolute inset-x-0 bottom-0 h-0 bg-white group-hover/cta:h-full group-active/cta:h-full"
         />
-        <span className="relative z-10">Send your profile</span>
+        <span className="bo-fill-label relative z-10">Send your profile</span>
       </Link>
     </div>
   );

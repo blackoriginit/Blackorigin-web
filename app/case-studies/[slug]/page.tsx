@@ -230,7 +230,7 @@ export default async function CaseStudyDetailPage({
       )}
 
       {/* FINAL CTA */}
-      <section className="case-cta">
+      <section className="case-cta theme-ash-panel">
         <div>
           <span className="case-orange-label">
             LET&apos;S WORK TOGETHER

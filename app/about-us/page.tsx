@@ -262,11 +262,11 @@ export default function AboutUsPage() {
           alt="Black Origin workspace"
           fill
           priority
-          className="object-cover opacity-75"
+          className="about-hero-image object-cover opacity-75"
           sizes="100vw"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-secondary/35" />
+        <div className="about-hero-overlay absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-secondary/35" />
 
         <div className="relative mx-auto min-h-[300px] max-w-[1100px] px-6 pb-16 pt-12 md:min-h-[380px] md:px-10 md:pb-20 md:pt-16">
           <div className="relative max-w-xl">

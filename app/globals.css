@@ -466,7 +466,9 @@
 [data-theme='dark'] .theme-ash-panel [class~="text-white/75"],
 [data-theme='dark'] .theme-ash-panel [class~="text-on-primary/65"],
 [data-theme='dark'] .theme-ash-panel [class~="text-on-primary/75"],
-[data-theme='dark'] .theme-ash-panel [class~="text-[#5A6B8C]"] {
+[data-theme='dark'] .theme-ash-panel [class~="text-[#5A6B8C]"],
+[data-theme='dark'] .theme-ash-panel [class~="text-slate-300"],
+[data-theme='dark'] .theme-ash-panel [class~="text-slate-400"] {
   color: var(--panel-ash-muted) !important;
 }
 /* Orange labels stay orange, deepened so they read on the light panel. */
@@ -498,6 +500,119 @@
 /* Softer, ash-toned job titles on the careers pages. */
 [data-theme='dark'] .bo-job-title {
   color: var(--job-title) !important;
+}
+
+/* Case-study end CTA sits on the same ash highlight panel. */
+[data-theme='dark'] .theme-ash-panel.case-cta p {
+  color: var(--panel-ash-muted) !important;
+}
+[data-theme='dark'] .theme-ash-panel.case-cta .case-orange-label {
+  color: var(--panel-ash-accent) !important;
+}
+[data-theme='dark'] .theme-ash-panel.case-cta .case-btn-secondary {
+  color: var(--panel-ash-text) !important;
+  border-color: var(--panel-ash-divider) !important;
+}
+
+/* ------------------------------------------------------------
+   CAREERS INTERACTIONS — SYNCED FILL + LABEL
+   The fill and the label share one easing curve. The label waits
+   a beat on hover-in so it is never the same colour as a
+   half-painted background; on hover-out it reverts immediately.
+   ------------------------------------------------------------ */
+.bo-job-card {
+  transition: background-color 380ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 380ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.bo-fill-layer {
+  transition: height 380ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.bo-fill-label {
+  transition: color 180ms ease-out;
+}
+.group:hover .bo-fill-label,
+.group\/cta:hover .bo-fill-label {
+  transition-delay: 130ms;
+}
+.group:hover .bo-view-details .bo-fill-label {
+  color: #ffffff !important;
+}
+[data-theme='dark'] .group:hover .bo-view-details .bo-fill-label {
+  color: var(--on-accent) !important;
+}
+/* The white fill must stay white in dark mode (bg-white maps to --surface). */
+[data-theme='dark'] .bo-profile-cta .bo-fill-layer {
+  background-color: #ffffff !important;
+}
+.group\/cta:hover .bo-profile-cta .bo-fill-label {
+  color: var(--text) !important;
+}
+[data-theme='dark'] .group\/cta:hover .bo-profile-cta .bo-fill-label {
+  color: var(--on-accent) !important;
+}
+
+/* ------------------------------------------------------------
+   ABOUT HERO — DIMMER PHOTO IN DARK MODE
+   Keeps the image present but gives the heading a calm, readable
+   backdrop like the light version.
+   ------------------------------------------------------------ */
+[data-theme='dark'] .about-hero-image {
+  opacity: 0.3 !important;
+}
+[data-theme='dark'] .about-hero-overlay {
+  background-image: linear-gradient(
+    to right,
+    rgba(16, 19, 24, 0.98) 0%,
+    rgba(16, 19, 24, 0.93) 48%,
+    rgba(16, 19, 24, 0.74) 100%
+  ) !important;
+}
+
+/* ------------------------------------------------------------
+   OUR PROCESS — REVERSED PANELS IN DARK MODE
+   Light ash on the left, deeper charcoal on the right, with every
+   label, divider and hover state adapted to its new surface.
+   ------------------------------------------------------------ */
+[data-theme='dark'] .bo-process-left {
+  background-color: var(--panel-ash) !important;
+  color: var(--panel-ash-text) !important;
+}
+[data-theme='dark'] .bo-process-left h2 {
+  color: var(--panel-ash-text) !important;
+}
+[data-theme='dark'] .bo-process-left [class~="text-slate-300"],
+[data-theme='dark'] .bo-process-left [class~="text-[#5A6B8C]"] {
+  color: var(--panel-ash-muted) !important;
+}
+[data-theme='dark'] .bo-process-left [class~="border-white/15"] {
+  border-color: var(--panel-ash-divider) !important;
+}
+[data-theme='dark'] .bo-process-left [class~="text-[#e85d04]"] {
+  color: var(--panel-ash-accent) !important;
+}
+[data-theme='dark'] .bo-process-left [class~="bg-[#e85d04]/20"] {
+  background-color: rgb(184 67 10 / 0.14) !important;
+}
+[data-theme='dark'] .bo-process-left [class~="text-slate-200"] {
+  color: var(--panel-ash-text) !important;
+}
+[data-theme='dark'] .bo-process-left [class~="hover:text-white"]:hover {
+  color: var(--panel-ash-accent) !important;
+}
+
+[data-theme='dark'] .bo-process-right {
+  background-color: var(--surface-muted) !important;
+  color: var(--text) !important;
+}
+[data-theme='dark'] .bo-process-right [class~="ring-white"] {
+  --tw-ring-color: var(--border) !important;
+}
+[data-theme='dark'] .bo-process-right [class~="bg-[#061a40]"] {
+  background-color: var(--primary) !important;
+  color: var(--on-accent) !important;
+}
+[data-theme='dark'] .bo-process-right .group:hover [class~="group-hover:bg-[#f6f8fd]"] {
+  background-color: var(--surface-elevated) !important;
 }
 
 /* Borders */

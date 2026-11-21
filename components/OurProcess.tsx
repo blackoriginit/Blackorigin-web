@@ -79,7 +79,7 @@ export default function OurProcess() {
     <section className="w-full bg-[#f6f8fd] px-4 py-12 sm:px-6 md:py-20">
       <div className="mx-auto grid max-w-5xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:shadow-xl md:grid-cols-[0.8fr_1.4fr]">
         {/* Left panel */}
-        <div className="bg-[#061a40] p-6 text-white sm:p-8 md:p-9">
+        <div className="bo-process-left bg-[#061a40] p-6 text-white sm:p-8 md:p-9">
           <div className="md:sticky md:top-24">
             <p className="text-[10px] font-bold tracking-[0.2em] text-[#e85d04]">
               OUR PROCESS
@@ -118,7 +118,7 @@ export default function OurProcess() {
         </div>
 
         {/* Steps */}
-        <div className="p-4 sm:p-8">
+        <div className="bo-process-right p-4 sm:p-8">
 
           <ol>
             {steps.map((s, i) => {
