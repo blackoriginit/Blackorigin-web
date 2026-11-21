@@ -622,19 +622,20 @@
 }
 
 /* ------------------------------------------------------------
-   ABOUT HERO — DIMMER PHOTO IN DARK MODE
-   Keeps the image present but gives the heading a calm, readable
-   backdrop like the light version.
+   ABOUT HERO — SOFTLY LIT PHOTO IN DARK MODE
+   Sits a step above the page charcoal (#151a20 vs #101318) with a
+   faint photo, so the hero reads as its own panel without losing
+   heading contrast.
    ------------------------------------------------------------ */
 [data-theme='dark'] .about-hero-image {
-  opacity: 0.3 !important;
+  opacity: 0.42 !important;
 }
 [data-theme='dark'] .about-hero-overlay {
   background-image: linear-gradient(
     to right,
-    rgba(16, 19, 24, 0.98) 0%,
-    rgba(16, 19, 24, 0.93) 48%,
-    rgba(16, 19, 24, 0.74) 100%
+    rgba(21, 26, 32, 0.94) 0%,
+    rgba(21, 26, 32, 0.86) 48%,
+    rgba(21, 26, 32, 0.62) 100%
   ) !important;
 }
 
