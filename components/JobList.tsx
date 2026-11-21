@@ -20,10 +20,10 @@ export default function JobList() {
 
           {/* Department */}
           <div className="flex items-center gap-3 sm:w-44 sm:shrink-0">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#eaf1ff] text-xs font-bold text-[#061a40] transition-colors duration-300 group-hover:bg-[#061a40] group-hover:text-white">
+            <span className="bo-job-index flex h-9 w-9 items-center justify-center rounded-lg bg-[#eaf1ff] text-xs font-bold text-[#061a40] group-hover:bg-[#061a40] group-hover:text-white">
               {String(i + 1).padStart(2, "0")}
             </span>
-            <span className="text-sm font-bold text-[#061a40]">
+            <span className="bo-job-dept text-sm font-bold text-[#061a40]">
               {j.department}
             </span>
           </div>
@@ -38,13 +38,13 @@ export default function JobList() {
               {[j.mode, j.type, j.level].map((chip) => (
                 <span
                   key={chip}
-                  className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 transition duration-300 group-hover:bg-white group-hover:ring-1 group-hover:ring-slate-200"
+                  className="bo-job-chip rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 group-hover:bg-white group-hover:ring-1 group-hover:ring-slate-200"
                 >
                   {chip}
                 </span>
               ))}
             </div>
-            <p className="mt-3 line-clamp-2 hidden max-w-xl text-sm leading-6 text-slate-500 md:block">
+            <p className="bo-job-summary mt-3 line-clamp-2 hidden max-w-xl text-sm leading-6 text-slate-500 md:block">
               {j.summary}
             </p>
           </div>

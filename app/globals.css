@@ -521,18 +521,57 @@
    half-painted background; on hover-out it reverts immediately.
    ------------------------------------------------------------ */
 .bo-job-card {
-  transition: background-color 380ms cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 380ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 460ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+/* The card highlight uses the same bottom-up fill as the buttons in the
+   card: a layer grows from the lower edge on the shared easing curve. */
+.bo-job-card::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 0;
+  background-color: #f6f8fd;
+  pointer-events: none;
+  z-index: 0;
+  transition: height 460ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-theme='dark'] .bo-job-card::before {
+  background-color: var(--panel-ash);
+}
+.bo-job-card:hover::before,
+.bo-job-card:focus-visible::before,
+.bo-job-card:active::before {
+  height: 100%;
+}
+/* Keep every label above the sweep; the accent bar stays on top of it too. */
+.bo-job-card > div,
+.bo-job-card > .bo-view-details {
+  position: relative;
+  z-index: 1;
+}
+/* The layer paints the highlight, so the card itself never color-swaps. */
+.bo-job-card:hover,
+.bo-job-card:focus-visible,
+.bo-job-card:active {
+  background-color: transparent !important;
 }
 .bo-fill-layer {
-  transition: height 380ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: height 460ms cubic-bezier(0.22, 1, 0.36, 1);
 }
-.bo-fill-label {
-  transition: color 180ms ease-out;
+.bo-fill-label,
+.bo-job-dept,
+.bo-job-title,
+.bo-job-summary,
+.bo-job-chip,
+.bo-job-index {
+  transition: color 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 300ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 .group:hover .bo-fill-label,
 .group\/cta:hover .bo-fill-label {
-  transition-delay: 130ms;
+  transition-delay: 180ms;
 }
 .group:hover .bo-view-details .bo-fill-label {
   color: #ffffff !important;
@@ -549,6 +588,37 @@
 }
 [data-theme='dark'] .group\/cta:hover .bo-profile-cta .bo-fill-label {
   color: var(--on-accent) !important;
+}
+
+/* Dark mode: the sweep stays ash and every label flips to charcoal as it
+   passes, so nothing is ever light-on-light. */
+[data-theme='dark'] .bo-job-card:hover,
+[data-theme='dark'] .bo-job-card:focus-visible,
+[data-theme='dark'] .bo-job-card:active {
+  border-color: var(--panel-ash-divider) !important;
+}
+[data-theme='dark'] .bo-job-card:hover .bo-job-dept,
+[data-theme='dark'] .bo-job-card:hover .bo-job-title,
+[data-theme='dark'] .bo-job-card:hover .bo-job-summary,
+[data-theme='dark'] .bo-job-card:hover .bo-view-details .bo-fill-label,
+[data-theme='dark'] .bo-job-card:focus-visible .bo-job-dept,
+[data-theme='dark'] .bo-job-card:focus-visible .bo-job-title,
+[data-theme='dark'] .bo-job-card:focus-visible .bo-job-summary,
+[data-theme='dark'] .bo-job-card:active .bo-job-dept,
+[data-theme='dark'] .bo-job-card:active .bo-job-title,
+[data-theme='dark'] .bo-job-card:active .bo-job-summary {
+  color: var(--panel-ash-text) !important;
+}
+[data-theme='dark'] .bo-job-card:hover .bo-job-chip,
+[data-theme='dark'] .bo-job-card:focus-visible .bo-job-chip {
+  background-color: #ffffff !important;
+  color: var(--panel-ash-muted) !important;
+  --tw-ring-color: var(--panel-ash-divider) !important;
+}
+[data-theme='dark'] .bo-job-card:hover .bo-job-index,
+[data-theme='dark'] .bo-job-card:focus-visible .bo-job-index {
+  background-color: var(--panel-ash-text) !important;
+  color: var(--panel-ash) !important;
 }
 
 /* ------------------------------------------------------------
