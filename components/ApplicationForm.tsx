@@ -215,10 +215,16 @@ export default function ApplicationForm({ job }: { job: Job }) {
           review your profile and get back to you at {values.email}.
         </p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-          <Link href="/careers" className="bo-btn bo-btn-primary">
+          <Link
+            href="/careers"
+            className="rounded-full bg-[#e85d04] px-6 py-2.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#ff7a1f] hover:shadow-lg"
+          >
             Browse more roles
           </Link>
-          <Link href="/" className="bo-btn bo-btn-secondary">
+          <Link
+            href="/"
+            className="rounded-full border border-slate-300 px-6 py-2.5 text-sm font-semibold text-[#061a40] transition duration-300 hover:-translate-y-0.5 hover:border-[#e85d04] hover:text-[#e85d04]"
+          >
             Back to home
           </Link>
         </div>
@@ -568,7 +574,10 @@ export default function ApplicationForm({ job }: { job: Job }) {
               {/* Actions */}
               <div className="mt-2 flex items-center justify-between border-t border-slate-200 pt-6">
                 {step === 1 ? (
-                  <Link href={backHref} className="bo-btn bo-btn-quiet">
+                  <Link
+                    href={backHref}
+                    className="text-sm font-semibold text-slate-500 transition hover:text-[#061a40]"
+                  >
                     Cancel
                   </Link>
                 ) : (
@@ -578,7 +587,7 @@ export default function ApplicationForm({ job }: { job: Job }) {
                       setStep(1);
                       setErrors({});
                     }}
-                    className="bo-btn bo-btn-quiet"
+                    className="text-sm font-semibold text-slate-500 transition hover:text-[#061a40]"
                   >
                     Back
                   </button>
@@ -587,7 +596,7 @@ export default function ApplicationForm({ job }: { job: Job }) {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="bo-btn bo-btn-primary w-full"
+                  className="w-full h-11 rounded-lg bg-primary text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 disabled:opacity-60"
                 >
                   {step === 1
                     ? "Continue"
